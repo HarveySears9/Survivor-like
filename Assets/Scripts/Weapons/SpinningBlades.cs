@@ -38,7 +38,7 @@ public class SpinningBlades : MonoBehaviour
         // Loop through each blade and rotate it
         foreach (GameObject blade in blades)
         {
-            blade.transform.Rotate(0f, 0f, spinSpeed * Time.deltaTime); // Spin each blade around Z-axis
+            blade.transform.Rotate(0f, 0f, 4f * spinSpeed * Time.deltaTime); // Spin each blade around Z-axis
         }
     }
 

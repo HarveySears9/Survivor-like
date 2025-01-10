@@ -9,11 +9,15 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public VariableJoystick variableJoystick;
     [SerializeField] private FireBreath fireBreath;
+    private AnimateSprite animator;
+    private SpriteRenderer spriteRenderer; // To control flipping of the sprite
 
     // Start is called before the first frame update
     void Start()
     {
         hp = maxHP;
+        animator = GetComponent<AnimateSprite>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,21 @@ public class PlayerController : MonoBehaviour
         if (moveDirection != Vector2.zero)
         {
             fireBreath.moveDirection = moveDirection;
+            animator.isMoving = true;
+
+            // Flip sprite based on movement direction
+            if (moveDirection.x < 0)
+            {
+                spriteRenderer.flipX = true; // Flip sprite when moving left
+            }
+            else if (moveDirection.x > 0)
+            {
+                spriteRenderer.flipX = false; // Keep sprite normal when moving right
+            }
+        }
+        else
+        {
+            animator.isMoving = false;
         }
 
     }
