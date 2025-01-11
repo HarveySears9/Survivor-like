@@ -520,9 +520,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa67a647ef08b4e4484ef207e1d5dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
   spawnInterval: 0.25
   circleRadius: 6
+  tier1:
+  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
+  tier2:
+  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
+  - {fileID: 3811681504374624625, guid: 3b8a281417011ef42827dfb237d3f297, type: 3}
+  tier3:
+  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
+  - {fileID: 3811681504374624625, guid: 3b8a281417011ef42827dfb237d3f297, type: 3}
+  weights1: 01000000
+  weights2: 0300000001000000
+  weights3: 0100000001000000
 --- !u!114 &429575879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,7 +2751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -445.07}
+  m_AnchoredPosition: {x: 0, y: -876.08}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1273769281
@@ -4145,7 +4155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -560.52}
+  m_AnchoredPosition: {x: 0, y: -735.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960822068

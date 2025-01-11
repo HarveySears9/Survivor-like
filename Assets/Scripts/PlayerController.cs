@@ -12,12 +12,18 @@ public class PlayerController : MonoBehaviour
     private AnimateSprite animator;
     private SpriteRenderer spriteRenderer; // To control flipping of the sprite
 
+    private HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         hp = maxHP;
         animator = GetComponent<AnimateSprite>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Find and initialize the health bar
+        healthBar = FindObjectOfType<HealthBar>();
+        healthBar.SetMaxHealth(maxHP);
     }
 
     // Update is called once per frame
@@ -54,6 +60,8 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hp -= damage;
+
+        healthBar.SetHealth(hp);
         if (hp <= 0)
         {
             Destroy(this);
@@ -67,5 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             hp = maxHP;
         }
+
+        healthBar.SetHealth(hp);
     }
 }
