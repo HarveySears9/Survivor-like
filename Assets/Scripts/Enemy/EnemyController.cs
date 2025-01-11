@@ -57,6 +57,8 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0f)
         {
+            // Trigger the EnemyDeathEventManager
+            EnemyDeathEventManager.EnemyDied(transform.position);
             Destroy(gameObject);
         }
     }

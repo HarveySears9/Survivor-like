@@ -59,4 +59,13 @@ public class PlayerController : MonoBehaviour
             Destroy(this);
         }
     }
+
+    public void Heal(float percentage)
+    {
+        hp += (percentage/100f)*maxHP;
+        if (hp > maxHP)
+        {
+            hp = maxHP;
+        }
+    }
 }
