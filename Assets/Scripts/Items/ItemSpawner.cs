@@ -2,9 +2,42 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject[] dropItems; // Array of item prefabs
-    public int[] dropWeights;      // Array of weights for items (should match dropItems length)
+    private GameObject[] dropItems; // Array of item prefabs
+    private int[] dropWeights;      // Array of weights for items (should match dropItems length)
     public float dropChance = 0.5f; // Chance to drop an item
+
+    public GameObject[] tier1, tier2, tier3;
+    public int[] weights1, weights2, weights3;
+
+    void Start()
+    {
+        dropItems = tier1;
+        dropWeights = weights1;
+
+        GameTimer gameTimer = FindObjectOfType<GameTimer>();
+        gameTimer.OnDropChange += UpdateDropTier;
+    }
+
+    void UpdateDropTier(int newTier)
+    {
+        // Adjust drop rates or items based on the tier
+        switch (newTier)
+        {
+            case 1:
+                dropItems = tier1;
+                dropWeights = weights1;
+                break;
+            case 2:
+                dropItems = tier2;
+                dropWeights = weights2;
+                break;
+            case 3:
+                dropItems = tier3;
+                dropWeights = weights3;
+                break;
+
+        }
+    }
 
     void OnEnable()
     {
