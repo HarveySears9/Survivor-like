@@ -13,6 +13,8 @@ public class DivineAura : MonoBehaviour
 
     public PlayerController player;       // Reference to the PlayerController script
 
+    public LevelUpButtons levelUpButton;
+
     void Start()
     {
         if (player == null)
@@ -20,6 +22,7 @@ public class DivineAura : MonoBehaviour
             Debug.LogError("PlayerController script not found on GameObject!");
         }
         cooldownTimer = cooldownDuration; // Initialize the cooldown timer
+        levelUpButton.LevelUp(level, maxLevel);
     }
 
     public void LevelUp()
@@ -36,6 +39,7 @@ public class DivineAura : MonoBehaviour
             level = maxLevel;
         }
         healAmount++;
+        levelUpButton.LevelUp(level, maxLevel);
     }
 
     void Update()

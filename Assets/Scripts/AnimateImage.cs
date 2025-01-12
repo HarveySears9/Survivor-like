@@ -24,7 +24,7 @@ public class AnimateImage : MonoBehaviour
 
     void OnDisable()
     {
-        StopAnimation(); // Stop animation when disabled
+        //StopAnimation(); // Stop animation when disabled
     }
 
     public void StartAnimation()

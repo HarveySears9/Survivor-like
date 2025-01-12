@@ -21,6 +21,7 @@ public class SpinningBlades : MonoBehaviour
     public GameObject level4;
     public GameObject level5;
 
+    public LevelUpButtons levelUpButton;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class SpinningBlades : MonoBehaviour
         blades = level1Blades; // Initialize blades with level1 at the start
         currentLevel = level1;
         //currentLevel.SetActive(true);
+        levelUpButton.LevelUp(level, maxLevel);
     }
 
     // FixedUpdate is called once per frame
@@ -84,5 +86,6 @@ public class SpinningBlades : MonoBehaviour
         }
 
         currentLevel.SetActive(true);
+        levelUpButton.LevelUp(level, maxLevel);
     }
 }

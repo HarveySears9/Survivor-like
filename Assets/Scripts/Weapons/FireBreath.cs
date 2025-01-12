@@ -11,7 +11,14 @@ public class FireBreath : MonoBehaviour
     public float spreadAngle = 30f;   // Total spread angle for the fireballs
     private float nextFireTime = 0f;  // Tracks when the next fire is allowed
 
+    public LevelUpButtons levelUpButton;
+
     public Vector2 moveDirection; // The direction of the player’s movement
+
+    void Start()
+    {
+        levelUpButton.LevelUp(level, maxLevel);
+    }
 
     void Update()
     {
@@ -58,6 +65,8 @@ public class FireBreath : MonoBehaviour
         {
             level = maxLevel;
         }
+
+        levelUpButton.LevelUp(level, maxLevel);
     }
 
     IEnumerator BurstFire()
