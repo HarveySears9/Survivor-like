@@ -12,7 +12,7 @@ public class HealthPotion : MonoBehaviour
         {
             Debug.Log("Health potion aquired");
             // Handle player damage logic here
-            other.GetComponent<PlayerController>().Heal(healPercentage);
+            other.GetComponent<PlayerController>().Heal(healPercentage, false);
             Destroy(gameObject);
         }
     }

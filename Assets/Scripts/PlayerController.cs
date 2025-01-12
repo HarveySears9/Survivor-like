@@ -68,9 +68,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Heal(float percentage)
+    public void Heal(float percentage, bool amount)
     {
-        hp += (percentage/100f)*maxHP;
+        if (amount)
+        {
+            hp += percentage;
+        }
+        else
+        {
+            hp += (percentage / 100f) * maxHP;
+        }
         if (hp > maxHP)
         {
             hp = maxHP;

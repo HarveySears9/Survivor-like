@@ -8,6 +8,7 @@ public class SpinningBlades : MonoBehaviour
     private GameObject currentLevel;
     public float spinSpeed;     // Speed of the spinning (in degrees per second)
     public int level;
+    public int maxLevel = 5;
     public GameObject[] level1Blades;
     public GameObject[] level2Blades;
     public GameObject[] level3Blades;
@@ -23,10 +24,10 @@ public class SpinningBlades : MonoBehaviour
 
     void Start()
     {
-        level = 1;
+        level = 0;
         blades = level1Blades; // Initialize blades with level1 at the start
         currentLevel = level1;
-        currentLevel.SetActive(true);
+        //currentLevel.SetActive(true);
     }
 
     // FixedUpdate is called once per frame
@@ -46,10 +47,19 @@ public class SpinningBlades : MonoBehaviour
     public void LevelUp()
     {
         level++;  // Increase level
+        if(level > maxLevel)
+        {
+            level = maxLevel;
+        }
         currentLevel.SetActive(false);
 
         switch (level)
         {
+            case 1:
+                // If level is 1 or an unexpected value, set to level1 blades
+                blades = level1Blades;
+                currentLevel = level1;
+                break;
             case 2:
                 blades = level2Blades;
                 currentLevel = level2;

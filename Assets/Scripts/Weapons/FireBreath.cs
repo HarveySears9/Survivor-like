@@ -7,6 +7,7 @@ public class FireBreath : MonoBehaviour
     public GameObject fireballPrefab; // Reference to the Fireball prefab
     public float fireRate = 5f;       // Time between each fire breath
     public int level = 1;             // Weapon level (determines number of fireballs)
+    public int maxLevel = 5;
     public float spreadAngle = 30f;   // Total spread angle for the fireballs
     private float nextFireTime = 0f;  // Tracks when the next fire is allowed
 
@@ -50,6 +51,15 @@ public class FireBreath : MonoBehaviour
         StartCoroutine(BurstFire());
     }
 
+    public void LevelUp()
+    {
+        level++;
+        if (level > maxLevel)
+        {
+            level = maxLevel;
+        }
+    }
+
     IEnumerator BurstFire()
     {
         // Store the original fire rate
@@ -57,6 +67,8 @@ public class FireBreath : MonoBehaviour
 
         // Temporarily set the fire rate to a faster value
         fireRate = 10f;
+
+        nextFireTime = 0f;
 
         // Wait for 3 seconds
         yield return new WaitForSeconds(3f);

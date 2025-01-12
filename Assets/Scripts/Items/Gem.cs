@@ -10,7 +10,13 @@ public class Gem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Gem aquired");
+            EXPBar playerEXP = other.GetComponent<EXPBar>();
+            if (playerEXP != null)
+            {
+                playerEXP.AddEXP(value); // Add EXP to the player
+            }
+
+            // Destroy the gem after it's collected
             Destroy(gameObject);
         }
     }
