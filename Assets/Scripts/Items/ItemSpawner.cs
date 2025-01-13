@@ -9,6 +9,9 @@ public class ItemSpawner : MonoBehaviour
     public GameObject[] tier1, tier2, tier3;
     public int[] weights1, weights2, weights3;
 
+
+    public GameObject[] bossDrops;
+
     void Start()
     {
         dropItems = tier1;
@@ -43,12 +46,16 @@ public class ItemSpawner : MonoBehaviour
     {
         // Subscribe to the EnemyDeath event
         EnemyDeathEventManager.OnEnemyDeath += SpawnItem;
+
+        EnemyDeathEventManager.OnBossDeath += SpawnBossItem;
     }
 
     void OnDisable()
     {
         // Unsubscribe from the event
         EnemyDeathEventManager.OnEnemyDeath -= SpawnItem;
+
+        EnemyDeathEventManager.OnBossDeath -= SpawnBossItem;
     }
 
     void SpawnItem(Vector3 position)
@@ -65,6 +72,11 @@ public class ItemSpawner : MonoBehaviour
                 Instantiate(dropItems[selectedIndex], position, Quaternion.identity);
             }
         }
+    }
+
+    void SpawnBossItem(Vector3 position)
+    {
+        Instantiate(bossDrops[0], position, Quaternion.identity);
     }
 
     int GetWeightedRandomIndex(int[] weights)

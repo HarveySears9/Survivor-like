@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private AnimateSprite animator;
     private SpriteRenderer spriteRenderer; // To control flipping of the sprite
 
-    private HealthBar healthBar;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Find and initialize the health bar
-        healthBar = FindObjectOfType<HealthBar>();
         healthBar.SetMaxHealth(maxHP);
     }
 

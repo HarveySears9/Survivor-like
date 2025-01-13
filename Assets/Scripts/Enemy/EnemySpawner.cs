@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] tier1, tier2, tier3;
     public int[] weights1, weights2, weights3;
 
+    public bool spawning;
+
     void Start()
     {
         // Find the player's transform and main camera at the start
@@ -50,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnInterval)
+        if (timer >= spawnInterval && spawning)
         {
             SpawnEnemy();
             timer = 0f;  // Reset the timer
