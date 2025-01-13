@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EXPBar : MonoBehaviour
 {
@@ -11,8 +12,18 @@ public class EXPBar : MonoBehaviour
     public float expThreshold = 100; // EXP needed for the next level
     public GameObject levelUpMenu; // Reference to the level-up menu
 
+    public TextMeshProUGUI levelText;
+
     void Start()
     {
+        UpdateEXPBar();
+        SetText();
+    }
+
+    public void ScrollPickUp()
+    {
+        LevelUp();
+
         UpdateEXPBar();
     }
 
@@ -40,11 +51,17 @@ public class EXPBar : MonoBehaviour
 
         // Show the level-up menu and pause the game
         levelUpMenu.SetActive(true);
+        SetText();
     }
 
     // Updates the slider to reflect the current EXP
     void UpdateEXPBar()
     {
         expBar.value = currentEXP / expThreshold; // Normalize the value (0 to 1)
+    }
+
+    void SetText()
+    {
+        levelText.text = "LV:"+currentLevel.ToString();
     }
 }

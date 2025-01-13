@@ -16,6 +16,8 @@ public class BossFight : MonoBehaviour
 
     public GameObject bossHpBar;
 
+    public int delay;
+
     private EnemySpawner spawner;
 
     void Start()
@@ -35,9 +37,17 @@ public class BossFight : MonoBehaviour
             gameTimer.PauseTimer(); // Pause the timer when the boss spawns
             Debug.Log("Game Timer Paused for Boss Fight");
         }
+
         spawner.spawning = false;
+        StartCoroutine(BossDelay());
+    }
+
+    private IEnumerator BossDelay()
+    {
+        yield return new WaitForSeconds(delay); // Corrected method call
         SpawnBoss();
     }
+
 
     public void OnBossDeath(Vector3 position)
     {
