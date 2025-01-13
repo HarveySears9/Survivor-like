@@ -22,7 +22,7 @@ public class EXPBar : MonoBehaviour
 
     public void ScrollPickUp()
     {
-        LevelUp();
+        LevelUp(true);
 
         UpdateEXPBar();
     }
@@ -34,17 +34,21 @@ public class EXPBar : MonoBehaviour
 
         if (currentEXP >= expThreshold)
         {
-            LevelUp();
+            LevelUp(false);
         }
 
         UpdateEXPBar();
     }
 
     // Triggered when the player levels up
-    void LevelUp()
+    void LevelUp(bool scroll)
     {
         currentLevel++; // Increase the player's level
         currentEXP -= expThreshold; // Carry over any extra EXP
+        if(scroll)
+        {
+            currentEXP = 0;
+        }
         expThreshold *= 1.25f; // Increase the threshold for the next level (optional)
 
         UpdateEXPBar();
