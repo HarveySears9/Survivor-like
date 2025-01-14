@@ -192,7 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Giant Bat
-  health: 10
+  maxHP: 10
   speed: 1
   damage: 3
   playerTransform: {fileID: 0}
+  healthBar: {fileID: 0}
+  drops:
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}

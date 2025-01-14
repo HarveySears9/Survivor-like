@@ -74,9 +74,9 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 
-    void SpawnBossItem(Vector3 position)
+    void SpawnBossItem(Vector3 position, GameObject dropPrefab)
     {
-        Instantiate(bossDrops[0], position, Quaternion.identity);
+        Instantiate(dropPrefab, position, Quaternion.identity);
     }
 
     int GetWeightedRandomIndex(int[] weights)

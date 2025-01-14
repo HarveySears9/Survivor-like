@@ -123,7 +123,7 @@ MonoBehaviour:
   - {fileID: 22241327, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   moveArray: []
   animating: 1
-  animationSpeed: 0.25
+  animationSpeed: 0.1
   isMoving: 0
 --- !u!58 &400224325043239802
 CircleCollider2D:

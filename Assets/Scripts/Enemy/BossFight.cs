@@ -49,7 +49,7 @@ public class BossFight : MonoBehaviour
     }
 
 
-    public void OnBossDeath(Vector3 position)
+    public void OnBossDeath(Vector3 position, GameObject dropPrefab)
     {
         if (gameTimer != null)
         {
@@ -72,7 +72,7 @@ public class BossFight : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f); // Position to spawn the enemy
 
         // Instantiate the selected enemy at the calculated position
-        GameObject enemyObj = Instantiate(bosses[0], spawnPosition, Quaternion.identity);
+        GameObject enemyObj = Instantiate(bosses[Random.Range(0, bosses.Length)], spawnPosition, Quaternion.identity);
 
         // Get the EnemyController component from the instantiated enemy
         Boss boss = enemyObj.GetComponent<Boss>();

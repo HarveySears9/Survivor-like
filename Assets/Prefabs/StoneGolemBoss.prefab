@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3002231138143279824}
   - component: {fileID: 2924775774161024276}
   m_Layer: 0
-  m_Name: StoneGolumBoss
+  m_Name: StoneGolemBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,9 +194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648be1198d70a3847b7800838b61716e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Stone Golum
+  name: Stone Golem
   maxHP: 50
   speed: 1
   damage: 3
   playerTransform: {fileID: 0}
   healthBar: {fileID: 0}
+  drops:
+  - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
+  - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}

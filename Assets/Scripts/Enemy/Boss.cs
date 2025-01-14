@@ -23,6 +23,8 @@ public class Boss : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    public GameObject[] drops;
+
     void Start()
     {
         // Initialize Rigidbody2D and speed variables
@@ -84,7 +86,7 @@ public class Boss : MonoBehaviour
         if (health <= 0f)
         {
             // Trigger the EnemyDeathEventManager
-            EnemyDeathEventManager.BossDied(transform.position);
+            EnemyDeathEventManager.BossDied(transform.position, drops[Random.Range(0, drops.Length)]);
             Destroy(gameObject);
         }
     }

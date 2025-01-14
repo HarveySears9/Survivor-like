@@ -1577,6 +1577,7 @@ MonoBehaviour:
   bossText: {fileID: 154559580}
   circleRadius: 6
   bosses:
+  - {fileID: 381536309536306029, guid: d393b098c86454c47818e9f20636b52a, type: 3}
   - {fileID: 9133842674983061728, guid: e4e0d1bfb136eac47936b4c122cb027f, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
