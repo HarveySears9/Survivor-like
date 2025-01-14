@@ -127,8 +127,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 464
-        width: 48
+        y: 850
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -147,9 +147,9 @@ TextureImporter:
       name: B'RickSwords_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 464
-        width: 48
+        x: 64
+        y: 850
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -168,9 +168,9 @@ TextureImporter:
       name: B'RickSwords_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 464
-        width: 48
+        x: 128
+        y: 850
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: B'RickSwords_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 464
-        width: 48
+        x: 192
+        y: 850
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       name: B'RickSwords_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 464
-        width: 48
+        x: 256
+        y: 850
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -232,8 +232,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 416
-        width: 48
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: B'RickSwords_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 416
-        width: 48
+        x: 64
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -273,9 +273,9 @@ TextureImporter:
       name: B'RickSwords_7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 416
-        width: 48
+        x: 128
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -294,9 +294,9 @@ TextureImporter:
       name: B'RickSwords_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 416
-        width: 48
+        x: 192
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -315,9 +315,9 @@ TextureImporter:
       name: B'RickSwords_9
       rect:
         serializedVersion: 2
-        x: 192
-        y: 416
-        width: 48
+        x: 256
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -336,9 +336,9 @@ TextureImporter:
       name: B'RickSwords_10
       rect:
         serializedVersion: 2
-        x: 240
-        y: 416
-        width: 48
+        x: 320
+        y: 802
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -358,8 +358,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 368
-        width: 48
+        y: 754
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -378,9 +378,9 @@ TextureImporter:
       name: B'RickSwords_12
       rect:
         serializedVersion: 2
-        x: 48
-        y: 368
-        width: 48
+        x: 64
+        y: 754
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,9 +399,9 @@ TextureImporter:
       name: B'RickSwords_13
       rect:
         serializedVersion: 2
-        x: 96
-        y: 368
-        width: 48
+        x: 128
+        y: 754
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -420,9 +420,9 @@ TextureImporter:
       name: B'RickSwords_14
       rect:
         serializedVersion: 2
-        x: 144
-        y: 368
-        width: 48
+        x: 192
+        y: 754
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       name: B'RickSwords_15
       rect:
         serializedVersion: 2
-        x: 192
-        y: 368
-        width: 48
+        x: 256
+        y: 754
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -463,8 +463,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 48
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -483,9 +483,9 @@ TextureImporter:
       name: B'RickSwords_17
       rect:
         serializedVersion: 2
-        x: 48
-        y: 320
-        width: 48
+        x: 64
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -504,9 +504,9 @@ TextureImporter:
       name: B'RickSwords_18
       rect:
         serializedVersion: 2
-        x: 96
-        y: 320
-        width: 48
+        x: 128
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -525,9 +525,9 @@ TextureImporter:
       name: B'RickSwords_19
       rect:
         serializedVersion: 2
-        x: 144
-        y: 320
-        width: 48
+        x: 192
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -546,9 +546,9 @@ TextureImporter:
       name: B'RickSwords_20
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
-        width: 48
+        x: 256
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -567,9 +567,9 @@ TextureImporter:
       name: B'RickSwords_21
       rect:
         serializedVersion: 2
-        x: 240
-        y: 320
-        width: 48
+        x: 320
+        y: 706
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -589,8 +589,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 272
-        width: 48
+        y: 658
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -609,9 +609,9 @@ TextureImporter:
       name: B'RickSwords_23
       rect:
         serializedVersion: 2
-        x: 48
-        y: 272
-        width: 48
+        x: 64
+        y: 658
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -630,9 +630,9 @@ TextureImporter:
       name: B'RickSwords_24
       rect:
         serializedVersion: 2
-        x: 96
-        y: 272
-        width: 48
+        x: 128
+        y: 658
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -651,9 +651,9 @@ TextureImporter:
       name: B'RickSwords_25
       rect:
         serializedVersion: 2
-        x: 144
-        y: 272
-        width: 48
+        x: 192
+        y: 658
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -672,9 +672,9 @@ TextureImporter:
       name: B'RickSwords_26
       rect:
         serializedVersion: 2
-        x: 192
-        y: 272
-        width: 48
+        x: 256
+        y: 658
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -694,8 +694,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
-        width: 48
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -714,9 +714,9 @@ TextureImporter:
       name: B'RickSwords_28
       rect:
         serializedVersion: 2
-        x: 48
-        y: 224
-        width: 48
+        x: 64
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -735,9 +735,9 @@ TextureImporter:
       name: B'RickSwords_29
       rect:
         serializedVersion: 2
-        x: 96
-        y: 224
-        width: 48
+        x: 128
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -756,9 +756,9 @@ TextureImporter:
       name: B'RickSwords_30
       rect:
         serializedVersion: 2
-        x: 144
-        y: 224
-        width: 48
+        x: 192
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -777,9 +777,9 @@ TextureImporter:
       name: B'RickSwords_31
       rect:
         serializedVersion: 2
-        x: 192
-        y: 224
-        width: 48
+        x: 256
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -798,9 +798,9 @@ TextureImporter:
       name: B'RickSwords_32
       rect:
         serializedVersion: 2
-        x: 240
-        y: 224
-        width: 48
+        x: 320
+        y: 610
+        width: 64
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -811,6 +811,1392 @@ TextureImporter:
       bones: []
       spriteID: 2d229b2eaabbcc347af75869d6ff89b9
       internalID: -814420330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 562
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6ea160d9d4d7f4d92ae4e3d68fc443
+      internalID: -2058606947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 562
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901f612c205c91044a5dc34b6636d8c4
+      internalID: 379574533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_35
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 562
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0bb6498451e034ebf50176de04ecb8
+      internalID: -1462953142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 562
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b706ee8c14ac80409dcbf04fae625a8
+      internalID: -575749235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_37
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 562
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e612bcc01eb76b944a5b2b94c586978e
+      internalID: 937295295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a26627f7652d0408057e768a41271f
+      internalID: 1041573321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_39
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c16922586aea9346bfe2062db403807
+      internalID: -1912432741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345050a3542fecf40ac19aad2c00c19a
+      internalID: -2006299888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_41
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ffbec00ef7b9d4987ba7896f9b4a1f
+      internalID: 187685903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_42
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541cce9a493d9994ea29f84aa18c5da3
+      internalID: 1745114153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_43
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 514
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c7b0a2c916f7e4387c339501e530a8
+      internalID: 686750332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 466
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4cb0bb1eac898469636c0ff680f1a2
+      internalID: -541440754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 466
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cc67cc710997c4987f612a6483cc53
+      internalID: 925872574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 466
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38de7cec19a2054ab2b59c838b9ffa3
+      internalID: -918726613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_47
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 466
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0a4eeadf6f9b24dbfc78a95dfdac9d
+      internalID: -1044659043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_48
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 466
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e519406e4e9ad4ab8a711cbfdb9f27
+      internalID: -1777443284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8ec25c09b2d094f9f051a77d248b96
+      internalID: -1285480716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e2c0edfda1c264e8098c5a36a5f53b
+      internalID: -83982275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf660b7d9c36f74e94bc4bca1a9e303
+      internalID: 2045972269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_52
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128c636a12ff3e8499d180860cec7d41
+      internalID: -457439231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_53
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdaa66f98883cf428b84791dc93a3b3
+      internalID: -1421415495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 418
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5fc787f569fec4aa3b140039e38c60
+      internalID: 1931391825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 370
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb623d4eff20b64298c33eb5886bbac
+      internalID: -1391945621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 370
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04feac93a3bbcf4aa30d40cf125dd59
+      internalID: 371938116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 370
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bf06e8e0bcbf14baae0646eea1e5fe
+      internalID: -1564379014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_58
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 370
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc90bef9af406fd4d90072e546ac1436
+      internalID: 1554150204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_59
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 370
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d99bf6634275e54b957520033fc7677
+      internalID: 843966963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfc7e88b870a0b4d80fae399f43710d
+      internalID: -614824484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6fe1bcfb008124d9d9987a77c62de3
+      internalID: -1570365150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0d9ba9b21206d41b8e02e25b893ff3
+      internalID: 783060746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f1c8da023804147afac4e212ac4ded
+      internalID: -1858835904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7917129437e7b34aa1e0ed1b80c0808
+      internalID: 1110535435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_65
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 322
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a1a23b4bdf5cc40a1603e4ae2ed60c
+      internalID: 1058422390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59614b42f99ecf64b8334f096af3a4c2
+      internalID: -1762088001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_67
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 274
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a762ef5a23c1bc8449e38e5ae37b504d
+      internalID: 419979706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 274
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e05dbf82a704ab43b208c4ef450c924
+      internalID: 1932175186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 274
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2e7216136f59743a62ba71065f8053
+      internalID: 1533017422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 274
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4b6d7b8b863e342932ab8a0000ed9b
+      internalID: 1515725364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e189d5036259ef844b6759307454291b
+      internalID: -2114252861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_72
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3dc6ec87a791c4f90ef4c9f5ffdcfb
+      internalID: 1198141145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_73
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad225b1c4579c84ca8c7e55fd0e0110
+      internalID: 1807261532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_74
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d28c281ac28a24a84c51d718d4df13
+      internalID: 260193793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_75
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd97222b306d1e4184ecf0d641c77f5
+      internalID: -673964823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_76
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 226
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8befaea0adb074eb03b4ff332e7248
+      internalID: -542893076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf9fe614ed01dd458570c3d564b9cce
+      internalID: -1050286624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_78
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 178
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fb719e6043ce849a00343a085229a0
+      internalID: 1274012018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_79
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 178
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e363d4b36d2d6b49b1c7acf8775db3b
+      internalID: 1083176757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 178
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7755f815eb36947a23200b9c8e4a7e
+      internalID: -1428598058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_81
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 178
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efac3faaf2e23884798d24ef8ecc082b
+      internalID: -329090990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d8c07bf67d9094d82386a86109f724
+      internalID: -1139021505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_83
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d326915365acc7240813087abe349117
+      internalID: 2082922188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_84
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbeedc5c0d960843812813a3831466c
+      internalID: 917614198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_85
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f879ee976edfcaa44a21600d060225c5
+      internalID: -1863505439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_86
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988165e680e58184f957f7a1ebb26408
+      internalID: 918509872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_87
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 130
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3645b5a36c6b8f346bba908d71e68904
+      internalID: -1306314584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94057a4f1c738044e8e866cb754e6a8f
+      internalID: -432288587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_89
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 82
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b07d31bbc27494b82ad54ca12019ea
+      internalID: 1352317710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_90
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 82
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cca611f0c0eeb041875a26e3288d56a
+      internalID: -1902694357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_91
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 82
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe09d0da52c8ee54fa1d672ddbf1168f
+      internalID: -1348958768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 82
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a2b804f204724458b016b455ce35af
+      internalID: -727413708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9421c97944a164ca8151e22d0f48f6
+      internalID: 2142781858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_94
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac7bab5733e19c4286c93bbf831fcea
+      internalID: -330619878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_95
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2df1f5c7cf6e2d408ba19f89e00590c
+      internalID: 697253082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_96
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3efcaef25baf3c4aacd6c601b390e0d
+      internalID: 1048791862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_97
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ca09fbff56caf48b1926c5813f8eee
+      internalID: 1405476250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B'RickSwords_98
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 34
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852aa7307b2e34040955e6759cad081f
+      internalID: 1594285374
       vertices: []
       indices: 
       edges: []
@@ -853,12 +2239,78 @@ TextureImporter:
       B'RickSwords_30: 523269282
       B'RickSwords_31: 1811275581
       B'RickSwords_32: -814420330
+      B'RickSwords_33: -2058606947
+      B'RickSwords_34: 379574533
+      B'RickSwords_35: -1462953142
+      B'RickSwords_36: -575749235
+      B'RickSwords_37: 937295295
+      B'RickSwords_38: 1041573321
+      B'RickSwords_39: -1912432741
       B'RickSwords_4: 1850824278
+      B'RickSwords_40: -2006299888
+      B'RickSwords_41: 187685903
+      B'RickSwords_42: 1745114153
+      B'RickSwords_43: 686750332
+      B'RickSwords_44: -541440754
+      B'RickSwords_45: 925872574
+      B'RickSwords_46: -918726613
+      B'RickSwords_47: -1044659043
+      B'RickSwords_48: -1777443284
+      B'RickSwords_49: -1285480716
       B'RickSwords_5: 1155529175
+      B'RickSwords_50: -83982275
+      B'RickSwords_51: 2045972269
+      B'RickSwords_52: -457439231
+      B'RickSwords_53: -1421415495
+      B'RickSwords_54: 1931391825
+      B'RickSwords_55: -1391945621
+      B'RickSwords_56: 371938116
+      B'RickSwords_57: -1564379014
+      B'RickSwords_58: 1554150204
+      B'RickSwords_59: 843966963
       B'RickSwords_6: 455693557
+      B'RickSwords_60: -614824484
+      B'RickSwords_61: -1570365150
+      B'RickSwords_62: 783060746
+      B'RickSwords_63: -1858835904
+      B'RickSwords_64: 1110535435
+      B'RickSwords_65: 1058422390
+      B'RickSwords_66: -1762088001
+      B'RickSwords_67: 419979706
+      B'RickSwords_68: 1932175186
+      B'RickSwords_69: 1533017422
       B'RickSwords_7: -1360330460
+      B'RickSwords_70: 1515725364
+      B'RickSwords_71: -2114252861
+      B'RickSwords_72: 1198141145
+      B'RickSwords_73: 1807261532
+      B'RickSwords_74: 260193793
+      B'RickSwords_75: -673964823
+      B'RickSwords_76: -542893076
+      B'RickSwords_77: -1050286624
+      B'RickSwords_78: 1274012018
+      B'RickSwords_79: 1083176757
       B'RickSwords_8: -2108642623
+      B'RickSwords_80: -1428598058
+      B'RickSwords_81: -329090990
+      B'RickSwords_82: -1139021505
+      B'RickSwords_83: 2082922188
+      B'RickSwords_84: 917614198
+      B'RickSwords_85: -1863505439
+      B'RickSwords_86: 918509872
+      B'RickSwords_87: -1306314584
+      B'RickSwords_88: -432288587
+      B'RickSwords_89: 1352317710
       B'RickSwords_9: 1338360139
+      B'RickSwords_90: -1902694357
+      B'RickSwords_91: -1348958768
+      B'RickSwords_92: -727413708
+      B'RickSwords_93: 2142781858
+      B'RickSwords_94: -330619878
+      B'RickSwords_95: 697253082
+      B'RickSwords_96: 1048791862
+      B'RickSwords_97: 1405476250
+      B'RickSwords_98: 1594285374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

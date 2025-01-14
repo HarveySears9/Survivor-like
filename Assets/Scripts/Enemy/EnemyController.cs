@@ -12,12 +12,16 @@ public class EnemyController : MonoBehaviour
     private float currentSpeed;       // Current speed (used for slowing effects)
     private float originalSpeed;      // Original speed for resetting after slow
 
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         // Initialize Rigidbody2D and speed variables
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = speed;
         currentSpeed = speed;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -26,6 +30,16 @@ public class EnemyController : MonoBehaviour
         {
             // Get the direction from the enemy to the player
             direction = (playerTransform.position - transform.position).normalized;
+
+            // Flip sprite based on movement direction
+            if (direction.x < 0)
+            {
+                spriteRenderer.flipX = true; // Flip sprite when moving left
+            }
+            else if (direction.x > 0)
+            {
+                spriteRenderer.flipX = false; // Keep sprite normal when moving right
+            }
 
             // Move the enemy using Rigidbody2D
             rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);

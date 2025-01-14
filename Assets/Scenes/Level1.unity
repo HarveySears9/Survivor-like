@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashPrefab: {fileID: 7747718533898637920, guid: 4bc07af7781e45842b47def7941f466c, type: 3}
   fireRate: 1
-  level: 2
+  level: 0
   maxLevel: 5
   range: 2
   playerAnimator: {fileID: 808585398}
@@ -710,6 +710,45 @@ MonoBehaviour:
   - {fileID: 523269282, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
   - {fileID: 1811275581, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
   - {fileID: -814420330, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword3:
+  - {fileID: -2058606947, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 379574533, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -1462953142, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -575749235, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 937295295, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword3moving:
+  - {fileID: 1041573321, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -1912432741, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -2006299888, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 187685903, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1745114153, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 686750332, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword4:
+  - {fileID: -541440754, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 925872574, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -918726613, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -1044659043, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -1777443284, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword4moving:
+  - {fileID: -1285480716, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -83982275, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 2045972269, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -457439231, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -1421415495, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1931391825, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword5:
+  - {fileID: -1762088001, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 419979706, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1932175186, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1533017422, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1515725364, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  sword5moving:
+  - {fileID: -2114252861, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1198141145, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 1807261532, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: 260193793, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -673964823, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
+  - {fileID: -542893076, guid: 468c2ba9435ca304a8e6b398962e6302, type: 3}
   levelUpButton: {fileID: 1915697983}
 --- !u!1 &144193800
 GameObject:
@@ -1538,7 +1577,7 @@ MonoBehaviour:
   bossText: {fileID: 154559580}
   circleRadius: 6
   bosses:
-  - {fileID: 381536309536306029, guid: d393b098c86454c47818e9f20636b52a, type: 3}
+  - {fileID: 9133842674983061728, guid: e4e0d1bfb136eac47936b4c122cb027f, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
 --- !u!1 &435274908
@@ -2558,7 +2597,7 @@ MonoBehaviour:
   bossCount: 0
   difficultyInterval: 60
   dropInterval: 60
-  bossInterval: 10
+  bossInterval: 5
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3016,7 +3055,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    oldSize: {x: 4, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7081,7 +7120,7 @@ MonoBehaviour:
   - {fileID: 1420724567, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: 1372392279, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   animating: 1
-  animationSpeed: 0.25
+  animationSpeed: 0.1
 --- !u!114 &1811691229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7645,7 +7684,7 @@ MonoBehaviour:
   - {fileID: 2143215680, guid: a363a95014d9bc74fb4839df63702a49, type: 3}
   - {fileID: 1993352443, guid: a363a95014d9bc74fb4839df63702a49, type: 3}
   animating: 1
-  animationSpeed: 0.25
+  animationSpeed: 0.1
 --- !u!114 &1877730199
 MonoBehaviour:
   m_ObjectHideFlags: 0

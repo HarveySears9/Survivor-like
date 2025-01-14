@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
     public string name;
 
     public int maxHP = 10;
-    public float health;         // Enemy health
+    private float health;         // Enemy health
     public float speed = 2f;         // Normal movement speed
     public float damage = 1f;
     public Transform playerTransform; // Reference to the player's position
@@ -21,12 +21,18 @@ public class Boss : MonoBehaviour
 
     public HealthBar healthBar;
 
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         // Initialize Rigidbody2D and speed variables
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = speed;
         currentSpeed = speed;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        health = maxHP;
     }
 
     void FixedUpdate()
@@ -35,7 +41,15 @@ public class Boss : MonoBehaviour
         {
             // Get the direction from the enemy to the player
             direction = (playerTransform.position - transform.position).normalized;
-
+            // Flip sprite based on movement direction
+            if (direction.x < 0)
+            {
+                spriteRenderer.flipX = true; // Flip sprite when moving left
+            }
+            else if (direction.x > 0)
+            {
+                spriteRenderer.flipX = false; // Keep sprite normal when moving right
+            }
             // Move the enemy using Rigidbody2D
             rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
         }

@@ -14,13 +14,14 @@ public class SwordSlash : MonoBehaviour
     public AnimateSprite playerAnimator;
     public AnimateImage levelUpButtonAnimator;
 
-    public Sprite[] sword1 ,sword1moving, sword2, sword2moving;
+    public Sprite[] sword1 ,sword1moving, sword2, sword2moving, sword3, sword3moving, sword4, sword4moving, sword5, sword5moving;
 
     public LevelUpButtons levelUpButton;
 
     void Start()
     {
         levelUpButton.LevelUp(level, maxLevel);
+        UpdateSprites();
     }
 
     void Update()
@@ -60,7 +61,9 @@ public class SwordSlash : MonoBehaviour
             GameObject slash = Instantiate(slashPrefab, transform.position, Quaternion.identity);
 
             // Set the rotation to match the fireball's movement direction
-            float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
+            // Add a random variation to the angle
+            float randomOffset = Random.Range(-5f, 5f); // Adjust the range to control the spread (e.g., -5 to 5 degrees)
+            float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg + randomOffset;
             slash.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
 
             // Pass the fire direction to the fireball script
@@ -93,7 +96,21 @@ public class SwordSlash : MonoBehaviour
             case 2:
                 playerAnimator.spriteArray = sword2;
                 playerAnimator.moveArray = sword2moving;
-                levelUpButtonAnimator.spriteArray = sword1;
+                levelUpButtonAnimator.spriteArray = sword3;
+                break;
+            case 3:
+                playerAnimator.spriteArray = sword3;
+                playerAnimator.moveArray = sword3moving;
+                levelUpButtonAnimator.spriteArray = sword4;
+                break;
+            case 4:
+                playerAnimator.spriteArray = sword4;
+                playerAnimator.moveArray = sword4moving;
+                levelUpButtonAnimator.spriteArray = sword5;
+                break;
+            case 5:
+                playerAnimator.spriteArray = sword5;
+                playerAnimator.moveArray = sword5moving;
                 break;
         }
     }
