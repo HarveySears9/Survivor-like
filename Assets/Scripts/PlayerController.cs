@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public int maxHP = 10;
     public float hp;
     public float speed;
+    public float startSpeed;
     public VariableJoystick variableJoystick;
     [SerializeField] private FireBreath fireBreath;
     private AnimateSprite animator;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startSpeed = speed;
         hp = maxHP;
         animator = GetComponent<AnimateSprite>();
         spriteRenderer = GetComponent<SpriteRenderer>();
