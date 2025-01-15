@@ -86,7 +86,7 @@ public class Boss : MonoBehaviour
         if (health <= 0f)
         {
             // Trigger the EnemyDeathEventManager
-            EnemyDeathEventManager.BossDied(transform.position, drops[Random.Range(0, drops.Length)]);
+            EnemyDeathEventManager.BossDied(transform.position, drops);
             Destroy(gameObject);
         }
     }

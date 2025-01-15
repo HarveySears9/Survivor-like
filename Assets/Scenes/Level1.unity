@@ -1577,8 +1577,8 @@ MonoBehaviour:
   bossText: {fileID: 154559580}
   circleRadius: 6
   bosses:
-  - {fileID: 381536309536306029, guid: d393b098c86454c47818e9f20636b52a, type: 3}
   - {fileID: 9133842674983061728, guid: e4e0d1bfb136eac47936b4c122cb027f, type: 3}
+  - {fileID: 4469197173487781520, guid: df4aab97692ebf34fb8a16579beb343d, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
 --- !u!1 &435274908
@@ -2960,7 +2960,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 519420032}
@@ -3309,8 +3309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -135}
-  m_SizeDelta: {x: 100, y: 15}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: 125, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885726194
 MonoBehaviour:

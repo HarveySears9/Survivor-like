@@ -6,7 +6,7 @@ public class EnemyDeathEventManager : MonoBehaviour
     public delegate void EnemyDeath(Vector3 position);
     public static event EnemyDeath OnEnemyDeath;
 
-    public delegate void BossDeath(Vector3 position, GameObject dropPrefab);
+    public delegate void BossDeath(Vector3 position, GameObject[] dropPrefab);
     public static event BossDeath OnBossDeath;
 
     // Method to invoke the event
@@ -16,7 +16,7 @@ public class EnemyDeathEventManager : MonoBehaviour
     }
 
     // Method to invoke the event
-    public static void BossDied(Vector3 position, GameObject dropPrefab)
+    public static void BossDied(Vector3 position, GameObject[] dropPrefab)
     {
         OnBossDeath?.Invoke(position, dropPrefab);
     }

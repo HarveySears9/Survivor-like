@@ -49,7 +49,7 @@ public class BossFight : MonoBehaviour
     }
 
 
-    public void OnBossDeath(Vector3 position, GameObject dropPrefab)
+    public void OnBossDeath(Vector3 position, GameObject[] dropPrefab)
     {
         if (gameTimer != null)
         {

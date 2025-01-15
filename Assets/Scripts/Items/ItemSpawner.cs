@@ -74,9 +74,21 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 
-    void SpawnBossItem(Vector3 position, GameObject dropPrefab)
+    void SpawnBossItem(Vector3 position, GameObject[] dropPrefabs)
     {
-        Instantiate(dropPrefab, position, Quaternion.identity);
+
+        foreach (GameObject dropPrefab in dropPrefabs)
+        {
+            // Calculate a random offset within the specified variance
+            Vector3 randomOffset = new Vector3(
+                Random.Range(-0.25f, 0.25f),
+                Random.Range(-0.15f, 0.15f),
+                0f
+            );
+
+            // Instantiate the prefab at the position with the random offset
+            Instantiate(dropPrefab, position + randomOffset, Quaternion.identity);
+        }
     }
 
     int GetWeightedRandomIndex(int[] weights)
