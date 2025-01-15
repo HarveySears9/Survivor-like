@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8145135815492524631}
   - component: {fileID: 7196794192443871597}
   - component: {fileID: 3002231138143279824}
-  - component: {fileID: 2924775774161024276}
+  - component: {fileID: 4470494816631302246}
   m_Layer: 0
   m_Name: GrassGolemBoss
   m_TagString: Enemy
@@ -182,7 +182,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
---- !u!114 &2924775774161024276
+--- !u!114 &4470494816631302246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,15 +191,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 9133842674983061728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648be1198d70a3847b7800838b61716e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f4309e2e811b164cb12e5741c1b7fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: Grass Golem
   maxHP: 30
-  speed: 1
+  speed: 2
   damage: 2
   playerTransform: {fileID: 0}
   healthBar: {fileID: 0}
   drops:
-  - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  sporeCloudPrefab: {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
+  sporeCooldown: 5
+  minionPrefab: {fileID: 3811681504374624625, guid: 3b8a281417011ef42827dfb237d3f297, type: 3}
+  minionSpawnCooldown: 8

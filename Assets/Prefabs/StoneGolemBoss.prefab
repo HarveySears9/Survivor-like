@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3021477198630520924}
   - component: {fileID: 6861360618525388261}
   - component: {fileID: 9058844370459959159}
-  - component: {fileID: 1508094784148992778}
+  - component: {fileID: -6024387320389970472}
   m_Layer: 0
   m_Name: StoneGolemBoss
   m_TagString: Enemy
@@ -182,7 +182,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
---- !u!114 &1508094784148992778
+--- !u!114 &-6024387320389970472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4469197173487781520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648be1198d70a3847b7800838b61716e, type: 3}
+  m_Script: {fileID: 11500000, guid: c11d34b70f089e64e9b7224828daec8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: Stone Golem
@@ -202,4 +202,10 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   drops:
   - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
+  boulderPrefab: {fileID: 4129034542896093630, guid: e0a3e1301bfa14b479804e3f5d5c09b5, type: 3}
+  boulderCooldown: 5
+  boulderCount: 5
+  spreadAngle: 60
+  boulderDamage: 2

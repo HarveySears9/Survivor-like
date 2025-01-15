@@ -17,6 +17,9 @@ public class Boss : MonoBehaviour
     private float currentSpeed;       // Current speed (used for slowing effects)
     private float originalSpeed;      // Original speed for resetting after slow
 
+    protected bool moving = true;
+    private bool isDead = false;
+
     public string Name { get { return name; } }
 
     public HealthBar healthBar;
@@ -25,7 +28,7 @@ public class Boss : MonoBehaviour
 
     public GameObject[] drops;
 
-    void Start()
+    protected virtual void Start()
     {
         // Initialize Rigidbody2D and speed variables
         rb = GetComponent<Rigidbody2D>();
@@ -37,9 +40,9 @@ public class Boss : MonoBehaviour
         health = maxHP;
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (playerTransform != null)
+        if (playerTransform != null && moving)
         {
             // Get the direction from the enemy to the player
             direction = (playerTransform.position - transform.position).normalized;
@@ -85,9 +88,13 @@ public class Boss : MonoBehaviour
 
         if (health <= 0f)
         {
-            // Trigger the EnemyDeathEventManager
-            EnemyDeathEventManager.BossDied(transform.position, drops);
-            Destroy(gameObject);
+            if (!isDead)
+            {
+                isDead = true;
+                // Trigger the EnemyDeathEventManager
+                EnemyDeathEventManager.BossDied(transform.position, drops);
+                Destroy(gameObject);
+            }
         }
     }
 
