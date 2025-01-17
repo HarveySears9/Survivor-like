@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     private float currentSpeed;       // Current speed (used for slowing effects)
     private float originalSpeed;      // Original speed for resetting after slow
 
+    private bool isFlipped = false;
+
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -27,26 +29,30 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         if (playerTransform != null)
-        {
-            // Get the direction from the enemy to the player
             direction = (playerTransform.position - transform.position).normalized;
+        bool flip = direction.x < 0;
 
-            // Flip sprite based on movement direction
-            if (direction.x < 0)
-            {
-                spriteRenderer.flipX = true; // Flip sprite when moving left
-            }
-            else if (direction.x > 0)
-            {
-                spriteRenderer.flipX = false; // Keep sprite normal when moving right
-            }
+        if (flip != isFlipped) // Only flip if the state changes
+        {
+            isFlipped = flip;
 
-            // Move the enemy using Rigidbody2D
-            rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
+            spriteRenderer.flipX = flip;
+
+            foreach (Transform child in GetComponentsInChildren<Transform>())
+            {
+                if (child == transform) continue;
+
+                Vector3 localPosition = child.localPosition;
+                localPosition.x *= -1; // Flip the X-axis
+                child.localPosition = localPosition;
+            }
         }
+
+        rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+
+void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

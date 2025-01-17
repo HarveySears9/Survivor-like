@@ -20,6 +20,8 @@ public class Boss : MonoBehaviour
     protected bool moving = true;
     private bool isDead = false;
 
+    private bool isFlipped = false;
+
     public string Name { get { return name; } }
 
     public HealthBar healthBar;
@@ -44,18 +46,25 @@ public class Boss : MonoBehaviour
     {
         if (playerTransform != null && moving)
         {
-            // Get the direction from the enemy to the player
             direction = (playerTransform.position - transform.position).normalized;
-            // Flip sprite based on movement direction
-            if (direction.x < 0)
+            bool flip = direction.x < 0;
+
+            if (flip != isFlipped) // Only flip if the state changes
             {
-                spriteRenderer.flipX = true; // Flip sprite when moving left
+                isFlipped = flip;
+
+                spriteRenderer.flipX = flip;
+
+                foreach (Transform child in GetComponentsInChildren<Transform>())
+                {
+                    if (child == transform) continue;
+
+                    Vector3 localPosition = child.localPosition;
+                    localPosition.x *= -1; // Flip the X-axis
+                    child.localPosition = localPosition;
+                }
             }
-            else if (direction.x > 0)
-            {
-                spriteRenderer.flipX = false; // Keep sprite normal when moving right
-            }
-            // Move the enemy using Rigidbody2D
+
             rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
         }
     }

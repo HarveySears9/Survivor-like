@@ -10,6 +10,7 @@ public class EXPBar : MonoBehaviour
     public int currentLevel = 1;   // Player's current level
     public float currentEXP = 0;   // Current EXP amount
     public float expThreshold = 100; // EXP needed for the next level
+    public float thresholdIncrease = 0.05f;
     public GameObject levelUpMenu; // Reference to the level-up menu
 
     public TextMeshProUGUI levelText;
@@ -49,7 +50,7 @@ public class EXPBar : MonoBehaviour
         {
             currentEXP = 0;
         }
-        expThreshold *= 1.25f; // Increase the threshold for the next level (optional)
+        expThreshold *= 1f + thresholdIncrease; // Increase the threshold for the next level (optional)
 
         UpdateEXPBar();
 
