@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public bool isMoving = false;
+    public Vector2 moveDirection = Vector2.zero;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // For 2D movement (X and Y only)
-        Vector2 moveDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+        moveDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
 
         // Move the player in the direction specified by moveDirection
         transform.Translate(moveDirection * speed * Time.deltaTime);
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             fireBreath.moveDirection = moveDirection;
             animator.isMoving = true;
+            isMoving = true;
 
             // Flip sprite based on movement direction
             if (moveDirection.x < 0)
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.isMoving = false;
+            isMoving = false;
         }
 
     }

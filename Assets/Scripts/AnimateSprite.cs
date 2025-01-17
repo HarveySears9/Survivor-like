@@ -11,7 +11,9 @@ public class AnimateSprite : MonoBehaviour
     public float animationSpeed = 0.25f; // Time between sprite updates (can be adjusted in the Inspector)
     public bool isMoving = false;
 
-    // Start is called before the first frame update
+    // Reference to another AnimateSprite instance to sync with
+    public AnimateSprite syncWith;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component
@@ -40,18 +42,19 @@ public class AnimateSprite : MonoBehaviour
     {
         if (spriteRenderer != null && animating)
         {
-            if(!isMoving)
+            // If syncing with another AnimateSprite, match the index
+            if (syncWith != null && syncWith.animating)
             {
-                // Use modulo to cycle through the sprite array
-                currentIndex = (currentIndex + 1) % spriteArray.Length;
-                spriteRenderer.sprite = spriteArray[currentIndex];  // Update the sprite of the SpriteRenderer
+                currentIndex = syncWith.currentIndex;
             }
             else
             {
-                // Use modulo to cycle through the sprite array
-                currentIndex = (currentIndex + 1) % moveArray.Length;
-                spriteRenderer.sprite = moveArray[currentIndex];  // Update the sprite of the SpriteRenderer
+                // Use modulo to cycle through the appropriate sprite array
+                currentIndex = (currentIndex + 1) % (isMoving ? moveArray.Length : spriteArray.Length);
             }
+
+            // Update the sprite of the SpriteRenderer
+            spriteRenderer.sprite = isMoving ? moveArray[currentIndex] : spriteArray[currentIndex];
         }
     }
 }
