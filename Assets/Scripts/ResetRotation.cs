@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ResetRotation : MonoBehaviour
 {
+    private Transform myTransform;
 
-    private Transform transform;
-
-    // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        myTransform = GetComponent<Transform>();
+    }
+
+    void LateUpdate()
+    {
+        // Reset world rotation to (0, 0, 0)
+        myTransform.rotation = Quaternion.identity;
     }
 }

@@ -3153,7 +3153,7 @@ MonoBehaviour:
   bossCount: 0
   difficultyInterval: 60
   dropInterval: 60
-  bossInterval: 60
+  bossInterval: 1
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0

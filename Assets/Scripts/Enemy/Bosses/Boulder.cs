@@ -13,6 +13,8 @@ public class Boulder : MonoBehaviour
     public GameObject gfx;
     public float spinSpeed = 5f;
 
+    public GameObject shadow;
+
     public void Initialize(Vector2 direction)
     {
         moveDirection = direction.normalized;
@@ -23,7 +25,20 @@ public class Boulder : MonoBehaviour
     {
         // Move the fireball in the set direction
         transform.Translate(moveDirection * speed * Time.deltaTime);
+
+        if (shadow != null)
+        {
+            // Reset the shadow's rotation to identity
+            shadow.transform.rotation = Quaternion.identity;
+
+            // Calculate the shadow's world position
+            Vector3 worldShadowPosition = transform.position + new Vector3(0, -0.25f, 0);
+
+            // Convert the world position to the boulder's local space
+            shadow.transform.position = worldShadowPosition;
+        }
     }
+
 
     void FixedUpdate()
     {
