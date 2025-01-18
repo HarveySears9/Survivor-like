@@ -6,6 +6,13 @@ public class HealthPotion : MonoBehaviour
 {
     public float healPercentage = 10f;
 
+    public float lifetime = 30f;
+
+    void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
