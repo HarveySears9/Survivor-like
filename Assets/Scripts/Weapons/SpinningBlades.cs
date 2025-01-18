@@ -23,13 +23,18 @@ public class SpinningBlades : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
+    private float damage;
+
     void Start()
     {
+        damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
         level = 0;
         blades = level1Blades; // Initialize blades with level1 at the start
         currentLevel = level1;
         //currentLevel.SetActive(true);
         levelUpButton.LevelUp(level, maxLevel);
+
+        SetDamage();
     }
 
     // FixedUpdate is called once per frame
@@ -88,4 +93,31 @@ public class SpinningBlades : MonoBehaviour
         currentLevel.SetActive(true);
         levelUpButton.LevelUp(level, maxLevel);
     }
+
+    void SetDamage()
+    {
+        // Combine all the blade arrays into a single list for iteration
+        List<GameObject> allBlades = new List<GameObject>();
+        allBlades.AddRange(level1Blades);
+        allBlades.AddRange(level2Blades);
+        allBlades.AddRange(level3Blades);
+        allBlades.AddRange(level4Blades);
+        allBlades.AddRange(level5Blades);
+
+        // Iterate over all blades and set damage
+        foreach (GameObject blade in allBlades)
+        {
+            // Ensure the blade has a Weapon component before trying to set damage
+            Weapon weapon = blade.GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                weapon.damage = damage;
+            }
+            else
+            {
+                Debug.LogWarning($"No Weapon component found on blade: {blade.name}");
+            }
+        }
+    }
+
 }

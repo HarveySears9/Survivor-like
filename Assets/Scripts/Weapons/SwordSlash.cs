@@ -22,9 +22,12 @@ public class SwordSlash : MonoBehaviour
     public SpriteRenderer sr;
 
     public PlayerController player;
+    
+    private float damage;
 
     void Start()
     {
+        damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
         UpdateSprites();
     }
@@ -85,6 +88,7 @@ public class SwordSlash : MonoBehaviour
 
             // Pass the fire direction to the fireball script
             slash.GetComponent<Fireball>().Initialize(Vector2.right);
+            slash.GetComponent<Weapon>().damage = damage;
         }
     }
 

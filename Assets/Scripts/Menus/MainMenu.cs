@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
             playerData.coins = 999999;
             playerData.maxHPLevel = 0;
             playerData.maxHP = 10;
+            playerData.currentDamage = 1;
             playerData.speedLevel = 0;
 
             SaveFile.SaveData(playerData);

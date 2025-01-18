@@ -69,6 +69,7 @@ public static class SaveFile
         public int coins;
         public int maxHPLevel;
         public int maxHP;
+        public int currentDamage;
         public int speedLevel;
     }
 }
