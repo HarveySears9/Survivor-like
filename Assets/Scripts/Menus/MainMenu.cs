@@ -18,6 +18,12 @@ public class MainMenu : MonoBehaviour
         if (loadedData == null)
         {
             SaveFile.Data playerData = new SaveFile.Data();
+
+            playerData.coins = 999999;
+            playerData.maxHPLevel = 0;
+            playerData.maxHP = 10;
+            playerData.speedLevel = 0;
+
             SaveFile.SaveData(playerData);
             loadedData = playerData; // Ensure loadedData is initialized
         }

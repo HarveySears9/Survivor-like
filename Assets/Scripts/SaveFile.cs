@@ -67,5 +67,8 @@ public static class SaveFile
     {
         public int skinEquipped;
         public int coins;
+        public int maxHPLevel;
+        public int maxHP;
+        public int speedLevel;
     }
 }

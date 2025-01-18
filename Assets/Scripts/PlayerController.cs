@@ -33,10 +33,25 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startSpeed = speed;
-        hp = maxHP;
         animator = GetComponent<AnimateSprite>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Load saved data
+        SaveFile.Data playerData = SaveFile.LoadData<SaveFile.Data>();
+
+        if (playerData == null)
+        {
+            playerData = new SaveFile.Data();
+            playerData.maxHPLevel = 0;
+        }
+
+        // Calculate Max HP based on upgrade level
+        maxHP = maxHP + playerData.maxHP; // +2 HP per upgrade level
+        speed = speed * (1f + playerData.speedLevel * 0.05f);
+
+        startSpeed = speed;
+
+        hp = maxHP; // Set current HP to max HP
 
         // Find and initialize the health bar
         healthBar.SetMaxHealth(maxHP);
@@ -96,23 +111,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Heal(float percentage, bool amount)
+    public void Heal(float value, bool isFlatAmount)
     {
-        if (amount)
-        {
-            hp += percentage;
-        }
-        else
-        {
-            hp += (percentage / 100f) * maxHP;
-        }
-        if (hp > maxHP)
-        {
-            hp = maxHP;
-        }
-
+        hp += isFlatAmount ? value : (value / 100f) * maxHP;
+        hp = Mathf.Clamp(hp, 0, maxHP); // Clamp to prevent exceeding maxHP
         healthBar.SetHealth(hp);
     }
+
 
     private IEnumerator StartDeath()
     {
