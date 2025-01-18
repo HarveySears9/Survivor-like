@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   speed: 2.5
-  damage: 1
+  damage: 2
   playerTransform: {fileID: 0}
 --- !u!61 &4306135929168625672
 BoxCollider2D:
@@ -198,6 +198,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  syncWith: []
 --- !u!1 &6751513998710359039
 GameObject:
   m_ObjectHideFlags: 0

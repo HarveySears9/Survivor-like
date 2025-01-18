@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &122540150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   player: {fileID: 808585395}
   level: 0
   maxLevel: 5
-  percentIncreasePerLevel: 5
+  percentIncreasePerLevel: 10
   boots1:
   - {fileID: 1398360167, guid: 2d2408f0b34559045b94c55c129c34b4, type: 3}
   - {fileID: -1976899170, guid: 2d2408f0b34559045b94c55c129c34b4, type: 3}
@@ -1996,19 +1996,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa67a647ef08b4e4484ef207e1d5dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 0.25
+  spawnInterval: 0.5
   circleRadius: 6
   tier1:
-  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
+  - {fileID: 1602081048957474121, guid: 868c7697986adc342b016ea62848f6a8, type: 3}
+  - {fileID: 3620952820977870064, guid: 26b18aba5cf5ebc4798034ea69ba340d, type: 3}
+  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
   tier2:
-  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
-  - {fileID: 3811681504374624625, guid: 3b8a281417011ef42827dfb237d3f297, type: 3}
+  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
+  - {fileID: 3620952820977870064, guid: 26b18aba5cf5ebc4798034ea69ba340d, type: 3}
+  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
+  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
   tier3:
-  - {fileID: 3571937811114636930, guid: 62b5278c99e1ab741bd107ff39236349, type: 3}
-  - {fileID: 3811681504374624625, guid: 3b8a281417011ef42827dfb237d3f297, type: 3}
-  weights1: 01000000
-  weights2: 0300000001000000
-  weights3: 0100000001000000
+  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
+  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
+  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
+  - {fileID: 1579217258466824211, guid: 3e65420e8a2ef504cae59e2b2fbf1032, type: 3}
+  tier4:
+  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
+  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
+  - {fileID: 1579217258466824211, guid: 3e65420e8a2ef504cae59e2b2fbf1032, type: 3}
+  tier5: []
+  tier6: []
+  weights1: 3c0000001e0000000a000000
+  weights2: 3200000014000000140000000a000000
+  weights3: 280000001e0000000f0000000f000000
+  weights4: 1e0000002300000023000000
+  weights5: 
+  weights6: 
   spawning: 1
 --- !u!114 &429575879
 MonoBehaviour:
@@ -3704,9 +3719,9 @@ MonoBehaviour:
   difficulty: 1
   dropTier: 1
   bossCount: 0
-  difficultyInterval: 61
-  dropInterval: 61
-  bossInterval: 60
+  difficultyInterval: 30
+  dropInterval: 60
+  bossInterval: 120
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4395,8 +4410,8 @@ MonoBehaviour:
   expBar: {fileID: 890236185}
   currentLevel: 1
   currentEXP: 0
-  expThreshold: 25
-  thresholdIncrease: 0.05
+  expThreshold: 10
+  thresholdIncrease: 0.1
   levelUpMenu: {fileID: 122540149}
   levelText: {fileID: 1958561645}
 --- !u!1 &836817948

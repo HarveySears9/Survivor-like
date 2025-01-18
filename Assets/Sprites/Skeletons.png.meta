@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71797434d6bd57847afad8e0a7bd6c9c
+guid: cb6078665fb16f74a922dc28ff6d4c25
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,484 +123,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Minions_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 231
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b92b5e5c8e21db4cb27c3e9fbb750e0
-      internalID: -1129305276
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 230
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 715a4f5f3ac243b41b8492637a23ed1f
-      internalID: 479514146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 230
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10ae8bbbc2189214f839d5101d1f5856
-      internalID: -1583159957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_3
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 231
-        width: 13
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48faf2a58a12550418b2151b4735d016
-      internalID: 48882429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_4
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 224
-        width: 32
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29d9499b80e8b544f8dab438c0cef9a4
-      internalID: -1109239171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_5
+      name: Skeletons_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 480
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb391118522e13f4ba7f041ecabcaade
-      internalID: 1472724765
+      spriteID: de5e118d5254cbc49953deb3162d36ae
+      internalID: -348381952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_6
+      name: Skeletons_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 192
+        y: 480
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f026315182ad1498ff22b2d52c1236
-      internalID: -207738966
+      spriteID: 71a2424e1c0797648b8933c6ced776b7
+      internalID: 1924581118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_7
+      name: Skeletons_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 480
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e245d8686c8325459fc9fcc14bdb453
-      internalID: 1164701947
+      spriteID: 68204728b38e7f447b036f927a7ccff3
+      internalID: 843350825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_8
+      name: Skeletons_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 480
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d45a068716a4f245a0922e626d9e875
-      internalID: -1016575027
+      spriteID: 4c629dd8ee5058349b6e74318ba8da53
+      internalID: -1262833449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_9
+      name: Skeletons_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 448
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df487d0698906ee4fa1e63c60817c326
-      internalID: 361675315
+      spriteID: f6c93c0a0bd340f468420c4bbe8dff14
+      internalID: -1518413866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_10
+      name: Skeletons_5
       rect:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 448
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ca06db6b932717408a925f88e63a0c9
-      internalID: 1361031035
+      spriteID: 027f9efacfd150344b60fef5e69d5a8f
+      internalID: 1929242454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unarmed 3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 191950de045c9094580157792e4572c2
-      internalID: -1197919954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unarmed 4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6409983bb285cb4d97641cff1aef947
-      internalID: 474233214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unarmed 1
+      name: Skeletons_6
       rect:
         serializedVersion: 2
         x: 128
-        y: 160
+        y: 448
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a05c1550c43a02c4f93b1126c44e2383
-      internalID: 1675456025
+      spriteID: 09185622038bfea41aacaf2485288535
+      internalID: -974730091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unarmed 5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e75665e403eebe418a36cb65f79ea89
-      internalID: 1430355327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unarmed 2
+      name: Skeletons_7
       rect:
         serializedVersion: 2
         x: 192
-        y: 160
+        y: 448
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ebddd0c12674f445bf58c4ece3658f1
-      internalID: -720926068
+      spriteID: 9ef0c308e6cd64a4ab8d34f77529db6e
+      internalID: 520813270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unarmed 6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9940c739da556d45afe586cd6d721da
-      internalID: -613803629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minions_17
+      name: Skeletons_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 416
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adf06f044adf71641aa038338907a1f0
-      internalID: -406565365
+      spriteID: 365ac50fb29627c449988503ec7d14c5
+      internalID: 744059334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_18
+      name: Skeletons_9
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 416
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87bec5cf66f0a04468727ced342abb42
-      internalID: 1642158883
+      spriteID: 4a2524bec16503f4a865dbcf3114b3a5
+      internalID: 691542697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_19
+      name: Skeletons_10
       rect:
         serializedVersion: 2
         x: 128
-        y: 96
+        y: 416
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afbd527f2b5771e4e80475a6a011aab2
-      internalID: 146020924
+      spriteID: aaca2a774d9c65a4eb2fad0aff40119c
+      internalID: 912499135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_20
+      name: Skeletons_11
       rect:
         serializedVersion: 2
         x: 192
-        y: 96
+        y: 416
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 854a7d797751f3c4f956cdf984c6ba80
-      internalID: 1922500196
+      spriteID: 398babf6a8943184fa12d64d2959abeb
+      internalID: 235130220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_21
+      name: Skeletons_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 384
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f056b78eaeb1828458ed27825b58ee72
-      internalID: 1726141413
+      spriteID: f2016c5607007c54aa3319953f227a17
+      internalID: -514934070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minions_22
+      name: Skeletons_13
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 384
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6af5a9d5771ebb4f8d2ae082b698f40
-      internalID: -2024577434
+      spriteID: 3553f3a62f3a16a4cb5e9866ec16b9c2
+      internalID: -965970729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeletons_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7690e1bf6dc0a04badd509ccdba336a
+      internalID: 1703364807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeletons_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d525d279c8d6a4e96966a46eff15c0
+      internalID: -1082035174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeletons_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e81f6a302f62c24f93ef5bd4a23ef90
+      internalID: -1232537203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeletons_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716f1361a92a8c54e943f0d40766bee9
+      internalID: -483671561
       vertices: []
       indices: 
       edges: []
@@ -616,29 +511,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Minions_0: -1129305276
-      Minions_1: 479514146
-      Minions_10: 1361031035
-      Minions_17: -406565365
-      Minions_18: 1642158883
-      Minions_19: 146020924
-      Minions_2: -1583159957
-      Minions_20: 1922500196
-      Minions_21: 1726141413
-      Minions_22: -2024577434
-      Minions_3: 48882429
-      Minions_4: -1109239171
-      Minions_5: 1472724765
-      Minions_6: -207738966
-      Minions_7: 1164701947
-      Minions_8: -1016575027
-      Minions_9: 361675315
-      Unarmed 1: 1675456025
-      Unarmed 2: -720926068
-      Unarmed 3: -1197919954
-      Unarmed 4: 474233214
-      Unarmed 5: 1430355327
-      Unarmed 6: -613803629
+      Skeletons_0: -348381952
+      Skeletons_1: 1924581118
+      Skeletons_10: 912499135
+      Skeletons_11: 235130220
+      Skeletons_12: -514934070
+      Skeletons_13: -965970729
+      Skeletons_14: 1703364807
+      Skeletons_15: -1082035174
+      Skeletons_16: -1232537203
+      Skeletons_17: -483671561
+      Skeletons_2: 843350825
+      Skeletons_3: -1262833449
+      Skeletons_4: -1518413866
+      Skeletons_5: 1929242454
+      Skeletons_6: -974730091
+      Skeletons_7: 520813270
+      Skeletons_8: 744059334
+      Skeletons_9: 691542697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,8 +11,8 @@ public class EnemySpawner : MonoBehaviour
     private Transform playerTransform;        // Reference to the player's transform
     private Camera mainCamera;
 
-    public GameObject[] tier1, tier2, tier3;
-    public int[] weights1, weights2, weights3;
+    public GameObject[] tier1, tier2, tier3, tier4, tier5, tier6;
+    public int[] weights1, weights2, weights3, weights4, weights5, weights6;
 
     public bool spawning;
 
@@ -44,7 +44,18 @@ public class EnemySpawner : MonoBehaviour
                 enemyPrefabs = tier3;
                 spawnWeights = weights3;
                 break;
-
+            case 4:
+                enemyPrefabs = tier4;
+                spawnWeights = weights4;
+                break;
+            //case 5:
+                //enemyPrefabs = tier5;
+                //spawnWeights = weights5;
+                //break;
+            //case 6:
+                //enemyPrefabs = tier6;
+               // spawnWeights = weights6;
+               // break;
         }
     }
 

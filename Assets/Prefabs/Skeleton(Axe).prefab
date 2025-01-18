@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6526390618015273277
+--- !u!1 &4281700221959974676
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2703573155104327105}
-  - component: {fileID: 1707080159055812718}
+  - component: {fileID: 5679835076845489238}
+  - component: {fileID: 3214853590150456518}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2703573155104327105
+--- !u!4 &5679835076845489238
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526390618015273277}
+  m_GameObject: {fileID: 4281700221959974676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -1.75, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: -0.2, y: -0.9, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2203849179143382782}
+  m_Father: {fileID: 8895938959344953389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1707080159055812718
+--- !u!212 &3214853590150456518
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526390618015273277}
+  m_GameObject: {fileID: 4281700221959974676}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &9133842674983061728
+--- !u!1 &5106567510122415594
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,42 +92,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2203849179143382782}
-  - component: {fileID: 1494300154386605101}
-  - component: {fileID: 8145135815492524631}
-  - component: {fileID: 7196794192443871597}
-  - component: {fileID: 3002231138143279824}
-  - component: {fileID: 4470494816631302246}
+  - component: {fileID: 8895938959344953389}
+  - component: {fileID: 8672001261173994311}
+  - component: {fileID: 3955059252631840414}
+  - component: {fileID: 5426787255784151460}
+  - component: {fileID: 1434026040806072610}
+  - component: {fileID: 3283095150700733705}
   m_Layer: 0
-  m_Name: GrassGolemBoss
+  m_Name: Skeleton(Axe)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2203849179143382782
+--- !u!4 &8895938959344953389
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
+  m_GameObject: {fileID: 5106567510122415594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1502.788, y: 1210.1072, z: 0}
+  m_LocalPosition: {x: -0.63157827, y: -0.4287267, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2703573155104327105}
+  - {fileID: 5679835076845489238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1494300154386605101
+--- !u!212 &8672001261173994311
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
+  m_GameObject: {fileID: 5106567510122415594}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 51708287
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1973946229, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
+  m_Sprite: {fileID: -406565365, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,13 +173,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8145135815492524631
+--- !u!114 &3955059252631840414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106567510122415594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a61f2e2ba02ab41b2cffc15f96d0c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  speed: 1
+  damage: 3
+  playerTransform: {fileID: 0}
+--- !u!61 &5426787255784151460
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
+  m_GameObject: {fileID: 5106567510122415594}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -205,27 +221,27 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15, y: -0.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 4}
+    oldSize: {x: 4, y: 1.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.75, y: 2.35}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &7196794192443871597
+--- !u!50 &1434026040806072610
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
+  m_GameObject: {fileID: 5106567510122415594}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -245,53 +261,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3002231138143279824
+--- !u!114 &3283095150700733705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
+  m_GameObject: {fileID: 5106567510122415594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7e19a99c6e35e044a6f3651a4766c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -1973946229, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
-  - {fileID: 991648138, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
-  - {fileID: 1631505328, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
-  - {fileID: -359297515, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
-  - {fileID: 403292379, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
+  - {fileID: -406565365, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
+  - {fileID: 1642158883, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
+  - {fileID: 146020924, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
+  - {fileID: 1922500196, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
+  - {fileID: 1726141413, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
+  - {fileID: -2024577434, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
   moveArray: []
   animating: 1
-  animationSpeed: 0.1
+  animationSpeed: 0.2
   isMoving: 0
   syncWith: []
---- !u!114 &4470494816631302246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133842674983061728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4309e2e811b164cb12e5741c1b7fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Grass Golem
-  maxHP: 75
-  speed: 1.5
-  damage: 5
-  playerTransform: {fileID: 0}
-  healthBar: {fileID: 0}
-  drops:
-  - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
-  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
-  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
-  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
-  sporeCloudPrefab: {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
-  sporeCooldown: 5
-  minionPrefab: {fileID: 307535761751524326, guid: 669286c9ffd1a664ab54dfd6c6dc2350, type: 3}
-  minionSpawnCooldown: 5
