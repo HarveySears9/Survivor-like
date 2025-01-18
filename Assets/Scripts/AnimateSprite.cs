@@ -12,7 +12,7 @@ public class AnimateSprite : MonoBehaviour
     public bool isMoving = false;
 
     // Reference to another AnimateSprite instance to sync with
-    public AnimateSprite syncWith;
+    public AnimateSprite[] syncWith;
 
     void Start()
     {
@@ -42,10 +42,18 @@ public class AnimateSprite : MonoBehaviour
     {
         if (spriteRenderer != null && animating)
         {
-            // If syncing with another AnimateSprite, match the index
-            if (syncWith != null && syncWith.animating)
+            // Check if there's an array of sync targets
+            if (syncWith != null && syncWith.Length > 0)
             {
-                currentIndex = syncWith.currentIndex;
+                // Loop through the sync array and match the currentIndex with the first valid one
+                foreach (AnimateSprite sync in syncWith)
+                {
+                    if (sync != null && sync.animating)
+                    {
+                        currentIndex = sync.currentIndex;
+                        break; // Sync with the first valid target and exit the loop
+                    }
+                }
             }
             else
             {
@@ -57,4 +65,5 @@ public class AnimateSprite : MonoBehaviour
             spriteRenderer.sprite = isMoving ? moveArray[currentIndex] : spriteArray[currentIndex];
         }
     }
+
 }

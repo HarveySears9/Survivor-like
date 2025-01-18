@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2703573155104327105}
   - component: {fileID: 1707080159055812718}
-  - component: {fileID: 4275521487817479487}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4275521487817479487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526390618015273277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c671fc34a8686ed408737567724eb7dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9133842674983061728
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +267,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  syncWith: []
 --- !u!114 &4470494816631302246
 MonoBehaviour:
   m_ObjectHideFlags: 0

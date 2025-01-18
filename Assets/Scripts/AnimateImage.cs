@@ -12,6 +12,8 @@ public class AnimateImage : MonoBehaviour
 
     private Coroutine animationCoroutine; // Reference to the running animation coroutine
 
+    public AnimateImage[] syncWith;
+
     void OnEnable()
     {
         imageComponent = GetComponent<Image>();
@@ -53,8 +55,23 @@ public class AnimateImage : MonoBehaviour
         {
             if (imageComponent != null)
             {
-                // Update the sprite
-                currentIndex = (currentIndex + 1) % spriteArray.Length;
+                if (syncWith != null && syncWith.Length > 0)
+                {
+                    // Loop through the sync array and match the currentIndex with the first valid one
+                    foreach (AnimateImage sync in syncWith)
+                    {
+                        if (sync != null && sync.animating)
+                        {
+                            currentIndex = sync.currentIndex;
+                            break; // Sync with the first valid target and exit the loop
+                        }
+                    }
+                }
+                else
+                {
+                    // cycle through the appropriate sprite array
+                    currentIndex = (currentIndex + 1) % spriteArray.Length;
+                }
                 imageComponent.sprite = spriteArray[currentIndex];
             }
 

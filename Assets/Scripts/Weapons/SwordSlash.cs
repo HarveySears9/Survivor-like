@@ -18,6 +18,11 @@ public class SwordSlash : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
+    public AnimateSprite gfx;
+    public SpriteRenderer sr;
+
+    public PlayerController player;
+
     void Start()
     {
         levelUpButton.LevelUp(level, maxLevel);
@@ -30,6 +35,18 @@ public class SwordSlash : MonoBehaviour
         {
             FireAtTargets();
             nextFireTime = Time.time + 1f / fireRate; // Set next fire time
+        }
+
+        gfx.isMoving = player.isMoving;
+
+        // Flip the sprite's X-axis based on the player's movement direction
+        if (player.moveDirection.x < 0)
+        {
+            sr.flipX = true; // Flip sprite when moving left
+        }
+        else if (player.moveDirection.x > 0)
+        {
+            sr.flipX = false; // Keep sprite normal when moving right
         }
     }
 

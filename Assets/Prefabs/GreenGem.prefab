@@ -198,14 +198,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -1956144229, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: 1432083953, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  - {fileID: -1956144229, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: 1945260483, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: -592226686, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   moveArray: []
   animating: 1
   animationSpeed: 0.25
   isMoving: 0
+  syncWith: {fileID: 0}
 --- !u!58 &8373611281315140213
 CircleCollider2D:
   m_ObjectHideFlags: 0
