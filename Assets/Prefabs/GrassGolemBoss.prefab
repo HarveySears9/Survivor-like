@@ -294,4 +294,4 @@ MonoBehaviour:
   sporeCloudPrefab: {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
   sporeCooldown: 5
   minionPrefab: {fileID: 307535761751524326, guid: 669286c9ffd1a664ab54dfd6c6dc2350, type: 3}
-  minionSpawnCooldown: 8
+  minionSpawnCooldown: 5

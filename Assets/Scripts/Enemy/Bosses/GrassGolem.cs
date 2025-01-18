@@ -30,7 +30,7 @@ public class GrassGolem : Boss
         // Spore Cloud Attack
         if (Time.time >= nextSporeTime)
         {
-            StartCoroutine(ReleaseSporeCloud());
+            //StartCoroutine(ReleaseSporeCloud());
             nextSporeTime = Time.time + sporeCooldown;
         }
 

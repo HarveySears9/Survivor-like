@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public Sprite[] red, redMoving, blue, blueMoving, black, blackMoving, gold, goldMoving;
+    public Sprite[] red, redMoving, redDead, blue, blueMoving, blueDead, black, blackMoving, blackDead, gold, goldMoving, goldDead;
 
     public AnimateSprite player;             // Reference to the player's AnimateSprite
     public AnimateImage[] upgradeButtons;    // Array of upgrade button animations
+    public AnimateSprite deadPlayer;
 
     void Start()
     {   
@@ -26,6 +27,11 @@ public class SkinManager : MonoBehaviour
                 {
                     button.spriteArray = red; // Set the sprite array for the upgrade buttons
                 }
+                if(deadPlayer != null)
+                {
+                    deadPlayer.spriteArray = redDead;
+                }
+
                 break;
 
             case 1: // Blue Skin
@@ -34,6 +40,10 @@ public class SkinManager : MonoBehaviour
                 foreach (var button in upgradeButtons)
                 {
                     button.spriteArray = blue;
+                }
+                if (deadPlayer != null)
+                {
+                    deadPlayer.spriteArray = blueDead;
                 }
                 break;
 
@@ -44,6 +54,10 @@ public class SkinManager : MonoBehaviour
                 {
                     button.spriteArray = black;
                 }
+                if (deadPlayer != null)
+                {
+                    deadPlayer.spriteArray = blackDead;
+                }
                 break;
 
             case 3: // Gold Skin
@@ -53,6 +67,10 @@ public class SkinManager : MonoBehaviour
                 {
                     button.spriteArray = gold;
                 }
+                if (deadPlayer != null)
+                {
+                    deadPlayer.spriteArray = goldDead;
+                }
                 break;
 
             default: // Default Skin (Fallback to Red)
@@ -61,6 +79,10 @@ public class SkinManager : MonoBehaviour
                 foreach (var button in upgradeButtons)
                 {
                     button.spriteArray = red;
+                }
+                if (deadPlayer != null)
+                {
+                    deadPlayer.spriteArray = redDead;
                 }
                 break;
         }

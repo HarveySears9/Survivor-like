@@ -196,6 +196,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.25
   isMoving: 0
+  syncWith: []
 --- !u!1 &4183803416140217135
 GameObject:
   m_ObjectHideFlags: 0
