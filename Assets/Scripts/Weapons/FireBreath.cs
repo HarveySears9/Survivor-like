@@ -22,7 +22,17 @@ public class FireBreath : MonoBehaviour
 
     void Start()
     {
-        damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
+        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+
+        // Check if the current character is not B'rick
+        if (loadedData.currentCharacter != 0)
+        {
+            // Deactivate the FireBreath GameObject
+            this.gameObject.SetActive(false);
+            return; // Exit early since FireBreath should not be initialized
+        }
+
+        damage = loadedData.currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
     }
 

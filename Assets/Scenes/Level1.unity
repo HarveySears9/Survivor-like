@@ -6710,7 +6710,22 @@ MonoBehaviour:
   goldDead:
   - {fileID: 1012061823, guid: e6ef1dc9168196b47870137dedeb2a03, type: 3}
   - {fileID: 878592786, guid: e6ef1dc9168196b47870137dedeb2a03, type: 3}
-  - {fileID: -2064549171, guid: e6ef1dc9168196b47870137dedeb2a03, type: 3}
+  draven:
+  - {fileID: -2110632793, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: 1345484436, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: -472269109, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: -775012340, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: 1555423355, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  dravenMoving:
+  - {fileID: -1574899812, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: 1248319901, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: 1214654246, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: 1549273002, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: -1742500673, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: -1460646855, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  dravenDead:
+  - {fileID: 1815179292, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
+  - {fileID: -336679562, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
   player: {fileID: 808585398}
   upgradeButtons:
   - {fileID: 459944066}
