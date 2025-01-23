@@ -2084,8 +2084,7 @@ MonoBehaviour:
   bossText: {fileID: 154559580}
   circleRadius: 6
   bosses:
-  - {fileID: 9133842674983061728, guid: e4e0d1bfb136eac47936b4c122cb027f, type: 3}
-  - {fileID: 4469197173487781520, guid: df4aab97692ebf34fb8a16579beb343d, type: 3}
+  - {fileID: 8600259776942184326, guid: 3d7875e7f25d9764b8341f06868fcf45, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
 --- !u!1 &435274908
@@ -3721,7 +3720,7 @@ MonoBehaviour:
   bossCount: 0
   difficultyInterval: 30
   dropInterval: 60
-  bossInterval: 120
+  bossInterval: 10
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0

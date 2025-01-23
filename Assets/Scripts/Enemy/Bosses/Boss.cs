@@ -14,8 +14,8 @@ public class Boss : MonoBehaviour
     private Vector2 direction;        // Direction vector for movement
     private Rigidbody2D rb;           // Rigidbody for physics-based movement
 
-    private float currentSpeed;       // Current speed (used for slowing effects)
-    private float originalSpeed;      // Original speed for resetting after slow
+    protected float currentSpeed;       // Current speed (used for slowing effects)
+    protected float originalSpeed;      // Original speed for resetting after slow
 
     protected bool moving = true;
     private bool isDead = false;
