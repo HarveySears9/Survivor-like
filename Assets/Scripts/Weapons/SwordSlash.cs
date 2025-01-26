@@ -18,7 +18,6 @@ public class SwordSlash : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
-    public AnimateSprite gfx;
     public SpriteRenderer sr;
 
     public PlayerController player;
@@ -27,6 +26,15 @@ public class SwordSlash : MonoBehaviour
 
     void Start()
     {
+        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+
+        // Check if the current character is not B'rick
+        if (loadedData.currentCharacter != 0)
+        {
+            // Deactivate the FireBreath GameObject
+            this.gameObject.SetActive(false);
+            return; // Exit early since FireBreath should not be initialized
+        }
         damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
         UpdateSprites();
@@ -40,7 +48,7 @@ public class SwordSlash : MonoBehaviour
             nextFireTime = Time.time + 1f / fireRate; // Set next fire time
         }
 
-        gfx.isMoving = player.isMoving;
+        playerAnimator.isMoving = player.isMoving;
 
         // Flip the sprite's X-axis based on the player's movement direction
         if (player.moveDirection.x < 0)

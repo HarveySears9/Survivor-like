@@ -14,7 +14,7 @@ public class TilemapPainter : MonoBehaviour
 
     public TileData[] tiles;        // Array of tiles with weights
     public Tilemap tilemap;         // Reference to the Tilemap
-    public Camera mainCamera;       // Reference to the main camera
+    private Camera mainCamera;       // Reference to the main camera
     public int range = 10;          // Range of tiles to check and paint around the player
     private Vector3Int lastPlayerCell; // Last painted cell position
     private List<TileBase> weightedTiles; // Weighted list for randomization

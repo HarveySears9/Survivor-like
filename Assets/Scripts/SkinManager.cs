@@ -3,121 +3,175 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public Sprite[] red, redMoving, redDead, blue, blueMoving, blueDead, black, blackMoving, blackDead, gold, goldMoving, goldDead, draven, dravenMoving, dravenDead;
+    public Sprite[] red, redMoving, redDead, blue, blueMoving, blueDead, black, blackMoving, blackDead,
+        kaelira, kaeliraMoving, kaeliraDead, kaeliraDress, kaeliraDressMoving, kaeliraDressDead,
+        draven, dravenMoving, dravenDead;
 
-    public AnimateSprite player;             // Reference to the player's AnimateSprite
-    public AnimateImage[] upgradeButtons;    // Array of upgrade button animations
-    public AnimateSprite deadPlayer;
+    public AnimateSprite brickSp, kaeliraSp;             // References to the players' AnimateSprite
+    public AnimateImage[] upgradeButtons;                // Array of upgrade button animations
+    public AnimateSprite deadBrickSp, deadKaeliraSp;
 
     private SaveFile.Data loadedData;
 
     void Start()
-    {   
+    {
+        // Load saved data
         loadedData = SaveFile.LoadData<SaveFile.Data>();
-        SetSkin(loadedData.skinEquipped);
+        if (loadedData == null)
+        {
+            loadedData = new SaveFile.Data();
+            SaveData();
+        }
+
+        // Apply saved skins for both characters
+        SetBrickSkin(loadedData.brickSkinEquipped);
+        SetKaeliraSkin(loadedData.kaeliraSkinEquipped);
+
+
+        ApplySkinToUpgradeButtons();
+    }
+
+    // Set the skin for B'rick
+    void SetBrickSkin(int skinIndex)
+    {
+        switch (skinIndex)
+        {
+            case 0:
+                brickSp.spriteArray = red;
+                brickSp.moveArray = redMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = redDead;
+                }
+                break;
+
+            case 1:
+                brickSp.spriteArray = blue;
+                brickSp.moveArray = blueMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = blueDead;
+                }
+                break;
+
+            case 2:
+                brickSp.spriteArray = black;
+                brickSp.moveArray = blackMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = blackDead;
+                }
+                break;
+
+            case 5: // Draven
+                brickSp.spriteArray = draven;
+                brickSp.moveArray = dravenMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = dravenDead;
+                }
+                break;
+
+            default:
+                Debug.LogWarning("Invalid skin index for B'rick. Defaulting to Red.");
+                brickSp.spriteArray = red;
+                brickSp.moveArray = redMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = redDead;
+                }
+                break;
+        }
+    }
+
+    // Set the skin for Kaelira
+    void SetKaeliraSkin(int skinIndex)
+    {
+        switch (skinIndex)
+        {
+            case 3:
+                kaeliraSp.spriteArray = kaelira;
+                kaeliraSp.moveArray = kaeliraMoving;
+                if (deadKaeliraSp != null)
+                {
+                    deadKaeliraSp.spriteArray = kaeliraDead;
+                }
+                break;
+
+            case 4:
+                kaeliraSp.spriteArray = kaeliraDress;
+                kaeliraSp.moveArray = kaeliraDressMoving;
+                if (deadKaeliraSp != null)
+                {
+                    deadKaeliraSp.spriteArray = kaeliraDressDead;
+                }
+                break;
+
+            default:
+                Debug.LogWarning("Invalid skin index for Kaelira. Defaulting to standard skin.");
+                kaeliraSp.spriteArray = kaelira;
+                kaeliraSp.moveArray = kaeliraMoving;
+                if (deadKaeliraSp != null)
+                {
+                    deadKaeliraSp.spriteArray = kaeliraDead;
+                }
+                break;
+        }
+    }
+
+    // Apply the current skin to all upgrade buttons
+    void ApplySkinToUpgradeButtons()
+    {
+        switch (loadedData.currentCharacter)
+        {
+            case 0:
+                foreach (var button in upgradeButtons)
+                {
+                    button.spriteArray = brickSp.spriteArray;
+                }
+                break;
+            case 1:
+                foreach (var button in upgradeButtons)
+                {
+                    button.spriteArray = kaeliraSp.spriteArray;
+                }
+                break;
+        }
+    }
+
+    // Save the current data
+    private void SaveData()
+    {
         SaveFile.SaveData(loadedData);
     }
 
-    void SetSkin(int skinIndex)
+    // Change the current character
+    public void SetCharacter(int characterIndex)
     {
+        loadedData.currentCharacter = characterIndex;
+        SaveData();
+    }
 
-        switch (skinIndex)
+    // Change the skin for the currently selected character
+    public void ChangeSkin(int skinIndex)
+    {
+        switch (loadedData.currentCharacter)
         {
-            case 0: // Red Skin (B'rick)
-                player.spriteArray = red;
-                player.moveArray = redMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = red; // Set the sprite array for the upgrade buttons
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = redDead;
-                }
-                loadedData.currentCharacter = 0; // B'rick
+            case 0: // B'rick
+                loadedData.brickSkinEquipped = skinIndex;
+                SetBrickSkin(skinIndex);
                 break;
 
-            case 1: // Blue Skin (B'rick)
-                player.spriteArray = blue;
-                player.moveArray = blueMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = blue;
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = blueDead;
-                }
-                loadedData.currentCharacter = 0; // B'rick
+            case 1: // Kaelira
+                loadedData.kaeliraSkinEquipped = skinIndex;
+                SetKaeliraSkin(skinIndex);
                 break;
 
-            case 2: // Black Skin (B'rick)
-                player.spriteArray = black;
-                player.moveArray = blackMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = black;
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = blackDead;
-                }
-                loadedData.currentCharacter = 0; // B'rick
-                break;
-
-            case 3: // Gold Skin (B'rick)
-                player.spriteArray = gold;
-                player.moveArray = goldMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = gold;
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = goldDead;
-                }
-                loadedData.currentCharacter = 0; // B'rick
-                break;
-
-            case 4: // Draven Skin
-                player.spriteArray = draven;
-                player.moveArray = dravenMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = draven;
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = dravenDead;
-                }
-                loadedData.currentCharacter = 1; // Draven
-                break;
-
-            default: // Default Skin (Fallback to Red/B'rick)
-                player.spriteArray = red;
-                player.moveArray = redMoving;
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = red;
-                }
-                if (deadPlayer != null)
-                {
-                    deadPlayer.spriteArray = redDead;
-                }
-                loadedData.currentCharacter = 0; // B'rick
+            default:
+                Debug.LogWarning("Invalid character selected.");
                 break;
         }
 
-        // Save the updated character data
-        SaveFile.SaveData(loadedData);
-    }
-
-
-    public void ChangeSkin(int index)
-    {
-        loadedData.skinEquipped = index; // Update skinEquipped in loadedData
-        SetSkin(loadedData.skinEquipped); // Update the skin
-        Debug.Log("Current Character: " + loadedData.currentCharacter); // Debug log to verify
-        SaveFile.SaveData(loadedData); // Save the data
+        SaveData();
     }
 }

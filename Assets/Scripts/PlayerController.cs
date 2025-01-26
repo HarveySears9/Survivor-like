@@ -71,7 +71,10 @@ public class PlayerController : MonoBehaviour
 
         if (moveDirection != Vector2.zero)
         {
-            fireBreath.moveDirection = moveDirection;
+            if(fireBreath != null)
+            {
+                fireBreath.moveDirection = moveDirection;
+            }
             animator.isMoving = true;
             isMoving = true;
 

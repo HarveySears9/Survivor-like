@@ -34,6 +34,7 @@ public class ThudbuttsHammer : MonoBehaviour
         // Move towards the target position or back to Thudbutt
         if (returning)
         {
+            currentTarget = thudbuttTransform.position;
             direction = (currentTarget - (Vector2)transform.position).normalized;
         }
 
@@ -54,7 +55,6 @@ public class ThudbuttsHammer : MonoBehaviour
     {
         yield return new WaitForSeconds(returnDelay);
         returning = true;
-        currentTarget = thudbuttTransform.position;
     }
 
     void FixedUpdate()

@@ -65,7 +65,8 @@ public static class SaveFile
     [System.Serializable]
     public class Data
     {
-        public int skinEquipped;
+        public int brickSkinEquipped;
+        public int kaeliraSkinEquipped;
         public int currentCharacter;
         public int coins;
         public int maxHPLevel;

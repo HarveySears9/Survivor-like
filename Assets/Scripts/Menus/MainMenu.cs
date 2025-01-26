@@ -24,6 +24,9 @@ public class MainMenu : MonoBehaviour
             playerData.maxHP = 10;
             playerData.currentDamage = 1;
             playerData.speedLevel = 0;
+            playerData.brickSkinEquipped = 0;
+            playerData.kaeliraSkinEquipped = 3;
+            playerData.currentCharacter = 0;
 
             SaveFile.SaveData(playerData);
             loadedData = playerData; // Ensure loadedData is initialized

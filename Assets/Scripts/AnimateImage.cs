@@ -8,25 +8,22 @@ public class AnimateImage : MonoBehaviour
     private Image imageComponent;       // Reference to the Image component
     public bool animating = true;       // Whether the animation is active
     private int currentIndex = 0;       // Current sprite index
-    public float animationSpeed = 0.25f; // Time between sprite updates in seconds
+    public float animationSpeed = 0.25f; // Time between sprite updates
 
-    private Coroutine animationCoroutine; // Reference to the running animation coroutine
+    private Coroutine animationCoroutine;
 
-    public AnimateImage[] syncWith;
+    public AnimateImage masterSprite;  // Reference to the master AnimateSprite for syncing
+
+    public int CurrentIndex => currentIndex;
 
     void OnEnable()
     {
         imageComponent = GetComponent<Image>();
-
         if (animating)
         {
             StartAnimation();
         }
-    }
-
-    void OnDisable()
-    {
-        //StopAnimation(); // Stop animation when disabled
+        currentIndex = 0;
     }
 
     public void StartAnimation()
@@ -41,7 +38,6 @@ public class AnimateImage : MonoBehaviour
     public void StopAnimation()
     {
         animating = false;
-
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
@@ -55,23 +51,16 @@ public class AnimateImage : MonoBehaviour
         {
             if (imageComponent != null)
             {
-                if (syncWith != null && syncWith.Length > 0)
+                // Sync with master sprite if one exists
+                if (masterSprite != null && masterSprite.animating)
                 {
-                    // Loop through the sync array and match the currentIndex with the first valid one
-                    foreach (AnimateImage sync in syncWith)
-                    {
-                        if (sync != null && sync.animating)
-                        {
-                            currentIndex = sync.currentIndex;
-                            break; // Sync with the first valid target and exit the loop
-                        }
-                    }
+                    currentIndex = masterSprite.CurrentIndex;
                 }
                 else
                 {
-                    // cycle through the appropriate sprite array
                     currentIndex = (currentIndex + 1) % spriteArray.Length;
                 }
+
                 imageComponent.sprite = spriteArray[currentIndex];
             }
 

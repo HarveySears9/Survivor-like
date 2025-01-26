@@ -97,7 +97,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
 --- !u!114 &1061438994412094902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 1
+  returnDelay: 1
   gfx: {fileID: 5245545063868614347}
   spinSpeed: 600
 --- !u!1 &5245545063868614347
