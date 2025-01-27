@@ -23,6 +23,7 @@ public class SkinManager : MonoBehaviour
             SaveData();
         }
 
+
         // Apply saved skins for both characters
         SetBrickSkin(loadedData.brickSkinEquipped);
         SetKaeliraSkin(loadedData.kaeliraSkinEquipped);

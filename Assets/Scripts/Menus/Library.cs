@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class DeathScreen : MonoBehaviour
+public class Library : MonoBehaviour
 {
-    public void MainMenu()
+    public void Home()
     {
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
-            Time.timeScale = 1f;
             SceneTracker.UpdateLastSceneName();
             SceneManager.LoadScene("PuddleBrook");
         }
         else
         {
-            Debug.LogError("Scene 'PuddleBrook' not found. Please check Build Settings.");
+            Debug.LogError("Scene 'MainMenu' not found. Please check Build Settings.");
         }
     }
 }

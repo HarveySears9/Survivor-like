@@ -35,7 +35,10 @@ public class MainMenu : MonoBehaviour
         // Set coin text, ensuring loadedData is valid
         if (loadedData != null)
         {
-            coinText.text = "Coins:"+loadedData.coins.ToString();
+            if(coinText != null)
+            {
+                coinText.text = "Coins:" + loadedData.coins.ToString();
+            }
         }
         else
         {
@@ -50,11 +53,38 @@ public class MainMenu : MonoBehaviour
     {
         if (Application.CanStreamedLevelBeLoaded("Level1"))
         {
+            SceneTracker.UpdateLastSceneName();
             SceneManager.LoadScene("Level1");
         }
         else
         {
             Debug.LogError("Scene 'Level1' not found. Please check Build Settings.");
+        }
+    }
+
+    public void Library()
+    {
+        if (Application.CanStreamedLevelBeLoaded("Library"))
+        {
+            SceneTracker.UpdateLastSceneName();
+            SceneManager.LoadScene("Library");
+        }
+        else
+        {
+            Debug.LogError("Scene 'Library' not found. Please check Build Settings.");
+        }
+    }
+
+    public void PuddleBrook()
+    {
+        if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
+        {
+            SceneTracker.UpdateLastSceneName();
+            SceneManager.LoadScene("PuddleBrook");
+        }
+        else
+        {
+            Debug.LogError("Scene 'Puddlebrook' not found. Please check Build Settings.");
         }
     }
 }

@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 6d0d84015a51c1d4697b894bb850d8db
+  - enabled: 1
+    path: Assets/Scenes/PuddleBrook.unity
+    guid: 1b32a905950392742be3daf62ff43455
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 224340aab72ff1c45bda0e19b5fa9fd0
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: f2e3113395c54dc489dd0a3c1fc5c5c9
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
