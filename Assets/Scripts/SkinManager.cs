@@ -154,25 +154,18 @@ public class SkinManager : MonoBehaviour
     }
 
     // Change the skin for the currently selected character
-    public void ChangeSkin(int skinIndex)
+    public void ChangeBrickSkin(int skinIndex)
     {
-        switch (loadedData.currentCharacter)
-        {
-            case 0: // B'rick
-                loadedData.brickSkinEquipped = skinIndex;
-                SetBrickSkin(skinIndex);
-                break;
+        loadedData.brickSkinEquipped = skinIndex;
+        SetBrickSkin(skinIndex);
+        SaveData();
+    }
 
-            case 1: // Kaelira
-                loadedData.kaeliraSkinEquipped = skinIndex;
-                SetKaeliraSkin(skinIndex);
-                break;
-
-            default:
-                Debug.LogWarning("Invalid character selected.");
-                break;
-        }
-
+    // Change the skin for the currently selected character
+    public void ChangeKaeliraSkin(int skinIndex)
+    {
+        loadedData.kaeliraSkinEquipped = skinIndex;
+        SetKaeliraSkin(skinIndex);
         SaveData();
     }
 }
