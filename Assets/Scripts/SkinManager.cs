@@ -4,7 +4,8 @@ using UnityEngine;
 public class SkinManager : MonoBehaviour
 {
     public Sprite[] red, redMoving, redDead, blue, blueMoving, blueDead, black, blackMoving, blackDead,
-        kaelira, kaeliraMoving, kaeliraDead, kaeliraDress, kaeliraDressMoving, kaeliraDressDead,
+        kaelira, kaeliraMoving, kaeliraDead, kaeliraDress, kaeliraDressMoving, kaeliraDressDead, 
+        kaeliraRed, kaeliraRedMoving, kaeliraRedDead, kaeliraGreen, kaeliraGreenMoving, kaeliraGreenDead,
         draven, dravenMoving, dravenDead;
 
     public AnimateSprite brickSp, kaeliraSp;             // References to the players' AnimateSprite
@@ -105,6 +106,24 @@ public class SkinManager : MonoBehaviour
                 if (deadKaeliraSp != null)
                 {
                     deadKaeliraSp.spriteArray = kaeliraDressDead;
+                }
+                break;
+
+            case 6:
+                kaeliraSp.spriteArray = kaeliraRed;
+                kaeliraSp.moveArray = kaeliraRedMoving;
+                if (deadKaeliraSp != null)
+                {
+                    deadKaeliraSp.spriteArray = kaeliraRedDead;
+                }
+                break;
+
+            case 7:
+                kaeliraSp.spriteArray = kaeliraGreen;
+                kaeliraSp.moveArray = kaeliraGreenMoving;
+                if (deadKaeliraSp != null)
+                {
+                    deadKaeliraSp.spriteArray = kaeliraGreenDead;
                 }
                 break;
 

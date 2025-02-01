@@ -11937,6 +11937,38 @@ MonoBehaviour:
   - {fileID: 811664828, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   - {fileID: 810181099, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   kaeliraDressDead: []
+  kaeliraRed:
+  - {fileID: 76884374, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 2070011277, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -517511777, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 768130954, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -2046118852, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  kaeliraRedMoving:
+  - {fileID: 288850499, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -1924296168, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 1683864150, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -295592440, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -351422435, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -981079000, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 3468277, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -281061585, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  kaeliraRedDead: []
+  kaeliraGreen:
+  - {fileID: 1244253865, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -628626913, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 1131440142, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -548734272, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 2044779411, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  kaeliraGreenMoving:
+  - {fileID: 213183476, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -57384301, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 1566193968, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 463480928, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 121412784, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 1892515892, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: -727471881, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  - {fileID: 57792019, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
+  kaeliraGreenDead: []
   draven:
   - {fileID: -2110632793, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
   - {fileID: 1345484436, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}

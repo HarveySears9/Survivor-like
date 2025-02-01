@@ -3,17 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class SceneTracker : MonoBehaviour
 {
+    public static SceneTracker Instance { get; private set; }
     public static string LastSceneName { get; private set; } = "";
 
     void Awake()
     {
-        // Don't destroy the tracker when changing scenes
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null) // Check if an instance already exists
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Preserve this instance across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
     }
 
     // Call this method before loading a new scene
     public static void UpdateLastSceneName()
     {
-        LastSceneName = SceneManager.GetActiveScene().name;
+        if (Instance != null) // Ensure Instance exists before updating
+        {
+            LastSceneName = SceneManager.GetActiveScene().name;
+        }
     }
 }
