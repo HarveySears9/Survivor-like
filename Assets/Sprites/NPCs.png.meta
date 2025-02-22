@@ -206,6 +206,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NPCs_4
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 448
+        width: 30
+        height: 55
+      alignment: 9
+      pivot: {x: 0.43333337, y: 0.49090907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60404b9875bccd54d99ded629dee8b99
+      internalID: 1385926561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 448
+        width: 30
+        height: 55
+      alignment: 9
+      pivot: {x: 0.43333337, y: 0.49090907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56a1a2ac1928e54b9e5a6139c7b3a8c
+      internalID: -1208337723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_6
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 448
+        width: 30
+        height: 55
+      alignment: 9
+      pivot: {x: 0.43333337, y: 0.49090907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904c688bef7b39341a5cce90a5a8d3a2
+      internalID: -1142454900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 448
+        width: 30
+        height: 55
+      alignment: 9
+      pivot: {x: 0.43333337, y: 0.49090907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf73b19859982d34dba5eaff6c584312
+      internalID: -1946612779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_8
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 448
+        width: 30
+        height: 55
+      alignment: 9
+      pivot: {x: 0.43333337, y: 0.49090907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab0656e70f9bf846aa9c6b42354db7b
+      internalID: -1734057883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -221,6 +326,11 @@ TextureImporter:
       NPCs_1: -2138635155
       NPCs_2: 1183753820
       NPCs_3: -2134469631
+      NPCs_4: 1385926561
+      NPCs_5: -1208337723
+      NPCs_6: -1142454900
+      NPCs_7: -1946612779
+      NPCs_8: -1734057883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
