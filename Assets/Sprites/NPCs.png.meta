@@ -130,8 +130,8 @@ TextureImporter:
         y: 448
         width: 19
         height: 22
-      alignment: 9
-      pivot: {x: 0.55263156, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,8 +151,8 @@ TextureImporter:
         y: 448
         width: 19
         height: 22
-      alignment: 9
-      pivot: {x: 0.55263156, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,10 +170,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 448
-        width: 19
+        width: 18
         height: 22
-      alignment: 9
-      pivot: {x: 0.55263156, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,10 +191,10 @@ TextureImporter:
         serializedVersion: 2
         x: 72
         y: 448
-        width: 19
+        width: 18
         height: 22
-      alignment: 9
-      pivot: {x: 0.55263156, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
         width: 30
         height: 55
       alignment: 9
-      pivot: {x: 0.43333337, y: 0.49090907}
+      pivot: {x: 0.4666667, y: 0.49090907}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
         width: 30
         height: 55
       alignment: 9
-      pivot: {x: 0.43333337, y: 0.49090907}
+      pivot: {x: 0.4666667, y: 0.5090909}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +257,7 @@ TextureImporter:
         width: 30
         height: 55
       alignment: 9
-      pivot: {x: 0.43333337, y: 0.49090907}
+      pivot: {x: 0.4666667, y: 0.5090909}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +278,7 @@ TextureImporter:
         width: 30
         height: 55
       alignment: 9
-      pivot: {x: 0.43333337, y: 0.49090907}
+      pivot: {x: 0.4666667, y: 0.5090909}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +299,7 @@ TextureImporter:
         width: 30
         height: 55
       alignment: 9
-      pivot: {x: 0.43333337, y: 0.49090907}
+      pivot: {x: 0.4666667, y: 0.5090909}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,6 +307,111 @@ TextureImporter:
       bones: []
       spriteID: 6ab0656e70f9bf846aa9c6b42354db7b
       internalID: -1734057883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 320
+        width: 17
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c70b5abe5c01c468e41e9406223240
+      internalID: -2097239919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_15
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 320
+        width: 17
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4295a438c4dcf054da8b6ed432b677d1
+      internalID: 1113627570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_16
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 320
+        width: 17
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bf1fe79b1836d4eab002aeb9721ea7
+      internalID: -108280319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_17
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 320
+        width: 17
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975ffe2575b82cb409dfd584c4eb81a1
+      internalID: -1235276962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCs_18
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 320
+        width: 17
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69e27f116a4cf14fb83e90ca6169ed2
+      internalID: -1538263068
       vertices: []
       indices: 
       edges: []
@@ -324,6 +429,15 @@ TextureImporter:
     nameFileIdTable:
       NPCs_0: -54180546
       NPCs_1: -2138635155
+      NPCs_10: 853980323
+      NPCs_11: -514787461
+      NPCs_12: 1173364380
+      NPCs_13: 1065110038
+      NPCs_14: -2097239919
+      NPCs_15: 1113627570
+      NPCs_16: -108280319
+      NPCs_17: -1235276962
+      NPCs_18: -1538263068
       NPCs_2: 1183753820
       NPCs_3: -2134469631
       NPCs_4: 1385926561
@@ -331,6 +445,7 @@ TextureImporter:
       NPCs_6: -1142454900
       NPCs_7: -1946612779
       NPCs_8: -1734057883
+      NPCs_9: -727708487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
