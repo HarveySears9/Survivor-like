@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1699609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &769575249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3342,6 +3342,12 @@ MonoBehaviour:
   - {fileID: 811664828, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   - {fileID: 810181099, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   kaeliraDressDead: []
+  kaeliraRed: []
+  kaeliraRedMoving: []
+  kaeliraRedDead: []
+  kaeliraGreen: []
+  kaeliraGreenMoving: []
+  kaeliraGreenDead: []
   draven:
   - {fileID: -2110632793, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}
   - {fileID: 1345484436, guid: ae66cb8af195e534fb3e30d20b998aed, type: 3}

@@ -29,6 +29,16 @@ public class SkinManager : MonoBehaviour
         SetBrickSkin(loadedData.brickSkinEquipped);
         SetKaeliraSkin(loadedData.kaeliraSkinEquipped);
 
+        switch (loadedData.currentCharacter)
+        {
+            case 0:
+                SetBrickSkin(loadedData.brickSkinEquipped);
+                break;
+            case 1:
+                SetKaeliraSkin(loadedData.kaeliraSkinEquipped);
+                break;
+        }
+
 
         ApplySkinToUpgradeButtons();
     }
