@@ -13,6 +13,8 @@ public class AnimateWidthToParent : MonoBehaviour
     public GameObject Upgrades;
     public AnimateImage animator;
 
+    public GameObject[] activateAfterOpen;
+
     void Start()
     {
         // Get and store the original size of the child
@@ -102,6 +104,21 @@ public class AnimateWidthToParent : MonoBehaviour
         childRectTransform.sizeDelta = new Vector2(targetWidth, childRectTransform.sizeDelta.y);
 
         animator.animating = false;
-        Upgrades.SetActive(true);
+        if(Upgrades != null)
+        {
+            Upgrades.SetActive(true);
+        }
+
+        if (activateAfterOpen != null)
+        {
+            foreach (GameObject go in activateAfterOpen)
+            {
+                if (go != null) // safety check
+                {
+                    go.SetActive(true);
+                }
+            }
+        }
+
     }
 }

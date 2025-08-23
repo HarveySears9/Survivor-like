@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 846b15809219a6540b590b452affc691
+guid: d2520dd91797514478f48619f6daca44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu stuff_0
+      name: fense_tileset_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 440
-        width: 135
-        height: 72
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37e1cca561fc8a4c9aa249929d1805e
-      internalID: 940987737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu stuff_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 394
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4436fa4c318e76744b886171a9450b2a
-      internalID: -1689436455
+      spriteID: 147f6f4679e4313438eaf44ba14e9076
+      internalID: -1669735353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu stuff_2
+      name: fense_tileset_1
       rect:
         serializedVersion: 2
-        x: 137
-        y: 440
-        width: 135
-        height: 72
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5043692f9bd4b49ad2f0143afb4d3f
-      internalID: 282763277
+      spriteID: 2f46e3a5449d4114abccaa0f5f244b95
+      internalID: -1372083351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu stuff_3
+      name: fense_tileset_2
       rect:
         serializedVersion: 2
-        x: 159
-        y: 363
-        width: 90
-        height: 54
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 11, z: 12, w: 11}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58eefbc258fb0f14aa57861bdc9de9bd
-      internalID: -2142189301
+      spriteID: 48583ecf802d3de47820fcc51cb13231
+      internalID: -1910673714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48bcd9a6c697ca47bb23ebd174eb045
+      internalID: -1285360554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d15d9163a6aa5b45ad01a6e83ae58f8
+      internalID: -356728201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbb6ac7bf9b37d4489496d5456a633a
+      internalID: -1014221255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10df2af235f678e45af222b613da814b
+      internalID: 1259889462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f8d65da46987248b3d1a9ca6732732
+      internalID: 768765704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d08c17d99e9ef48a3322b6b1855f30
+      internalID: 1452594121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fense_tileset_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac856e26f94b0ae4da899fdb3b632cb2
+      internalID: -620440393
       vertices: []
       indices: 
       edges: []
@@ -217,10 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Menu stuff_0: 940987737
-      Menu stuff_1: -1689436455
-      Menu stuff_2: 282763277
-      Menu stuff_3: -1471570317
+      fense_tileset_0: -1669735353
+      fense_tileset_1: -1372083351
+      fense_tileset_2: -1910673714
+      fense_tileset_3: -1285360554
+      fense_tileset_4: -356728201
+      fense_tileset_5: -1014221255
+      fense_tileset_6: 1259889462
+      fense_tileset_7: 768765704
+      fense_tileset_8: 1452594121
+      fense_tileset_9: -620440393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 846b15809219a6540b590b452affc691
+guid: 6dae6a552b011314185eea495eb9cb23
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,34 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu stuff_0
+      name: EnvironmentMiscItems_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 440
-        width: 135
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37e1cca561fc8a4c9aa249929d1805e
-      internalID: 940987737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu stuff_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 394
-        width: 32
-        height: 46
+        x: 118
+        y: 398
+        width: 52
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,50 +137,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4436fa4c318e76744b886171a9450b2a
-      internalID: -1689436455
+      spriteID: 69360c7449912f54c985243adcc5706c
+      internalID: -161766581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu stuff_2
+      name: EnvironmentMiscItems_1
       rect:
         serializedVersion: 2
-        x: 137
-        y: 440
-        width: 135
-        height: 72
+        x: 119
+        y: 350
+        width: 52
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5043692f9bd4b49ad2f0143afb4d3f
-      internalID: 282763277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu stuff_3
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 363
-        width: 90
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 11, z: 12, w: 11}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58eefbc258fb0f14aa57861bdc9de9bd
-      internalID: -2142189301
+      spriteID: e09df824ed78d9a41a23b17b25cb2d09
+      internalID: -3191545
       vertices: []
       indices: 
       edges: []
@@ -217,10 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Menu stuff_0: 940987737
-      Menu stuff_1: -1689436455
-      Menu stuff_2: 282763277
-      Menu stuff_3: -1471570317
+      EnvironmentMiscItems_0: -161766581
+      EnvironmentMiscItems_1: -3191545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

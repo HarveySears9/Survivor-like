@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] characters;
     public GameObject Spawner;
     public GameObject tileMapPainter;
+    public DeathScreen deathScreen;
     
     void Start()
     {
@@ -19,5 +20,6 @@ public class GameManager : MonoBehaviour
     {
         characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].SetActive(true); 
         characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].tag = "Player";
+        deathScreen.pc = characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].GetComponent<PlayerController>();
     }
 }
