@@ -33,5 +33,9 @@ public class DeathScreen : MonoBehaviour
         int minutes = Mathf.FloorToInt(gt.elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(gt.elapsedTime % 60f);
         timerText.text = $"Time Survived:\n{minutes:D2}:{seconds:D2}";
+
+        killsText.text =
+            "Enemies Defeated:\n" + KillCounter.enemyKills +
+            "\nBosses Defeated:\n" + KillCounter.bossKills;
     }
 }
