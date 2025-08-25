@@ -23,24 +23,38 @@ public class ItemSpawner : MonoBehaviour
 
     void UpdateDropTier(int newTier)
     {
-        // Adjust drop rates or items based on the tier
+        GameObject[] newItems = null;
+        int[] newWeights = null;
+
         switch (newTier)
         {
             case 1:
-                dropItems = tier1;
-                dropWeights = weights1;
+                newItems = tier1;
+                newWeights = weights1;
                 break;
             case 2:
-                dropItems = tier2;
-                dropWeights = weights2;
+                newItems = tier2;
+                newWeights = weights2;
                 break;
             case 3:
-                dropItems = tier3;
-                dropWeights = weights3;
+                newItems = tier3;
+                newWeights = weights3;
                 break;
+        }
 
+        // Only update if the arrays are not null and not empty
+        if (newItems != null && newItems.Length > 0 &&
+            newWeights != null && newWeights.Length > 0)
+        {
+            dropItems = newItems;
+            dropWeights = newWeights;
+        }
+        else
+        {
+            Debug.LogWarning($"Drop tier {newTier} is empty! Staying on previous tier.");
         }
     }
+
 
     void OnEnable()
     {

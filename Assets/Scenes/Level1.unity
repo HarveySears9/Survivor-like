@@ -3807,29 +3807,24 @@ MonoBehaviour:
   spawnInterval: 0.5
   circleRadius: 6
   tier1:
-  - {fileID: 1602081048957474121, guid: 868c7697986adc342b016ea62848f6a8, type: 3}
-  - {fileID: 3620952820977870064, guid: 26b18aba5cf5ebc4798034ea69ba340d, type: 3}
-  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
+  - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
+  - {fileID: 468037171807379834, guid: e4bf3995eb55a1b41a57959d36208688, type: 3}
+  - {fileID: 3351960396142399134, guid: 85245dedb7e153b4bb3f95543a64f9c1, type: 3}
   tier2:
-  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
-  - {fileID: 3620952820977870064, guid: 26b18aba5cf5ebc4798034ea69ba340d, type: 3}
-  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
-  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
+  - {fileID: 2777611697932807903, guid: 826e20a64c1db004d9f1b3befa1d8a35, type: 3}
+  - {fileID: 2387115273615205914, guid: cad87311634eb05458078df7be404a53, type: 3}
+  - {fileID: 4873592779103046050, guid: d88d1b2133ab5254dacfdcfbcbe6ee85, type: 3}
   tier3:
-  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
-  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
-  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
-  - {fileID: 1579217258466824211, guid: 3e65420e8a2ef504cae59e2b2fbf1032, type: 3}
-  tier4:
-  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
-  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
-  - {fileID: 1579217258466824211, guid: 3e65420e8a2ef504cae59e2b2fbf1032, type: 3}
+  - {fileID: 2349743462696065459, guid: 764f4729d5aab9b4a980b730497dc722, type: 3}
+  - {fileID: 3877733569208533600, guid: 96fd328ace9cae64ea879c84be0ee411, type: 3}
+  - {fileID: 8299233551345749544, guid: 11ac4ebe1bb8d5841b33c62bd9f184bf, type: 3}
+  tier4: []
   tier5: []
   tier6: []
-  weights1: 3c0000001e0000000a000000
-  weights2: 3200000014000000140000000a000000
-  weights3: 280000001e0000000f0000000f000000
-  weights4: 1e0000002300000023000000
+  weights1: 140000000100000005000000
+  weights2: 140000000200000005000000
+  weights3: 140000000200000005000000
+  weights4: 
   weights5: 
   weights6: 
   spawning: 1
@@ -7466,7 +7461,7 @@ MonoBehaviour:
   difficulty: 1
   dropTier: 1
   bossCount: 0
-  difficultyInterval: 30
+  difficultyInterval: 60
   dropInterval: 60
   bossInterval: 120
 --- !u!222 &740212142

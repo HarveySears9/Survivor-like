@@ -284,4 +284,4 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
-  syncWith: []
+  masterSprite: {fileID: 0}

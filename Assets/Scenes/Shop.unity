@@ -3431,6 +3431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933137730}
   - component: {fileID: 1933137731}
+  - component: {fileID: 1933137732}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -3505,6 +3506,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1933137732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933137729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e19a99c6e35e044a6f3651a4766c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteArray:
+  - {fileID: -3191545, guid: 6dae6a552b011314185eea495eb9cb23, type: 3}
+  - {fileID: 1601584364, guid: 6dae6a552b011314185eea495eb9cb23, type: 3}
+  - {fileID: -809826145, guid: 6dae6a552b011314185eea495eb9cb23, type: 3}
+  moveArray: []
+  animating: 1
+  animationSpeed: 0.15
+  isMoving: 0
+  masterSprite: {fileID: 0}
 --- !u!1 &1997795048
 GameObject:
   m_ObjectHideFlags: 0

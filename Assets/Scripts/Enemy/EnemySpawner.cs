@@ -30,34 +30,46 @@ public class EnemySpawner : MonoBehaviour
 
     void UpdateEnemyStats(int newTier)
     {
+        GameObject[] newPrefabs = null;
+        int[] newWeights = null;
+
         switch (newTier)
         {
             case 1:
-                enemyPrefabs = tier1;
-                spawnWeights = weights1;
+                newPrefabs = tier1;
+                newWeights = weights1;
                 break;
             case 2:
-                enemyPrefabs = tier2;
-                spawnWeights = weights2;
+                newPrefabs = tier2;
+                newWeights = weights2;
                 break;
             case 3:
-                enemyPrefabs = tier3;
-                spawnWeights = weights3;
+                newPrefabs = tier3;
+                newWeights = weights3;
                 break;
             case 4:
-                enemyPrefabs = tier4;
-                spawnWeights = weights4;
+                newPrefabs = tier4;
+                newWeights = weights4;
                 break;
-            //case 5:
-                //enemyPrefabs = tier5;
-                //spawnWeights = weights5;
-                //break;
-            //case 6:
-                //enemyPrefabs = tier6;
-               // spawnWeights = weights6;
-               // break;
+                // case 5:
+                //     newPrefabs = tier5;
+                //     newWeights = weights5;
+                //     break;
+        }
+
+        // Only update if the arrays are not null and not empty
+        if (newPrefabs != null && newPrefabs.Length > 0 &&
+            newWeights != null && newWeights.Length > 0)
+        {
+            enemyPrefabs = newPrefabs;
+            spawnWeights = newWeights;
+        }
+        else
+        {
+            Debug.LogWarning($"Tier {newTier} is empty! Staying on previous tier.");
         }
     }
+
 
     void Update()
     {
