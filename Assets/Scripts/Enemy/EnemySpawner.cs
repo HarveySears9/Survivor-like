@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
 
         GameTimer gameTimer = FindObjectOfType<GameTimer>();
         gameTimer.OnDifficultyChange += UpdateEnemyStats;
+        gameTimer.OnWaveStart += StartWave;
 
         UpdateEnemyStats(1);
     }
@@ -80,6 +82,19 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemy();
             timer = 0f;  // Reset the timer
         }
+    }
+
+    void StartWave()
+    {
+        StartCoroutine(Wave());
+    }
+
+    IEnumerator Wave()
+    {
+        float originalInterval = spawnInterval;
+        spawnInterval = 0.1f;                   // super fast spawns
+        yield return new WaitForSeconds(5f);    // wave lasts 5s
+        spawnInterval = originalInterval;       // return to normal
     }
 
     void SpawnEnemy()

@@ -26,12 +26,21 @@ public class GameTimer : MonoBehaviour
     public delegate void SpawnBoss(int newBossNumber);
     public event SpawnBoss OnSpawnBoss;
 
+    public delegate void WaveStart();
+    public event WaveStart OnWaveStart;
+    public float waveInterval = 30f; // time between waves
+
+    private float nextWaveTime;
+
+
     void Start()
     {
         nextDifficultyTime = difficultyInterval;
         nextDropTime = dropInterval;
         nextBossTime = bossInterval;
-        UpdateTimerUI(); // Initialize timer display
+        nextWaveTime = waveInterval;
+
+        UpdateTimerUI();  // Initialize timer display
     }
 
     void Update()
@@ -63,6 +72,13 @@ public class GameTimer : MonoBehaviour
             bossCount++;
             nextBossTime += bossInterval; // Schedule the next boss spawn
             OnSpawnBoss?.Invoke(bossCount); // Trigger the event
+        }
+
+        // Waves
+        if (elapsedTime >= nextWaveTime)
+        {
+            nextWaveTime += waveInterval;
+            OnWaveStart?.Invoke();
         }
 
         // Update the timer display

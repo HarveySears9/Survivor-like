@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4638909}
   - component: {fileID: 4638908}
-  - component: {fileID: 4638910}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -171,57 +170,6 @@ Transform:
   - {fileID: 1236922481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4638910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4638907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6e8543d7684454cbee377a5fe7d75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiles:
-  - tile: {fileID: 11400000, guid: 0183a725091c8914d911e0d8cbac10d3, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 4cfe172fbef93cd45a40ab0ade509a53, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 9551eaf6f214cc241841253573960d2d, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: a4bfdb9d3da20194fa86c59c9446985d, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 23a7f6edd76203c4a86025fdf33cefc9, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: dd36c1185507f714d88141123a599069, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: aabf40e6a260ed84fa995a52e32792dc, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 38fd44efbec9b7649b7ab71d7e665ef6, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 42a4db9fed2fd9f488b7fc5e814ddda6, type: 2}
-    weight: 10
-  - tile: {fileID: 11400000, guid: 62a9ba89d0040784584dbf10c7eed3bd, type: 2}
-    weight: 10
-  - tile: {fileID: 11400000, guid: 3fb0c02123d7b65499ce03da2df18259, type: 2}
-    weight: 10
-  - tile: {fileID: 11400000, guid: 1cac0cf1b18c83d4987240ea9c61355b, type: 2}
-    weight: 10
-  - tile: {fileID: 11400000, guid: 551d1e6b408bc6f4285f027984c7bc86, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: c635fac624448b14888e297f056b2575, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 0653035b9a291b74d8a64d99330e9858, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: a5370958fdaf91d42b86671536b127a3, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 730e4fc0f84e3f64491b15911b009e66, type: 2}
-    weight: 100
-  - tile: {fileID: 11400000, guid: 63d4172dccd631849a46ef3458c7aa8d, type: 2}
-    weight: 100
-  tilemap: {fileID: 0}
-  range: 10
 --- !u!1 &112792218
 GameObject:
   m_ObjectHideFlags: 0
