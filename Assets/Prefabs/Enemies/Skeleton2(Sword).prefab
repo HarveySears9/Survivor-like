@@ -185,9 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a61f2e2ba02ab41b2cffc15f96d0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 1.65
-  damage: 1.5
+  health: 4
+  speed: 1.5
+  damage: 2
   playerTransform: {fileID: 0}
 --- !u!61 &2751449341553154188
 BoxCollider2D:
@@ -284,4 +284,4 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
-  syncWith: []
+  masterSprite: {fileID: 0}
