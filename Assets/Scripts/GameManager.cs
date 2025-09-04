@@ -8,11 +8,17 @@ public class GameManager : MonoBehaviour
     public GameObject[] levels;
     public DeathScreen deathScreen;
 
-    public int currentLevel = 1;
-    
+    private int currentLevel;
+
     void Start()
     {
         SetCharacter();
+        // Retrieve the saved level (default 1 if not set)
+        currentLevel = PlayerPrefs.GetInt("SelectedLevel", 1);
+
+        Debug.Log("Loaded Level: " + currentLevel);
+
+        // Here you could spawn enemies, set tiles, change environment, etc.
         SetLevel(currentLevel);
     }
 
