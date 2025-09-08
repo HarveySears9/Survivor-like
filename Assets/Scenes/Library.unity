@@ -525,9 +525,9 @@ RectTransform:
   - {fileID: 92665387}
   m_Father: {fileID: 544660802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2017.2534, y: -150}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461634229
@@ -573,7 +573,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 461634230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2068484631}
+        m_TargetAssemblyTypeName: ShopTabs, Assembly-CSharp
+        m_MethodName: OnTabPressed
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &461634230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,9 +793,9 @@ RectTransform:
   - {fileID: 503883617}
   m_Father: {fileID: 544660802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 266.7505, y: -150}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518532758
@@ -829,7 +841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 518532759}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2068484631}
+        m_TargetAssemblyTypeName: ShopTabs, Assembly-CSharp
+        m_MethodName: OnTabPressed
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &518532759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_Color: {r: 1, g: 0.64767194, b: 0, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1255,9 +1279,9 @@ RectTransform:
   - {fileID: 1879745039}
   m_Father: {fileID: 544660802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 850.25146, y: -150}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782368842
@@ -1303,7 +1327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 782368843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2068484631}
+        m_TargetAssemblyTypeName: ShopTabs, Assembly-CSharp
+        m_MethodName: OnTabPressed
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &782368843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,9 +3099,9 @@ RectTransform:
   - {fileID: 2083921514}
   m_Father: {fileID: 544660802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1433.7524, y: -150}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960351814
@@ -3111,7 +3147,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1960351815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2068484631}
+        m_TargetAssemblyTypeName: ShopTabs, Assembly-CSharp
+        m_MethodName: OnTabPressed
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1960351815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3269,6 +3317,7 @@ GameObject:
   - component: {fileID: 2068484630}
   - component: {fileID: 2068484629}
   - component: {fileID: 2068484628}
+  - component: {fileID: 2068484631}
   m_Layer: 5
   m_Name: Tabs
   m_TagString: Untagged
@@ -3364,6 +3413,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068484626}
   m_CullTransparentMesh: 1
+--- !u!114 &2068484631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068484626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a731396aee7ea4fab7870a74e4d1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColour: {r: 1, g: 1, b: 1, a: 0.69803923}
+  highlightedColour: {r: 1, g: 0.64705884, b: 0, a: 0.69803923}
+  tabs:
+  - {fileID: 518532759}
+  - {fileID: 782368843}
+  - {fileID: 1960351815}
+  - {fileID: 461634230}
 --- !u!1 &2073976200
 GameObject:
   m_ObjectHideFlags: 0
