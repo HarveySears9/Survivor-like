@@ -6,16 +6,18 @@ using TMPro;
 
 public class Library : MonoBehaviour
 {
-    public void Home()
+    public SceneTransitionController stc;
+
+    public void PuddleBrook()
     {
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
             SceneTracker.UpdateLastSceneName();
-            SceneManager.LoadScene("PuddleBrook");
+            stc.TriggerTransition("PuddleBrook");
         }
         else
         {
-            Debug.LogError("Scene 'MainMenu' not found. Please check Build Settings.");
+            Debug.LogError("Scene 'Puddlebrook' not found. Please check Build Settings.");
         }
     }
 }

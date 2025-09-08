@@ -8,6 +8,7 @@ public class Tavern : MonoBehaviour
 {
     public GameObject[] skinMenus;      // Array of skin menus for each character
     public Button[] selectButtons;     // Array of "Select" buttons for each character
+    public SceneTransitionController stc;
 
     // Start is called before the first frame update
     void Start()
@@ -64,11 +65,11 @@ public class Tavern : MonoBehaviour
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
             SceneTracker.UpdateLastSceneName();
-            SceneManager.LoadScene("PuddleBrook");
+            stc.TriggerTransition("PuddleBrook");
         }
         else
         {
-            Debug.LogError("Scene 'MainMenu' not found. Please check Build Settings.");
+            Debug.LogError("Scene 'Puddlebrook' not found. Please check Build Settings.");
         }
     }
 }

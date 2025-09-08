@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI coinText; // Correct reference type
     public GameObject skinManager;
+    public SceneTransitionController stc;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +81,7 @@ public class MainMenu : MonoBehaviour
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
             SceneTracker.UpdateLastSceneName();
-            SceneManager.LoadScene("PuddleBrook");
+            stc.TriggerTransition("PuddleBrook");
         }
         else
         {

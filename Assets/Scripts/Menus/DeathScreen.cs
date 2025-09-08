@@ -12,13 +12,15 @@ public class DeathScreen : MonoBehaviour
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI killsText;
 
+    public SceneTransitionController stc;
+
     public void MainMenu()
     {
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
             Time.timeScale = 1f;
             SceneTracker.UpdateLastSceneName();
-            SceneManager.LoadScene("PuddleBrook");
+            stc.TriggerTransition("PuddleBrook");
         }
         else
         {
