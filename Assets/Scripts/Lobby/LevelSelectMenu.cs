@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelSelectMenu : MonoBehaviour
 {
     private int selectedLevel = 1;
+    public SceneTransitionController stc;
 
     public void play()
     {
         if (Application.CanStreamedLevelBeLoaded("Level1"))
         {
-            SceneManager.LoadScene("Level1");
+
+            stc.TriggerTransition("Level1");
         }
     }
 

@@ -9,12 +9,14 @@ public class EnterButton : MonoBehaviour
     public TextMeshProUGUI buttonText;
     private string scene;
 
+    public SceneTransitionController stc;
+
     // Start is called before the first frame update
     public void PushButton()
     {
         if (Application.CanStreamedLevelBeLoaded(scene))
         {
-            SceneManager.LoadScene(scene);
+            stc.TriggerTransition(scene);
         }
         else
         {
