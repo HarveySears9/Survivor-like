@@ -83,8 +83,15 @@ public class NPCs : MonoBehaviour
         dialogueText.text = "";
         foreach (char c in line.ToCharArray())
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(typeSpeed);
+            if (currentBubble != null)
+            {
+                dialogueText.text += c;
+                yield return new WaitForSeconds(typeSpeed);
+            }
+            else
+            {
+                yield break;
+            }
         }
     }
 }
