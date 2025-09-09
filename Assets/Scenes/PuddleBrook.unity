@@ -683,6 +683,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - Crums Please!!
+  - SQUAAA
+  dialogueBubblePrefab: {fileID: 6962028216575136075, guid: a4cf0957150cd604b9fc33b262caebe6, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2
 --- !u!58 &112792225
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -935,6 +941,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - Hello Adventurer
+  - Be Safe out there friend :)
+  - Welcome Back
+  dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1.75
 --- !u!61 &206934000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1326,6 +1339,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 5
   idle: 1
+  dialogueLines:
+  - Hey B'rick ;)
+  dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2
 --- !u!58 &232693204
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2228,6 +2246,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - Come buy something
+  - Need an Upgrade???
+  dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2
 --- !u!61 &377990717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2434,6 +2458,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - The Irony of my name is not lost on me
+  - CopperJaw Mcclink At your service
+  dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2
 --- !u!61 &404426521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6062,6 +6092,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - Crums!!!
+  dialogueBubblePrefab: {fileID: 6962028216575136075, guid: a4cf0957150cd604b9fc33b262caebe6, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2.5
 --- !u!58 &1177184406
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21342,7 +21377,8 @@ MonoBehaviour:
   - {fileID: -2138635155, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -54180546, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -2138635155, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  moveArray: []
+  moveArray:
+  - {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -21429,6 +21465,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines:
+  - CRUMS PLEASE ?!?!
+  dialogueBubblePrefab: {fileID: 6962028216575136075, guid: a4cf0957150cd604b9fc33b262caebe6, type: 3}
+  typeSpeed: 0.05
+  dialogBoxHieght: 2.75
 --- !u!58 &2099567751
 CircleCollider2D:
   m_ObjectHideFlags: 0

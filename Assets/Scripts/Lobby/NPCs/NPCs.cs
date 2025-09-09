@@ -1,30 +1,38 @@
-using System.Collections;
 using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class NPCs : MonoBehaviour
 {
     private SpriteRenderer sr;
+    private Transform player;
 
-    public float flipRange = 5f; // Max time between flips
-
+    public float flipRange = 5f;
     public bool idle = true;
 
-    private Transform player;
+    [Header("Dialogue Settings")]
+    public string[] dialogueLines;           // Lines this NPC can say
+    public GameObject dialogueBubblePrefab;  // Assign in Inspector
+    public float typeSpeed = 0.05f;          // Speed of typing
+    public float dialogBoxHieght = 1f;
+
+    private GameObject currentBubble;
+    private TextMeshProUGUI dialogueText;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        StartCoroutine(FlipSprite()); // Start the coroutine
+        StartCoroutine(FlipSprite());
     }
 
     IEnumerator FlipSprite()
     {
-        while (true) // Loop indefinitely
+        while (true)
         {
             yield return new WaitForSeconds(Random.Range(2f, flipRange));
             if (idle)
             {
-                sr.flipX = !sr.flipX; // Flip the sprite horizontally
+                sr.flipX = !sr.flipX;
             }
         }
     }
@@ -33,12 +41,31 @@ public class NPCs : MonoBehaviour
     {
         player = collision.transform;
         FacePlayer();
+
+        // Show dialogue bubble
+        if (dialogueBubblePrefab != null && currentBubble == null)
+        {
+            currentBubble = Instantiate(dialogueBubblePrefab, transform);
+            currentBubble.transform.localPosition = new Vector3(0, dialogBoxHieght, 0);
+
+            dialogueText = currentBubble.GetComponentInChildren<TextMeshProUGUI>();
+            dialogueText.text = "";
+            StartCoroutine(TypeLine(dialogueLines[Random.Range(0, dialogueLines.Length)]));
+
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         idle = true;
         player = null;
+        dialogueText.text = "";
+
+        // Destroy bubble on exit
+        if (currentBubble != null)
+        {
+            Destroy(currentBubble);
+        }
     }
 
     private void FacePlayer()
@@ -47,10 +74,17 @@ public class NPCs : MonoBehaviour
         {
             idle = false;
             float direction = player.position.x - transform.position.x;
-
-            // Flip based on player's relative position
             sr.flipX = direction < 0;
         }
     }
 
+    IEnumerator TypeLine(string line)
+    {
+        dialogueText.text = "";
+        foreach (char c in line.ToCharArray())
+        {
+            dialogueText.text += c;
+            yield return new WaitForSeconds(typeSpeed);
+        }
+    }
 }
