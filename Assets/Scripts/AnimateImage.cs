@@ -28,11 +28,24 @@ public class AnimateImage : MonoBehaviour
 
     public void StartAnimation()
     {
+        if(!animating)
+        {
+            animating = true;
+        }
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
         }
         animationCoroutine = StartCoroutine(AnimateSprites());
+    }
+
+    public void ContinueAnimation()
+    {
+        animating = true;
+    }
+    public void PauseAnimation()
+    {
+        animating = false;
     }
 
     public void StopAnimation()
