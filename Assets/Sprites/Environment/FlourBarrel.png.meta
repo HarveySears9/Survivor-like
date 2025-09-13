@@ -126,7 +126,7 @@ TextureImporter:
       name: FlourBarrel_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 512
         y: 343
         width: 215
         height: 169
@@ -147,7 +147,7 @@ TextureImporter:
       name: FlourBarrel_1
       rect:
         serializedVersion: 2
-        x: 215
+        x: 727
         y: 343
         width: 215
         height: 169
@@ -168,7 +168,7 @@ TextureImporter:
       name: FlourBarrel_2
       rect:
         serializedVersion: 2
-        x: 1
+        x: 513
         y: 211
         width: 243
         height: 128
@@ -189,7 +189,7 @@ TextureImporter:
       name: FlourBarrel_3
       rect:
         serializedVersion: 2
-        x: 250
+        x: 762
         y: 211
         width: 243
         height: 128
@@ -210,12 +210,12 @@ TextureImporter:
       name: FlourBarrel_4
       rect:
         serializedVersion: 2
-        x: 266
+        x: 778
         y: 124
         width: 107
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,6 +223,48 @@ TextureImporter:
       bones: []
       spriteID: a0a360f74f28c4f4e9c5d6eff008aee8
       internalID: -1481104913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlourBarrel_5
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 370
+        width: 265
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806cd4d9a3852aa43a583896320102a7
+      internalID: -1343057834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlourBarrel_6
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 213
+        width: 265
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22b180c810fc2049b98dbdff02a4209
+      internalID: 789136987
       vertices: []
       indices: 
       edges: []
@@ -243,6 +285,8 @@ TextureImporter:
       FlourBarrel_2: 886764536
       FlourBarrel_3: 285825811
       FlourBarrel_4: -1481104913
+      FlourBarrel_5: -1343057834
+      FlourBarrel_6: 789136987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
