@@ -942,9 +942,9 @@ MonoBehaviour:
   flipRange: 10
   idle: 1
   dialogueLines:
-  - Hello Adventurer
-  - Be Safe out there friend :)
-  - Welcome Back
+  - "Welcome, welcome! Don\u2019t mind the crumbs, it\u2019s just\u2026 mayor\u2019s
+    tax."
+  - Check the mission board! Adventure tastes better when it pays
   dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
   typeSpeed: 0.05
   dialogBoxHieght: 1.75
@@ -1340,7 +1340,9 @@ MonoBehaviour:
   flipRange: 5
   idle: 1
   dialogueLines:
-  - Hey B'rick ;)
+  - Arrows fly straighter after a good drink.
+  - "You\u2019d be surprised how much wisdom you can find in a tavern corner."
+  - "Careful, hero. I\u2019ve got an eye sharper than your blade."
   dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
   typeSpeed: 0.05
   dialogBoxHieght: 2
@@ -2247,8 +2249,8 @@ MonoBehaviour:
   flipRange: 10
   idle: 1
   dialogueLines:
-  - Come buy something
-  - Need an Upgrade???
+  - Half-demon, whole bargains!
+  - "Careful with that scroll\u2026 it once set my beard on fire."
   dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
   typeSpeed: 0.05
   dialogBoxHieght: 2
@@ -2459,8 +2461,10 @@ MonoBehaviour:
   flipRange: 10
   idle: 1
   dialogueLines:
-  - The Irony of my name is not lost on me
-  - CopperJaw Mcclink At your service
+  - The Irony of my name is not lost on me.
+  - Looking sharp? You could look sharper.
+  - CopperJaw Mcclink At your service.
+  - "Armor\u2019s nice, but style wins wars."
   dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
   typeSpeed: 0.05
   dialogBoxHieght: 2
