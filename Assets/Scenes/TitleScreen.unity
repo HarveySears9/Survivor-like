@@ -1202,6 +1202,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 5
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!1 &642378614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1548,12 @@ MonoBehaviour:
   - {fileID: -970533680, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   blackMoving: []
   blackDead: []
+  gold: []
+  goldMoving: []
+  goldDead: []
+  teal: []
+  tealMoving: []
+  tealDead: []
   kaelira:
   - {fileID: 447725486, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   - {fileID: 2141115162, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
@@ -2010,6 +2020,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!61 &1055574234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2267,6 +2281,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093599665}
   m_CullTransparentMesh: 1
+--- !u!1 &1102254856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1102254858}
+  - component: {fileID: 1102254857}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1102254857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102254856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa732354306ce84a9f756ef1c9d1436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    brickSkinEquipped: 0
+    kaeliraSkinEquipped: 0
+    currentCharacter: 0
+    coins: 0
+    maxHPLevel: 0
+    maxHP: 0
+    currentDamage: 0
+    speedLevel: 0
+    skins: []
+--- !u!4 &1102254858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102254856}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 674.23, y: 958.5408, z: -11.374995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134171410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2543,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 5
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!1 &1220721047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,6 +2964,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 5
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!1 &1320306906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,6 +3040,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 5
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!212 &1320306910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3290,6 +3370,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!61 &1503674937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3497,6 +3581,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   idle: 1
+  dialogueLines: []
+  dialogueBubblePrefab: {fileID: 0}
+  typeSpeed: 0.05
+  dialogBoxHieght: 1
 --- !u!61 &1823969963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3924,3 +4012,4 @@ SceneRoots:
   - {fileID: 379097025}
   - {fileID: 1047815650}
   - {fileID: 407799191}
+  - {fileID: 1102254858}

@@ -4,136 +4,85 @@ using TMPro;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;          // Displays total coins
-    public TextMeshProUGUI hpUpgradeCostText;   // Displays cost of next Max HP upgrade
-    public TextMeshProUGUI currentHpText;     // Displays current Max HP
-
+    public CoinUI coinUI;
+    public TextMeshProUGUI hpUpgradeCostText;
+    public TextMeshProUGUI currentHpText;
     public TextMeshProUGUI damageUpgradeCostText;
     public TextMeshProUGUI currentDamageText;
+    public TextMeshProUGUI currentSpeedText;
+    public TextMeshProUGUI speedUpgradeCostText;
 
-    public TextMeshProUGUI currentSpeedText;  // Displays current movement speed
-    public TextMeshProUGUI speedUpgradeCostText; // Displays cost of the next Speed upgrade
-
-    public Button hpUpgradeButton;           // Button to upgrade Max HP
-    public Button speedUpgradeButton;        // Button to upgrade movement speed
+    public Button hpUpgradeButton;
+    public Button speedUpgradeButton;
     public Button damageUpgradeButton;
 
-    public int baseHpUpgradeCost = 50;       // Cost of the first Max HP upgrade
-    public int baseSpeedUpgradeCost = 50;    // Cost of the first speed upgrade
+    public int baseHpUpgradeCost = 50;
+    public int baseSpeedUpgradeCost = 50;
     public int baseDamageUpgradeCost = 50;
 
-    private SaveFile.Data playerData;
-
-    void Start()
+    void OnEnable()
     {
-        // Load saved data
-        playerData = SaveFile.LoadData<SaveFile.Data>();
-
         UpdateUI();
     }
 
     public void UpgradeMaxHP()
     {
-        // Calculate upgrade cost
-        int upgradeCost = Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, playerData.maxHPLevel)); 
+        var data = PlayerDataManager.Instance.data;
+        int cost = Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
 
-        if (playerData.coins >= upgradeCost)
+        if (data.coins >= cost)
         {
-            // Deduct coins and increase Max HP level
-            playerData.coins -= upgradeCost;
-            playerData.maxHPLevel++;
-
-            playerData.maxHP += playerData.maxHPLevel+1;
-
-            // Save the updated data
-            SaveFile.SaveData(playerData);
-
-            // Update UI
+            data.coins -= cost;
+            data.maxHPLevel++;
+            data.maxHP += data.maxHPLevel + 1;
+            PlayerDataManager.Instance.Save();
             UpdateUI();
-        }
-        else
-        {
-            Debug.Log("Not enough coins!");
         }
     }
 
     public void UpgradeSpeed()
     {
-        // Calculate upgrade cost
-        int upgradeCost = Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, playerData.speedLevel)); // Cost doubles with each level
+        var data = PlayerDataManager.Instance.data;
+        int cost = Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
 
-        if (playerData.coins >= upgradeCost)
+        if (data.coins >= cost)
         {
-            // Deduct coins and increase Speed level
-            playerData.coins -= upgradeCost;
-            playerData.speedLevel++;
-
-            // Save the updated data
-            SaveFile.SaveData(playerData);
-
-            // Update UI
+            data.coins -= cost;
+            data.speedLevel++;
+            PlayerDataManager.Instance.Save();
             UpdateUI();
-        }
-        else
-        {
-            Debug.Log("Not enough coins!");
         }
     }
 
     public void UpgradeDamage()
     {
-        // Calculate upgrade cost
-        int upgradeCost = Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, playerData.currentDamage - 1)); // Cost doubles with each level
+        var data = PlayerDataManager.Instance.data;
+        int cost = Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
 
-        if (playerData.coins >= upgradeCost)
+        if (data.coins >= cost)
         {
-            // Deduct coins and increase Max HP level
-            playerData.coins -= upgradeCost;
-            playerData.currentDamage++;
-
-            // Save the updated data
-            SaveFile.SaveData(playerData);
-
-            // Update UI
+            data.coins -= cost;
+            data.currentDamage++;
+            PlayerDataManager.Instance.Save();
             UpdateUI();
-        }
-        else
-        {
-            Debug.Log("Not enough coins!");
         }
     }
 
     private void UpdateUI()
     {
-        // Update Max HP display
-        currentHpText.text = $"Max HP: {playerData.maxHP}";
+        var data = PlayerDataManager.Instance.data;
 
-        currentDamageText.text = "Damage:"+playerData.currentDamage.ToString();
+        currentHpText.text = $"Max HP: {data.maxHP}";
+        currentDamageText.text = $"Damage: {data.currentDamage}";
+        currentSpeedText.text = $"Speed: {100f * (1f + data.speedLevel * 0.05f)}%";
+        coinUI.UpdateCoins();
 
-        // Update Speed display
-        float speedMultiplier = 1f + playerData.speedLevel * 0.05f; // 5% increase per level
-        currentSpeedText.text = $"Speed: {(100f*(1f + playerData.speedLevel * 0.05f)).ToString()}%";
+        hpUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel))}";
+        speedUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel))}";
+        damageUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1))}";
 
-        // Update coin text
-        coinText.text = $"Coins: {playerData.coins}";
-
-        // Update upgrade costs
-        // For HP upgrade cost (exponential growth)
-        int nextHpUpgradeCost = Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, playerData.maxHPLevel));
-        hpUpgradeCostText.text = $"Cost: {nextHpUpgradeCost}";
-
-        // For Speed upgrade cost (exponential growth)
-        int nextSpeedUpgradeCost = Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, playerData.speedLevel));
-        speedUpgradeCostText.text = $"Cost: {nextSpeedUpgradeCost}";
-
-        // For Damage upgrade cost (exponential growth)
-        int nextDamageUpgradeCost = Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, playerData.currentDamage - 1));
-        damageUpgradeCostText.text = $"Cost: {nextDamageUpgradeCost}";
-
-
-        // Enable/disable buttons based on coins
-        hpUpgradeButton.interactable = playerData.coins >= nextHpUpgradeCost;
-        speedUpgradeButton.interactable = playerData.coins >= nextSpeedUpgradeCost;
-        damageUpgradeButton.interactable = playerData.coins >= nextDamageUpgradeCost;
+        hpUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
+        speedUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
+        damageUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
     }
 }

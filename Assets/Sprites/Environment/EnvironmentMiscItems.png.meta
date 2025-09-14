@@ -248,6 +248,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 350
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5c6d681eaf1be4da0f444b37ae2302
+      internalID: -1836811481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -265,6 +286,7 @@ TextureImporter:
       EnvironmentMiscItems_3: -809826145
       EnvironmentMiscItems_4: -1164961436
       EnvironmentMiscItems_5: 1657905850
+      EnvironmentMiscItems_6: -1836811481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

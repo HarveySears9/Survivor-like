@@ -2088,6 +2088,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_SortingLayerID
       value: 1271246615
       objectReference: {fileID: 0}
@@ -4224,7 +4228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_SortingOrder
-      value: -2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: name
@@ -5555,6 +5559,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -161766581, guid: 6dae6a552b011314185eea495eb9cb23, type: 3}
+    - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: name
       value: Quests
@@ -20894,6 +20902,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1343057834, guid: 4420e3d64f3e2c04b85d28ec22400b6a, type: 3}
+    - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: name
       value: Enter Shop
@@ -21795,6 +21807,10 @@ PrefabInstance:
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: name

@@ -1,0 +1,127 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class SkinShop : MonoBehaviour
+{
+    [Header("UI References")]
+    public GameObject[] buyButtons;         // Buttons to buy skins
+    public TextMeshProUGUI[] skinPrices;    // Cost text for each skin
+    public SkinManager sm;    // To change the brick skin
+
+    public CoinUI coinUI;
+
+    private SkinData[] skins;
+
+    void OnEnable()
+    {
+        if (PlayerDataManager.Instance == null || PlayerDataManager.Instance.data == null)
+        {
+            Debug.LogError("PlayerDataManager not initialized!");
+            return;
+        }
+
+        skins = PlayerDataManager.Instance.data.skins;
+
+        SetupButtons();
+        RefreshShopUI();
+    }
+
+    /// <summary>
+    /// Automatically assign OnClick listeners to buttons with correct skin indices
+    /// </summary>
+    private void SetupButtons()
+    {
+        if (buyButtons == null || skins == null)
+            return;
+
+        int buttonCount = Mathf.Min(buyButtons.Length, skins.Length - 1); // skip default skin (index 0)
+
+        for (int i = 0; i < buttonCount; i++)
+        {
+            int skinIndex = i + 1; // +1 to skip default skin
+            Button btn = buyButtons[i].GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(() => BuySkin(skinIndex));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Refreshes button states and price texts
+    /// </summary>
+    public void RefreshShopUI()
+    {
+        if (skins == null || buyButtons == null || skinPrices == null)
+            return;
+
+        int buttonCount = Mathf.Min(buyButtons.Length, skins.Length - 1);
+
+        for (int i = 0; i < buttonCount; i++)
+        {
+            int skinIndex = i + 1; // skip default skin
+            SkinData skin = skins[skinIndex];
+
+            Button btn = buyButtons[i].GetComponent<Button>();
+            TextMeshProUGUI btnText = buyButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI priceText = i < skinPrices.Length ? skinPrices[i] : null;
+
+            if (skin.owned)
+            {
+                if (btn != null) btn.interactable = false;
+                if (btnText != null) btnText.text = "Owned";
+                if (priceText != null) priceText.gameObject.SetActive(false);
+            }
+            else
+            {
+                if (btn != null) btn.interactable = true;
+                if (btnText != null) btnText.text = "Buy";
+                if (priceText != null)
+                {
+                    priceText.gameObject.SetActive(true);
+                    priceText.text = "Cost: " + skin.price;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Buys a skin safely
+    /// </summary>
+    public void BuySkin(int index)
+    {
+        var data = PlayerDataManager.Instance?.data;
+
+        if (data == null)
+        {
+            Debug.LogError("PlayerDataManager not initialized!");
+            return;
+        }
+
+        if (data.skins == null || index < 0 || index >= data.skins.Length)
+        {
+            Debug.LogError($"Invalid skin index {index}");
+            return;
+        }
+
+        SkinData skin = data.skins[index];
+
+        if (!skin.owned && data.coins >= skin.price)
+        {
+            data.coins -= skin.price;
+            skin.owned = true;
+
+            PlayerDataManager.Instance.Save();
+            RefreshShopUI();
+            coinUI.UpdateCoins();
+            sm.ChangeBrickSkin(index);
+        }
+        else if (data.coins < skin.price)
+        {
+            Debug.Log("Not enough coins to buy this skin!");
+        }
+    }
+}
+

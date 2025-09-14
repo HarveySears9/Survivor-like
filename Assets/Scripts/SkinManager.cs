@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public Sprite[] red, redMoving, redDead, blue, blueMoving, blueDead, black, blackMoving, blackDead,
-        kaelira, kaeliraMoving, kaeliraDead, kaeliraDress, kaeliraDressMoving, kaeliraDressDead, 
-        kaeliraRed, kaeliraRedMoving, kaeliraRedDead, kaeliraGreen, kaeliraGreenMoving, kaeliraGreenDead,
+    public Sprite[] red, redMoving, redDead, 
+        blue, blueMoving, blueDead, 
+        black, blackMoving, blackDead,
+        gold, goldMoving, goldDead,
+        teal, tealMoving, tealDead,
+        kaelira, kaeliraMoving, kaeliraDead, 
+        kaeliraDress, kaeliraDressMoving, kaeliraDressDead, 
+        kaeliraRed, kaeliraRedMoving, kaeliraRedDead, 
+        kaeliraGreen, kaeliraGreenMoving, kaeliraGreenDead,
         draven, dravenMoving, dravenDead;
 
     public AnimateSprite brickSp, kaeliraSp;             // References to the players' AnimateSprite
@@ -48,7 +54,7 @@ public class SkinManager : MonoBehaviour
     {
         switch (skinIndex)
         {
-            case 0:
+            case 0: // Default Red
                 brickSp.spriteArray = red;
                 brickSp.moveArray = redMoving;
                 if (deadBrickSp != null)
@@ -57,7 +63,7 @@ public class SkinManager : MonoBehaviour
                 }
                 break;
 
-            case 1:
+            case 1: //Blue
                 brickSp.spriteArray = blue;
                 brickSp.moveArray = blueMoving;
                 if (deadBrickSp != null)
@@ -66,7 +72,7 @@ public class SkinManager : MonoBehaviour
                 }
                 break;
 
-            case 2:
+            case 2: //Black
                 brickSp.spriteArray = black;
                 brickSp.moveArray = blackMoving;
                 if (deadBrickSp != null)
@@ -75,7 +81,15 @@ public class SkinManager : MonoBehaviour
                 }
                 break;
 
-            case 5: // Draven
+            case 3: // Gold
+                brickSp.spriteArray = draven;
+                brickSp.moveArray = dravenMoving;
+                if (deadBrickSp != null)
+                {
+                    deadBrickSp.spriteArray = dravenDead;
+                }
+                break;
+            case 4: // Teal
                 brickSp.spriteArray = draven;
                 brickSp.moveArray = dravenMoving;
                 if (deadBrickSp != null)

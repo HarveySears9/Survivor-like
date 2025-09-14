@@ -73,5 +73,6 @@ public static class SaveFile
         public int maxHP;
         public int currentDamage;
         public int speedLevel;
+        public SkinData[] skins;
     }
 }
