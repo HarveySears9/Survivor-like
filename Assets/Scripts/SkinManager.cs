@@ -1,22 +1,14 @@
-using System.Collections;
 using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public Sprite[] red, redMoving, redDead, 
-        blue, blueMoving, blueDead, 
-        black, blackMoving, blackDead,
-        gold, goldMoving, goldDead,
-        teal, tealMoving, tealDead,
-        kaelira, kaeliraMoving, kaeliraDead, 
-        kaeliraDress, kaeliraDressMoving, kaeliraDressDead, 
-        kaeliraRed, kaeliraRedMoving, kaeliraRedDead, 
-        kaeliraGreen, kaeliraGreenMoving, kaeliraGreenDead,
-        draven, dravenMoving, dravenDead;
+    [Header("Sprite Database")]
+    public SpriteDatabase database;
 
-    public AnimateSprite brickSp, kaeliraSp;             // References to the players' AnimateSprite
-    public AnimateImage[] upgradeButtons;                // Array of upgrade button animations
-    public AnimateSprite deadBrickSp, deadKaeliraSp;
+    [Header("Scene References")]
+    public AnimateSprite brickSp;           // Player sprite
+    public AnimateImage[] upgradeButtons;   // Upgrade button sprites
+    public AnimateSprite deadBrickSp;       // Dead player sprite
 
     private SaveFile.Data loadedData;
 
@@ -30,173 +22,55 @@ public class SkinManager : MonoBehaviour
             SaveData();
         }
 
-
-        // Apply saved skins for both characters
+        // Apply saved skin
         SetBrickSkin(loadedData.brickSkinEquipped);
-        SetKaeliraSkin(loadedData.kaeliraSkinEquipped);
 
-        switch (loadedData.currentCharacter)
-        {
-            case 0:
-                SetBrickSkin(loadedData.brickSkinEquipped);
-                break;
-            case 1:
-                SetKaeliraSkin(loadedData.kaeliraSkinEquipped);
-                break;
-        }
-
-
+        // Apply skin to upgrade buttons
         ApplySkinToUpgradeButtons();
     }
 
-    // Set the skin for B'rick
-    void SetBrickSkin(int skinIndex)
+    /// Set B'rick's skin using the SpriteDatabase
+    public void SetBrickSkin(int skinIndex)
     {
         switch (skinIndex)
         {
-            case 0: // Default Red
-                brickSp.spriteArray = red;
-                brickSp.moveArray = redMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = redDead;
-                }
-                break;
-
-            case 1: //Blue
-                brickSp.spriteArray = blue;
-                brickSp.moveArray = blueMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = blueDead;
-                }
-                break;
-
-            case 2: //Black
-                brickSp.spriteArray = black;
-                brickSp.moveArray = blackMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = blackDead;
-                }
-                break;
-
-            case 3: // Gold
-                brickSp.spriteArray = draven;
-                brickSp.moveArray = dravenMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = dravenDead;
-                }
-                break;
-            case 4: // Teal
-                brickSp.spriteArray = draven;
-                brickSp.moveArray = dravenMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = dravenDead;
-                }
-                break;
-
+            case 0: AssignBrickSprites(database.red, database.redMoving, database.redDead); break;
+            case 1: AssignBrickSprites(database.blue, database.blueMoving, database.blueDead); break;
+            case 2: AssignBrickSprites(database.black, database.blackMoving, database.blackDead); break;
+            case 3: AssignBrickSprites(database.gold, database.goldMoving, database.goldDead); break;
+            case 4: AssignBrickSprites(database.teal, database.tealMoving, database.tealDead); break;
             default:
                 Debug.LogWarning("Invalid skin index for B'rick. Defaulting to Red.");
-                brickSp.spriteArray = red;
-                brickSp.moveArray = redMoving;
-                if (deadBrickSp != null)
-                {
-                    deadBrickSp.spriteArray = redDead;
-                }
+                AssignBrickSprites(database.red, database.redMoving, database.redDead);
                 break;
         }
     }
 
-    // Set the skin for Kaelira
-    void SetKaeliraSkin(int skinIndex)
+    /// Assign sprites to the player and dead sprite
+    private void AssignBrickSprites(Sprite[] sprites, Sprite[] moveArray, Sprite[] deadArray)
     {
-        switch (skinIndex)
+        if (brickSp != null)
         {
-            case 3:
-                kaeliraSp.spriteArray = kaelira;
-                kaeliraSp.moveArray = kaeliraMoving;
-                if (deadKaeliraSp != null)
-                {
-                    deadKaeliraSp.spriteArray = kaeliraDead;
-                }
-                break;
-
-            case 4:
-                kaeliraSp.spriteArray = kaeliraDress;
-                kaeliraSp.moveArray = kaeliraDressMoving;
-                if (deadKaeliraSp != null)
-                {
-                    deadKaeliraSp.spriteArray = kaeliraDressDead;
-                }
-                break;
-
-            case 6:
-                kaeliraSp.spriteArray = kaeliraRed;
-                kaeliraSp.moveArray = kaeliraRedMoving;
-                if (deadKaeliraSp != null)
-                {
-                    deadKaeliraSp.spriteArray = kaeliraRedDead;
-                }
-                break;
-
-            case 7:
-                kaeliraSp.spriteArray = kaeliraGreen;
-                kaeliraSp.moveArray = kaeliraGreenMoving;
-                if (deadKaeliraSp != null)
-                {
-                    deadKaeliraSp.spriteArray = kaeliraGreenDead;
-                }
-                break;
-
-            default:
-                Debug.LogWarning("Invalid skin index for Kaelira. Defaulting to standard skin.");
-                kaeliraSp.spriteArray = kaelira;
-                kaeliraSp.moveArray = kaeliraMoving;
-                if (deadKaeliraSp != null)
-                {
-                    deadKaeliraSp.spriteArray = kaeliraDead;
-                }
-                break;
+            brickSp.spriteArray = sprites;
+            brickSp.moveArray = moveArray;
         }
-    }
 
-    // Apply the current skin to all upgrade buttons
-    void ApplySkinToUpgradeButtons()
-    {
-        switch (loadedData.currentCharacter)
+        if (deadBrickSp != null)
         {
-            case 0:
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = brickSp.spriteArray;
-                }
-                break;
-            case 1:
-                foreach (var button in upgradeButtons)
-                {
-                    button.spriteArray = kaeliraSp.spriteArray;
-                }
-                break;
+            deadBrickSp.spriteArray = deadArray;
         }
     }
 
-    // Save the current data
-    private void SaveData()
+    /// Apply the current skin to all upgrade buttons
+    private void ApplySkinToUpgradeButtons()
     {
-        SaveFile.SaveData(loadedData);
+        foreach (var button in upgradeButtons)
+        {
+            button.spriteArray = brickSp.spriteArray;
+        }
     }
 
-    // Change the current character
-    public void SetCharacter(int characterIndex)
-    {
-        loadedData.currentCharacter = characterIndex;
-        SaveData();
-    }
-
-    // Change the skin for the currently selected character
+    /// Change the equipped skin and save
     public void ChangeBrickSkin(int skinIndex)
     {
         loadedData.brickSkinEquipped = skinIndex;
@@ -204,11 +78,9 @@ public class SkinManager : MonoBehaviour
         SaveData();
     }
 
-    // Change the skin for the currently selected character
-    public void ChangeKaeliraSkin(int skinIndex)
+    /// Save the current data
+    private void SaveData()
     {
-        loadedData.kaeliraSkinEquipped = skinIndex;
-        SetKaeliraSkin(skinIndex);
-        SaveData();
+        SaveFile.SaveData(loadedData);
     }
 }

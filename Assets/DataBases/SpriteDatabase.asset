@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795c5afb4815f5546b833460aecea973, type: 3}
+  m_Name: SpriteDatabase
+  m_EditorClassIdentifier: 
+  red:
+  - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1185140201, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1677565199, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1209911466, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  redMoving:
+  - {fileID: 1373000260, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -2019813457, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 808392748, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1903573115, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1415327840, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -220141428, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1434372951, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 759223060, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  redDead: []
+  blue:
+  - {fileID: 1830220883, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 703646882, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1320851278, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1921403840, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1375655630, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blueMoving:
+  - {fileID: -1422419874, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -828205429, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1917891639, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1491295102, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 818710869, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 883417179, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 219372484, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1156931657, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blueDead: []
+  black:
+  - {fileID: 374226543, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1575974041, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 705570747, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -956594689, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -970533680, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blackMoving:
+  - {fileID: 1682124507, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 999108960, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1734643920, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1884546344, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 341465695, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1254468610, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1505499424, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -280717992, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blackDead: []
+  gold:
+  - {fileID: 1878832385, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 581374352, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -758676884, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 525836240, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -32054801, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  goldMoving:
+  - {fileID: -14020178, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1052230476, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 656824049, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -191035643, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 437367146, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1957393679, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -510060283, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 2014912782, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  goldDead: []
+  teal:
+  - {fileID: 1865048132, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1993706067, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 839324788, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1672393780, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1070027656, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  tealMoving:
+  - {fileID: 1596024666, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -248950125, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -384955263, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -370922180, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 806807175, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 372424385, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1804215287, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -663382733, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  tealDead: []
