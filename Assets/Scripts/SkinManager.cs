@@ -15,12 +15,7 @@ public class SkinManager : MonoBehaviour
     void Start()
     {
         // Load saved data
-        loadedData = SaveFile.LoadData<SaveFile.Data>();
-        if (loadedData == null)
-        {
-            loadedData = new SaveFile.Data();
-            SaveData();
-        }
+        loadedData = PlayerDataManager.Instance.data;
 
         // Apply saved skin
         SetBrickSkin(loadedData.brickSkinEquipped);

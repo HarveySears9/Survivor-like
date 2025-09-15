@@ -27,9 +27,7 @@ public class SkinShop : MonoBehaviour
         RefreshShopUI();
     }
 
-    /// <summary>
     /// Automatically assign OnClick listeners to buttons with correct skin indices
-    /// </summary>
     private void SetupButtons()
     {
         if (buyButtons == null || skins == null)
@@ -49,9 +47,7 @@ public class SkinShop : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Refreshes button states and price texts
-    /// </summary>
     public void RefreshShopUI()
     {
         if (skins == null || buyButtons == null || skinPrices == null)
@@ -87,9 +83,7 @@ public class SkinShop : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Buys a skin safely
-    /// </summary>
     public void BuySkin(int index)
     {
         var data = PlayerDataManager.Instance?.data;
@@ -106,19 +100,24 @@ public class SkinShop : MonoBehaviour
             return;
         }
 
-        SkinData skin = data.skins[index];
-
-        if (!skin.owned && data.coins >= skin.price)
+        // Always work directly on the array reference
+        if (!data.skins[index].owned && data.coins >= data.skins[index].price)
         {
-            data.coins -= skin.price;
-            skin.owned = true;
+            data.coins -= data.skins[index].price;
+            data.skins[index].owned = true;
 
+            // Only this one
             PlayerDataManager.Instance.Save();
+
+            // Update UI + equipped skin
             RefreshShopUI();
             coinUI.UpdateCoins();
             sm.ChangeBrickSkin(index);
+
+            Debug.Log("Skin purchased, owned: " + data.skins[index].owned);
         }
-        else if (data.coins < skin.price)
+
+        else if (data.coins < data.skins[index].price)
         {
             Debug.Log("Not enough coins to buy this skin!");
         }

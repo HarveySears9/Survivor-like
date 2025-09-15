@@ -3,35 +3,19 @@ using UnityEngine;
 public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager Instance;
-
-    public SaveFile.Data data; // Holds all player data (coins, skins, upgrades, etc.)
+    public SaveFile.Data data;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep across scenes
+            DontDestroyOnLoad(gameObject);
 
-            // Load saved data or create default
+            // Load saved data (if it exists)
             data = SaveFile.LoadData<SaveFile.Data>();
-            if (data == null)
-            {
-                data = new SaveFile.Data();
 
-                // Initialize defaults
-                data.coins = 0;
-                //Testing
-                data.coins = 100000;
-
-                data.maxHPLevel = 0;
-                data.maxHP = 10; // starting HP
-                data.speedLevel = 0;
-                data.currentDamage = 1;
-                data.currentCharacter = 0;
-
-            }
-
+            // Always define your defaults
             SkinData[] defaultSkins = new SkinData[]
             {
             new SkinData { owned = true, price = 0 },      // default Red
@@ -41,19 +25,36 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 1000 }   // Teal
             };
 
-            // Preserve ownership from the saved data
-            if (data.skins != null)
+            if (data == null)
             {
-                int lengthToCopy = Mathf.Min(data.skins.Length, defaultSkins.Length);
+                // Create brand new data
+                data = new SaveFile.Data();
+                data.coins = 100000; // Testing
+                data.maxHPLevel = 0;
+                data.maxHP = 10;
+                data.speedLevel = 0;
+                data.currentDamage = 1;
+                data.skins = defaultSkins;
+                Save();
+            }
+            else
+            {
+                // Merge ownership into defaults before saving
+                int lengthToCopy = Mathf.Min(data.skins?.Length ?? 0, defaultSkins.Length);
                 for (int i = 0; i < lengthToCopy; i++)
                 {
                     defaultSkins[i].owned = data.skins[i].owned;
                 }
+
+                data.skins = defaultSkins;
+                Save(); // overwrite with merged copy
             }
 
-            data.skins = defaultSkins;
-
-            Save(); // save initial data
+            // Debug log to check
+            //foreach (var skin in data.skins)
+            //{
+            //    Debug.Log($"Owned: {skin.owned}, Price: {skin.price}");
+            //}
         }
         else
         {
