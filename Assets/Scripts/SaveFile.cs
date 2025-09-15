@@ -20,13 +20,13 @@ public static class SaveFile
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Path.Combine(Application.persistentDataPath, fileName);
 
-        Debug.Log("Saving file at: " + path);
+        //Debug.Log("Saving file at: " + path);
 
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
             formatter.Serialize(stream, data);
         }
-        Debug.Log("Save complete");
+        //Debug.Log("Save complete");
     }
 
     public static T LoadData<T>()
@@ -38,7 +38,7 @@ public static class SaveFile
         }
 
         string path = Path.Combine(Application.persistentDataPath, fileName);
-        Debug.Log("Loading file at: " + path);
+        //Debug.Log("Loading file at: " + path);
 
         try
         {
@@ -48,7 +48,7 @@ public static class SaveFile
 
                 using (FileStream stream = new FileStream(path, FileMode.Open))
                 {
-                    Debug.Log("File found, deserializing...");
+                    //Debug.Log("File found, deserializing...");
                     T data = (T)formatter.Deserialize(stream);
                     return data;
                 }

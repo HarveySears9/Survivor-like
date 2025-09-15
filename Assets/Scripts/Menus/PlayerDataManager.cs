@@ -19,10 +19,10 @@ public class PlayerDataManager : MonoBehaviour
             SkinData[] defaultSkins = new SkinData[]
             {
             new SkinData { owned = true, price = 0 },      // default Red
-            new SkinData { owned = false, price = 100 },   // Blue
-            new SkinData { owned = false, price = 500 },   // Black
-            new SkinData { owned = false, price = 750 },   // Gold
-            new SkinData { owned = false, price = 1000 }   // Teal
+            new SkinData { owned = false, price = 1000 },   // Blue
+            new SkinData { owned = false, price = 5000 },   // Black
+            new SkinData { owned = false, price = 7500 },   // Gold
+            new SkinData { owned = false, price = 10000 }   // Teal
             };
 
             if (data == null)
