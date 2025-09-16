@@ -55,6 +55,11 @@ public class NPCs : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        FacePlayer();
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         idle = true;
