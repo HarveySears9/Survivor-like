@@ -33,6 +33,9 @@ public class LobbyManager : MonoBehaviour
             case "Shop":
                 player.transform.position = spawnLocations[3].position;
                 break;
+            case "Mirror":
+                player.transform.position = spawnLocations[4].position;
+                break;
 
             default:
                 // Fallback location

@@ -112,7 +112,7 @@ public class SkinShop : MonoBehaviour
             // Update UI + equipped skin
             RefreshShopUI();
             coinUI.UpdateCoins();
-            sm.ChangeBrickSkin(index);
+            //sm.ChangeBrickSkin(index);
 
             Debug.Log("Skin purchased, owned: " + data.skins[index].owned);
         }

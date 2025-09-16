@@ -871,6 +871,7 @@ MonoBehaviour:
   - {fileID: 269095655}
   - {fileID: 891357248}
   - {fileID: 733964945}
+  - {fileID: 290828529}
 --- !u!1 &206933997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1888,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!4 &290828529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6722810509336254413, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+  m_PrefabInstance: {fileID: 454009291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319188313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2082,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointGate
+      objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Color.b
       value: 0.06332594
@@ -2846,6 +2856,79 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5147743, y: 0.5416031}
   m_EdgeRadius: 0
+--- !u!1001 &454009291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointMirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: name
+      value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: sceneName
+      value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: enterButton
+      value: 
+      objectReference: {fileID: 1078154290}
+    - target: {fileID: 4043204583626191512, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9067008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7049692
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162478350747014547, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
 --- !u!1 &496882822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,6 +4177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointTavern
+      objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5439,6 +5526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointMissionBoard
+      objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -21077,6 +21168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointShop
+      objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -21971,6 +22066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925316021053945008, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: m_Name
+      value: SpawnPointLibrary
+      objectReference: {fileID: 0}
     - target: {fileID: 1937737348456188396, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -22147,6 +22246,7 @@ SceneRoots:
   - {fileID: 891357247}
   - {fileID: 1840773277}
   - {fileID: 1123445588}
+  - {fileID: 454009291}
   - {fileID: 4638909}
   - {fileID: 821320019}
   - {fileID: 404426524}
