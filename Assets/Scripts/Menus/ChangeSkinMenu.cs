@@ -21,6 +21,8 @@ public class ChangeSkinMenu : MonoBehaviour
 
     public Button equipButton;
 
+    public GameObject[] locks;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,15 @@ public class ChangeSkinMenu : MonoBehaviour
 
         if (equipButton != null) equipButton.interactable = false;
         if (equipButton != null) equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+
+
+        for (int i = 0; i < locks.Length; i++)
+        {
+            if (!data.skins[i].owned)
+            {
+                locks[i].SetActive(true);
+            }
+        }
     }
 
     public void OnSkinTabPressed(int index)
