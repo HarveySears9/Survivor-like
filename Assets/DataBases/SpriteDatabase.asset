@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795c5afb4815f5546b833460aecea973, type: 3}
   m_Name: SpriteDatabase
   m_EditorClassIdentifier: 
+  skinNames:
+  - B'Rick StoneHardd
+  - Blue B'Rick
+  - B'Rick Black
+  - GoldHardd
+  - MossStone
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}

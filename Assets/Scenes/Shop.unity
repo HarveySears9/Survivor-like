@@ -4730,7 +4730,7 @@ GameObject:
   - component: {fileID: 902242121}
   - component: {fileID: 902242120}
   m_Layer: 5
-  m_Name: SkinName
+  m_Name: SkinNameBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8446,7 +8446,7 @@ GameObject:
   - component: {fileID: 1559720339}
   - component: {fileID: 1559720338}
   m_Layer: 5
-  m_Name: SkinName
+  m_Name: SkinNameTeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9095,7 +9095,7 @@ GameObject:
   - component: {fileID: 1622513539}
   - component: {fileID: 1622513538}
   m_Layer: 5
-  m_Name: SkinName
+  m_Name: SkinNameGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9593,6 +9593,12 @@ MonoBehaviour:
   - {fileID: 1255285840}
   - {fileID: 1477416583}
   sm: {fileID: 743093919}
+  database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
+  skinNames:
+  - {fileID: 2138344178}
+  - {fileID: 902242120}
+  - {fileID: 1622513538}
+  - {fileID: 1559720338}
   coinUI: {fileID: 1773576814}
 --- !u!1 &1773576810
 GameObject:
@@ -11277,7 +11283,7 @@ GameObject:
   - component: {fileID: 2138344179}
   - component: {fileID: 2138344178}
   m_Layer: 5
-  m_Name: SkinName
+  m_Name: SkinNameBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

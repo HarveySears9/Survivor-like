@@ -15,7 +15,7 @@ public class ChangeSkinMenu : MonoBehaviour
 
     private int selectedIndex; // Stores Currently Selected Tab
 
-    public string[] skinNames; // Stores array of Names for Skins
+    private string[] skinNames; // Stores array of Names for Skins
 
     public TextMeshProUGUI nameText;
 
@@ -23,9 +23,14 @@ public class ChangeSkinMenu : MonoBehaviour
 
     public GameObject[] locks;
 
+    [Header("Sprite Database")]
+    public SpriteDatabase database;
+
     // Start is called before the first frame update
     void Start()
     {
+        skinNames = database.skinNames;
+
         SetUpMenu();
     }
 

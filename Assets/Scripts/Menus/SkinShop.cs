@@ -8,6 +8,11 @@ public class SkinShop : MonoBehaviour
     public GameObject[] buyButtons;         // Buttons to buy skins
     public TextMeshProUGUI[] skinPrices;    // Cost text for each skin
     public SkinManager sm;    // To change the brick skin
+    
+    [Header("Sprite Database")]
+    public SpriteDatabase database;
+
+    public TextMeshProUGUI[] skinNames;
 
     public CoinUI coinUI;
 
@@ -44,6 +49,13 @@ public class SkinShop : MonoBehaviour
                 btn.onClick.RemoveAllListeners();
                 btn.onClick.AddListener(() => BuySkin(skinIndex));
             }
+        }
+
+        //SkinNames Texts set based on database
+
+        for (int i = 0; i < skinNames.Length; i++)
+        {
+            skinNames[i].text = database.skinNames[i+1];
         }
     }
 
