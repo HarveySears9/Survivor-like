@@ -29,7 +29,7 @@ public class PlayerDataManager : MonoBehaviour
             {
                 // Create brand new data
                 data = new SaveFile.Data();
-                data.coins = 1000; // Testing
+                data.coins = 100000; // Testing
                 data.maxHPLevel = 0;
                 data.maxHP = 10;
                 data.speedLevel = 0;
