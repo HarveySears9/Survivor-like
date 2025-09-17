@@ -20,6 +20,8 @@ public class UpgradeMenu : MonoBehaviour
     public int baseSpeedUpgradeCost = 50;
     public int baseDamageUpgradeCost = 50;
 
+    public MenuDialogManager mdm;
+
     void OnEnable()
     {
         UpdateUI();
@@ -37,6 +39,11 @@ public class UpgradeMenu : MonoBehaviour
             data.maxHP += data.maxHPLevel + 1;
             PlayerDataManager.Instance.Save();
             UpdateUI();
+            mdm.OnInteraction();
+        }
+        else
+        {
+            mdm.OnBadInteraction();
         }
     }
 
@@ -51,6 +58,11 @@ public class UpgradeMenu : MonoBehaviour
             data.speedLevel++;
             PlayerDataManager.Instance.Save();
             UpdateUI();
+            mdm.OnInteraction();
+        }
+        else
+        {
+            mdm.OnBadInteraction();
         }
     }
 
@@ -65,6 +77,11 @@ public class UpgradeMenu : MonoBehaviour
             data.currentDamage++;
             PlayerDataManager.Instance.Save();
             UpdateUI();
+            mdm.OnInteraction();
+        }
+        else
+        {
+            mdm.OnBadInteraction();
         }
     }
 
@@ -81,8 +98,8 @@ public class UpgradeMenu : MonoBehaviour
         speedUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel))}";
         damageUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1))}";
 
-        hpUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
-        speedUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
-        damageUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
+        //hpUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
+        //speedUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
+        //damageUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
     }
 }

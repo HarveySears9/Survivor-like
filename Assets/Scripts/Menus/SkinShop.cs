@@ -16,6 +16,8 @@ public class SkinShop : MonoBehaviour
 
     public CoinUI coinUI;
 
+    public MenuDialogManager mdm;
+
     private SkinData[] skins;
 
     void OnEnable()
@@ -127,10 +129,13 @@ public class SkinShop : MonoBehaviour
             //sm.ChangeBrickSkin(index);
 
             Debug.Log("Skin purchased, owned: " + data.skins[index].owned);
+
+            mdm.OnInteraction();
         }
 
         else if (data.coins < data.skins[index].price)
         {
+            mdm.OnBadInteraction();
             Debug.Log("Not enough coins to buy this skin!");
         }
     }
