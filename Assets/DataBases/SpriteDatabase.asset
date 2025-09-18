@@ -17,7 +17,8 @@ MonoBehaviour:
   - Blue B'Rick
   - B'Rick Black
   - GoldHardd
-  - MossStone
+  - MosStone
+  - BrickY Bones
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -98,3 +99,19 @@ MonoBehaviour:
   - {fileID: -1804215287, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -663382733, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   tealDead: []
+  bone:
+  - {fileID: -926168172, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1770261063, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 52174885, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 655643188, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1405167280, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  boneMoving:
+  - {fileID: 2132740148, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1173737133, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1899545436, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -2011172903, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 889768312, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1115065850, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1657909765, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 376915585, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  boneDead: []
