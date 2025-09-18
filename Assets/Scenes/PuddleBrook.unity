@@ -872,6 +872,7 @@ MonoBehaviour:
   - {fileID: 891357248}
   - {fileID: 733964945}
   - {fileID: 290828529}
+  - {fileID: 1123445589}
 --- !u!1 &206933997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,7 +5651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: sceneName
-      value: Shop
+      value: MissionBoard
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: enterButton
@@ -5773,6 +5774,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+--- !u!4 &1123445589 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6722810509336254413, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+  m_PrefabInstance: {fileID: 1123445588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135057630
 GameObject:
   m_ObjectHideFlags: 0
