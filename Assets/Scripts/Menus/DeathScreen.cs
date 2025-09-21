@@ -34,6 +34,11 @@ public class DeathScreen : MonoBehaviour
 
         int minutes = Mathf.FloorToInt(gt.elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(gt.elapsedTime % 60f);
+
+        MissionManager.Instance.AddProgress($"time_Survived", seconds);
+
+        MissionManager.Instance.AddProgress($"coins_Collected", pc.coins);
+
         timerText.text = $"Time Survived:\n{minutes:D2}:{seconds:D2}";
 
         killsText.text =

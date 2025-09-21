@@ -102,7 +102,7 @@ public class Boss : MonoBehaviour
                 isDead = true;
                 // Trigger the EnemyDeathEventManager
                 EnemyDeathEventManager.BossDied(transform.position, drops);
-                ChallengeEvents.EnemyDefeated(EnemyType.Boss);
+                MissionManager.Instance.AddProgress($"kill_Boss");
 
                 Destroy(gameObject);
             }

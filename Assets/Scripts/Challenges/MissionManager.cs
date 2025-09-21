@@ -75,6 +75,16 @@ public class MissionManager : MonoBehaviour
                 type = ChallengeType.Daily
             });
 
+            data.activeMissions.Add(new Mission
+            {
+                missionText = "Survive for 2 minutes",
+                targetAmount = 120,
+                key = "time_Survived",
+                rewardType = RewardType.Coins,
+                rewardAmount = 150,
+                type = ChallengeType.Daily
+            });
+
             lastDailyReset = DateTime.Now;
             data.lastDailyReset = lastDailyReset;
             generateNewMissions = true;
@@ -95,6 +105,16 @@ public class MissionManager : MonoBehaviour
                 key = "kill_Boss",
                 rewardType = RewardType.Coins,
                 rewardAmount = 500,
+                type = ChallengeType.Weekly
+            });
+
+            data.activeMissions.Add(new Mission
+            {
+                missionText = "Collect 200 Coins",
+                targetAmount = 200,
+                key = "coins_Collected",
+                rewardType = RewardType.Coins,
+                rewardAmount = 130,
                 type = ChallengeType.Weekly
             });
 
