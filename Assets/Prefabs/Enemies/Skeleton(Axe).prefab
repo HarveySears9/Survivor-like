@@ -189,6 +189,7 @@ MonoBehaviour:
   speed: 1
   damage: 3
   playerTransform: {fileID: 0}
+  enemyType: 1
 --- !u!61 &5426787255784151460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,4 +285,5 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.2
   isMoving: 0
-  syncWith: []
+  destroyOnFinish: 0
+  masterSprite: {fileID: 0}

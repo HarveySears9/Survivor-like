@@ -79,5 +79,8 @@ public static class SaveFile
         public int currentDamage;
         public int speedLevel;
         public SkinData[] skins;
+        public List<Mission> activeMissions;
+        public DateTime lastDailyReset;
+        public DateTime lastWeeklyReset;
     }
 }

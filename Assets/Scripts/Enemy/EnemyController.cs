@@ -1,5 +1,15 @@
 using UnityEngine;
 
+public enum EnemyType
+{
+    Goblin,
+    Skeleton,
+    Boss,
+    Other
+    // add more as you go
+}
+
+
 public class EnemyController : MonoBehaviour
 {
     public float health = 1f;         // Enemy health
@@ -8,6 +18,8 @@ public class EnemyController : MonoBehaviour
     public Transform playerTransform; // Reference to the player's position
     private Vector2 direction;        // Direction vector for movement
     private Rigidbody2D rb;           // Rigidbody for physics-based movement
+
+    public EnemyType enemyType;
 
     private float currentSpeed;       // Current speed (used for slowing effects)
     private float originalSpeed;      // Original speed for resetting after slow
@@ -79,6 +91,7 @@ void OnTriggerEnter2D(Collider2D other)
         {
             // Trigger the EnemyDeathEventManager
             EnemyDeathEventManager.EnemyDied(transform.position);
+            ChallengeEvents.EnemyDefeated(enemyType);
             Destroy(gameObject);
         }
     }
