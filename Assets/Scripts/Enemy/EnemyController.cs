@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
     }
 
 
-void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -91,7 +91,7 @@ void OnTriggerEnter2D(Collider2D other)
         {
             // Trigger the EnemyDeathEventManager
             EnemyDeathEventManager.EnemyDied(transform.position);
-            ChallengeEvents.EnemyDefeated(enemyType);
+            MissionManager.Instance.AddProgress($"kill_{enemyType}");
             Destroy(gameObject);
         }
     }

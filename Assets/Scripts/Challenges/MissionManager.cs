@@ -58,6 +58,8 @@ public class MissionManager : MonoBehaviour
             data.activeMissions.Add(new Mission
             {
                 missionText = "Defeat 100 Goblins",
+                targetAmount = 100, 
+                key = "kill_Goblin",
                 rewardType = RewardType.Coins,
                 rewardAmount = 110,
                 type = ChallengeType.Daily
@@ -66,6 +68,8 @@ public class MissionManager : MonoBehaviour
             data.activeMissions.Add(new Mission
             {
                 missionText = "Defeat 50 Skeletons",
+                targetAmount = 50,
+                key = "kill_Skeleton",
                 rewardType = RewardType.Coins,
                 rewardAmount = 150,
                 type = ChallengeType.Daily
@@ -87,6 +91,8 @@ public class MissionManager : MonoBehaviour
             data.activeMissions.Add(new Mission
             {
                 missionText = "Defeat 1 Boss",
+                targetAmount = 1,
+                key = "kill_Boss",
                 rewardType = RewardType.Coins,
                 rewardAmount = 500,
                 type = ChallengeType.Weekly
@@ -109,5 +115,24 @@ public class MissionManager : MonoBehaviour
         {
             Debug.Log($"[{mission.type}] {mission.missionText} - Reward: {mission.rewardAmount} coins");
         }
+    }
+
+    public void AddProgress(string key, int amount = 1)
+    {
+        var data = PlayerDataManager.Instance.data;
+        foreach (var mission in data.activeMissions)
+        {
+            if (mission.key == key && !mission.completed)
+            {
+                mission.currentAmount += amount;
+                if (mission.currentAmount >= mission.targetAmount)
+                {
+                    mission.currentAmount = mission.targetAmount;
+                    mission.completed = true;
+                }
+            }
+        }
+
+        PlayerDataManager.Instance.Save();
     }
 }

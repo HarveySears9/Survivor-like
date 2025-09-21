@@ -1003,6 +1003,8 @@ MonoBehaviour:
   rewardAmount: {fileID: 1851712318167001101}
   missionGFX: {fileID: 685680370928830527}
   claimButton: {fileID: 1119791240773946950}
+  progressSlider: {fileID: 6492476190585828826}
+  progressText: {fileID: 6631518533279104431}
 --- !u!1 &7120052290050477870
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,4 +10,7 @@ public class MissionUIPrefab : MonoBehaviour
     public TextMeshProUGUI rewardAmount;
     public Image missionGFX;
     public Button claimButton;
+    [Header("Progress UI")]
+    public Slider progressSlider;      // Reference to the slider component
+    public TextMeshProUGUI progressText;
 }
