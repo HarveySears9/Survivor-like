@@ -1,61 +1,59 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class MissionUI : MonoBehaviour
 {
-    /*
-    public TextMeshProUGUI missionText;
-    public Slider progressBar;
-    public TextMeshProUGUI progressPercent;
-    public Button claimButton;
-    public Image rewardImage;
-    public TextMeshProUGUI rewardText;
+    public Sprite coinGFX;
 
-    private Mission mission;
+    [Header("Scroll Contents")]
+    public Transform dailyScrollContent;
+    public Transform weeklyScrollContent;
 
-    public void SetMission(Mission m)
+    public GameObject missionUIPrefab;
+
+    private List<GameObject> spawnedMissions = new List<GameObject>();
+
+    void Start()
     {
-        mission = m;
-        Refresh();
+        RefreshMissionUI();
     }
 
-    public void Refresh()
+    public void RefreshMissionUI()
     {
-        if (mission == null) return;
+        // Clear old UI
+        foreach (var go in spawnedMissions)
+            Destroy(go);
+        spawnedMissions.Clear();
 
-        missionText.text = mission.missionText;
-        progressBar.value = mission.Progress01;
-        progressPercent.text = $"{mission.currentAmount}/{mission.targetAmount}";
-        rewardImage.sprite = mission.rewardImage;
-        rewardText.text = mission.rewardText;
+        var missions = PlayerDataManager.Instance.data.activeMissions;
 
-        claimButton.interactable = mission.completed && !mission.claimed;
-    }
-
-    public void OnClaim()
-    {
-        if (mission != null && mission.completed && !mission.claimed)
+        foreach (var mission in missions)
         {
-            mission.claimed = true;
+            // Choose parent based on type
+            Transform parent = mission.type == ChallengeType.Daily ? dailyScrollContent : weeklyScrollContent;
 
-            // Give reward here
-            if (mission.rewardText.StartsWith("x")) // coins
+            GameObject instance = Instantiate(missionUIPrefab, parent);
+            spawnedMissions.Add(instance);
+
+            MissionUIPrefab ui = instance.GetComponent<MissionUIPrefab>();
+            if (ui != null)
             {
-                int coins = int.Parse(mission.rewardText.Substring(1));
-                PlayerDataManager.Instance.data.coins += coins;
-            }
-            else if (mission.rewardText.Contains("Skin"))
-            {
-                // Example: unlock gold skin
-                PlayerDataManager.Instance.data.skins[3].owned = true;
-            }
+                ui.MissionText.text = mission.missionText;
+                if (mission.rewardType == RewardType.Coins)
+                {
+                    ui.missionGFX.sprite = coinGFX;
+                    ui.rewardAmount.text = "x" + mission.rewardAmount;
+                }
 
-            PlayerDataManager.Instance.Save();
-
-            Debug.Log($"Claimed reward: {mission.rewardText}");
-            Refresh();
+                /*ui.claimButton.interactable = !mission.claimed;
+                ui.claimButton.onClick.RemoveAllListeners();
+                ui.claimButton.onClick.AddListener(() =>
+                {
+                    ClaimMission(mission, ui);
+                });*/
+            }
         }
     }
-    */
 }
