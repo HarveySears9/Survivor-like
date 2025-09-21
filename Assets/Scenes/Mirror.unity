@@ -3053,6 +3053,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!1 &1025238026
 GameObject:
@@ -7988,6 +7989,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.15
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1408364817
 SpriteRenderer:
@@ -10599,6 +10601,8 @@ MonoBehaviour:
   - {fileID: 2048939207}
   - {fileID: 1735227915}
   - {fileID: 2108950995}
+  puffPrefab: {fileID: 314746695697151484, guid: 1c16a8bf02fe5c645b59f4135c47172e, type: 3}
+  brickTransform: {fileID: 1021901963}
   database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
 --- !u!1 &2048274598
 GameObject:

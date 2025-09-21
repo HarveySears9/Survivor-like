@@ -11,6 +11,8 @@ public class AnimateSprite : MonoBehaviour
     public float animationSpeed = 0.25f; // Time between sprite updates
     public bool isMoving = false;
 
+    public bool destroyOnFinish = false;
+
     // Reference to another AnimateSprite instance to sync with
     public AnimateSprite masterSprite;
 
@@ -49,6 +51,11 @@ public class AnimateSprite : MonoBehaviour
         else
         {
             currentIndex = (currentIndex + 1) % (isMoving ? moveArray.Length : spriteArray.Length);
+        }
+
+        if(currentIndex == 0 && destroyOnFinish)
+        {
+            Destroy(gameObject);
         }
 
         spriteRenderer.sprite = isMoving ? moveArray[currentIndex] : spriteArray[currentIndex];

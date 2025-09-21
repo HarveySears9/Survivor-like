@@ -23,6 +23,10 @@ public class ChangeSkinMenu : MonoBehaviour
 
     public GameObject[] locks;
 
+
+    public GameObject puffPrefab;
+    public Transform brickTransform;
+
     [Header("Sprite Database")]
     public SpriteDatabase database;
 
@@ -33,6 +37,21 @@ public class ChangeSkinMenu : MonoBehaviour
 
         SetUpMenu();
     }
+
+    IEnumerator EquipWithPuff(int index)
+    {
+        // Spawn puff
+        Vector3 spawnPos = brickTransform.position + new Vector3(0f, -0.25f, 0f);
+        GameObject puff = Instantiate(puffPrefab, spawnPos, Quaternion.identity);
+
+
+        // Optional: wait until puff is "big enough"
+        yield return new WaitForSeconds(0.3f);
+
+        // Change skin after puff
+        sm.ChangeBrickSkin(index);
+    }
+
 
     void SetUpMenu()
     {
@@ -94,7 +113,7 @@ public class ChangeSkinMenu : MonoBehaviour
         var data = PlayerDataManager.Instance?.data;
         if (data.skins[selectedIndex].owned)
         {
-            EquipSkin(selectedIndex);
+            StartCoroutine(EquipWithPuff(selectedIndex));
             if (equipButton != null) equipButton.interactable = false;
             if (equipButton != null) equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
         }
