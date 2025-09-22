@@ -62,6 +62,26 @@ public class MissionUI : MonoBehaviour
                 });
             }
         }
+
+        ResizeContent(dailyScrollContent);
+        ResizeContent(weeklyScrollContent);
+    }
+
+    private void ResizeContent(Transform scrollContent)
+    {
+        int childCount = scrollContent.transform.childCount;
+        float elementHeight = 500f; // your prefab’s height
+        float spacing = 50f;             // optional, if using a VerticalLayoutGroup
+
+        float newHeight = (childCount * elementHeight) + (childCount - 1) * spacing + 350f;
+
+        RectTransform rt = scrollContent.GetComponent<RectTransform>();
+        if (rt != null)
+        {
+            Vector2 size = rt.sizeDelta;
+            size.y = newHeight;
+            rt.sizeDelta = size;
+        }
     }
 
     public void Home()
