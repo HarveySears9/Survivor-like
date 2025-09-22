@@ -6,6 +6,9 @@ public class MissionManager : MonoBehaviour
 {
     public static MissionManager Instance;
 
+    [Header("Database Reference")]
+    public MissionDatabase missionDatabase;
+
     private DateTime lastDailyReset;
     private DateTime lastWeeklyReset;
 
@@ -55,35 +58,8 @@ public class MissionManager : MonoBehaviour
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Daily);
 
             // Add new daily missions
-            data.activeMissions.Add(new Mission
-            {
-                missionText = "Defeat 100 Goblins",
-                targetAmount = 100, 
-                key = "kill_Goblin",
-                rewardType = RewardType.Coins,
-                rewardAmount = 110,
-                type = ChallengeType.Daily
-            });
-
-            data.activeMissions.Add(new Mission
-            {
-                missionText = "Defeat 50 Skeletons",
-                targetAmount = 50,
-                key = "kill_Skeleton",
-                rewardType = RewardType.Coins,
-                rewardAmount = 150,
-                type = ChallengeType.Daily
-            });
-
-            data.activeMissions.Add(new Mission
-            {
-                missionText = "Survive for 2 minutes",
-                targetAmount = 120,
-                key = "time_Survived",
-                rewardType = RewardType.Coins,
-                rewardAmount = 150,
-                type = ChallengeType.Daily
-            });
+            // Pick 4 random daily missions
+            AddRandomMissions(missionDatabase.dailyMissions, ChallengeType.Daily, 4, data.activeMissions);
 
             lastDailyReset = DateTime.Now;
             data.lastDailyReset = lastDailyReset;
@@ -98,25 +74,9 @@ public class MissionManager : MonoBehaviour
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Weekly);
 
             // Add new weekly missions
-            data.activeMissions.Add(new Mission
-            {
-                missionText = "Defeat 1 Boss",
-                targetAmount = 1,
-                key = "kill_Boss",
-                rewardType = RewardType.Coins,
-                rewardAmount = 500,
-                type = ChallengeType.Weekly
-            });
+            // Pick 4 random weekly missions
+            AddRandomMissions(missionDatabase.weeklyMissions, ChallengeType.Weekly, 4, data.activeMissions);
 
-            data.activeMissions.Add(new Mission
-            {
-                missionText = "Collect 200 Coins",
-                targetAmount = 200,
-                key = "coins_Collected",
-                rewardType = RewardType.Coins,
-                rewardAmount = 130,
-                type = ChallengeType.Weekly
-            });
 
             lastWeeklyReset = DateTime.Now;
             data.lastWeeklyReset = lastWeeklyReset;
@@ -126,6 +86,35 @@ public class MissionManager : MonoBehaviour
         if (generateNewMissions)
         {
             PlayerDataManager.Instance.Save();
+        }
+    }
+
+    void AddRandomMissions(Mission[] sourceArray, ChallengeType type, int count, List<Mission> targetList)
+    {
+        if (sourceArray == null || sourceArray.Length == 0)
+            return;
+
+        // Make a copy of source array so we don’t modify the original
+        List<Mission> pool = new List<Mission>(sourceArray);
+
+        for (int i = 0; i < count && pool.Count > 0; i++)
+        {
+            int index = UnityEngine.Random.Range(0, pool.Count);
+            Mission chosen = new Mission
+            {
+                missionText = pool[index].missionText,
+                key = pool[index].key,
+                targetAmount = pool[index].targetAmount,
+                rewardType = pool[index].rewardType,
+                rewardAmount = pool[index].rewardAmount,
+                type = type,
+                completed = false,
+                claimed = false,
+                currentAmount = 0
+            };
+
+            targetList.Add(chosen);
+            pool.RemoveAt(index);
         }
     }
 

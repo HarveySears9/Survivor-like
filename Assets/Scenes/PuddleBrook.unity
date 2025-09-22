@@ -3671,7 +3671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af56412e83478e44be74367a4657f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMissions: []
+  missionDatabase: {fileID: 11400000, guid: df0e59cc89ebff84cbacbcfb0b91ef8f, type: 2}
 --- !u!4 &729023990
 Transform:
   m_ObjectHideFlags: 0
