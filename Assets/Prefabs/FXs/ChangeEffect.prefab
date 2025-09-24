@@ -108,7 +108,7 @@ MonoBehaviour:
   - {fileID: 1613468197, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
   moveArray: []
   animating: 1
-  animationSpeed: 0.1
+  animationSpeed: 0.075
   isMoving: 0
   destroyOnFinish: 1
   masterSprite: {fileID: 0}

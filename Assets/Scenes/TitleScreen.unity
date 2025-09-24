@@ -1219,6 +1219,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &472836245
 SpriteRenderer:
@@ -2065,6 +2066,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1055574236
 SpriteRenderer:
@@ -2293,6 +2295,7 @@ MonoBehaviour:
     currentDamage: 0
     speedLevel: 0
     skins: []
+    activeMissions: []
 --- !u!4 &1102254858
 Transform:
   m_ObjectHideFlags: 0
@@ -2449,6 +2452,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1152894473
 SpriteRenderer:
@@ -2876,6 +2880,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1299701464
 SpriteRenderer:
@@ -3004,6 +3009,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!114 &1320306909
 MonoBehaviour:
@@ -3126,6 +3132,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1337817679
 SpriteRenderer:
@@ -3421,6 +3428,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1503674939
 SpriteRenderer:
@@ -3632,6 +3640,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!212 &1823969965
 SpriteRenderer:
@@ -3742,6 +3751,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!114 &1982446928
 MonoBehaviour:

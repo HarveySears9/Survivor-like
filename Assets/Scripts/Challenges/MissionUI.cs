@@ -21,6 +21,8 @@ public class MissionUI : MonoBehaviour
     void Start()
     {
         RefreshMissionUI();
+        ResizeContent(dailyScrollContent);
+        ResizeContent(weeklyScrollContent);
     }
 
     public void RefreshMissionUI()
@@ -58,13 +60,21 @@ public class MissionUI : MonoBehaviour
                 ui.claimButton.onClick.RemoveAllListeners();
                 ui.claimButton.onClick.AddListener(() =>
                 {
-                    //ClaimMission(mission, ui);
+                    MissionManager.Instance.ClaimMission(mission);
                 });
+                
+                ui.claimButton.interactable = !mission.claimed && mission.completed;
+
+                var buttonText = ui.claimButton.GetComponentInChildren<TextMeshProUGUI>();
+                if (mission.claimed)
+                    buttonText.text = "Claimed";
+                else if (mission.completed)
+                    buttonText.text = "Claim";
+                else
+                    buttonText.text = "Incomplete";
+
             }
         }
-
-        ResizeContent(dailyScrollContent);
-        ResizeContent(weeklyScrollContent);
     }
 
     private void ResizeContent(Transform scrollContent)

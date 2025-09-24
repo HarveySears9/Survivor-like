@@ -144,4 +144,44 @@ public class MissionManager : MonoBehaviour
 
         PlayerDataManager.Instance.Save();
     }
+
+    public void ClaimMission(Mission mission)
+    {
+        var data = PlayerDataManager.Instance.data;
+
+        if (mission == null)
+            return;
+
+        if (!mission.completed || mission.claimed)
+        {
+            Debug.Log("Mission not claimable yet!");
+            return;
+        }
+
+        // Mark as claimed
+        mission.claimed = true;
+
+        // Grant reward
+        switch (mission.rewardType)
+        {
+            case RewardType.Coins:
+                data.coins += mission.rewardAmount;
+                Debug.Log($"Player gained {mission.rewardAmount} coins!");
+                break;
+
+            case RewardType.Skin:
+                if (mission.rewardAmount >= 0 && mission.rewardAmount < data.skins.Length)
+                {
+                    data.skins[mission.rewardAmount].owned = true;
+                    Debug.Log($"Player unlocked skin {mission.rewardAmount}!");
+                }
+                break;
+        }
+
+        // Save progress
+        PlayerDataManager.Instance.Save();
+
+        // Refresh UI
+        FindObjectOfType<MissionUI>()?.RefreshMissionUI();
+    }
 }
