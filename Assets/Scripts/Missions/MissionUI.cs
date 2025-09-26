@@ -3,10 +3,16 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MissionUI : MonoBehaviour
 {
     public SceneTransitionController stc;
+
+    [Header("Timers")]
+    public TextMeshProUGUI dailyTimerText;
+    public TextMeshProUGUI weeklyTimerText;
+
 
     public Sprite coinGFX;
 
@@ -24,6 +30,27 @@ public class MissionUI : MonoBehaviour
         ResizeContent(dailyScrollContent);
         ResizeContent(weeklyScrollContent);
     }
+
+    void Update()
+    {
+        var data = PlayerDataManager.Instance.data;
+
+        // DAILY TIMER
+        DateTime nextDailyReset = data.lastDailyReset.Date.AddDays(1); // next midnight
+        TimeSpan dailyRemaining = nextDailyReset - DateTime.Now;
+        if (dailyRemaining.TotalSeconds < 0) dailyRemaining = TimeSpan.Zero;
+
+        dailyTimerText.text = $"Cooldown:\n{dailyRemaining.Hours:D2}:{dailyRemaining.Minutes:D2}:{dailyRemaining.Seconds:D2}";
+
+        // WEEKLY TIMER
+        int daysUntilMonday = ((int)DayOfWeek.Monday - (int)DateTime.Today.DayOfWeek + 7) % 7;
+        DateTime nextWeeklyReset = DateTime.Today.AddDays(daysUntilMonday).Date;
+        TimeSpan weeklyRemaining = nextWeeklyReset - DateTime.Now;
+        if (weeklyRemaining.TotalSeconds < 0) weeklyRemaining = TimeSpan.Zero;
+
+        weeklyTimerText.text = $"Cooldown:\n{weeklyRemaining.Days}d {weeklyRemaining.Hours:D2}:{weeklyRemaining.Minutes:D2}:{weeklyRemaining.Seconds:D2}";
+    }
+
 
     public void RefreshMissionUI()
     {

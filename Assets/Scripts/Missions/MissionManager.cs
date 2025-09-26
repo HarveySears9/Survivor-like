@@ -47,39 +47,47 @@ public class MissionManager : MonoBehaviour
     void CheckAndGenerateMissions()
     {
         var data = PlayerDataManager.Instance.data;
-
         bool generateNewMissions = false;
 
-        // Daily reset
-        if ((DateTime.Now - lastDailyReset).TotalHours >= 24 ||
-        !data.activeMissions.Exists(m => m.type == ChallengeType.Daily))
+        DateTime now = DateTime.Now;
+
+        // --- DAILY RESET ---
+        // Next midnight after lastDailyReset
+        DateTime nextDailyReset = lastDailyReset.Date.AddDays(1);
+
+        if (now >= nextDailyReset || !data.activeMissions.Exists(m => m.type == ChallengeType.Daily))
         {
             // Remove any existing daily missions
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Daily);
 
-            // Add new daily missions
-            // Pick 4 random daily missions
+            // Add 4 new daily missions from database
             AddRandomMissions(missionDatabase.dailyMissions, ChallengeType.Daily, 4, data.activeMissions);
 
-            lastDailyReset = DateTime.Now;
+            // Update reset times
+            lastDailyReset = now.Date; // today at 00:00
             data.lastDailyReset = lastDailyReset;
+
             generateNewMissions = true;
         }
 
-        // Weekly reset
-        if ((DateTime.Now - lastWeeklyReset).TotalDays >= 7 ||
-        !data.activeMissions.Exists(m => m.type == ChallengeType.Weekly))
+        // --- WEEKLY RESET ---
+        // Find the Monday midnight after lastWeeklyReset
+        int daysUntilMonday = ((int)DayOfWeek.Monday - (int)lastWeeklyReset.DayOfWeek + 7) % 7;
+        DateTime nextWeeklyReset = lastWeeklyReset.Date.AddDays(daysUntilMonday == 0 ? 7 : daysUntilMonday);
+
+        if (now >= nextWeeklyReset || !data.activeMissions.Exists(m => m.type == ChallengeType.Weekly))
         {
             // Remove any existing weekly missions
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Weekly);
 
-            // Add new weekly missions
-            // Pick 4 random weekly missions
+            // Add 4 new weekly missions from database
             AddRandomMissions(missionDatabase.weeklyMissions, ChallengeType.Weekly, 4, data.activeMissions);
 
-
-            lastWeeklyReset = DateTime.Now;
+            // Update reset times (last Monday midnight)
+            int daysSinceMonday = ((int)now.DayOfWeek - (int)DayOfWeek.Monday + 7) % 7;
+            lastWeeklyReset = now.Date.AddDays(-daysSinceMonday);
             data.lastWeeklyReset = lastWeeklyReset;
+
             generateNewMissions = true;
         }
 
@@ -88,6 +96,7 @@ public class MissionManager : MonoBehaviour
             PlayerDataManager.Instance.Save();
         }
     }
+
 
     void AddRandomMissions(Mission[] sourceArray, ChallengeType type, int count, List<Mission> targetList)
     {
