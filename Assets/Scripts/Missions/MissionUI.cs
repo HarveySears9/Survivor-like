@@ -15,20 +15,26 @@ public class MissionUI : MonoBehaviour
 
 
     public Sprite coinGFX;
+    public SpriteDatabase database;
 
     [Header("Scroll Contents")]
     public Transform dailyScrollContent;
     public Transform weeklyScrollContent;
+    public Transform challengeScrollContent;
 
     public GameObject missionUIPrefab;
 
     private List<GameObject> spawnedMissions = new List<GameObject>();
 
+    private Dictionary<int, Sprite> skinIcons;
+
     void Start()
     {
+        BuildSkinIconDictionary();
         RefreshMissionUI();
         ResizeContent(dailyScrollContent);
         ResizeContent(weeklyScrollContent);
+        ResizeContent(challengeScrollContent);
     }
 
     void Update()
@@ -51,6 +57,18 @@ public class MissionUI : MonoBehaviour
         weeklyTimerText.text = $"Cooldown:\n{weeklyRemaining.Days}d {weeklyRemaining.Hours:D2}:{weeklyRemaining.Minutes:D2}:{weeklyRemaining.Seconds:D2}";
     }
 
+    private void BuildSkinIconDictionary()
+    {
+        skinIcons = new Dictionary<int, Sprite>
+        {
+            { 0, database.red.Length > 0 ? database.red[0] : null },
+            { 1, database.blue.Length > 0 ? database.blue[0] : null },
+            { 2, database.black.Length > 0 ? database.black[0] : null },
+            { 3, database.gold.Length > 0 ? database.gold[0] : null },
+            { 4, database.teal.Length > 0 ? database.teal[0] : null },
+            { 5, database.bone.Length > 0 ? database.bone[0] : null }
+        };
+    }
 
     public void RefreshMissionUI()
     {
@@ -64,7 +82,13 @@ public class MissionUI : MonoBehaviour
         foreach (var mission in missions)
         {
             // Choose parent based on type
-            Transform parent = mission.type == ChallengeType.Daily ? dailyScrollContent : weeklyScrollContent;
+            Transform parent = mission.type switch
+            {
+                ChallengeType.Daily => dailyScrollContent,
+                ChallengeType.Weekly => weeklyScrollContent,
+                ChallengeType.Challenge => challengeScrollContent,
+                _ => dailyScrollContent
+            };
 
             GameObject instance = Instantiate(missionUIPrefab, parent);
             spawnedMissions.Add(instance);
@@ -77,6 +101,29 @@ public class MissionUI : MonoBehaviour
                 {
                     ui.missionGFX.sprite = coinGFX;
                     ui.rewardAmount.text = "x" + mission.rewardAmount;
+                }
+                else if (mission.rewardType == RewardType.Skin)
+                {
+                    if (skinIcons != null && skinIcons.TryGetValue(mission.rewardAmount, out var skinSprite))
+                    {
+                        ui.missionGFX.sprite = skinSprite;
+                        RectTransform rt = ui.missionGFX.GetComponent<RectTransform>();
+                        if (rt != null)
+                        {
+                            Vector3 scale = rt.localScale;
+                            scale = new Vector3(4.25f, 4.25f, 1f);
+                            rt.localScale = scale;
+
+                            Vector3 pos = rt.localPosition;
+                            pos.y = 50f;
+                            rt.localPosition = pos;
+                        }
+                    }
+                    else
+                    {
+                        ui.missionGFX.sprite = null; // fallback if index not found
+                        Debug.LogWarning($"No skin icon found for index {mission.rewardAmount}");
+                    }
                 }
 
                 ui.progressSlider.value = mission.Progress01;   // value between 0 and 1

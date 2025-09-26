@@ -52,43 +52,61 @@ public class MissionManager : MonoBehaviour
         DateTime now = DateTime.Now;
 
         // --- DAILY RESET ---
-        // Next midnight after lastDailyReset
         DateTime nextDailyReset = lastDailyReset.Date.AddDays(1);
-
         if (now >= nextDailyReset || !data.activeMissions.Exists(m => m.type == ChallengeType.Daily))
         {
-            // Remove any existing daily missions
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Daily);
-
-            // Add 4 new daily missions from database
             AddRandomMissions(missionDatabase.dailyMissions, ChallengeType.Daily, 4, data.activeMissions);
 
-            // Update reset times
-            lastDailyReset = now.Date; // today at 00:00
+            lastDailyReset = now.Date;
             data.lastDailyReset = lastDailyReset;
 
             generateNewMissions = true;
         }
 
         // --- WEEKLY RESET ---
-        // Find the Monday midnight after lastWeeklyReset
         int daysUntilMonday = ((int)DayOfWeek.Monday - (int)lastWeeklyReset.DayOfWeek + 7) % 7;
         DateTime nextWeeklyReset = lastWeeklyReset.Date.AddDays(daysUntilMonday == 0 ? 7 : daysUntilMonday);
 
         if (now >= nextWeeklyReset || !data.activeMissions.Exists(m => m.type == ChallengeType.Weekly))
         {
-            // Remove any existing weekly missions
             data.activeMissions.RemoveAll(m => m.type == ChallengeType.Weekly);
-
-            // Add 4 new weekly missions from database
             AddRandomMissions(missionDatabase.weeklyMissions, ChallengeType.Weekly, 4, data.activeMissions);
 
-            // Update reset times (last Monday midnight)
             int daysSinceMonday = ((int)now.DayOfWeek - (int)DayOfWeek.Monday + 7) % 7;
             lastWeeklyReset = now.Date.AddDays(-daysSinceMonday);
             data.lastWeeklyReset = lastWeeklyReset;
 
             generateNewMissions = true;
+        }
+
+        // --- CHALLENGE MISSIONS ---
+        // Add any new ones from database that don’t exist yet
+        if (missionDatabase.challengeMissions != null)
+        {
+            foreach (var dbMission in missionDatabase.challengeMissions)
+            {
+                bool alreadyExists = data.activeMissions.Exists(m => m.type == ChallengeType.Challenge && m.id == dbMission.id);
+
+                if (!alreadyExists)
+                {
+                    Mission newMission = new Mission
+                    {
+                        id = dbMission.id,
+                        missionText = dbMission.missionText,
+                        key = dbMission.key,
+                        targetAmount = dbMission.targetAmount,
+                        rewardType = dbMission.rewardType,
+                        rewardAmount = dbMission.rewardAmount,
+                        type = ChallengeType.Challenge,
+                        completed = false,
+                        claimed = false,
+                        currentAmount = 0
+                    };
+                    data.activeMissions.Add(newMission);
+                    generateNewMissions = true;
+                }
+            }
         }
 
         if (generateNewMissions)

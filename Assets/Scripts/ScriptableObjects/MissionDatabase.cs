@@ -10,4 +10,7 @@ public class MissionDatabase : ScriptableObject
 
     [Header("Weekly Missions")]
     public Mission[] weeklyMissions;
+
+    [Header("Challenge Missions")]
+    public Mission[] challengeMissions;
 }

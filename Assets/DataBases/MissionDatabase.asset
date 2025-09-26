@@ -86,3 +86,13 @@ MonoBehaviour:
     type: 1
     claimed: 0
     completed: 0
+  challengeMissions:
+  - missionText: Defeat 1 Skeleton
+    rewardType: 1
+    key: kill_Skeleton
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 5
+    type: 2
+    claimed: 0
+    completed: 0

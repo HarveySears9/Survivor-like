@@ -1,11 +1,12 @@
 using UnityEngine;
 
 public enum RewardType { Coins, Skin }
-public enum ChallengeType { Daily, Weekly, Special }
+public enum ChallengeType { Daily, Weekly, Challenge }
 
 [System.Serializable]
 public class Mission
 {
+    public int id;            //for tracking Challenge missions existance
     public string missionText;       // e.g. "Defeat 100 Goblins"
     public RewardType rewardType;    // Coins or skins
     public string key;

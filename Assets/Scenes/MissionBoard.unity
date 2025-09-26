@@ -8231,8 +8231,10 @@ MonoBehaviour:
   dailyTimerText: {fileID: 1763859162}
   weeklyTimerText: {fileID: 1843370152}
   coinGFX: {fileID: 563492071, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
   dailyScrollContent: {fileID: 54338984}
   weeklyScrollContent: {fileID: 665474584}
+  challengeScrollContent: {fileID: 1127606307}
   missionUIPrefab: {fileID: 6844680939500489520, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
 --- !u!1 &2021553465
 GameObject:
