@@ -18,12 +18,12 @@ public class PlayerDataManager : MonoBehaviour
             // Always define your defaults
             SkinData[] defaultSkins = new SkinData[]
             {
-            new SkinData { owned = true, price = 0 },      // default Red
+            new SkinData { owned = true, price = 0, achievement = true },      // default Red
             new SkinData { owned = false, price = 1000 },   // Blue
             new SkinData { owned = false, price = 5000 },   // Black
             new SkinData { owned = false, price = 7500 },   // Gold
             new SkinData { owned = false, price = 10000 },   // Teal
-            new SkinData { owned = false, price = 20000 }       // Bone
+            new SkinData { owned = false, price = 0, achievement = true }       // Bone
             };
 
             if (data == null)

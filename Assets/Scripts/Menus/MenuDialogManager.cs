@@ -79,6 +79,7 @@ public class MenuDialogManager : MonoBehaviour
         dialogueBubble.SetActive(false);
 
         // Start the sequence
+        StopAllCoroutines();
         typingCoroutine = StartCoroutine(ShowDialogue(interactionLines[Random.Range(0, interactionLines.Length)]));
     }
 
@@ -91,6 +92,7 @@ public class MenuDialogManager : MonoBehaviour
         dialogueBubble.SetActive(false);
 
         // Start the sequence
+        StopAllCoroutines();
         typingCoroutine = StartCoroutine(ShowDialogue(badInteractionLines[Random.Range(0, badInteractionLines.Length)]));
     }
 }

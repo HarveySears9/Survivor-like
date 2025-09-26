@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class SkinShop : MonoBehaviour
 {
     [Header("UI References")]
-    public GameObject[] buyButtons;         // Buttons to buy skins
-    public TextMeshProUGUI[] skinPrices;    // Cost text for each skin
-    public SkinManager sm;    // To change the brick skin
-    
-    [Header("Sprite Database")]
+    public Transform shopContentParent;       // The ScrollView content panel
+    public GameObject shopItemPrefab;         // Prefab for each skin item
+
+    public SkinManager sm;
     public SpriteDatabase database;
-
-    public TextMeshProUGUI[] skinNames;
-
     public CoinUI coinUI;
-
     public MenuDialogManager mdm;
 
     private SkinData[] skins;
+    private List<GameObject> spawnedShopItems = new List<GameObject>();
+    private Dictionary<int, Sprite> skinIcons;
+
+
+    void Start()
+    {
+        ResizeContent(shopContentParent);
+    }
 
     void OnEnable()
     {
@@ -30,114 +34,122 @@ public class SkinShop : MonoBehaviour
 
         skins = PlayerDataManager.Instance.data.skins;
 
-        SetupButtons();
+        BuildSkinIconDictionary();
         RefreshShopUI();
     }
 
-    /// Automatically assign OnClick listeners to buttons with correct skin indices
-    private void SetupButtons()
+    private void BuildSkinIconDictionary()
     {
-        if (buyButtons == null || skins == null)
-            return;
-
-        int buttonCount = Mathf.Min(buyButtons.Length, skins.Length - 1); // skip default skin (index 0)
-
-        for (int i = 0; i < buttonCount; i++)
+        skinIcons = new Dictionary<int, Sprite>
         {
-            int skinIndex = i + 1; // +1 to skip default skin
-            Button btn = buyButtons[i].GetComponent<Button>();
-            if (btn != null)
-            {
-                btn.onClick.RemoveAllListeners();
-                btn.onClick.AddListener(() => BuySkin(skinIndex));
-            }
-        }
-
-        //SkinNames Texts set based on database
-
-        for (int i = 0; i < skinNames.Length; i++)
-        {
-            skinNames[i].text = database.skinNames[i+1];
-        }
+            { 0, database.red.Length > 0 ? database.red[0] : null },
+            { 1, database.blue.Length > 0 ? database.blue[0] : null },
+            { 2, database.black.Length > 0 ? database.black[0] : null },
+            { 3, database.gold.Length > 0 ? database.gold[0] : null },
+            { 4, database.teal.Length > 0 ? database.teal[0] : null },
+            { 5, database.bone.Length > 0 ? database.bone[0] : null }
+        };
     }
 
-    /// Refreshes button states and price texts
+    /// Clears and rebuilds the shop UI
     public void RefreshShopUI()
     {
-        if (skins == null || buyButtons == null || skinPrices == null)
-            return;
+        // Clear old items
+        foreach (var go in spawnedShopItems)
+            Destroy(go);
+        spawnedShopItems.Clear();
 
-        int buttonCount = Mathf.Min(buyButtons.Length, skins.Length - 1);
+        if (skins == null) return;
 
-        for (int i = 0; i < buttonCount; i++)
+        for (int i = 0; i < skins.Length; i++)
         {
-            int skinIndex = i + 1; // skip default skin
-            SkinData skin = skins[skinIndex];
+            SkinData skin = skins[i];
 
-            Button btn = buyButtons[i].GetComponent<Button>();
-            TextMeshProUGUI btnText = buyButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            TextMeshProUGUI priceText = i < skinPrices.Length ? skinPrices[i] : null;
+            // Skip achievement-only skins
+            if (skin.achievement)
+                continue;
 
-            if (skin.owned)
+            GameObject instance = Instantiate(shopItemPrefab, shopContentParent);
+            spawnedShopItems.Add(instance);
+
+            ShopItemUI ui = instance.GetComponent<ShopItemUI>();
+
+            if (ui != null)
             {
-                if (btn != null) btn.interactable = false;
-                if (btnText != null) btnText.text = "Owned";
-                if (priceText != null) priceText.gameObject.SetActive(false);
-            }
-            else
-            {
-                if (btn != null) btn.interactable = true;
-                if (btnText != null) btnText.text = "Buy";
-                if (priceText != null)
+                // Set name from database (if exists)
+                if (i < database.skinNames.Length)
+                    ui.skinNameText.text = database.skinNames[i];
+                else
+                    ui.skinNameText.text = $"Skin {i}";
+
+                ui.skinImage.sprite = skinIcons.ContainsKey(i) ? skinIcons[i] : null;
+
+                // Set button + price
+                if (skin.owned)
                 {
-                    priceText.gameObject.SetActive(true);
-                    priceText.text = "Cost: " + skin.price;
+                    ui.buyButton.interactable = false;
+                    ui.buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+                    ui.priceText.gameObject.SetActive(false);
+                }
+                else
+                {
+                    ui.buyButton.interactable = true;
+                    ui.buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Buy";
+                    ui.priceText.gameObject.SetActive(true);
+                    ui.priceText.text = "Cost: " + skin.price;
+
+                    int skinIndex = i; // capture loop variable
+                    ui.buyButton.onClick.RemoveAllListeners();
+                    ui.buyButton.onClick.AddListener(() => BuySkin(skinIndex));
                 }
             }
         }
     }
 
-    /// Buys a skin safely
+    /// Buys a skin
     public void BuySkin(int index)
     {
         var data = PlayerDataManager.Instance?.data;
 
-        if (data == null)
-        {
-            Debug.LogError("PlayerDataManager not initialized!");
-            return;
-        }
-
-        if (data.skins == null || index < 0 || index >= data.skins.Length)
+        if (data == null || data.skins == null || index < 0 || index >= data.skins.Length)
         {
             Debug.LogError($"Invalid skin index {index}");
             return;
         }
 
-        // Always work directly on the array reference
         if (!data.skins[index].owned && data.coins >= data.skins[index].price)
         {
             data.coins -= data.skins[index].price;
             data.skins[index].owned = true;
 
-            // Only this one
             PlayerDataManager.Instance.Save();
 
-            // Update UI + equipped skin
             RefreshShopUI();
             coinUI.UpdateCoins();
-            //sm.ChangeBrickSkin(index);
-
-            Debug.Log("Skin purchased, owned: " + data.skins[index].owned);
 
             mdm.OnInteraction();
         }
-
         else if (data.coins < data.skins[index].price)
         {
             mdm.OnBadInteraction();
             Debug.Log("Not enough coins to buy this skin!");
         }
     }
-}
 
+    private void ResizeContent(Transform scrollContent)
+    {
+        int childCount = scrollContent.transform.childCount;
+        float elementHeight = 550f; // your prefab’s height
+        float spacing = 50f;             // optional, if using a VerticalLayoutGroup
+
+        float newHeight = (childCount * elementHeight) + (childCount - 1) * spacing + 350f;
+
+        RectTransform rt = scrollContent.GetComponent<RectTransform>();
+        if (rt != null)
+        {
+            Vector2 size = rt.sizeDelta;
+            size.y = newHeight;
+            rt.sizeDelta = size;
+        }
+    }
+}
