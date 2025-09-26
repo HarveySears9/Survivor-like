@@ -2196,7 +2196,6 @@ MonoBehaviour:
   childRectTransform: {fileID: 256993029}
   parentRectTransform: {fileID: 1804827858}
   animationDuration: 1
-  Upgrades: {fileID: 0}
   animator: {fileID: 256993031}
   activateAfterOpen:
   - {fileID: 678111965}
@@ -10107,7 +10106,6 @@ MonoBehaviour:
   childRectTransform: {fileID: 899851997}
   parentRectTransform: {fileID: 556973765}
   animationDuration: 1
-  Upgrades: {fileID: 0}
   animator: {fileID: 899851999}
   activateAfterOpen:
   - {fileID: 1926011144}
@@ -20098,9 +20096,9 @@ MonoBehaviour:
   childRectTransform: {fileID: 1843022519}
   parentRectTransform: {fileID: 1835681935}
   animationDuration: 1
-  Upgrades: {fileID: 677401931}
   animator: {fileID: 1843022520}
-  activateAfterOpen: []
+  activateAfterOpen:
+  - {fileID: 677401931}
 --- !u!1 &1843924349
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,6 @@ public class AnimateWidthToParent : MonoBehaviour
     public float animationDuration = 0.5f; // Time it takes to adjust the width
     private Coroutine widthAdjustmentCoroutine;
     private Vector2 originalSize;
-
-    public GameObject Upgrades;
     public AnimateImage animator;
 
     public GameObject[] activateAfterOpen;
@@ -63,7 +61,16 @@ public class AnimateWidthToParent : MonoBehaviour
             animator.StopAnimation();
         }
 
-        Upgrades.SetActive(false);
+        if (activateAfterOpen != null)
+        {
+            foreach (GameObject go in activateAfterOpen)
+            {
+                if (go != null) // safety check
+                {
+                    go.SetActive(false);
+                }
+            }
+        }
     }
 
     void StartWidthAnimation()
@@ -104,10 +111,6 @@ public class AnimateWidthToParent : MonoBehaviour
         childRectTransform.sizeDelta = new Vector2(targetWidth, childRectTransform.sizeDelta.y);
 
         animator.animating = false;
-        if(Upgrades != null)
-        {
-            Upgrades.SetActive(true);
-        }
 
         if (activateAfterOpen != null)
         {
