@@ -10,6 +10,10 @@ public class Boss : MonoBehaviour
     private float health;         // Enemy health
     public float speed = 2f;         // Normal movement speed
     public float damage = 1f;
+
+    public float damageInterval = 1f;
+    private float lastDamageTime = 0f;
+
     public Transform playerTransform; // Reference to the player's position
     private Vector2 direction;        // Direction vector for movement
     private Rigidbody2D rb;           // Rigidbody for physics-based movement
@@ -71,13 +75,6 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Enemy hit the player!");
-            // Handle player damage logic here
-            other.GetComponent<PlayerController>().TakeDamage(damage);
-        }
-
         if (other.CompareTag("Weapon"))
         {
             Weapon weapon = other.GetComponent<Weapon>();
@@ -85,6 +82,19 @@ public class Boss : MonoBehaviour
             {
                 Debug.Log("Enemy hit by weapon!");
                 TakeDamage(weapon.damage);
+            }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Time.time >= lastDamageTime + damageInterval)
+            {
+                lastDamageTime = Time.time;
+                Debug.Log("Enemy hit the player!");
+                other.GetComponent<PlayerController>().TakeDamage(damage);
             }
         }
     }
