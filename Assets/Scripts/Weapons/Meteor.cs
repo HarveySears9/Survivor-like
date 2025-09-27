@@ -13,7 +13,6 @@ public class Meteor : MonoBehaviour
 
     private GameObject shadowInstance;
     private float startY;
-    private float elapsed = 0f;
 
     private Vector3 shadowStartScale;
 

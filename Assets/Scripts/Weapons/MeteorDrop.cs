@@ -1,11 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class MeteorDrop : MonoBehaviour
 {
     public GameObject meteorPrefab;
     public Transform player;
 
-    public float fireRate = 2f;   // How often meteors drop
+    public float fireRate = 5f;   // How often meteors drop
     public int level = 1;
     public int maxLevel = 5;
 
@@ -14,6 +15,7 @@ public class MeteorDrop : MonoBehaviour
     public int maxMeteorsPerWave = 5;
 
     private float nextFireTime = 0f;
+    private bool firing = false;
 
     public LevelUpButtons levelUpButton;
 
@@ -24,15 +26,17 @@ public class MeteorDrop : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= nextFireTime)
+        if (!firing && Time.time >= nextFireTime)
         {
-            SpawnMeteors();
+            StartCoroutine(SpawnMeteors());
             nextFireTime = Time.time + 1f / fireRate;
         }
     }
 
-    void SpawnMeteors()
+    IEnumerator SpawnMeteors()
     {
+        firing = true;
+
         for (int i = 0; i < meteorsPerWave; i++)
         {
             Vector2 targetPos = GetRandomPositionAroundPlayer();
@@ -44,7 +48,15 @@ public class MeteorDrop : MonoBehaviour
             Meteor meteorScript = meteor.GetComponent<Meteor>();
             if (meteorScript != null)
                 meteorScript.targetPosition = targetPos;
+
+            // Wait a small random amount before spawning the next meteor
+            float randomDelay = Random.Range(0.1f, 0.5f); // adjust min/max delay as you like
+            yield return new WaitForSeconds(randomDelay);
         }
+
+        nextFireTime = Time.time + 1f / fireRate;
+
+        firing = false;
     }
 
     Vector2 GetRandomPositionAroundPlayer()
