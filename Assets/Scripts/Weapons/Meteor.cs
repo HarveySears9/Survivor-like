@@ -6,6 +6,7 @@ public class Meteor : MonoBehaviour
     public float damage = 10f;
 
     public GameObject impactPrefab;
+    public GameObject aoePrefab;
     public GameObject shadowPrefab;
 
     public Vector3 targetPosition;
@@ -20,7 +21,7 @@ public class Meteor : MonoBehaviour
     {
         // Spawn shadow at target
         Vector3 shadowPos = targetPosition;
-        shadowPos.y -= 0.5f; // slight offset
+        shadowPos.y -= 0.25f; // slight offset
         shadowInstance = Instantiate(shadowPrefab, shadowPos, Quaternion.identity);
 
         // Store the prefab's original scale
@@ -55,6 +56,9 @@ public class Meteor : MonoBehaviour
     void Impact()
     {
         // Spawn the impact AOE at the meteor's current position
+        Vector3 aoePos = transform.position;
+        aoePos.y -= 0.1f;
+        Instantiate(aoePrefab, aoePos, Quaternion.identity);
         Instantiate(impactPrefab, transform.position, Quaternion.identity);
 
         if (shadowInstance != null)

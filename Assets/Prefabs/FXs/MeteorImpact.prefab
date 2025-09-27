@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2964530781266050596
 Transform:
   m_ObjectHideFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1271246615
   m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -59958501, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 996302167, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,12 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -1459375293, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: -887962224, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 40968362, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: -1872956019, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: -17501952, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1319425365, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
+  - {fileID: 996302167, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: 996302167, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: -263310232, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: -1454237784, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: -2133695980, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: 840909238, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: 15492315, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: -1461796818, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: -188499900, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
+  - {fileID: 1459053936, guid: 0d435121e7511d94299b68b28c43e069, type: 3}
   moveArray: []
   animating: 1
   animationSpeed: 0.15

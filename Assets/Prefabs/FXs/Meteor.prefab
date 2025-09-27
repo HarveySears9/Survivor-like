@@ -196,5 +196,6 @@ MonoBehaviour:
   fallSpeed: 10
   damage: 5
   impactPrefab: {fileID: 5362083764109600020, guid: 6b3543329a138f441865a68484ecfe3a, type: 3}
+  aoePrefab: {fileID: 9218306184963478178, guid: 11e36d4ad12dc824390ac70916c9bc9f, type: 3}
   shadowPrefab: {fileID: 8025563917311964931, guid: fe65908542427d84a9922dd3b3d2cf00, type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
