@@ -2048,9 +2048,7 @@ GameObject:
   - component: {fileID: 1055574231}
   - component: {fileID: 1055574236}
   - component: {fileID: 1055574235}
-  - component: {fileID: 1055574234}
   - component: {fileID: 1055574233}
-  - component: {fileID: 1055574232}
   m_Layer: 0
   m_Name: Goose (2)
   m_TagString: Untagged
@@ -2074,41 +2072,6 @@ Transform:
   - {fileID: 1220721048}
   m_Father: {fileID: 2071533029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1055574232
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055574230}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: -0.15}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!114 &1055574233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,51 +2090,6 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 0}
   typeSpeed: 0.05
   dialogBoxHieght: 1
---- !u!61 &1055574234
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055574230}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08814362, y: 0.27886957}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.375}
-    newSize: {x: 1.5, y: 1.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3412874, y: 0.8822609}
-  m_EdgeRadius: 0
 --- !u!114 &1055574235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3411,9 +3329,7 @@ GameObject:
   - component: {fileID: 1503674934}
   - component: {fileID: 1503674939}
   - component: {fileID: 1503674938}
-  - component: {fileID: 1503674937}
   - component: {fileID: 1503674936}
-  - component: {fileID: 1503674935}
   m_Layer: 0
   m_Name: Goose (1)
   m_TagString: Untagged
@@ -3437,41 +3353,6 @@ Transform:
   - {fileID: 1019569031}
   m_Father: {fileID: 2071533029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1503674935
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503674933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.8, y: 0.15}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!114 &1503674936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3490,51 +3371,6 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 0}
   typeSpeed: 0.05
   dialogBoxHieght: 1
---- !u!61 &1503674937
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503674933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08814362, y: 0.27886957}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.375}
-    newSize: {x: 1.5, y: 1.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3412874, y: 0.8822609}
-  m_EdgeRadius: 0
 --- !u!114 &1503674938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3623,9 +3459,7 @@ GameObject:
   - component: {fileID: 1823969960}
   - component: {fileID: 1823969965}
   - component: {fileID: 1823969964}
-  - component: {fileID: 1823969963}
   - component: {fileID: 1823969962}
-  - component: {fileID: 1823969961}
   m_Layer: 0
   m_Name: Goose
   m_TagString: Untagged
@@ -3649,41 +3483,6 @@ Transform:
   - {fileID: 83056280}
   m_Father: {fileID: 2071533029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1823969961
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823969959}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!114 &1823969962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3702,51 +3501,6 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 0}
   typeSpeed: 0.05
   dialogBoxHieght: 1
---- !u!61 &1823969963
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823969959}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08520019, y: 0.2818131}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.375}
-    newSize: {x: 1.5, y: 1.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3354003, y: 0.8763738}
-  m_EdgeRadius: 0
 --- !u!114 &1823969964
 MonoBehaviour:
   m_ObjectHideFlags: 0
