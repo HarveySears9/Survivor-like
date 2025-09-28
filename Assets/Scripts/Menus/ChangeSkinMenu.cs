@@ -41,12 +41,12 @@ public class ChangeSkinMenu : MonoBehaviour
     IEnumerator EquipWithPuff(int index)
     {
         // Spawn puff
-        Vector3 spawnPos = brickTransform.position + new Vector3(0f, -0.25f, 0f);
+        Vector3 spawnPos = brickTransform.position + new Vector3(0f, -0.3f, 0f);
         GameObject puff = Instantiate(puffPrefab, spawnPos, Quaternion.identity);
 
 
         // Optional: wait until puff is "big enough"
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
         // Change skin after puff
         sm.ChangeBrickSkin(index);

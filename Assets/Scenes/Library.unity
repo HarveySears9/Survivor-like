@@ -1342,29 +1342,33 @@ MonoBehaviour:
 
     Sword Slash VFX - Pimen
 
+    Fireball VFX - Pimen
+
+    Change Skin
+    VFX - Pimen
+
 
     Fire VFX - brullov
 
 
 
-    Character
-    Sprite Templates - GandalfHardcore</size>
+    Character Sprite Templates - GandalfHardcore</size>
 
 
 
-    <size=30><u>Music & Sound</u></size>
+    <size=30><u>Music
+    & Sound</u></size>
 
 
-    <size=20>Licensed
-    Assets</size>
+    <size=20>Licensed Assets</size>
 
 
 
-    <size=30><u>Special Thanks</u></size>
+    <size=30><u>Special
+    Thanks</u></size>
 
 
-    <size=20>My
-    friends, family, and all adventurers of Puddlebrook</size>
+    <size=20>My friends, family, and all adventurers of Puddlebrook</size>
 
 
 
@@ -6815,7 +6819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331, y: -31.365}
+  m_AnchoredPosition: {x: -300, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.37269986}
 --- !u!114 &788832713
@@ -6838,7 +6842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791614552, guid: a363a95014d9bc74fb4839df63702a49, type: 3}
+  m_Sprite: {fileID: -1641580802, guid: a0d5e346bd99415409dfeb48bbb0f292, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

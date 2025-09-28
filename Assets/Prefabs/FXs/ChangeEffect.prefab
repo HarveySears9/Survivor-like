@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9015302633641081663
 Transform:
   m_ObjectHideFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_GameObject: {fileID: 314746695697151484}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1678387349
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1013420160, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
+  m_Sprite: {fileID: 774935639, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,17 +98,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -867334778, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 870543578, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1264406697, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1013420160, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1523467836, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 482732416, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1639917926, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
-  - {fileID: 1613468197, guid: 2edb9188ad509d543a2583992f8d7099, type: 3}
+  - {fileID: 774935639, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -232898838, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 1750411969, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 58356174, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -1087354847, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -1986870360, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 193017948, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 704509117, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 847384293, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 912145771, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 2083140099, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: 527756622, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -102136034, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -659476673, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
+  - {fileID: -898957088, guid: 5c5429676bfb06d49a6d22b3a8903dd0, type: 3}
   moveArray: []
   animating: 1
-  animationSpeed: 0.075
+  animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 1
   masterSprite: {fileID: 0}
