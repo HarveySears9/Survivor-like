@@ -144,14 +144,34 @@ public class FireBreath : MonoBehaviour
     {
         level++;
         if (level > maxLevel)
-        {
             level = maxLevel;
-        }
 
         levelUpButton.LevelUp(level, maxLevel);
 
-        fireRate++;
+        // Set fire rate based on level
+        switch (level)
+        {
+            case 1:
+                fireRate = 1f;    // 1 shot per second
+                break;
+            case 2:
+                fireRate = 1.25f; // faster, 1 shot every 0.8s
+                break;
+            case 3:
+                fireRate = 1.5f;  // 1 shot every 0.667s
+                break;
+            case 4:
+                fireRate = 1.75f; // 1 shot every 0.57s
+                break;
+            case 5:
+                fireRate = 2f;    // 1 shot every 0.5s
+                break;
+            default:
+                fireRate = 1f;
+                break;
+        }
     }
+
 
     IEnumerator BurstFire()
     {

@@ -187,8 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 6
   speed: 1
-  damage: 6
+  damage: 4
+  damageInterval: 1
   playerTransform: {fileID: 0}
+  enemyType: 0
 --- !u!61 &5219556884646708018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,4 +286,5 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}

@@ -7429,7 +7429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 3236070517778889549, guid: f7914ab8b1db6e04595e27d1509b11ef, type: 3}
   player: {fileID: 808585393}
-  fireRate: 1
+  fireRate: 0.25
   level: 0
   maxLevel: 5
   radius: 1.5
@@ -7716,9 +7716,9 @@ MonoBehaviour:
   difficulty: 1
   dropTier: 1
   bossCount: 0
-  difficultyInterval: 60
-  dropInterval: 60
-  bossInterval: 120
+  difficultyInterval: 90
+  dropInterval: 90
+  bossInterval: 180
   waveInterval: 30
 --- !u!222 &740212142
 CanvasRenderer:
@@ -16367,7 +16367,7 @@ MonoBehaviour:
   fireRate: 1
   level: 0
   maxLevel: 5
-  maxChains: 2
+  maxChains: 1
   chainRange: 5
   range: 10
   levelUpButton: {fileID: 1316870217}

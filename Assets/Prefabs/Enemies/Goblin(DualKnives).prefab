@@ -101,10 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a61f2e2ba02ab41b2cffc15f96d0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 3
   speed: 2
   damage: 1
+  damageInterval: 1
   playerTransform: {fileID: 0}
+  enemyType: 0
 --- !u!61 &8210444833417991524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -200,6 +202,7 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
   masterSprite: {fileID: 0}
 --- !u!1 &6037681601258690687
 GameObject:

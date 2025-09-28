@@ -8,7 +8,7 @@ public class LightningChain : MonoBehaviour
     public int level = 1;
     public int maxLevel = 5;
 
-    public int maxChains = 2;      // how many extra enemies it can hit
+    public int maxChains = 1;      // how many extra enemies it can hit
     public float chainRange = 3f;  // how far it can jump between enemies
     public float range = 10f;      // how far from player the first target can be
 
