@@ -50,7 +50,7 @@ public class MissionUI : MonoBehaviour
 
         // WEEKLY TIMER
         int daysUntilMonday = ((int)DayOfWeek.Monday - (int)DateTime.Today.DayOfWeek + 7) % 7;
-        DateTime nextWeeklyReset = DateTime.Today.AddDays(daysUntilMonday).Date;
+        DateTime nextWeeklyReset = DateTime.Today.AddDays(daysUntilMonday == 0 ? 7 : daysUntilMonday).Date;
         TimeSpan weeklyRemaining = nextWeeklyReset - DateTime.Now;
         if (weeklyRemaining.TotalSeconds < 0) weeklyRemaining = TimeSpan.Zero;
 
