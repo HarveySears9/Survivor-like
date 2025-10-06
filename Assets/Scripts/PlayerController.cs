@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
     public void AddCoin(int value)
     {
         coins += value;
-        coinText.text = "Coins:" + coins.ToString();
+        coinText.text = ":" + coins.ToString();
     }
 
 }

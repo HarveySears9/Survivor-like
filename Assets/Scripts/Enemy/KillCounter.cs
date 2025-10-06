@@ -22,7 +22,7 @@ public class KillCounter : MonoBehaviour
     private void CountEnemyKill(Vector3 position)
     {
         enemyKills++;
-        killText.text = "Kills: " + enemyKills.ToString();
+        killText.text = ":" + enemyKills.ToString();
     }
 
     private void CountBossKill(Vector3 position, GameObject[] dropPrefab)
