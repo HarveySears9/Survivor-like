@@ -1,9 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 public class KillCounter : MonoBehaviour
 {
     public static int enemyKills = 0;
     public static int bossKills = 0;
+    public TextMeshProUGUI killText;
 
     void OnEnable()
     {
@@ -20,6 +22,7 @@ public class KillCounter : MonoBehaviour
     private void CountEnemyKill(Vector3 position)
     {
         enemyKills++;
+        killText.text = "Kills: " + enemyKills.ToString();
     }
 
     private void CountBossKill(Vector3 position, GameObject[] dropPrefab)
