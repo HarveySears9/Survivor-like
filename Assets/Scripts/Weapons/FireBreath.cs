@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class FireBreath : MonoBehaviour
 {
     public GameObject fireballPrefab; // Reference to the Fireball prefab
-    public float fireRate = 5f;       // Time between each fire breath
+    private float fireRate = 5f;       // Time between each fire breath
+    public float baseFireRate = 0.5f;
     public int level = 1;             // Weapon level (determines number of fireballs)
     public int maxLevel = 5;
     public float spreadAngle = 30f;   // Total spread angle for the fireballs
@@ -34,6 +35,7 @@ public class FireBreath : MonoBehaviour
 
         damage = loadedData.currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
+        fireRate = baseFireRate;
     }
 
     void Update()
@@ -45,7 +47,7 @@ public class FireBreath : MonoBehaviour
         }
     }
 
-    void Fire()
+    void ShotgunFire()
     {
         //int fireballCount = (2*level) + 1; // More fireballs as the level increases
         int fireballCount = 3;
@@ -90,6 +92,29 @@ public class FireBreath : MonoBehaviour
             fireball.GetComponent<Fireball>().Initialize(Vector2.right);
             fireball.GetComponent<Weapon>().damage = damage;
         }
+    }
+
+    void Fire()
+    {
+        Transform enemyTarget = FindTargets();
+
+        Vector2 fireDirection;
+
+        if (enemyTarget == null) return; // Exit if no targets are found
+
+        // Calculate direction to the target
+        fireDirection = (enemyTarget.position - transform.position).normalized;
+
+        // Instantiate the fireball
+        GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+
+        // Set the rotation to match the fireball's movement direction
+        float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
+        fireball.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
+
+        // Pass the fire direction to the fireball script
+        fireball.GetComponent<Fireball>().Initialize(Vector2.right);
+        fireball.GetComponent<Weapon>().damage = damage;
     }
 
     private Transform FindTargets()
@@ -152,22 +177,22 @@ public class FireBreath : MonoBehaviour
         switch (level)
         {
             case 1:
-                fireRate = 1f;    // 1 shot per second
+                fireRate = baseFireRate * 1f;    // 1 shot per second
                 break;
             case 2:
-                fireRate = 1.25f; // faster, 1 shot every 0.8s
+                fireRate = baseFireRate * 1.50f; // faster, 1 shot every 0.8s
                 break;
             case 3:
-                fireRate = 1.5f;  // 1 shot every 0.667s
+                fireRate = baseFireRate * 2f;  // 1 shot every 0.667s
                 break;
             case 4:
-                fireRate = 1.75f; // 1 shot every 0.57s
+                fireRate = baseFireRate * 2.5f; // 1 shot every 0.57s
                 break;
             case 5:
-                fireRate = 2f;    // 1 shot every 0.5s
+                fireRate = baseFireRate * 3f;    // 1 shot every 0.5s
                 break;
             default:
-                fireRate = 1f;
+                fireRate = baseFireRate * 1f;
                 break;
         }
     }
