@@ -11,6 +11,8 @@ public class Bolt : MonoBehaviour
 
     public float speed = 7f; // bolt travel speed
 
+    private bool hit = false;
+
     public void Initialize(Transform firstTarget, float dmg, int chains, float range)
     {
         target = firstTarget;
@@ -21,31 +23,42 @@ public class Bolt : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        // If target got destroyed, try to find a new one
+        if (target != null)
         {
-            Destroy(gameObject);
-            return;
+            // Calculate direction to target
+            Vector2 direction = (target.position - transform.position).normalized;
+
+            // Rotate gfx to face the movement direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            gfx.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Move toward target
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+            // If we reached the target
+            if (Vector2.Distance(transform.position, target.position) < 0.1f)
+            {
+                HitTarget();
+            }
         }
-
-        // Calculate direction to target
-        Vector2 direction = (target.position - transform.position).normalized;
-
-        // Rotate gfx to face the movement direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        gfx.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Move toward target
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-        // If we reached the target
-        if (Vector2.Distance(transform.position, target.position) < 0.1f)
+        else
         {
-            HitTarget();
+            target = FindNextTarget();
+            if (target == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 
     void HitTarget()
     {
+        if (hit) { return; }
+
+        hit = true;
+
         if (chainsRemaining > 0)
         {
             Transform nextTarget = FindNextTarget();
@@ -63,11 +76,22 @@ public class Bolt : MonoBehaviour
     Transform FindNextTarget()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, chainRange);
+        Transform closest = null;
+        float closestDist = Mathf.Infinity;
+
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Enemy") && hit.transform != target)
-                return hit.transform;
+            {
+                float dist = Vector2.Distance(transform.position, hit.transform.position);
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    closest = hit.transform;
+                }
+            }
         }
-        return null;
+
+        return closest;
     }
 }

@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
 
     private bool isFlipped = false;
 
+    private bool isDead = false;
+
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -93,14 +95,20 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-        void TakeDamage(float damage)
+    void TakeDamage(float damage)
     {
+        if (isDead) return; // already dead, ignore further damage
+
         health -= damage;
         if (health <= 0f)
         {
+            isDead = true;
+
             // Trigger the EnemyDeathEventManager
             EnemyDeathEventManager.EnemyDied(transform.position);
+
             MissionManager.Instance.AddProgress($"kill_{enemyType}");
+
             Destroy(gameObject);
         }
     }

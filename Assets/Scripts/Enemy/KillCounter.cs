@@ -9,6 +9,8 @@ public class KillCounter : MonoBehaviour
 
     void OnEnable()
     {
+        enemyKills = 0;
+        bossKills = 0;
         EnemyDeathEventManager.OnEnemyDeath += CountEnemyKill;
         EnemyDeathEventManager.OnBossDeath += CountBossKill;
     }

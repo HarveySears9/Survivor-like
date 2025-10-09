@@ -5,7 +5,6 @@ public class Meteor : MonoBehaviour
     public float fallSpeed = 10f;
     public float damage = 10f;
 
-    public GameObject impactPrefab;
     public GameObject aoePrefab;
     public GameObject shadowPrefab;
 
@@ -58,7 +57,7 @@ public class Meteor : MonoBehaviour
         Vector3 aoePos = transform.position;
         aoePos.y -= 0.1f;
         Instantiate(aoePrefab, aoePos, Quaternion.identity);
-        Instantiate(impactPrefab, transform.position, Quaternion.identity);
+
 
         if (shadowInstance != null)
             Destroy(shadowInstance);

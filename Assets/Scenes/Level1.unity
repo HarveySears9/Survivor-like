@@ -4048,7 +4048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa67a647ef08b4e4484ef207e1d5dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 0.5
+  spawnInterval: 1
   circleRadius: 6
   tier1:
   - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
@@ -4065,9 +4065,9 @@ MonoBehaviour:
   tier4: []
   tier5: []
   tier6: []
-  weights1: 140000000100000005000000
-  weights2: 140000000200000005000000
-  weights3: 140000000200000005000000
+  weights1: 280000000100000005000000
+  weights2: 280000000200000005000000
+  weights3: 280000000200000005000000
   weights4: 
   weights5: 
   weights6: 
@@ -15320,7 +15320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 568635051185227710, guid: 6093857d94b32ee41a7eb393e72373a9, type: 3}
-  fireRate: 1
+  baseFireRate: 0.75
   level: 1
   maxLevel: 5
   spreadAngle: 30
@@ -16650,7 +16650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningPrefab: {fileID: 7044823161952540664, guid: dc20e31482724654299dfe4062ec7602, type: 3}
-  fireRate: 1
+  fireRate: 0.5
   level: 0
   maxLevel: 5
   maxChains: 1
