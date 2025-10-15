@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifetime: 1.5
+  penetrate: 0
 --- !u!114 &-2021436258800077376
 MonoBehaviour:
   m_ObjectHideFlags: 0

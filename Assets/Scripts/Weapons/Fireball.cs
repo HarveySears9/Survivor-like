@@ -7,6 +7,8 @@ public class Fireball : MonoBehaviour
 
     private Vector2 moveDirection;
 
+    public bool penetrate = true;
+
     public void Initialize(Vector2 direction)
     {
         moveDirection = direction.normalized;
@@ -17,5 +19,16 @@ public class Fireball : MonoBehaviour
     {
         // Move the fireball in the set direction
         transform.Translate(moveDirection * speed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if(!penetrate)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

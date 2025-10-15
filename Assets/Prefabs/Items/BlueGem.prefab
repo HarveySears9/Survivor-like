@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  lifetime: 60
 --- !u!114 &6321473513490857731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +207,8 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.25
   isMoving: 0
-  syncWith: {fileID: 0}
+  destroyOnFinish: 0
+  masterSprite: {fileID: 0}
 --- !u!58 &4043153243002244630
 CircleCollider2D:
   m_ObjectHideFlags: 0

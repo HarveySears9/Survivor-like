@@ -268,6 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 79026102}
+  - component: {fileID: 79026103}
   m_Layer: 0
   m_Name: Level2
   m_TagString: Untagged
@@ -292,6 +293,24 @@ Transform:
   - {fileID: 1001450320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &79026103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79026101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f834c4f93af549b44b8363885bf1f7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSpawner: {fileID: 1001450322}
+  spawnInterval: 0.75
+  difficultyInterval: 90
+  dropInterval: 90
+  bossInterval: 180
+  waveInterval: 45
 --- !u!1 &97395562
 GameObject:
   m_ObjectHideFlags: 0
@@ -7792,10 +7811,6 @@ MonoBehaviour:
   difficulty: 1
   dropTier: 1
   bossCount: 0
-  difficultyInterval: 90
-  dropInterval: 90
-  bossInterval: 180
-  waveInterval: 30
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8730,7 +8745,7 @@ MonoBehaviour:
   expBar: {fileID: 890236185}
   currentLevel: 1
   currentEXP: 0
-  expThreshold: 10
+  expThreshold: 5
   thresholdIncrease: 0.1
   levelUpMenu: {fileID: 122540149}
   levelText: {fileID: 1958561645}
@@ -17604,6 +17619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1645223457}
+  - component: {fileID: 1645223458}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -17628,6 +17644,24 @@ Transform:
   - {fileID: 429575880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1645223458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645223456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f834c4f93af549b44b8363885bf1f7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSpawner: {fileID: 429575878}
+  spawnInterval: 0.75
+  difficultyInterval: 90
+  dropInterval: 90
+  bossInterval: 180
+  waveInterval: 45
 --- !u!1 &1654217182
 GameObject:
   m_ObjectHideFlags: 0

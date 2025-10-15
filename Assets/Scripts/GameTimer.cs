@@ -8,14 +8,14 @@ public class GameTimer : MonoBehaviour
     public int difficulty = 1;             // Current difficulty level
     public int dropTier = 1;               // Current drop tier
     public int bossCount = 0;              // Number of bosses spawned
-    public float difficultyInterval = 30f; // Time interval for difficulty increase (in seconds)
-    public float dropInterval = 60f;       // Time interval for drop tier increase (in seconds)
-    public float bossInterval = 120f;      // Time interval for boss spawn (in seconds)
+    private float difficultyInterval; // Time interval for difficulty increase (in seconds)
+    private float dropInterval;       // Time interval for drop tier increase (in seconds)
+    private float bossInterval;      // Time interval for boss spawn (in seconds)
 
     private float nextDifficultyTime;
     private float nextDropTime;
     private float nextBossTime;
-    private bool isPaused = false;         // Flag to pause the timer
+    private bool isPaused = true;         // Flag to pause the timer
 
     public delegate void DifficultyChange(int newDifficulty);
     public event DifficultyChange OnDifficultyChange;
@@ -28,18 +28,27 @@ public class GameTimer : MonoBehaviour
 
     public delegate void WaveStart();
     public event WaveStart OnWaveStart;
-    public float waveInterval = 30f; // time between waves
+    private float waveInterval; // time between waves
 
     private float nextWaveTime;
 
-
-    void Start()
+    public void SetIntervals(float diff, float drop, float boss, float wave)
     {
+        difficultyInterval = diff;
+        dropInterval = drop;
+        bossInterval = boss;
+        waveInterval = wave;
+
         nextDifficultyTime = difficultyInterval;
         nextDropTime = dropInterval;
         nextBossTime = bossInterval;
         nextWaveTime = waveInterval;
+        isPaused = false;
+    }
 
+    void Start()
+    {
+        isPaused = true;
         UpdateTimerUI();  // Initialize timer display
     }
 
