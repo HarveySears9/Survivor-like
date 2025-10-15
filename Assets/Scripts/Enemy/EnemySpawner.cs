@@ -3,84 +3,82 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private GameObject[] enemyPrefabs;            // Reference to the enemy prefab
-    private int[] spawnWeights;
-    public float spawnInterval = 2f;          // Time between spawns
-    public float circleRadius = 15f;          // Radius of the circle (larger than camera view)
+    [Header("Spawn Settings")]
+    public float spawnInterval = 2f;   // Time between spawns
+    public float circleRadius = 15f;   // Radius of spawn circle
+    public bool spawning = false;      // Whether spawner is active
+
+    [Header("Enemy Spawn Database")]
+    public EnemySpawnsDatabase enemyDatabase;   // Reference to the ScriptableObject
+
+    private GameObject[] enemyPrefabs;          // Current tier’s enemies
+    private int[] spawnWeights;                 // Current tier’s weights
 
     private float timer;
-    private Transform playerTransform;        // Reference to the player's transform
+    private Transform playerTransform;
     private Camera mainCamera;
-
-    public GameObject[] tier1, tier2, tier3, tier4, tier5, tier6;
-    public int[] weights1, weights2, weights3, weights4, weights5, weights6;
-
-    public bool spawning;
 
     void Start()
     {
-        // Find the player's transform and main camera at the start
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        mainCamera = Camera.main;  // Get the main camera
+        // Get player + camera
+        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+        mainCamera = Camera.main;
 
+        if (playerTransform == null)
+        {
+            Debug.LogError("Player not found! Make sure it has the 'Player' tag.");
+            return;
+        }
+
+        if (enemyDatabase == null || enemyDatabase.enemySpawns == null || enemyDatabase.enemySpawns.Length == 0)
+        {
+            Debug.LogError("EnemySpawnsDatabase not assigned or empty!");
+            return;
+        }
+
+        // Subscribe to events
         GameTimer gameTimer = FindObjectOfType<GameTimer>();
-        gameTimer.OnDifficultyChange += UpdateEnemyStats;
-        gameTimer.OnWaveStart += StartWave;
+        if (gameTimer != null)
+        {
+            gameTimer.OnDifficultyChange += UpdateEnemyStats;
+            gameTimer.OnWaveStart += StartWave;
+        }
+        else
+        {
+            Debug.LogWarning("GameTimer not found — difficulty and wave changes won't trigger.");
+        }
 
+        // Initialize to first tier
         UpdateEnemyStats(1);
     }
 
     void UpdateEnemyStats(int newTier)
     {
-        GameObject[] newPrefabs = null;
-        int[] newWeights = null;
+        // Ensure tier is within valid range
+        int tierIndex = Mathf.Clamp(newTier - 1, 0, enemyDatabase.enemySpawns.Length - 1);
 
-        switch (newTier)
-        {
-            case 1:
-                newPrefabs = tier1;
-                newWeights = weights1;
-                break;
-            case 2:
-                newPrefabs = tier2;
-                newWeights = weights2;
-                break;
-            case 3:
-                newPrefabs = tier3;
-                newWeights = weights3;
-                break;
-            case 4:
-                newPrefabs = tier4;
-                newWeights = weights4;
-                break;
-                // case 5:
-                //     newPrefabs = tier5;
-                //     newWeights = weights5;
-                //     break;
-        }
+        EnemySpawns data = enemyDatabase.enemySpawns[tierIndex];
 
-        // Only update if the arrays are not null and not empty
-        if (newPrefabs != null && newPrefabs.Length > 0 &&
-            newWeights != null && newWeights.Length > 0)
+        if (data.enemyPrefabs != null && data.enemyPrefabs.Length > 0 &&
+            data.weights != null && data.weights.Length > 0)
         {
-            enemyPrefabs = newPrefabs;
-            spawnWeights = newWeights;
+            enemyPrefabs = data.enemyPrefabs;
+            spawnWeights = data.weights;
         }
         else
         {
-            Debug.LogWarning($"Tier {newTier} is empty! Staying on previous tier.");
+            Debug.LogWarning($"Tier {newTier} in database is empty or invalid — keeping previous settings.");
         }
     }
-
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnInterval && spawning)
+        if (spawning && timer >= spawnInterval)
         {
             SpawnEnemy();
-            timer = 0f;  // Reset the timer
+            timer = 0f;
         }
     }
 
@@ -92,59 +90,58 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator Wave()
     {
         float originalInterval = spawnInterval;
-        spawnInterval = 0.1f;                   // super fast spawns
-        yield return new WaitForSeconds(5f);    // wave lasts 5s
-        spawnInterval = originalInterval;       // return to normal
+        spawnInterval = 0.1f;
+        yield return new WaitForSeconds(5f);
+        spawnInterval = originalInterval;
     }
 
     void SpawnEnemy()
     {
-        // Randomly pick an angle in radians (0 to 360 degrees)
-        float randomAngle = Random.Range(0f, 360f);
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0)
+        {
+            Debug.LogWarning("No enemy prefabs assigned for this tier!");
+            return;
+        }
 
-        // Calculate the spawn position using trigonometry
+        // Random angle for spawn around player
+        float randomAngle = Random.Range(0f, 360f);
         float spawnX = playerTransform.position.x + circleRadius * Mathf.Cos(randomAngle * Mathf.Deg2Rad);
         float spawnY = playerTransform.position.y + circleRadius * Mathf.Sin(randomAngle * Mathf.Deg2Rad);
 
-        Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f); // Position to spawn the enemy
-
-        // Determine which enemy to spawn using weighted random selection
+        Vector3 spawnPos = new Vector3(spawnX, spawnY, 0f);
         GameObject selectedEnemy = GetRandomWeightedEnemy();
 
-        // Instantiate the selected enemy at the calculated position
-        GameObject enemyObj = Instantiate(selectedEnemy, spawnPosition, Quaternion.identity);
+        GameObject enemyObj = Instantiate(selectedEnemy, spawnPos, Quaternion.identity);
 
-        // Get the EnemyController component from the instantiated enemy
+        // Assign target
         EnemyController enemy = enemyObj.GetComponent<EnemyController>();
-
-        // Assign the player's transform to the enemy to target the player
-        enemy.playerTransform = playerTransform;
+        if (enemy != null)
+            enemy.playerTransform = playerTransform;
     }
 
     GameObject GetRandomWeightedEnemy()
     {
-        // Calculate the total weight
-        int totalWeight = 0;
-        for (int i = 0; i < spawnWeights.Length; i++)
+        if (spawnWeights == null || spawnWeights.Length != enemyPrefabs.Length)
         {
-            totalWeight += spawnWeights[i];
+            Debug.LogWarning("Spawn weights and prefabs mismatch! Defaulting to first enemy.");
+            return enemyPrefabs[0];
         }
 
-        // Generate a random value within the range of totalWeight
-        int randomWeight = Random.Range(0, totalWeight);
+        int totalWeight = 0;
+        foreach (int w in spawnWeights)
+            totalWeight += w;
 
-        // Iterate through the weights to determine which prefab to select
+        int randomWeight = Random.Range(0, totalWeight);
         int cumulativeWeight = 0;
+
         for (int i = 0; i < spawnWeights.Length; i++)
         {
             cumulativeWeight += spawnWeights[i];
             if (randomWeight < cumulativeWeight)
-            {
                 return enemyPrefabs[i];
-            }
         }
 
-        // Fallback in case no selection is made (shouldn't happen)
+        // Fallback
         return enemyPrefabs[0];
     }
 }

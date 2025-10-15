@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f472a4d1cd0be4bacc75f80843c45d, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  enemySpawns:
+  - enemyPrefabs:
+    - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
+    weights: 01000000
+  - enemyPrefabs:
+    - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
+    - {fileID: 3351960396142399134, guid: 85245dedb7e153b4bb3f95543a64f9c1, type: 3}
+    weights: 1900000001000000
+  - enemyPrefabs:
+    - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
+    - {fileID: 468037171807379834, guid: e4bf3995eb55a1b41a57959d36208688, type: 3}
+    - {fileID: 3351960396142399134, guid: 85245dedb7e153b4bb3f95543a64f9c1, type: 3}
+    weights: 280000000100000005000000
+  - enemyPrefabs:
+    - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
+    - {fileID: 468037171807379834, guid: e4bf3995eb55a1b41a57959d36208688, type: 3}
+    - {fileID: 3351960396142399134, guid: 85245dedb7e153b4bb3f95543a64f9c1, type: 3}
+    - {fileID: 2777611697932807903, guid: 826e20a64c1db004d9f1b3befa1d8a35, type: 3}
+    weights: 28000000010000000500000005000000
+  - enemyPrefabs:
+    - {fileID: 2777611697932807903, guid: 826e20a64c1db004d9f1b3befa1d8a35, type: 3}
+    - {fileID: 2387115273615205914, guid: cad87311634eb05458078df7be404a53, type: 3}
+    - {fileID: 4873592779103046050, guid: d88d1b2133ab5254dacfdcfbcbe6ee85, type: 3}
+    weights: 280000000100000005000000
+  - enemyPrefabs:
+    - {fileID: 2777611697932807903, guid: 826e20a64c1db004d9f1b3befa1d8a35, type: 3}
+    - {fileID: 2387115273615205914, guid: cad87311634eb05458078df7be404a53, type: 3}
+    - {fileID: 4873592779103046050, guid: d88d1b2133ab5254dacfdcfbcbe6ee85, type: 3}
+    - {fileID: 2349743462696065459, guid: 764f4729d5aab9b4a980b730497dc722, type: 3}
+    weights: 28000000010000000500000005000000
+  - enemyPrefabs:
+    - {fileID: 2349743462696065459, guid: 764f4729d5aab9b4a980b730497dc722, type: 3}
+    - {fileID: 3877733569208533600, guid: 96fd328ace9cae64ea879c84be0ee411, type: 3}
+    - {fileID: 3877733569208533600, guid: 96fd328ace9cae64ea879c84be0ee411, type: 3}
+    weights: 280000000100000005000000

@@ -4069,28 +4069,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 1
   circleRadius: 6
-  tier1:
-  - {fileID: 8343973408498521522, guid: edf109622d4dea94c8630977874214f5, type: 3}
-  - {fileID: 468037171807379834, guid: e4bf3995eb55a1b41a57959d36208688, type: 3}
-  - {fileID: 3351960396142399134, guid: 85245dedb7e153b4bb3f95543a64f9c1, type: 3}
-  tier2:
-  - {fileID: 2777611697932807903, guid: 826e20a64c1db004d9f1b3befa1d8a35, type: 3}
-  - {fileID: 2387115273615205914, guid: cad87311634eb05458078df7be404a53, type: 3}
-  - {fileID: 4873592779103046050, guid: d88d1b2133ab5254dacfdcfbcbe6ee85, type: 3}
-  tier3:
-  - {fileID: 2349743462696065459, guid: 764f4729d5aab9b4a980b730497dc722, type: 3}
-  - {fileID: 3877733569208533600, guid: 96fd328ace9cae64ea879c84be0ee411, type: 3}
-  - {fileID: 8299233551345749544, guid: 11ac4ebe1bb8d5841b33c62bd9f184bf, type: 3}
-  tier4: []
-  tier5: []
-  tier6: []
-  weights1: 280000000100000005000000
-  weights2: 280000000200000005000000
-  weights3: 280000000200000005000000
-  weights4: 
-  weights5: 
-  weights6: 
   spawning: 1
+  enemyDatabase: {fileID: 11400000, guid: 6622b5c7034905d44880bfb54d6bd970, type: 2}
 --- !u!114 &429575879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11000,28 +10980,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 0.5
   circleRadius: 6
-  tier1:
-  - {fileID: 1602081048957474121, guid: 868c7697986adc342b016ea62848f6a8, type: 3}
-  - {fileID: 5106567510122415594, guid: 87713fc867f846243b17cb81131b28e6, type: 3}
-  - {fileID: 3620952820977870064, guid: 26b18aba5cf5ebc4798034ea69ba340d, type: 3}
-  tier2:
-  - {fileID: 7565328182572884486, guid: f90d17a4f425e2041977c2d6ee9c2d98, type: 3}
-  - {fileID: 1579217258466824211, guid: 3e65420e8a2ef504cae59e2b2fbf1032, type: 3}
-  - {fileID: 8826517682484708880, guid: 2077c8938f2b9a34787aca30ce5a8378, type: 3}
-  tier3:
-  - {fileID: 8396803953245210689, guid: 9e7c84541c9b81b4c9726d02811f60b8, type: 3}
-  - {fileID: 8703961660102976755, guid: c81c38fbf57b2eb48ade09c511ac58fc, type: 3}
-  - {fileID: 1870420538103452908, guid: 44736b60068f94b48a3f614c8ec5c696, type: 3}
-  tier4: []
-  tier5: []
-  tier6: []
-  weights1: 140000000100000005000000
-  weights2: 140000000200000005000000
-  weights3: 140000000200000005000000
-  weights4: 
-  weights5: 
-  weights6: 
   spawning: 1
+  enemyDatabase: {fileID: 11400000, guid: 6622b5c7034905d44880bfb54d6bd970, type: 2}
 --- !u!114 &1001450323
 MonoBehaviour:
   m_ObjectHideFlags: 0
