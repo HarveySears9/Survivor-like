@@ -1,33 +1,34 @@
-using UnityEngine;
-using System.Collections.Generic;
+﻿using UnityEngine;
 
 public class LightningChain : MonoBehaviour
 {
-    public GameObject lightningPrefab; // prefab for the bolt effect
+    public GameObject lightningPrefab;
     public float fireRate = 1f;
     public int level = 1;
     public int maxLevel = 5;
 
-    public int maxChains = 1;      // how many extra enemies it can hit
-    public float chainRange = 3f;  // how far it can jump between enemies
-    public float range = 10f;      // how far from player the first target can be
+    public int maxChains = 1;
+    public float chainRange = 3f;
+    public float range = 10f;
 
     private float nextFireTime = 0f;
-    private float damage;
+    private float damage = 10f; // fallback for testing
 
     public LevelUpButtons levelUpButton;
 
     void Start()
     {
-        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
-        damage = loadedData.currentDamage;
+        // Optional save load
+        // SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+        // damage = loadedData.currentDamage;
 
-        levelUpButton.LevelUp(level, maxLevel);
+        if (levelUpButton != null)
+            levelUpButton.LevelUp(level, maxLevel);
     }
 
     void Update()
     {
-        if (level <= 0) return; // Do nothing if un-leveled
+        if (level <= 0) return;
 
         if (Time.time >= nextFireTime)
         {
@@ -41,31 +42,27 @@ public class LightningChain : MonoBehaviour
         Transform firstTarget = FindClosestEnemy(range);
         if (firstTarget == null) return;
 
-        GameObject bolt = Instantiate(lightningPrefab, transform.position, Quaternion.identity);
+        Debug.Log($"⚡ Firing first bolt at {firstTarget.name}");
 
-        Bolt boltScript = bolt.GetComponent<Bolt>();
-        if (boltScript != null)
-        {
-            boltScript.Initialize(firstTarget, damage, maxChains, chainRange);
-        }
+        GameObject bolt = Instantiate(lightningPrefab, transform.position, Quaternion.identity);
+        bolt.GetComponent<Bolt>().Initialize(firstTarget, damage, maxChains, chainRange);
     }
 
-
-    Transform FindClosestEnemy(float searchRange, Transform exclude = null)
+    Transform FindClosestEnemy(float searchRange)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, searchRange);
         Transform closest = null;
         float minDist = Mathf.Infinity;
 
-        foreach (var hit in hits)
+        foreach (var h in hits)
         {
-            if (hit.CompareTag("Enemy") && hit.transform != exclude)
+            if (h.CompareTag("Enemy"))
             {
-                float dist = Vector2.Distance(transform.position, hit.transform.position);
+                float dist = Vector2.Distance(transform.position, h.transform.position);
                 if (dist < minDist)
                 {
                     minDist = dist;
-                    closest = hit.transform;
+                    closest = h.transform;
                 }
             }
         }
@@ -78,10 +75,28 @@ public class LightningChain : MonoBehaviour
         level++;
         if (level > maxLevel) level = maxLevel;
 
-        levelUpButton.LevelUp(level, maxLevel);
+        if (levelUpButton != null)
+            levelUpButton.LevelUp(level, maxLevel);
 
-        // scale effect
-        maxChains++;
-        fireRate += 0.2f;
+        switch (level)
+        {
+            case 1:
+                maxChains = 1;
+                break;
+            case 2:
+                maxChains = 2;
+                break;
+            case 3:
+                maxChains = 3;
+                break;
+            case 4:
+                maxChains = 4;
+                break;
+            case 5:
+                maxChains = 5;
+                break;
+        }
+
+        Debug.Log($"⚡ Lightning upgraded! Level: {level}, Max Chains: {maxChains}");
     }
 }

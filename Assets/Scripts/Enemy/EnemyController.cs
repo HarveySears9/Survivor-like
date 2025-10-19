@@ -95,7 +95,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         if (isDead) return; // already dead, ignore further damage
 
