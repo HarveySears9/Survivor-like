@@ -7504,7 +7504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 3236070517778889549, guid: f7914ab8b1db6e04595e27d1509b11ef, type: 3}
   player: {fileID: 808585393}
-  fireRate: 0.25
+  fireRate: 0.2
   level: 0
   maxLevel: 5
   radius: 1.5
@@ -14098,8 +14098,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1523958783}
-        m_TargetAssemblyTypeName: LightningChain, Assembly-CSharp
+      - m_Target: {fileID: 1523958785}
+        m_TargetAssemblyTypeName: ArcBolt, Assembly-CSharp
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -15295,7 +15295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 568635051185227710, guid: 6093857d94b32ee41a7eb393e72373a9, type: 3}
-  baseFireRate: 0.75
+  baseFireRate: 1.25
   level: 1
   maxLevel: 5
   spreadAngle: 30
@@ -16604,7 +16604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523958784}
-  - component: {fileID: 1523958783}
+  - component: {fileID: 1523958785}
   m_Layer: 0
   m_Name: LightningChain
   m_TagString: Untagged
@@ -16612,26 +16612,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1523958783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523958782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e925302eb2944504fba3ba537aebf6f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightningPrefab: {fileID: 7044823161952540664, guid: dc20e31482724654299dfe4062ec7602, type: 3}
-  fireRate: 0.5
-  level: 0
-  maxLevel: 5
-  maxChains: 1
-  chainRange: 5
-  range: 10
-  levelUpButton: {fileID: 1316870217}
 --- !u!4 &1523958784
 Transform:
   m_ObjectHideFlags: 0
@@ -16647,6 +16627,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 808585393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1523958785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523958782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954d9e078b6e3e048a6ca79a53e46e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.4
+  baseRange: 5
+  chainRange: 3
+  damage: 1
+  maxChains: 3
+  level: 0
+  maxLevel: 5
+  levelUpButton: {fileID: 1316870217}
+  arcVisualPrefab: {fileID: 0}
 --- !u!1 &1528730556
 GameObject:
   m_ObjectHideFlags: 0
@@ -17617,7 +17618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSpawner: {fileID: 429575878}
-  spawnInterval: 0.75
+  spawnInterval: 0.6
   difficultyInterval: 90
   dropInterval: 90
   bossInterval: 180
@@ -18015,9 +18016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lightning
-
-    Chain'
+  m_text: Arc Bolt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
