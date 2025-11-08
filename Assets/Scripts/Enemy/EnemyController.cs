@@ -33,6 +33,10 @@ public class EnemyController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+
+    private float separationRadius = 0.15f;
+    private float separationStrength = 0.1f;
+
     void Start()
     {
         // Initialize Rigidbody2D and speed variables
@@ -43,30 +47,58 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private Vector2 smoothDirection;
+
     void FixedUpdate()
     {
-        if (playerTransform != null)
-            direction = (playerTransform.position - transform.position).normalized;
-        bool flip = direction.x < 0;
+        if (playerTransform == null) return;
 
-        if (flip != isFlipped) // Only flip if the state changes
+        Vector2 targetDir = (playerTransform.position - transform.position).normalized;
+
+        // --- Separation behaviour ---
+        Vector2 separationForce = Vector2.zero;
+        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, separationRadius);
+
+        foreach (var c in nearbyEnemies)
+        {
+            if (c != null && c != GetComponent<Collider2D>() && c.CompareTag("Enemy"))
+            {
+                Vector2 away = (Vector2)(transform.position - c.transform.position);
+                float dist = away.magnitude;
+                if (dist > 0f)
+                    separationForce += away.normalized / dist;
+            }
+        }
+
+        Vector2 finalDir = (targetDir + separationForce * separationStrength).normalized;
+
+        // Smooth transition instead of snapping
+        smoothDirection = Vector2.Lerp(smoothDirection, finalDir, 0.1f);
+
+        rb.MovePosition(rb.position + smoothDirection * currentSpeed * Time.fixedDeltaTime);
+
+        HandleFlip(targetDir.x);
+    }
+
+
+    void HandleFlip(float dirX)
+    {
+        bool flip = dirX < 0;
+        if (flip != isFlipped)
         {
             isFlipped = flip;
-
             spriteRenderer.flipX = flip;
 
             foreach (Transform child in GetComponentsInChildren<Transform>())
             {
                 if (child == transform) continue;
-
-                Vector3 localPosition = child.localPosition;
-                localPosition.x *= -1; // Flip the X-axis
-                child.localPosition = localPosition;
+                Vector3 localPos = child.localPosition;
+                localPos.x *= -1;
+                child.localPosition = localPos;
             }
         }
-
-        rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
     }
+
 
 
     void OnTriggerEnter2D(Collider2D other)

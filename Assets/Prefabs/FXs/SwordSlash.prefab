@@ -163,8 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4466c109fb80f104785efe049e48102b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   lifetime: 0.3
+  penetrate: 1
 --- !u!114 &817321334096779982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +201,5 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
+  destroyOnFinish: 0
+  masterSprite: {fileID: 0}
