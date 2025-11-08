@@ -35,9 +35,10 @@ public class ArcBolt : MonoBehaviour
         {
             Transform firstTarget = FindClosestEnemy(transform.position, baseRange);
             if (firstTarget != null)
+            {
                 Fire(firstTarget);
-
-            nextFireTime = Time.time + 1f / fireRate;
+                nextFireTime = Time.time + 1f / fireRate;
+            }
         }
     }
 
