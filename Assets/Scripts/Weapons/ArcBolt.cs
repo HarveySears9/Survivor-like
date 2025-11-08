@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class ArcBolt : MonoBehaviour
@@ -18,8 +19,12 @@ public class ArcBolt : MonoBehaviour
     [Header("Visuals")]
     public GameObject arcVisualPrefab; // simple graphic (line or particle)
 
+    [Header("Timing Settings")]
+    public float chainDelay = 0.08f; // delay between each lightning jump
+
     private float nextFireTime = 0f;
     private List<Transform> hitEnemies = new List<Transform>();
+    private bool isFiring = false;
 
     void Start()
     {
@@ -29,70 +34,74 @@ public class ArcBolt : MonoBehaviour
 
     void Update()
     {
-        if (level <= 0) return;
+        if (level <= 0 || isFiring) return;
 
         if (Time.time >= nextFireTime)
         {
             Transform firstTarget = FindClosestEnemy(transform.position, baseRange);
             if (firstTarget != null)
             {
-                Fire(firstTarget);
-                nextFireTime = Time.time + 1f / fireRate;
+                StartCoroutine(FireRoutine(firstTarget));
             }
+            // no target? just wait — don’t reset cooldown
         }
     }
 
-    /// <summary>
-    /// Fires the ArcBolt starting from the first enemy
-    /// </summary>
-    public void Fire(Transform firstTarget)
+    IEnumerator FireRoutine(Transform firstTarget)
     {
-        if (firstTarget == null) return;
+        if (firstTarget == null) yield break;
 
+        isFiring = true;
+        yield return StartCoroutine(ChainToTargetRoutine(firstTarget, maxChains, transform.position));
+        nextFireTime = Time.time + 1f / fireRate;
+        isFiring = false;
+    }
+
+    IEnumerator ChainToTargetRoutine(Transform target, int chainsRemaining, Vector3 startPos)
+    {
         hitEnemies.Clear();
-        // Pass player's position as start of first arc
-        ChainToTarget(firstTarget, maxChains, transform.position);
+
+        while (target != null && chainsRemaining > 0)
+        {
+            // if target got destroyed, stop immediately
+            if (target == null)
+                yield break;
+
+            hitEnemies.Add(target);
+
+            // Damage enemy safely
+            var enemy = target.GetComponent<EnemyController>();
+            var boss = target.GetComponent<Boss>();
+
+            if (enemy != null) enemy.TakeDamage(damage);
+            if (boss != null) boss.TakeDamage(damage);
+
+            Vector3 targetPos = target != null ? target.position : startPos;
+
+            // Visual
+            if (arcVisualPrefab != null)
+                SpawnLightningArc(startPos, targetPos);
+
+
+            // Line
+            // DrawLine(startPos, targetPos);
+
+            yield return new WaitForSeconds(chainDelay);
+
+            // Find next target
+            Transform nextTarget = FindClosestEnemy(targetPos, chainRange);
+
+            // If next target is invalid, break
+            if (nextTarget == null || hitEnemies.Contains(nextTarget))
+                break;
+
+            // Prep for next chain
+            startPos = targetPos;
+            target = nextTarget;
+            chainsRemaining--;
+        }
     }
 
-    /// <summary>
-    /// Chains to target recursively
-    /// </summary>
-    void ChainToTarget(Transform target, int chainsRemaining, Vector3 startPos)
-    {
-        if (target == null || chainsRemaining <= 0) return;
-
-        hitEnemies.Add(target);
-
-        // Deal damage to the enemy
-        var enemy = target.GetComponent<EnemyController>();
-        var boss = target.GetComponent<Boss>();
-
-        if (enemy != null) enemy.TakeDamage(damage);
-        if (boss != null) boss.TakeDamage(damage);
-
-
-        // Show visual prefab if assigned
-        if (arcVisualPrefab != null)
-        {
-            GameObject visual = Instantiate(arcVisualPrefab, target.position, Quaternion.identity);
-            Destroy(visual, 0.2f);
-        }
-
-        // Draw line from startPos to target
-        DrawLine(startPos, target.position);
-
-        // Find next target
-        Transform nextTarget = FindClosestEnemy(target.position, chainRange);
-        if (nextTarget != null && !hitEnemies.Contains(nextTarget))
-        {
-            // Recursive chain: target becomes new start
-            ChainToTarget(nextTarget, chainsRemaining - 1, target.position);
-        }
-    }
-
-    /// <summary>
-    /// Finds the closest enemy to a position within a given range
-    /// </summary>
     Transform FindClosestEnemy(Vector3 position, float range)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(position, range);
@@ -101,8 +110,10 @@ public class ArcBolt : MonoBehaviour
 
         foreach (var h in hits)
         {
+            if (h == null) continue; // skip destroyed colliders
             if (h.CompareTag("Enemy") && !hitEnemies.Contains(h.transform))
             {
+                if (h.transform == null) continue; // safeguard
                 float dist = Vector2.Distance(position, h.transform.position);
                 if (dist < closestDist)
                 {
@@ -115,9 +126,6 @@ public class ArcBolt : MonoBehaviour
         return closest;
     }
 
-    /// <summary>
-    /// Draws a temporary line between two positions on the Projectile sorting layer
-    /// </summary>
     void DrawLine(Vector3 start, Vector3 end)
     {
         GameObject lineObj = new GameObject("ArcLine");
@@ -131,11 +139,29 @@ public class ArcBolt : MonoBehaviour
         lr.startColor = Color.yellow;
         lr.endColor = Color.yellow;
 
-        // Set sorting layer for visuals
         lr.sortingLayerName = "Projectile";
         lr.sortingOrder = 5;
 
         Destroy(lineObj, 0.2f);
+    }
+
+    void SpawnLightningArc(Vector3 start, Vector3 end)
+    {
+        if (arcVisualPrefab == null) return;
+
+        GameObject visual = Instantiate(arcVisualPrefab, start, Quaternion.identity);
+
+        // Compute the direction and distance
+        Vector3 dir = end - start;
+        float distance = dir.magnitude;
+
+        // Rotate the prefab to face the target
+        visual.transform.right = dir.normalized;
+
+        // Scale along X to stretch between points
+        Vector3 scale = visual.transform.localScale;
+        scale.x = distance / (arcVisualPrefab.GetComponent<SpriteRenderer>().sprite.bounds.size.x); // Adjust for sprite width
+        visual.transform.localScale = scale;
     }
 
     void OnDrawGizmosSelected()
@@ -144,9 +170,6 @@ public class ArcBolt : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, baseRange);
     }
 
-    /// <summary>
-    /// Level up the ArcBolt, increasing max chains
-    /// </summary>
     public void LevelUp()
     {
         level++;

@@ -16647,7 +16647,8 @@ MonoBehaviour:
   level: 0
   maxLevel: 5
   levelUpButton: {fileID: 1316870217}
-  arcVisualPrefab: {fileID: 0}
+  arcVisualPrefab: {fileID: 6604213439518367188, guid: c558475a4fd4f0f4f8ddafeee7a116ac, type: 3}
+  chainDelay: 0.08
 --- !u!1 &1528730556
 GameObject:
   m_ObjectHideFlags: 0
