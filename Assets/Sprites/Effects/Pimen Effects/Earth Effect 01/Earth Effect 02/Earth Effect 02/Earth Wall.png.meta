@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5596dd8417d775418e5f782dec9fade
+guid: ee3d91cfd64b1b54892d8d15e8ad427e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_0
+      name: Earth Wall_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dac4ff90319ce418739e0c086ec84b
+      internalID: -2107545874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Earth Wall_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b542a40828d87ce4684c1ff8f8eb2208
+      internalID: -2065660676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Earth Wall_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e572522b293ef64eab91ce2e2d725a7
+      internalID: -1392535237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Earth Wall_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 40
-        height: 32
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd9e304879de849469d6f85c8504b80b
-      internalID: 1350707646
+      spriteID: 9ef2fccf3d7f09647a535f58a131800d
+      internalID: 1607725775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_1
+      name: Earth Wall_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 32
-        width: 40
-        height: 32
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4875c7adf332e6749af0455c1adee8db
-      internalID: 1564447567
+      spriteID: 81867e56cf2c50b44b98778e90ec5c1a
+      internalID: 2120322121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_2
+      name: Earth Wall_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 40
-        height: 32
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6694b5321d60b2148ba2c27dba97e2d3
-      internalID: -1685929628
+      spriteID: 66054694f18941a4aa3f54a6bba095cc
+      internalID: -1514917296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_3
+      name: Earth Wall_6
       rect:
         serializedVersion: 2
-        x: 120
-        y: 32
-        width: 40
-        height: 32
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a4d2721b81640d4eb7599c05cc4683b
-      internalID: 206619763
+      spriteID: 4d52a6a0003578a42aa33ba76395627c
+      internalID: 1002601832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_4
+      name: Earth Wall_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 32
-        width: 40
-        height: 32
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4176651b76797444bb1bf2891ffac3a6
-      internalID: -1700111363
+      spriteID: 651c9f848c8e3374cb59e47f77449160
+      internalID: -1882917939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_5
+      name: Earth Wall_8
       rect:
         serializedVersion: 2
-        x: 200
-        y: 32
-        width: 40
-        height: 32
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b01a09185645b24cad3ae1ccacf824c
-      internalID: 1474627600
+      spriteID: 780826ade57c472429163d18d88e7bd9
+      internalID: -834298822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_6
+      name: Earth Wall_9
       rect:
         serializedVersion: 2
-        x: 240
-        y: 32
-        width: 40
-        height: 32
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c608ba9be3fdc1e44bbf119d43329b79
-      internalID: 349770018
+      spriteID: 3c8a7744cf9f57e42946fc9d502bb512
+      internalID: -1233102100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_7
+      name: Earth Wall_10
       rect:
         serializedVersion: 2
-        x: 280
-        y: 32
-        width: 40
-        height: 32
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,62 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b431a9435c1d3f4f9add62e0de95ed0
-      internalID: 1710936232
+      spriteID: 56d1a3a0c4edb764d978b0226bbefead
+      internalID: -1776455758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_8
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe6afa19d12b0ac41b3a6180c42988de
-      internalID: 2108385511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_9
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0256804ee9fc34d47aca2b4b4779acc3
-      internalID: -136040839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_10
+      name: Earth Wall_11
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1277b3765b8f1a549a56321110c571db
-      internalID: -450569636
+      spriteID: 047d4dc2d50f25c4c96668fd1fbaf8c2
+      internalID: -1341002928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_11
+      name: Earth Wall_12
       rect:
         serializedVersion: 2
-        x: 40
+        x: 48
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,92 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2b1571548f18e43b39b26988de2737
-      internalID: -1497823190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_12
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 153b5f700c7439a498aec8f2cd8957f0
-      internalID: 1207419180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_13
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 823aae291d3600a4da6b46c4df1117d4
-      internalID: -1658488843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_14
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ad1db9bb2eff2c47b6242f1bfa69b97
-      internalID: 1616940451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_15
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 778cd49ccb69a1644995a1514ef6f174
-      internalID: -1584024521
+      spriteID: 7f05c346d1ea95941b596894f824c132
+      internalID: 4744172
       vertices: []
       indices: 
       edges: []
@@ -469,22 +406,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dark VFX 1 (40x32)_0: 1350707646
-      Dark VFX 1 (40x32)_1: 1564447567
-      Dark VFX 1 (40x32)_10: -450569636
-      Dark VFX 1 (40x32)_11: -1497823190
-      Dark VFX 1 (40x32)_12: 1207419180
-      Dark VFX 1 (40x32)_13: -1658488843
-      Dark VFX 1 (40x32)_14: 1616940451
-      Dark VFX 1 (40x32)_15: -1584024521
-      Dark VFX 1 (40x32)_2: -1685929628
-      Dark VFX 1 (40x32)_3: 206619763
-      Dark VFX 1 (40x32)_4: -1700111363
-      Dark VFX 1 (40x32)_5: 1474627600
-      Dark VFX 1 (40x32)_6: 349770018
-      Dark VFX 1 (40x32)_7: 1710936232
-      Dark VFX 1 (40x32)_8: 2108385511
-      Dark VFX 1 (40x32)_9: -136040839
+      Earth Wall_0: -2107545874
+      Earth Wall_1: -2065660676
+      Earth Wall_10: -1776455758
+      Earth Wall_11: -1341002928
+      Earth Wall_12: 4744172
+      Earth Wall_2: -1392535237
+      Earth Wall_3: 1607725775
+      Earth Wall_4: 2120322121
+      Earth Wall_5: -1514917296
+      Earth Wall_6: 1002601832
+      Earth Wall_7: -1882917939
+      Earth Wall_8: -834298822
+      Earth Wall_9: -1233102100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

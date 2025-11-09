@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5596dd8417d775418e5f782dec9fade
+guid: ccf5208fd36325e488df5135ea9500a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_0
+      name: Dark VFX 2 (48x64)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 40
-        height: 32
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd9e304879de849469d6f85c8504b80b
-      internalID: 1350707646
+      spriteID: fc059afb7e9422240aab41f4ae199465
+      internalID: -1072101810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_1
+      name: Dark VFX 2 (48x64)_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 32
-        width: 40
-        height: 32
+        x: 48
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4875c7adf332e6749af0455c1adee8db
-      internalID: 1564447567
+      spriteID: 9c845a59c20bc5245a8157b66927ddfa
+      internalID: -1291210250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_2
+      name: Dark VFX 2 (48x64)_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 40
-        height: 32
+        x: 96
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6694b5321d60b2148ba2c27dba97e2d3
-      internalID: -1685929628
+      spriteID: 3e7f756e8792adb4db4c0c3594ee6a1a
+      internalID: 813720767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_3
+      name: Dark VFX 2 (48x64)_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 32
-        width: 40
-        height: 32
+        x: 144
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a4d2721b81640d4eb7599c05cc4683b
-      internalID: 206619763
+      spriteID: 4bef3a18f9cee5846889365fd4c58aab
+      internalID: -732547608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_4
+      name: Dark VFX 2 (48x64)_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 32
-        width: 40
-        height: 32
+        x: 192
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,125 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4176651b76797444bb1bf2891ffac3a6
-      internalID: -1700111363
+      spriteID: 888e0953819bdf8469d2c1b06a30aed3
+      internalID: -900227896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_5
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b01a09185645b24cad3ae1ccacf824c
-      internalID: 1474627600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_6
+      name: Dark VFX 2 (48x64)_5
       rect:
         serializedVersion: 2
         x: 240
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c608ba9be3fdc1e44bbf119d43329b79
-      internalID: 349770018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_7
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b431a9435c1d3f4f9add62e0de95ed0
-      internalID: 1710936232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_8
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe6afa19d12b0ac41b3a6180c42988de
-      internalID: 2108385511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_9
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 32
-        width: 40
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0256804ee9fc34d47aca2b4b4779acc3
-      internalID: -136040839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_10
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1277b3765b8f1a549a56321110c571db
-      internalID: -450569636
+      spriteID: 3c83d95e97700534596ab589c856acb1
+      internalID: 691303419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_11
+      name: Dark VFX 2 (48x64)_6
       rect:
         serializedVersion: 2
-        x: 40
+        x: 288
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2b1571548f18e43b39b26988de2737
-      internalID: -1497823190
+      spriteID: 05d4832fcf9fe85489f746e65e596b41
+      internalID: 1582144753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_12
+      name: Dark VFX 2 (48x64)_7
       rect:
         serializedVersion: 2
-        x: 80
+        x: 336
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 153b5f700c7439a498aec8f2cd8957f0
-      internalID: 1207419180
+      spriteID: 4f8dbe07b1a0eaf4c86d4a59c673fa6a
+      internalID: 50885023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_13
+      name: Dark VFX 2 (48x64)_8
       rect:
         serializedVersion: 2
-        x: 120
+        x: 384
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 823aae291d3600a4da6b46c4df1117d4
-      internalID: -1658488843
+      spriteID: d2ef3a52da2fd5f43af9c87b5b9cb939
+      internalID: 1208846206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_14
+      name: Dark VFX 2 (48x64)_9
       rect:
         serializedVersion: 2
-        x: 160
+        x: 432
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ad1db9bb2eff2c47b6242f1bfa69b97
-      internalID: 1616940451
+      spriteID: 034d0db8dc7a54e4d85c9cfb2cd8d99a
+      internalID: 1642321222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark VFX 1 (40x32)_15
+      name: Dark VFX 2 (48x64)_10
       rect:
         serializedVersion: 2
-        x: 200
+        x: 480
         y: 0
-        width: 40
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,8 +347,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 778cd49ccb69a1644995a1514ef6f174
-      internalID: -1584024521
+      spriteID: c41746a6087039144984f5d677e3ae6e
+      internalID: 761061295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark VFX 2 (48x64)_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82bb6e41ff596146822fdc36dd146c2
+      internalID: 545058635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark VFX 2 (48x64)_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea80bbfba6b74c4a9836ac13f6394ef
+      internalID: 1500169407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark VFX 2 (48x64)_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fdfa14dbd3f5f4a9ae382477c6cbb0
+      internalID: -1948240656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark VFX 2 (48x64)_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36abb5c4fac6ddf49a303dd604b8ce57
+      internalID: 1639915757
       vertices: []
       indices: 
       edges: []
@@ -469,22 +448,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dark VFX 1 (40x32)_0: 1350707646
-      Dark VFX 1 (40x32)_1: 1564447567
-      Dark VFX 1 (40x32)_10: -450569636
-      Dark VFX 1 (40x32)_11: -1497823190
-      Dark VFX 1 (40x32)_12: 1207419180
-      Dark VFX 1 (40x32)_13: -1658488843
-      Dark VFX 1 (40x32)_14: 1616940451
-      Dark VFX 1 (40x32)_15: -1584024521
-      Dark VFX 1 (40x32)_2: -1685929628
-      Dark VFX 1 (40x32)_3: 206619763
-      Dark VFX 1 (40x32)_4: -1700111363
-      Dark VFX 1 (40x32)_5: 1474627600
-      Dark VFX 1 (40x32)_6: 349770018
-      Dark VFX 1 (40x32)_7: 1710936232
-      Dark VFX 1 (40x32)_8: 2108385511
-      Dark VFX 1 (40x32)_9: -136040839
+      Dark VFX 2 (48x64)_0: -1072101810
+      Dark VFX 2 (48x64)_1: -1291210250
+      Dark VFX 2 (48x64)_10: 761061295
+      Dark VFX 2 (48x64)_11: 545058635
+      Dark VFX 2 (48x64)_12: 1500169407
+      Dark VFX 2 (48x64)_13: -1948240656
+      Dark VFX 2 (48x64)_14: 1639915757
+      Dark VFX 2 (48x64)_2: 813720767
+      Dark VFX 2 (48x64)_3: -732547608
+      Dark VFX 2 (48x64)_4: -900227896
+      Dark VFX 2 (48x64)_5: 691303419
+      Dark VFX 2 (48x64)_6: 1582144753
+      Dark VFX 2 (48x64)_7: 50885023
+      Dark VFX 2 (48x64)_8: 1208846206
+      Dark VFX 2 (48x64)_9: 1642321222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
