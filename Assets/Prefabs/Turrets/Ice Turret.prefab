@@ -101,13 +101,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8398524660225180425, guid: 54035e6735fcfc74fafe0d4771c48aec, type: 3}
   firePoint: {fileID: 8113607572225555949}
-  fireRate: 1
-  range: 2
+  fireRate: 0.75
+  range: 2.5
   damage: 1
-  lifeTime: 10
+  lifeTime: 20
   level: 1
   maxLevel: 5
   barrel: {fileID: 6679413872256575152}
+  rotationSpeed: 360
+  aimTolerance: 5
 --- !u!1 &7673694318758211945
 GameObject:
   m_ObjectHideFlags: 0
