@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 973d00ffa9d88374cb110cc1100b5772
+guid: fb9fa84f3533e4547b9b77ec09e46f89
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,610 +123,505 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_0
+      name: Cacodaemon Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e7d116d61af3c47a42259d4c964725
+      internalID: 1535643065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e28b6a60d486084cb256e86e33391f9
+      internalID: -2064480072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98c9f49bfe1aed4d9f28cb882342b57
+      internalID: -1115182861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16abc5f5a7ce4454cae57c9e2de11407
+      internalID: -259571447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a294b93dafe694bb9b3d76ee2452a0
+      internalID: -379625402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b68ba305821d5743a0dc81c3e30d922
+      internalID: 2040222897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7f83a5ec449dbb44b670b309c80460b
-      internalID: -8567768
+      spriteID: 431c557a10c2b0a459c09d8adb228f24
+      internalID: -1196342951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ff1289a350937d46a1932a5ba40e207
-      internalID: -2075933369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_2
+      name: Cacodaemon Sprite Sheet_7
       rect:
         serializedVersion: 2
         x: 64
         y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f27c06873312d5d43bb43c20ea8000cc
-      internalID: 2074552809
+      spriteID: a3a127c34e9cf38439c5bee91eea5c75
+      internalID: -419187640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46117ee6a56a13141ac0d5471f2b811f
-      internalID: -1265262054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_4
+      name: Cacodaemon Sprite Sheet_8
       rect:
         serializedVersion: 2
         x: 128
         y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f562a657a6ce841b3725b6765a697f
-      internalID: 932131146
+      spriteID: 06cf2b7e27d425a45bb70a28e9b43881
+      internalID: 938451533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7b859ef37dfba94f845aeb2c34e27ad
-      internalID: -526197889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_6
+      name: Cacodaemon Sprite Sheet_9
       rect:
         serializedVersion: 2
         x: 192
         y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f92002a927d40147b08fb7a28294785
-      internalID: -1510922304
+      spriteID: d5a3dce5f2aa41346b2b0de0ff813d03
+      internalID: 264414327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_7
+      name: Cacodaemon Sprite Sheet_10
       rect:
         serializedVersion: 2
-        x: 224
+        x: 256
         y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 377c7b23adc52d24281e96e4ff2a2994
-      internalID: 1570406992
+      spriteID: 0a7f198790a49ff45aeab5af0fc50d8e
+      internalID: 797442176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_8
+      name: Cacodaemon Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
+        x: 320
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2e9f86f9549d3e4a8ec66aaaebd3880
-      internalID: -438440306
+      spriteID: d66ec8969fb5eb944b651f3cef8bbf51
+      internalID: -1513037238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe189712788f02a4087abe99e6d2c258
-      internalID: 1285725738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aaef10790d9b25840933e4d470b11069
-      internalID: -1793114731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fd48f8e438bb8e4697565b08d506463
-      internalID: -1398660423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_12
+      name: Cacodaemon Sprite Sheet_12
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 113b20ed0a6747e45b3b88dfe3426937
-      internalID: 2031065538
+      spriteID: 286c3210dba3c524fa53e3bc1987f859
+      internalID: 1920139349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e31ca772ffa48d488608a3f59300e57
-      internalID: -2024478725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_14
+      name: Cacodaemon Sprite Sheet_13
       rect:
         serializedVersion: 2
         x: 64
         y: 64
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64522dd43338739438863c91ffb3e4c4
-      internalID: 1312980525
+      spriteID: eb3cc8426bf6efa49ab55a65606c686a
+      internalID: 106739363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a26d992ab6ef604aa11e5a758bf75c3
-      internalID: 1342277287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_16
+      name: Cacodaemon Sprite Sheet_14
       rect:
         serializedVersion: 2
         x: 128
         y: 64
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f85431b6b8d6b2e4e9cae29a8baef13f
-      internalID: 272047878
+      spriteID: a42666de2e210a347a720cd4e4105a86
+      internalID: -1465320555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7370bf3045fa205499b708b6bfb5161a
-      internalID: 616920569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_18
+      name: Cacodaemon Sprite Sheet_15
       rect:
         serializedVersion: 2
         x: 192
         y: 64
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b47ec3f9cac1b4d9d2a543dabbe297
-      internalID: -1374242925
+      spriteID: 793e3ce3a5d288943947b71b4d84dfa1
+      internalID: 1093285890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c55de6a73cafa83428dcd0522ddd378d
-      internalID: 2104779903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56970b1f13a65e9428cf1c51dd38f0a3
-      internalID: -1634169737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c01e824b8cc6174d9b433e6251d01e3
-      internalID: 1168963198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_22
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47e1c2bc7af64744290eadfdfb9d7e5f
-      internalID: -1351364658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_23
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b276a39e5c1b34b4f866b91b2472edb8
-      internalID: -1715782965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_24
+      name: Cacodaemon Sprite Sheet_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f0046d3ccb06543b9bd37f8cb03cc0
-      internalID: -1410164255
+      spriteID: 30abfdc019256aa439fab4100e1abb38
+      internalID: 1201048617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_25
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 887124c2fc986e542a6582a1ad7e2881
-      internalID: -1420678817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_26
+      name: Cacodaemon Sprite Sheet_17
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5635bb9ed6e277846a94af9a4d9639c0
-      internalID: -1129888154
+      spriteID: 480a1fd14c047c343b02b86a40cbffcd
+      internalID: 1036551587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_27
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bda3e15ce3b9544f85047c12cd4a1e3
-      internalID: -1771020307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye Monster Sprite Sheet_28
+      name: Cacodaemon Sprite Sheet_18
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0044f1200dd74d40a5583f245b14a76
-      internalID: 525820239
+      spriteID: 69d11c51a6ff3dd469456da10b396de3
+      internalID: 1470900474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5f926b7c48cf54ea59d0896ba5e1a3
+      internalID: -220397149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74347313730c6aa4c9c603abe8a834a8
+      internalID: -45951058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde31693f07e3ff42a21e7044d0d6de0
+      internalID: -303430667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fc47f65e46ac24dbcf717cf3ffb4a2
+      internalID: 1254978459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022627f82c289b1488b0f68cf24c2de0
+      internalID: -1382584347
       vertices: []
       indices: 
       edges: []
@@ -742,35 +637,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Eye Monster Sprite Sheet_0: -8567768
-      Eye Monster Sprite Sheet_1: -2075933369
-      Eye Monster Sprite Sheet_10: -1793114731
-      Eye Monster Sprite Sheet_11: -1398660423
-      Eye Monster Sprite Sheet_12: 2031065538
-      Eye Monster Sprite Sheet_13: -2024478725
-      Eye Monster Sprite Sheet_14: 1312980525
-      Eye Monster Sprite Sheet_15: 1342277287
-      Eye Monster Sprite Sheet_16: 272047878
-      Eye Monster Sprite Sheet_17: 616920569
-      Eye Monster Sprite Sheet_18: -1374242925
-      Eye Monster Sprite Sheet_19: 2104779903
-      Eye Monster Sprite Sheet_2: 2074552809
-      Eye Monster Sprite Sheet_20: -1634169737
-      Eye Monster Sprite Sheet_21: 1168963198
-      Eye Monster Sprite Sheet_22: -1351364658
-      Eye Monster Sprite Sheet_23: -1715782965
-      Eye Monster Sprite Sheet_24: -1410164255
-      Eye Monster Sprite Sheet_25: -1420678817
-      Eye Monster Sprite Sheet_26: -1129888154
-      Eye Monster Sprite Sheet_27: -1771020307
-      Eye Monster Sprite Sheet_28: 525820239
-      Eye Monster Sprite Sheet_3: -1265262054
-      Eye Monster Sprite Sheet_4: 932131146
-      Eye Monster Sprite Sheet_5: -526197889
-      Eye Monster Sprite Sheet_6: -1510922304
-      Eye Monster Sprite Sheet_7: 1570406992
-      Eye Monster Sprite Sheet_8: -438440306
-      Eye Monster Sprite Sheet_9: 1285725738
+      Cacodaemon Sprite Sheet_0: 1535643065
+      Cacodaemon Sprite Sheet_1: -2064480072
+      Cacodaemon Sprite Sheet_10: 797442176
+      Cacodaemon Sprite Sheet_11: -1513037238
+      Cacodaemon Sprite Sheet_12: 1920139349
+      Cacodaemon Sprite Sheet_13: 106739363
+      Cacodaemon Sprite Sheet_14: -1465320555
+      Cacodaemon Sprite Sheet_15: 1093285890
+      Cacodaemon Sprite Sheet_16: 1201048617
+      Cacodaemon Sprite Sheet_17: 1036551587
+      Cacodaemon Sprite Sheet_18: 1470900474
+      Cacodaemon Sprite Sheet_19: -220397149
+      Cacodaemon Sprite Sheet_2: -1115182861
+      Cacodaemon Sprite Sheet_20: -45951058
+      Cacodaemon Sprite Sheet_21: -303430667
+      Cacodaemon Sprite Sheet_22: 1254978459
+      Cacodaemon Sprite Sheet_23: -1382584347
+      Cacodaemon Sprite Sheet_3: -259571447
+      Cacodaemon Sprite Sheet_4: -379625402
+      Cacodaemon Sprite Sheet_5: 2040222897
+      Cacodaemon Sprite Sheet_6: -1196342951
+      Cacodaemon Sprite Sheet_7: -419187640
+      Cacodaemon Sprite Sheet_8: 938451533
+      Cacodaemon Sprite Sheet_9: 264414327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
