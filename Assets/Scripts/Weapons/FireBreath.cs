@@ -219,4 +219,10 @@ public class FireBreath : MonoBehaviour
         aimWithJoystick = false;
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
 }

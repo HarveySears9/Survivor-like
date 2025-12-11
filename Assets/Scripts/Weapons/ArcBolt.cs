@@ -26,6 +26,9 @@ public class ArcBolt : MonoBehaviour
     private List<Transform> hitEnemies = new List<Transform>();
     private bool isFiring = false;
 
+
+    public bool testing = false;
+
     void Start()
     {
         if (levelUpButton != null)
@@ -105,6 +108,7 @@ public class ArcBolt : MonoBehaviour
     Transform FindClosestEnemy(Vector3 position, float range)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(position, range);
+        
         Transform closest = null;
         float closestDist = Mathf.Infinity;
 
@@ -164,12 +168,6 @@ public class ArcBolt : MonoBehaviour
         visual.transform.localScale = scale;
     }
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, baseRange);
-    }
-
     public void LevelUp()
     {
         level++;
@@ -186,5 +184,13 @@ public class ArcBolt : MonoBehaviour
             case 4: maxChains = 5; break;
             case 5: maxChains = 6; break;
         }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, baseRange);
+        Gizmos.DrawWireSphere(transform.position, chainRange);
     }
 }
