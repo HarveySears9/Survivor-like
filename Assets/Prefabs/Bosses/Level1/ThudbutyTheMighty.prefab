@@ -274,7 +274,8 @@ MonoBehaviour:
   animating: 1
   animationSpeed: 0.15
   isMoving: 1
-  syncWith: []
+  destroyOnFinish: 0
+  masterSprite: {fileID: 0}
 --- !u!114 &-2653470856465480761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,12 +289,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Thudbutt The Mighty
-  maxHP: 1000
+  maxHP: 300
   speed: 2
   damage: 15
+  damageInterval: 1
   playerTransform: {fileID: 0}
   healthBar: {fileID: 0}
   drops:
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
   hammerPrefab: {fileID: 787470760057298453, guid: cd00b3300a819094ca9e1f49eec8e3a2, type: 3}
   hammerThrowCooldown: 5
+  hammerDamage: 5

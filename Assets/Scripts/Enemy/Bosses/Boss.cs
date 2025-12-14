@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
     public string name;
 
     public int maxHP = 10;
-    private float health;         // Enemy health
+    protected float health;         // Enemy health
     public float speed = 2f;         // Normal movement speed
     public float damage = 1f;
 
@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour
     protected float originalSpeed;      // Original speed for resetting after slow
 
     protected bool moving = true;
-    private bool isDead = false;
+    protected bool isDead = false;
 
     private bool isFlipped = false;
 
@@ -99,7 +99,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
 
