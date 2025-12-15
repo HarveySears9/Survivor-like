@@ -34,6 +34,9 @@ public class Boss : MonoBehaviour
 
     public GameObject[] drops;
 
+    // --- Slow effect tracking ---
+    private Coroutine slowRoutine;
+
     protected virtual void Start()
     {
         // Initialize Rigidbody2D and speed variables
@@ -119,18 +122,46 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ApplySlow(float slowMultiplier, float duration)
+    // --- SLOW EFFECT HANDLING ---
+    public void ApplySlow(float slowAmount, float duration)
     {
-        // Reduce the current speed by the multiplier
-        currentSpeed = originalSpeed * slowMultiplier;
+        // Cancel existing slow so new one refreshes
+        if (slowRoutine != null)
+            StopCoroutine(slowRoutine);
 
-        // Reset speed after the specified duration
-        Invoke(nameof(RemoveSlow), duration);
+        slowRoutine = StartCoroutine(SlowEffect(slowAmount, duration));
     }
 
-    private void RemoveSlow()
+    private IEnumerator SlowEffect(float slowAmount, float duration)
     {
-        // Reset the current speed to the original speed
+        // Clamp slow between 0–1 (1 = no slow, 0 = fully stopped)
+        slowAmount = Mathf.Clamp01(slowAmount);
+
+        currentSpeed = originalSpeed * slowAmount;
+
+        // Smoothly transition color to blue
+        if (spriteRenderer != null)
+            yield return StartCoroutine(FadeColor(spriteRenderer.color, Color.cyan, 0.1f));
+
+        yield return new WaitForSeconds(duration);
+
+        // Restore normal speed and color
         currentSpeed = originalSpeed;
+        if (spriteRenderer != null)
+            yield return StartCoroutine(FadeColor(spriteRenderer.color, Color.white, 0.1f));
+
+        slowRoutine = null;
+    }
+
+    private IEnumerator FadeColor(Color from, Color to, float time)
+    {
+        float elapsed = 0f;
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(from, to, elapsed / time);
+            yield return null;
+        }
+        spriteRenderer.color = to;
     }
 }
