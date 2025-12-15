@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healPercentage: 10
-  lifetime: 60
+  lifetime: 90
 --- !u!58 &5121369854247330358
 CircleCollider2D:
   m_ObjectHideFlags: 0

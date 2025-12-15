@@ -2498,8 +2498,8 @@ MonoBehaviour:
   expBar: {fileID: 890236185}
   currentLevel: 1
   currentEXP: 0
-  expThreshold: 10
-  thresholdIncrease: 0.1
+  baseExpThreshold: 5
+  expPerLevel: 3
   levelUpMenu: {fileID: 122540149}
   levelText: {fileID: 1958561645}
 --- !u!114 &302951750
@@ -4909,19 +4909,19 @@ MonoBehaviour:
   - {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
   tier2:
   - {fileID: 3190766407511353783, guid: dda01c051595cb44eb93a0e8e79ab506, type: 3}
+  - {fileID: 249015855445185922, guid: 206679ec82198e24bad80e217b2ea04a, type: 3}
   - {fileID: 4056437496795740678, guid: f5a5de47c56e92c43bc3b9a11292db4f, type: 3}
   - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}
-  - {fileID: 249015855445185922, guid: 206679ec82198e24bad80e217b2ea04a, type: 3}
   - {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
   tier3:
-  - {fileID: 3190766407511353783, guid: dda01c051595cb44eb93a0e8e79ab506, type: 3}
-  - {fileID: 4056437496795740678, guid: f5a5de47c56e92c43bc3b9a11292db4f, type: 3}
-  - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}
   - {fileID: 249015855445185922, guid: 206679ec82198e24bad80e217b2ea04a, type: 3}
+  - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}
+  - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
   - {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
-  weights1: 0a0000000200000001000000
-  weights2: 0a00000002000000010000000200000001000000
-  weights3: 0a00000002000000020000000500000001000000
+  weights1: 32000000230000000f000000
+  weights2: 190000001e000000140000000f0000000a000000
+  weights3: 190000001e0000000f000000140000000a000000
   bossDrops:
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
 --- !u!4 &465943711
@@ -9321,8 +9321,8 @@ MonoBehaviour:
   expBar: {fileID: 890236185}
   currentLevel: 1
   currentEXP: 0
-  expThreshold: 5
-  thresholdIncrease: 0.1
+  baseExpThreshold: 2
+  expPerLevel: 3
   levelUpMenu: {fileID: 122540149}
   levelText: {fileID: 1958561645}
 --- !u!1 &836817948
@@ -16583,7 +16583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 568635051185227710, guid: 6093857d94b32ee41a7eb393e72373a9, type: 3}
-  baseFireRate: 1.25
+  baseFireRate: 2.5
   level: 1
   maxLevel: 5
   spreadAngle: 30
@@ -19284,8 +19284,8 @@ MonoBehaviour:
   levelSpawner: {fileID: 429575878}
   spawnInterval: 0.6
   difficultyInterval: 30
-  dropInterval: 90
-  bossInterval: 10
+  dropInterval: 120
+  bossInterval: 180
   waveInterval: 45
 --- !u!1 &1654217182
 GameObject:

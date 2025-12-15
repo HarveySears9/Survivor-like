@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 3
-  lifetime: 60
+  lifetime: 90
 --- !u!114 &4059506823722759466
 MonoBehaviour:
   m_ObjectHideFlags: 0

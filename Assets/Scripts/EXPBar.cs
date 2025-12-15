@@ -9,16 +9,24 @@ public class EXPBar : MonoBehaviour
     public Slider expBar;          // Reference to the EXP slider
     public int currentLevel = 1;   // Player's current level
     public float currentEXP = 0;   // Current EXP amount
-    public float expThreshold = 100; // EXP needed for the next level
-    public float thresholdIncrease = 0.05f;
+    public float baseExpThreshold = 5f;   // fast early levels
+    public float expPerLevel = 3f;        // pacing control
+    private float expThreshold;
+
     public GameObject levelUpMenu; // Reference to the level-up menu
 
     public TextMeshProUGUI levelText;
 
     void Start()
     {
+        RecalculateThreshold();
         UpdateEXPBar();
         SetText();
+    }
+
+    void RecalculateThreshold()
+    {
+        expThreshold = baseExpThreshold + (currentLevel * expPerLevel);
     }
 
     public void ScrollPickUp()
@@ -50,7 +58,8 @@ public class EXPBar : MonoBehaviour
         {
             currentEXP = 0;
         }
-        expThreshold *= 1f + thresholdIncrease; // Increase the threshold for the next level (optional)
+
+        RecalculateThreshold();
 
         UpdateEXPBar();
 

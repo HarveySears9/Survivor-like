@@ -36,6 +36,7 @@ public class FireBreath : MonoBehaviour
         damage = loadedData.currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
         fireRate = baseFireRate;
+        nextFireTime = Time.time;
     }
 
     void Update()
@@ -177,22 +178,19 @@ public class FireBreath : MonoBehaviour
         switch (level)
         {
             case 1:
-                fireRate = baseFireRate * 1f;    // 1 shot per second
+                fireRate = baseFireRate;        // 2.5
                 break;
             case 2:
-                fireRate = baseFireRate * 1.50f; // faster, 1 shot every 0.8s
+                fireRate = baseFireRate * 1.4f; // 3.5
                 break;
             case 3:
-                fireRate = baseFireRate * 2f;  // 1 shot every 0.667s
+                fireRate = baseFireRate * 1.8f; // 4.5
                 break;
             case 4:
-                fireRate = baseFireRate * 2.5f; // 1 shot every 0.57s
+                fireRate = baseFireRate * 2.3f; // 5.75
                 break;
             case 5:
-                fireRate = baseFireRate * 3f;    // 1 shot every 0.5s
-                break;
-            default:
-                fireRate = baseFireRate * 1f;
+                fireRate = baseFireRate * 3f;   // 7.5
                 break;
         }
     }
