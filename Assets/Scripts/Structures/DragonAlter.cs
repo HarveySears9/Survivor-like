@@ -3,6 +3,7 @@ using UnityEngine;
 public class DragonAlter : MonoBehaviour
 {
     private AnimateSprite animator;
+    public GameObject button;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class DragonAlter : MonoBehaviour
         if (animator != null)
         {
             animator.isMoving = true;
+            button.SetActive(true);
         }
     }
 
@@ -26,6 +28,7 @@ public class DragonAlter : MonoBehaviour
         if (animator != null)
         {
             animator.isMoving = false;
+            button.SetActive(false);
         }
     }
 }

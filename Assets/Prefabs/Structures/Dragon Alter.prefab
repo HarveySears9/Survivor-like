@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1278681679357904781}
   - component: {fileID: 1103493150325929787}
   - component: {fileID: 322471159274266566}
-  - component: {fileID: 8761072718047945836}
+  - component: {fileID: 5826455878503546663}
   m_Layer: 6
   m_Name: Dragon Alter
   m_TagString: Untagged
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b430c7228bd99f24f8c1b40d72a03ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8761072718047945836
-CircleCollider2D:
+--- !u!70 &5826455878503546663
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -267,7 +267,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -287,6 +287,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.35}
-  serializedVersion: 2
-  m_Radius: 1.25
+  m_Offset: {x: 0.000000034587703, y: 0.29014271}
+  m_Size: {x: 4.259008, y: 2.5557399}
+  m_Direction: 1
