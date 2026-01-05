@@ -17,9 +17,9 @@ TagManager:
   - UI
   - Building
   - Player
-  - 
-  - 
-  - 
+  - Weapon
+  - Enemy
+  - PlayerTrigger
   - 
   - 
   - 

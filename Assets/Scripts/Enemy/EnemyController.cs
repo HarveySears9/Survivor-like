@@ -16,8 +16,6 @@ public class EnemyController : MonoBehaviour
     public float health = 1f;         // Enemy health
     public float speed = 2f;         // Normal movement speed
     public float damage = 1f;
-    public float damageInterval = 1f;
-    private float lastDamageTime = 0f;
 
     public Transform playerTransform; // Reference to the player's position
     private Vector2 direction;        // Direction vector for movement
@@ -117,8 +115,8 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-    void OnTriggerStay2D(Collider2D other)
+    
+    /*void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -129,7 +127,7 @@ public class EnemyController : MonoBehaviour
                 other.GetComponent<PlayerController>().TakeDamage(damage);
             }
         }
-    }
+    }*/
 
     public void TakeDamage(float damage)
     {

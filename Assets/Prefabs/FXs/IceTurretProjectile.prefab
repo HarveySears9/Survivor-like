@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1681301816068781449}
   - component: {fileID: 1404245344131421261}
   - component: {fileID: 4106158368633972597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IceTurretProjectile
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7354610861553087635}
   - component: {fileID: 817321334096779982}
   - component: {fileID: 3045396678623996051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SwordSlash
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3795037866247709708}
   - component: {fileID: 4340274695182406483}
   - component: {fileID: 633622982373894191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidTurretProjectile
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1541000551194016274}
   - component: {fileID: 3854536647762415625}
   - component: {fileID: 3397458113435419899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidSprayTurretProjectile (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1463218829405847031}
   - component: {fileID: 5021331342326720232}
   - component: {fileID: 2056944341363057601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidSprayTurretProjectile
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 3212845340556460796}
   - component: {fileID: 5564909004608575825}
   - component: {fileID: 8473484432737637790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidSprayTurretProjectile (3)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 8378846489520314620}
   - component: {fileID: 2762923332285680984}
   - component: {fileID: 6542066839615016933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidSprayTurretProjectile
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 7807461548592298213}
   - component: {fileID: 2973367252705841843}
   - component: {fileID: 7336434400756274744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcidSprayTurretProjectile (2)
   m_TagString: Weapon
   m_Icon: {fileID: 0}

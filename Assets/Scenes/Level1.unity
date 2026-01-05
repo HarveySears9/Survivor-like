@@ -539,7 +539,8 @@ GameObject:
   m_Component:
   - component: {fileID: 107780989}
   - component: {fileID: 107780990}
-  m_Layer: 0
+  - component: {fileID: 107780991}
+  m_Layer: 8
   m_Name: Spinning blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,6 +613,33 @@ MonoBehaviour:
   level4: {fileID: 561836686}
   level5: {fileID: 1004247155}
   levelUpButton: {fileID: 1960822071}
+--- !u!50 &107780991
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107780988}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &122540149
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,8 +906,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142822142}
-  m_Layer: 0
-  m_Name: GameObject
+  - component: {fileID: 142822143}
+  m_Layer: 10
+  m_Name: DamageTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,6 +929,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 808585393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &142822143
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142822141}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.75}
+  m_Size: {x: 1, y: 1.55}
+  m_Direction: 0
 --- !u!1 &144193800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1274,7 @@ GameObject:
   - component: {fileID: 164346768}
   - component: {fileID: 164346767}
   - component: {fileID: 164346766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (5)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -2637,6 +2701,7 @@ MonoBehaviour:
   coinText: {fileID: 780041044}
   isMoving: 0
   moveDirection: {x: 0, y: 0}
+  damageInterval: 0.25
 --- !u!114 &302951754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3783,7 +3848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388621589}
   - component: {fileID: 388621590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5034,7 +5099,7 @@ GameObject:
   - component: {fileID: 481433572}
   - component: {fileID: 481433571}
   - component: {fileID: 481433570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (2)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5775,7 +5840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 550183049}
   - component: {fileID: 550183050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6126,7 +6191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 561836687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6263,7 +6328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 570951276}
   - component: {fileID: 570951277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6485,7 +6550,7 @@ GameObject:
   - component: {fileID: 583030126}
   - component: {fileID: 583030125}
   - component: {fileID: 583030124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -8004,7 +8069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737469389}
   - component: {fileID: 737469390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8428,7 +8493,7 @@ GameObject:
   - component: {fileID: 763135927}
   - component: {fileID: 763135926}
   - component: {fileID: 763135925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -8963,7 +9028,7 @@ GameObject:
   - component: {fileID: 808319976}
   - component: {fileID: 808319975}
   - component: {fileID: 808319974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (3)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -9096,13 +9161,12 @@ GameObject:
   m_Component:
   - component: {fileID: 808585393}
   - component: {fileID: 808585392}
-  - component: {fileID: 808585394}
   - component: {fileID: 808585395}
   - component: {fileID: 808585397}
-  - component: {fileID: 808585396}
   - component: {fileID: 808585398}
   - component: {fileID: 808585399}
-  m_Layer: 0
+  - component: {fileID: 808585401}
+  m_Layer: 7
   m_Name: B'Rick
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9192,36 +9256,6 @@ Transform:
   - {fileID: 142822142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &808585394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808585391}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 08fc3a7385a0569419fba2f95de5778a, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &808585395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9259,51 +9293,7 @@ MonoBehaviour:
   coinText: {fileID: 780041044}
   isMoving: 0
   moveDirection: {x: 0, y: 0}
---- !u!61 &808585396
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808585391}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.75}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.2}
-  m_EdgeRadius: 0
+  damageInterval: 0.25
 --- !u!50 &808585397
 Rigidbody2D:
   serializedVersion: 4
@@ -9312,14 +9302,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808585391}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9330,7 +9320,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &808585398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9382,6 +9372,41 @@ MonoBehaviour:
   expPerLevel: 3
   levelUpMenu: {fileID: 122540149}
   levelText: {fileID: 1958561645}
+--- !u!70 &808585401
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808585391}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.75}
+  m_Size: {x: 0.7, y: 1.25}
+  m_Direction: 0
 --- !u!1 &836817948
 GameObject:
   m_ObjectHideFlags: 0
@@ -9511,7 +9536,7 @@ GameObject:
   - component: {fileID: 839286222}
   - component: {fileID: 839286221}
   - component: {fileID: 839286220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (3)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -9897,7 +9922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845335978}
   - component: {fileID: 845335979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10033,7 +10058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855801310}
   - component: {fileID: 855801311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10169,7 +10194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873319269}
   - component: {fileID: 873319270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10920,7 +10945,7 @@ GameObject:
   - component: {fileID: 916959947}
   - component: {fileID: 916959946}
   - component: {fileID: 916959945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -11052,7 +11077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927883765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11577,7 +11602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 957715936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11612,7 +11637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961019371}
   - component: {fileID: 961019372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12174,7 +12199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004247156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12378,7 +12403,7 @@ GameObject:
   - component: {fileID: 1035238582}
   - component: {fileID: 1035238581}
   - component: {fileID: 1035238580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (4)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -12610,7 +12635,7 @@ GameObject:
   - component: {fileID: 1042421304}
   - component: {fileID: 1042421303}
   - component: {fileID: 1042421302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -13295,7 +13320,7 @@ GameObject:
   - component: {fileID: 1100548775}
   - component: {fileID: 1100548774}
   - component: {fileID: 1100548773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -13428,7 +13453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1104337897}
   - component: {fileID: 1104337898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14015,7 +14040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162746702}
   - component: {fileID: 1162746703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14649,7 +14674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272210446}
   - component: {fileID: 1272210447}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16049,7 +16074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1399883239}
   - component: {fileID: 1399883240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16894,7 +16919,7 @@ GameObject:
   - component: {fileID: 1473440113}
   - component: {fileID: 1473440112}
   - component: {fileID: 1473440111}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (4)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -17029,7 +17054,7 @@ GameObject:
   - component: {fileID: 1474443274}
   - component: {fileID: 1474443273}
   - component: {fileID: 1474443272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (3)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -17667,7 +17692,7 @@ GameObject:
   - component: {fileID: 1501398461}
   - component: {fileID: 1501398460}
   - component: {fileID: 1501398459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (2)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -18233,7 +18258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1528730557}
   - component: {fileID: 1528730558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18844,7 +18869,7 @@ GameObject:
   - component: {fileID: 1607908363}
   - component: {fileID: 1607908362}
   - component: {fileID: 1607908361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19166,7 +19191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637793428}
   - component: {fileID: 1637793429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19356,7 +19381,7 @@ GameObject:
   - component: {fileID: 1654217186}
   - component: {fileID: 1654217185}
   - component: {fileID: 1654217184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -19903,7 +19928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750088582}
   - component: {fileID: 1750088583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20041,7 +20066,7 @@ GameObject:
   - component: {fileID: 1771131204}
   - component: {fileID: 1771131206}
   - component: {fileID: 1771131205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -20174,7 +20199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775991956}
   - component: {fileID: 1775991957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20538,7 +20563,7 @@ GameObject:
   - component: {fileID: 1793222007}
   - component: {fileID: 1793222006}
   - component: {fileID: 1793222005}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -21598,7 +21623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862148894}
   - component: {fileID: 1862148895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22213,7 +22238,7 @@ GameObject:
   - component: {fileID: 1913172878}
   - component: {fileID: 1913172880}
   - component: {fileID: 1913172879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (1)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -23811,7 +23836,7 @@ GameObject:
   - component: {fileID: 1988331505}
   - component: {fileID: 1988331504}
   - component: {fileID: 1988331503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (2)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -24080,7 +24105,7 @@ GameObject:
   - component: {fileID: 1999199385}
   - component: {fileID: 1999199384}
   - component: {fileID: 1999199383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle (2)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -24349,7 +24374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009321155}
   - component: {fileID: 2009321156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24485,7 +24510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037503321}
   - component: {fileID: 2037503322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24888,7 +24913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083416635}
   - component: {fileID: 2083416636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25575,7 +25600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2127102537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1288017881526273653}
   - component: {fileID: 4366311933690952485}
   - component: {fileID: 299673432487498680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 630228324217769022}
   - component: {fileID: 1149794632138092047}
   - component: {fileID: 3880104444664536790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 4039977435780756587}
   - component: {fileID: 4234472506262496220}
   - component: {fileID: 1535820799828870988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 7829148225323786539}
   - component: {fileID: 4658422960473950974}
   - component: {fileID: 1525519196452050071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 861075653076923235}
   - component: {fileID: 6288726800286775070}
   - component: {fileID: 4525690901944971124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 4333528258744624786}
   - component: {fileID: 3773318746754500477}
   - component: {fileID: 2799430494281110220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AOEChild (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 2301103232530053755}
   - component: {fileID: 4017032771947641533}
   - component: {fileID: 4128321839618604199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BurningAOE
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -1033,6 +1033,10 @@ PrefabInstance:
     - target: {fileID: 5362083764109600020, guid: 6b3543329a138f441865a68484ecfe3a, type: 3}
       propertyPath: m_Name
       value: MeteorImpact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362083764109600020, guid: 6b3543329a138f441865a68484ecfe3a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5362083764109600020, guid: 6b3543329a138f441865a68484ecfe3a, type: 3}
       propertyPath: m_IsActive

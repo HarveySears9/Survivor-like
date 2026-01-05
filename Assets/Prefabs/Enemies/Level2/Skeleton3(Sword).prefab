@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5187478282429073707}
   - component: {fileID: 8891382473436556575}
   - component: {fileID: 7603941831535659140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skeleton3(Sword)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   health: 6
   speed: 1.5
   damage: 3
+  damageInterval: 1
   playerTransform: {fileID: 0}
   enemyType: 1
 --- !u!61 &5187478282429073707
@@ -159,14 +160,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870420538103452908}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -177,7 +178,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7603941831535659140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4481737945798792448}
   - component: {fileID: 7808792221090025796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

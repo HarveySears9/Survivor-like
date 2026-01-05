@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private AnimateSprite animator;
     private SpriteRenderer spriteRenderer; // To control flipping of the sprite
 
+    private Rigidbody2D rb;
+
     public GameObject deathScreen;
     public GameObject deadPlayer;
 
@@ -30,11 +32,15 @@ public class PlayerController : MonoBehaviour
     private bool dead = false;
     public Vector2 moveDirection = Vector2.zero;
 
+    float lastDamageTime;
+    public float damageInterval = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<AnimateSprite>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
 
         // Load saved data
         SaveFile.Data playerData = SaveFile.LoadData<SaveFile.Data>();
@@ -67,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move the player in the direction specified by moveDirection
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
 
         if (moveDirection != Vector2.zero)
         {
@@ -158,6 +164,32 @@ public class PlayerController : MonoBehaviour
     {
         coins += value;
         coinText.text = ":" + coins.ToString();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+
+        EnemyController enemy = other.GetComponent<EnemyController>();
+        if (enemy == null) return;
+
+        TakeDamage(enemy.damage);
+
+        // Reset timer so interval starts AFTER first hit
+        lastDamageTime = Time.time;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+
+        if (Time.time < lastDamageTime + damageInterval) return;
+
+        EnemyController enemy = other.GetComponent<EnemyController>();
+        if (enemy == null) return;
+
+        TakeDamage(enemy.damage);
+        lastDamageTime = Time.time;
     }
 
 }
