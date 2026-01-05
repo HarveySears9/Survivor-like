@@ -168,28 +168,33 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
-
-        EnemyController enemy = other.GetComponent<EnemyController>();
-        if (enemy == null) return;
-
-        TakeDamage(enemy.damage);
-
-        // Reset timer so interval starts AFTER first hit
-        lastDamageTime = Time.time;
+        TryTakeContactDamage(other);
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
-
         if (Time.time < lastDamageTime + damageInterval) return;
+        TryTakeContactDamage(other);
+    }
 
+    void TryTakeContactDamage(Collider2D other)
+    {
+        // Boss damage
+        Boss boss = other.GetComponent<Boss>();
+        if (boss != null)
+        {
+            TakeDamage(boss.damage);
+            lastDamageTime = Time.time;
+            return;
+        }
+
+        // Normal enemy damage
         EnemyController enemy = other.GetComponent<EnemyController>();
-        if (enemy == null) return;
-
-        TakeDamage(enemy.damage);
-        lastDamageTime = Time.time;
+        if (enemy != null)
+        {
+            TakeDamage(enemy.damage);
+            lastDamageTime = Time.time;
+        }
     }
 
 }

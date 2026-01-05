@@ -19367,7 +19367,7 @@ MonoBehaviour:
   spawnInterval: 0.6
   difficultyInterval: 30
   dropInterval: 120
-  bossInterval: 180
+  bossInterval: 1
   waveInterval: 45
 --- !u!1 &1654217182
 GameObject:
