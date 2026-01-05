@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8686215370957267085}
   - component: {fileID: 5512603377234539845}
   - component: {fileID: 2492181716098955398}
-  - component: {fileID: 5050812117166118791}
   - component: {fileID: 2664123003852802256}
   - component: {fileID: 4917799575734923079}
+  - component: {fileID: 1940217056575106316}
   m_Layer: 9
   m_Name: Abyssal Chicken
   m_TagString: Enemy
@@ -104,54 +104,8 @@ MonoBehaviour:
   health: 1
   speed: 1.25
   damage: 0.5
-  damageInterval: 1
   playerTransform: {fileID: 0}
   enemyType: 0
---- !u!61 &5050812117166118791
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5041408792113627775}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2664123003852802256
 Rigidbody2D:
   serializedVersion: 4
@@ -204,6 +158,41 @@ MonoBehaviour:
   isMoving: 0
   destroyOnFinish: 0
   masterSprite: {fileID: 0}
+--- !u!70 &1940217056575106316
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041408792113627775}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09808287, y: -0.3031651}
+  m_Size: {x: 0.90325445, y: 1.1172533}
+  m_Direction: 0
 --- !u!1 &8524186908545677701
 GameObject:
   m_ObjectHideFlags: 0

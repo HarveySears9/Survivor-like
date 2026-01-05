@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 7579236400421103913}
   - component: {fileID: 8625954813405682119}
   - component: {fileID: 5365533449938049656}
-  - component: {fileID: 7568101394091078424}
   - component: {fileID: 3009524678016269989}
   - component: {fileID: 926262654882868042}
+  - component: {fileID: 6320932258640583625}
   m_Layer: 9
   m_Name: Cobra
   m_TagString: Enemy
@@ -188,54 +188,8 @@ MonoBehaviour:
   health: 1
   speed: 1.25
   damage: 0.5
-  damageInterval: 1
   playerTransform: {fileID: 0}
   enemyType: 3
---- !u!61 &7568101394091078424
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4708156172824267091}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.37601244, y: 0.31416774}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.15625, y: 0.0625}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1332836, y: 0.9428787}
-  m_EdgeRadius: 0
 --- !u!50 &3009524678016269989
 Rigidbody2D:
   serializedVersion: 4
@@ -289,3 +243,38 @@ MonoBehaviour:
   isMoving: 0
   destroyOnFinish: 0
   masterSprite: {fileID: 0}
+--- !u!70 &6320932258640583625
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708156172824267091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.33919144, y: 0.30872107}
+  m_Size: {x: 1.3303655, y: 0.8674646}
+  m_Direction: 1
