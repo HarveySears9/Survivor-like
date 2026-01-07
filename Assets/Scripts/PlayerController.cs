@@ -130,6 +130,14 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator StartDeath()
     {
+        // Disable Collider (for building interation)
+        CapsuleCollider2D col = GetComponent<CapsuleCollider2D>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
+
         // Disable all weapons
         foreach (var weapon in weapons)
         {
