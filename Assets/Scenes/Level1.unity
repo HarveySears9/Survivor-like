@@ -4928,6 +4928,7 @@ MonoBehaviour:
   - {fileID: 5081407993993958160, guid: 46c2c1b790449044fbc2ab8adf0f52c2, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
+  worldMessage: {fileID: 358378588}
 --- !u!1 &435274908
 GameObject:
   m_ObjectHideFlags: 0
@@ -12810,6 +12811,7 @@ MonoBehaviour:
   - {fileID: 8600259776942184326, guid: 3d7875e7f25d9764b8341f06868fcf45, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
+  worldMessage: {fileID: 358378588}
 --- !u!114 &1001450322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21123,9 +21125,9 @@ MonoBehaviour:
   spawnInterval: 0.6
   difficultyInterval: 30
   dropInterval: 120
-  bossInterval: 180
+  bossInterval: 10
   waveInterval: 45
-  structureInterval: 5
+  structureInterval: 120
 --- !u!1 &1654217182
 GameObject:
   m_ObjectHideFlags: 0

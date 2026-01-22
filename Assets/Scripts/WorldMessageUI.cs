@@ -40,7 +40,7 @@ public class WorldMessageUI : MonoBehaviour
         yield return Fade(0f, 1f, fadeInTime);
 
         // Hold
-        yield return new WaitForSeconds(holdTime);
+        yield return new WaitForSecondsRealtime(holdTime);
 
         // Fade out
         yield return Fade(1f, 0f, fadeOutTime);
@@ -51,7 +51,7 @@ public class WorldMessageUI : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < duration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             canvasGroup.alpha = Mathf.Lerp(from, to, elapsed / duration);
             yield return null;
         }

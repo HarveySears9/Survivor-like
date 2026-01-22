@@ -20,6 +20,8 @@ public class BossFight : MonoBehaviour
 
     private EnemySpawner spawner;
 
+    [SerializeField] private WorldMessageUI worldMessage;
+
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -53,6 +55,8 @@ public class BossFight : MonoBehaviour
     {
         if (gameTimer != null)
         {
+            worldMessage.ShowMessage("BOSS DEFEATED");
+
             gameTimer.ResumeTimer(); // Resume the timer when the boss is defeated
             Debug.Log("Game Timer Resumed after Boss Fight");
             bossHpBar.SetActive(false);
