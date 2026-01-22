@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2703573155104327105}
   - component: {fileID: 1707080159055812718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3002231138143279824}
   - component: {fileID: 4470494816631302246}
   - component: {fileID: 5180228128790728347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GrassGolemBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -219,6 +219,7 @@ MonoBehaviour:
   - {fileID: -359297515, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
   - {fileID: 403292379, guid: 05d3bb1835743024bab22c156956bdef, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5878262597592351363}
   - component: {fileID: 512831261428519141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8024245582360564914}
   - component: {fileID: -2653470856465480761}
   - component: {fileID: 6668979100695273490}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ThudbutyTheMighty
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: -2055288502, guid: c5fed1e53bd367342af6dff802d3b2c0, type: 3}
   - {fileID: -1891655089, guid: c5fed1e53bd367342af6dff802d3b2c0, type: 3}
   - {fileID: -1464479494, guid: c5fed1e53bd367342af6dff802d3b2c0, type: 3}
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.15
   isMoving: 1

@@ -41,12 +41,12 @@ public class ArcBolt : MonoBehaviour
 
         if (Time.time >= nextFireTime)
         {
+            hitEnemies.Clear();
             Transform firstTarget = FindClosestEnemy(transform.position, baseRange);
             if (firstTarget != null)
             {
                 StartCoroutine(FireRoutine(firstTarget));
             }
-            // no target? just wait — don’t reset cooldown
         }
     }
 
@@ -62,7 +62,6 @@ public class ArcBolt : MonoBehaviour
 
     IEnumerator ChainToTargetRoutine(Transform target, int chainsRemaining, Vector3 startPos)
     {
-        hitEnemies.Clear();
 
         while (target != null && chainsRemaining > 0)
         {
@@ -108,7 +107,13 @@ public class ArcBolt : MonoBehaviour
     Transform FindClosestEnemy(Vector3 position, float range)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(position, range);
-        
+
+        Debug.Log($"Found {hits.Length} colliders in range {range}");
+        foreach (var h in hits)
+        {
+            Debug.Log($"{h.name} - Tag: {h.tag}");
+        }
+
         Transform closest = null;
         float closestDist = Mathf.Infinity;
 
@@ -127,6 +132,7 @@ public class ArcBolt : MonoBehaviour
             }
         }
 
+        Debug.Log($"{closest}");
         return closest;
     }
 

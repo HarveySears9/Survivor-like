@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4994292254846118605}
   - component: {fileID: 7116506239417090088}
   - component: {fileID: 1856771916257264648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GrassGolemMinion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   - {fileID: -1583159957, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
   - {fileID: 48882429, guid: 71797434d6bd57847afad8e0a7bd6c9c, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -201,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8038474799441291879}
   - component: {fileID: 4669953935446543105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

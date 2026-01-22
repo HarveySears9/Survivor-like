@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6453768094874056854}
   - component: {fileID: 1380184319123725391}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -4669607056510459106}
   - component: {fileID: 1424440684846387925}
   - component: {fileID: 7491815027142746085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnakeWomanBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -231,6 +231,7 @@ MonoBehaviour:
   - {fileID: 608052433, guid: 36779ff76b26502498c361b81b56ae85, type: 3}
   - {fileID: -2041573099, guid: 36779ff76b26502498c361b81b56ae85, type: 3}
   - {fileID: 1458045614, guid: 36779ff76b26502498c361b81b56ae85, type: 3}
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 1
