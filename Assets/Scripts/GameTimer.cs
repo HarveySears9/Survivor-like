@@ -32,17 +32,26 @@ public class GameTimer : MonoBehaviour
 
     private float nextWaveTime;
 
-    public void SetIntervals(float diff, float drop, float boss, float wave)
+    public delegate void SpawnStructure();
+    public event SpawnStructure OnSpawnStructure;
+
+    private float structureInterval;
+    private float nextStructureTime;
+
+    public void SetIntervals(float diff, float drop, float boss, float wave, float structure)
     {
         difficultyInterval = diff;
         dropInterval = drop;
         bossInterval = boss;
         waveInterval = wave;
+        structureInterval = structure;
 
         nextDifficultyTime = difficultyInterval;
         nextDropTime = dropInterval;
         nextBossTime = bossInterval;
         nextWaveTime = waveInterval;
+        nextStructureTime = structureInterval;
+
         isPaused = false;
     }
 
@@ -88,6 +97,13 @@ public class GameTimer : MonoBehaviour
         {
             nextWaveTime += waveInterval;
             OnWaveStart?.Invoke();
+        }
+
+        // Structure spawning
+        if (elapsedTime >= nextStructureTime)
+        {
+            nextStructureTime += structureInterval;
+            OnSpawnStructure?.Invoke();
         }
 
         // Update the timer display
