@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eb60e312c55504993f0df29240f29c, type: 3}
+  m_Name: DragonDealTable
+  m_EditorClassIdentifier: 
+  deals:
+  - {fileID: 11400000, guid: f10b27a852e456f41978da3c5158ab39, type: 2}
+  - {fileID: 11400000, guid: c140a09b31ba34d4886148f8a0950ff6, type: 2}
+  - {fileID: 11400000, guid: 1df59baa474c3c040a31f4fee0fa8dbf, type: 2}

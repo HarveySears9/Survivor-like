@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public int coins = 0;
     public TextMeshProUGUI coinText;
 
+    public float coinMultiplyer = 1f;
+
     public bool isMoving = false;
     private bool dead = false;
     public Vector2 moveDirection = Vector2.zero;
@@ -127,6 +129,12 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(hp);
     }
 
+    public void IncreaseMaxHP(float percentage)
+    {
+        int increase = Mathf.CeilToInt(maxHP * percentage);
+        maxHP += increase;
+        healthBar.SetHealth(hp);
+    }
 
     private IEnumerator StartDeath()
     {
@@ -170,8 +178,13 @@ public class PlayerController : MonoBehaviour
 
     public void AddCoin(int value)
     {
-        coins += value;
+        coins += Mathf.FloorToInt(value * coinMultiplyer);
         coinText.text = ":" + coins.ToString();
+    }
+
+    public void IncreaseCoinMultiplyer(float value)
+    {
+        coinMultiplyer += value;
     }
 
     void OnTriggerEnter2D(Collider2D other)

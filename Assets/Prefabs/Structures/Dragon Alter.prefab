@@ -203,6 +203,7 @@ MonoBehaviour:
   - {fileID: 1402600068, guid: ba1701cf9fcf4a14fb41574d249615f1, type: 3}
   - {fileID: -346065573, guid: ba1701cf9fcf4a14fb41574d249615f1, type: 3}
   - {fileID: 414079864, guid: ba1701cf9fcf4a14fb41574d249615f1, type: 3}
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.2
   isMoving: 0
@@ -255,6 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b430c7228bd99f24f8c1b40d72a03ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
+  dealTable: {fileID: 11400000, guid: 5a0d370af16dce14f9ffd15b0ac97304, type: 2}
 --- !u!70 &5826455878503546663
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
