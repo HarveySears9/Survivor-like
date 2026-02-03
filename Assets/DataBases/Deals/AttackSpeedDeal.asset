@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539d1b2221c4a72429e96370802a82af, type: 3}
-  m_Name: Deal3
+  m_Name: AttackSpeedDeal
   m_EditorClassIdentifier: 
-  dealType: 2
-  hpCostPercent: 0.25
-  value: 1
-  weight: 20
+  dealType: 1
+  hpCostPercent: 0.15
+  value: 0.1
+  weight: 25

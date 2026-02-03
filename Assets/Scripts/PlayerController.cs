@@ -37,6 +37,13 @@ public class PlayerController : MonoBehaviour
     float lastDamageTime;
     public float damageInterval = 0.25f;
 
+    [Header("Dragon Altar Buffs")]
+    public float attackSpeedMultiplier = 1f;
+    public float rageDamageBonus = 0f;   // % bonus when low HP (0.3 = +30%)
+    public float lifestealPercent = 0f;  // % of damage dealt (0.05 = 5%)
+    public bool isRaging = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +108,10 @@ public class PlayerController : MonoBehaviour
             animator.isMoving = false;
             isMoving = false;
         }
+
+        //player is raging when Hp is below half
+        isRaging = hp <= maxHP * 0.5f;
+
 
     }
 

@@ -29,10 +29,14 @@ public class ArcBolt : MonoBehaviour
 
     public bool testing = false;
 
+    private PlayerController player;
+
     void Start()
     {
         if (levelUpButton != null)
             levelUpButton.LevelUp(level, maxLevel);
+
+        player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
@@ -56,7 +60,11 @@ public class ArcBolt : MonoBehaviour
 
         isFiring = true;
         yield return StartCoroutine(ChainToTargetRoutine(firstTarget, maxChains, transform.position));
-        nextFireTime = Time.time + 1f / fireRate;
+        
+        float effectiveFireRate = fireRate;
+        effectiveFireRate *= player.attackSpeedMultiplier;
+        nextFireTime = Time.time + 1f / effectiveFireRate;
+        
         isFiring = false;
     }
 

@@ -115,7 +115,7 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    
+
     /*void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -131,21 +131,19 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (isDead) return; // already dead, ignore further damage
+        if (isDead) return;
 
         health -= damage;
+
         if (health <= 0f)
         {
             isDead = true;
-
-            // Trigger the EnemyDeathEventManager
             EnemyDeathEventManager.EnemyDied(transform.position);
-
             MissionManager.Instance.AddProgress($"kill_{enemyType}");
-
             Destroy(gameObject);
         }
     }
+
 
     // --- SLOW EFFECT HANDLING ---
     public void ApplySlow(float slowAmount, float duration)

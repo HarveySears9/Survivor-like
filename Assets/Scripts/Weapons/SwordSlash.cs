@@ -45,7 +45,9 @@ public class SwordSlash : MonoBehaviour
         if (Time.time >= nextFireTime)
         {
             FireAtTargets();
-            nextFireTime = Time.time + 1f / fireRate; // Set next fire time
+            float effectiveFireRate = fireRate;
+            effectiveFireRate *= player.attackSpeedMultiplier;
+            nextFireTime = Time.time + 1f / effectiveFireRate;
         }
 
         playerAnimator.isMoving = player.isMoving;

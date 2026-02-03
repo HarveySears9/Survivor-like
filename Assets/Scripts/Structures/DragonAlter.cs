@@ -75,6 +75,7 @@ public class DragonAlter : MonoBehaviour
         animator.spriteRenderer.sprite = animator.spriteArray[0];
         button.SetIndex(-1);
 
+        // HP cost
         player.TakeDamage(player.maxHP * assignedDeal.hpCostPercent);
 
         switch (assignedDeal.dealType)
@@ -83,8 +84,16 @@ public class DragonAlter : MonoBehaviour
                 player.IncreaseMaxHP(assignedDeal.value);
                 break;
 
-            case DragonDealType.GoldGain:
-                player.IncreaseCoinMultiplyer(assignedDeal.value);
+            case DragonDealType.AttackSpeed:
+                player.attackSpeedMultiplier += assignedDeal.value;
+                break;
+
+            case DragonDealType.RageBoost:
+                player.rageDamageBonus += assignedDeal.value;
+                break;
+
+            case DragonDealType.Lifesteal:
+                player.lifestealPercent += assignedDeal.value;
                 break;
 
             case DragonDealType.FreeLevel:

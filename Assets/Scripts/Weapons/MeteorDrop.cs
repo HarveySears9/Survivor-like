@@ -19,9 +19,12 @@ public class MeteorDrop : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
+    private PlayerController playerController;
+
     void Start()
     {
         levelUpButton.LevelUp(level, maxLevel);
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     void Update()
@@ -29,7 +32,9 @@ public class MeteorDrop : MonoBehaviour
         if (!firing && Time.time >= nextFireTime)
         {
             StartCoroutine(SpawnMeteors());
-            nextFireTime = Time.time + 1f / fireRate;
+            float effectiveFireRate = fireRate;
+            effectiveFireRate *= playerController.attackSpeedMultiplier;
+            nextFireTime = Time.time + 1f / effectiveFireRate;
         }
     }
 

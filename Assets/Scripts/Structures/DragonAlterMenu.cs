@@ -9,7 +9,7 @@ public class DragonAlterMenu : MonoBehaviour
 
     private bool openLevelUpMenu = false;
 
-    [SerializeField] private TextMeshProUGUI costText, rewardText, rewardAmount;
+    [SerializeField] private TextMeshProUGUI costText, rewardText, rewardAmount, dealFlavourText;
 
     public void SetAlter(DragonAlter alter) 
     { 
@@ -60,16 +60,36 @@ public class DragonAlterMenu : MonoBehaviour
         switch (deal.dealType)
         {
             case DragonDealType.MaxHPIncrease:
+                dealFlavourText.text = "The dragon hardens your flesh.";
                 rewardText.text = "Max HP";
                 rewardAmount.text = $"+{deal.value * 100f:0}%";
                 break;
 
-            case DragonDealType.GoldGain:
-                rewardText.text = "Gold Gain";
+            //case DragonDealType.GoldGain:
+            //rewardText.text = "Gold Gain";
+            //rewardAmount.text = $"+{deal.value * 100f:0}%";
+            //break;
+
+            case DragonDealType.AttackSpeed:
+                dealFlavourText.text = "Your blood moves faster.";
+                rewardText.text = "Attack Speed";
+                rewardAmount.text = $"+{deal.value * 100f:0}%";
+                break;
+
+            case DragonDealType.RageBoost:
+                dealFlavourText.text = "Pain sharpens your strikes.";
+                rewardText.text = "Attack When HP is low";
+                rewardAmount.text = $"+{deal.value * 100f:0}%";
+                break;
+
+            case DragonDealType.Lifesteal:
+                dealFlavourText.text = "The dragon feeds through you.";
+                rewardText.text = "Life Steal";
                 rewardAmount.text = $"+{deal.value * 100f:0}%";
                 break;
 
             case DragonDealType.FreeLevel:
+                dealFlavourText.text = "The dragon accelerates your growth.";
                 rewardText.text = "Level";
                 rewardAmount.text = $"+{deal.value:0}";
                 break;

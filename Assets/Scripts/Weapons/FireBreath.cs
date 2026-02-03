@@ -21,6 +21,9 @@ public class FireBreath : MonoBehaviour
 
     private float damage;
 
+    private PlayerController player;
+
+
     void Start()
     {
         SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
@@ -33,6 +36,8 @@ public class FireBreath : MonoBehaviour
             return; // Exit early since FireBreath should not be initialized
         }
 
+        player = FindObjectOfType<PlayerController>();
+
         damage = loadedData.currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
         fireRate = baseFireRate;
@@ -41,12 +46,20 @@ public class FireBreath : MonoBehaviour
 
     void Update()
     {
+        float effectiveFireRate = baseFireRate;
+
+        if (player != null)
+        {
+            effectiveFireRate *= player.attackSpeedMultiplier;
+        }
+
         if (Time.time >= nextFireTime)
         {
             Fire();
-            nextFireTime = Time.time + 1f / fireRate; // Set next fire time
+            nextFireTime = Time.time + 1f / effectiveFireRate;
         }
     }
+
 
     void ShotgunFire()
     {
@@ -79,7 +92,7 @@ public class FireBreath : MonoBehaviour
                 // Add a spread angle to the direction
                 fireDirection = Quaternion.Euler(0, 0, angle) * fireDirection;
             }
-        
+
 
 
             // Instantiate the fireball

@@ -3,9 +3,12 @@ using UnityEngine;
 public enum DragonDealType
 {
     MaxHPIncrease,
-    GoldGain,
+    AttackSpeed,
+    RageBoost,
+    Lifesteal,
     FreeLevel
 }
+
 
 [CreateAssetMenu(menuName = "Dragon Altar/Deal")]
 public class DragonDeal : ScriptableObject
