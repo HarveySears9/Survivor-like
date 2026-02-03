@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deadPlayer;
 
     public GameObject[] weapons;
+    public GameObject rageAura;
 
     public HealthBar healthBar;
 
@@ -110,8 +111,11 @@ public class PlayerController : MonoBehaviour
         }
 
         //player is raging when Hp is below half
-        isRaging = hp <= maxHP * 0.5f;
-
+        if (rageDamageBonus > 0f)
+        {
+            isRaging = hp <= maxHP * 0.5f;
+            rageAura.SetActive(isRaging);
+        }
 
     }
 
@@ -228,5 +232,26 @@ public class PlayerController : MonoBehaviour
             lastDamageTime = Time.time;
         }
     }
+
+    public float ApplyDamageModifiers(float dmg)
+    {
+        float finalDamage = dmg;
+
+        // Rage
+        if (isRaging)
+            finalDamage *= (1f+rageDamageBonus);
+
+        return finalDamage;
+    }
+
+    public void OnDamageDealt(float finalDamage)
+    {
+        if (lifestealPercent > 0f)
+        {
+            float healAmount = finalDamage * lifestealPercent;
+            Heal(healAmount, true);
+        }
+    }
+
 
 }

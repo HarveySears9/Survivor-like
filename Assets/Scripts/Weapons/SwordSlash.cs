@@ -98,7 +98,7 @@ public class SwordSlash : MonoBehaviour
 
             // Pass the fire direction to the fireball script
             slash.GetComponent<Fireball>().Initialize(Vector2.right);
-            slash.GetComponent<Weapon>().damage = damage;
+            slash.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
         }
     }
 

@@ -25,6 +25,10 @@ public class SpinningBlades : MonoBehaviour
 
     private float damage;
 
+    public PlayerController player;
+
+    public GameObject[] allBlades;
+
     void Start()
     {
         damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
@@ -34,7 +38,7 @@ public class SpinningBlades : MonoBehaviour
         //currentLevel.SetActive(true);
         levelUpButton.LevelUp(level, maxLevel);
 
-        SetDamage();
+        SetUpDamage();
     }
 
     // FixedUpdate is called once per frame
@@ -48,6 +52,8 @@ public class SpinningBlades : MonoBehaviour
         {
             blade.transform.Rotate(0f, 0f, 4f * spinSpeed * Time.deltaTime); // Spin each blade around Z-axis
         }
+
+        SetUpDamage();
     }
 
     // Function to increase the level and update the blades
@@ -94,15 +100,8 @@ public class SpinningBlades : MonoBehaviour
         levelUpButton.LevelUp(level, maxLevel);
     }
 
-    void SetDamage()
+    void SetUpDamage()
     {
-        // Combine all the blade arrays into a single list for iteration
-        List<GameObject> allBlades = new List<GameObject>();
-        allBlades.AddRange(level1Blades);
-        allBlades.AddRange(level2Blades);
-        allBlades.AddRange(level3Blades);
-        allBlades.AddRange(level4Blades);
-        allBlades.AddRange(level5Blades);
 
         // Iterate over all blades and set damage
         foreach (GameObject blade in allBlades)
@@ -111,7 +110,7 @@ public class SpinningBlades : MonoBehaviour
             Weapon weapon = blade.GetComponent<Weapon>();
             if (weapon != null)
             {
-                weapon.damage = damage;
+                weapon.damage = player.ApplyDamageModifiers(damage);
             }
             else
             {

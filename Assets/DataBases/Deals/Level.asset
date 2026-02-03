@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d1b2221c4a72429e96370802a82af, type: 3}
   m_Name: Level
   m_EditorClassIdentifier: 
-  dealType: 0
+  dealType: 4
   hpCostPercent: 0.3
   value: 1
   weight: 15

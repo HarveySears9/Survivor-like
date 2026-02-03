@@ -83,8 +83,8 @@ public class ArcBolt : MonoBehaviour
             var enemy = target.GetComponent<EnemyController>();
             var boss = target.GetComponent<Boss>();
 
-            if (enemy != null) enemy.TakeDamage(damage);
-            if (boss != null) boss.TakeDamage(damage);
+            if (enemy != null) enemy.TakeDamage(player.ApplyDamageModifiers(damage));
+            if (boss != null) boss.TakeDamage(player.ApplyDamageModifiers(damage));
 
             Vector3 targetPos = target != null ? target.position : startPos;
 

@@ -15,4 +15,4 @@ MonoBehaviour:
   dealType: 2
   hpCostPercent: 0.15
   value: 0.3
-  weight: 20
+  weight: 200

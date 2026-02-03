@@ -104,7 +104,7 @@ public class FireBreath : MonoBehaviour
 
             // Pass the fire direction to the fireball script
             fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-            fireball.GetComponent<Weapon>().damage = damage;
+            fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
         }
     }
 
@@ -128,7 +128,7 @@ public class FireBreath : MonoBehaviour
 
         // Pass the fire direction to the fireball script
         fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-        fireball.GetComponent<Weapon>().damage = damage;
+        fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
     }
 
     private Transform FindTargets()
