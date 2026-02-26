@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: -1, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5073836030071786825}
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 51708287
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1510922304, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
+  m_Sprite: {fileID: 1662299498, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,15 +230,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -8567768, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: -2075933369, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: 2074552809, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: -1265262054, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: 932131146, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: -526197889, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: -1510922304, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
-  - {fileID: 1570406992, guid: 973d00ffa9d88374cb110cc1100b5772, type: 3}
+  - {fileID: 1662299498, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
+  - {fileID: -2036060147, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
+  - {fileID: 1865601063, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
+  - {fileID: -1192398838, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
+  - {fileID: 1201582598, guid: 8fde5bf352b82d14698263abcb220834, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.2
   isMoving: 0
@@ -276,6 +274,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.062416244, y: 0.040124655}
-  m_Size: {x: 0.79625505, y: 0.98350286}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.4285465, y: 0.8928797}
+  m_Direction: 1
