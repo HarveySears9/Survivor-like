@@ -36,6 +36,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.speedLevel = 0;
                 data.currentDamage = 1;
                 data.skins = defaultSkins;
+                data.levelsUnlocked = new bool[] { true, false };
                 Save();
             }
             else
@@ -50,12 +51,6 @@ public class PlayerDataManager : MonoBehaviour
                 data.skins = defaultSkins;
                 Save(); // overwrite with merged copy
             }
-
-            // Debug log to check
-            //foreach (var skin in data.skins)
-            //{
-            //    Debug.Log($"Owned: {skin.owned}, Price: {skin.price}");
-            //}
         }
         else
         {

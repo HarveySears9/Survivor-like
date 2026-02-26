@@ -82,5 +82,8 @@ public static class SaveFile
         public List<Mission> activeMissions;
         public DateTime lastDailyReset;
         public DateTime lastWeeklyReset;
+
+        public bool[] levelsUnlocked;
+
     }
 }
