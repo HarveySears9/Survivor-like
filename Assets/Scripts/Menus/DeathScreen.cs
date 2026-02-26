@@ -45,4 +45,27 @@ public class DeathScreen : MonoBehaviour
             "Enemies Defeated:\n" + KillCounter.enemyKills +
             "\nBosses Defeated:\n" + KillCounter.bossKills;
     }
+
+    public void LevelComplete()
+    {
+        var data = PlayerDataManager.Instance.data;
+
+        if (data == null)
+            return;
+
+        int currentLevel = PlayerPrefs.GetInt("SelectedLevel", 1);
+
+        int nextLevelIndex = currentLevel;
+
+        if (nextLevelIndex < data.levelsUnlocked.Length)
+        {
+            data.levelsUnlocked[nextLevelIndex] = true;
+            PlayerDataManager.Instance.Save();
+            Debug.Log("Unlocked Level " + (currentLevel + 1));
+        }
+        else
+        {
+            Debug.Log("Last level completed. Nothing to unlock.");
+        }
+    }
 }

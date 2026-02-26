@@ -131,6 +131,8 @@ public class BossFight : MonoBehaviour
         if (winScreen != null)
         {
             winScreen.SetActive(true);
+            DeathScreen screen = winScreen.GetComponent<DeathScreen>();
+            screen.LevelComplete();
         }
     }
 
