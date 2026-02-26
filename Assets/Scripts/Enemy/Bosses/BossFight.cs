@@ -22,10 +22,15 @@ public class BossFight : MonoBehaviour
 
     [SerializeField] private WorldMessageUI worldMessage;
 
+    private int currentBossIndex = 0;
+
+    public GameObject winScreen;
+
+
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        GameTimer gameTimer = FindObjectOfType<GameTimer>();
+        gameTimer = FindObjectOfType<GameTimer>();
         gameTimer.OnSpawnBoss += OnSpawnBoss;
         spawner = GetComponent<EnemySpawner>();
 
@@ -46,7 +51,7 @@ public class BossFight : MonoBehaviour
 
     private IEnumerator BossDelay()
     {
-        yield return new WaitForSeconds(delay); // Corrected method call
+        yield return new WaitForSeconds(delay);
         SpawnBoss();
     }
 
@@ -57,10 +62,20 @@ public class BossFight : MonoBehaviour
         {
             worldMessage.ShowMessage("BOSS DEFEATED");
 
-            gameTimer.ResumeTimer(); // Resume the timer when the boss is defeated
-            Debug.Log("Game Timer Resumed after Boss Fight");
             bossHpBar.SetActive(false);
-            spawner.spawning = true;
+
+            currentBossIndex++; // Move to next boss in order
+
+            if (currentBossIndex >= bosses.Length)
+            {
+                Debug.Log("All bosses defeated! LEVEL COMPLETE!");
+                StartCoroutine(LevelComplete());
+            }
+            else
+            {
+                gameTimer.ResumeTimer();
+                spawner.spawning = true;
+            }
         }
     }
 
@@ -76,7 +91,14 @@ public class BossFight : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f); // Position to spawn the enemy
 
         // Instantiate the selected enemy at the calculated position
-        GameObject enemyObj = Instantiate(bosses[Random.Range(0, bosses.Length)], spawnPosition, Quaternion.identity);
+        if (currentBossIndex >= bosses.Length)
+        {
+            Debug.Log("All bosses already spawned.");
+            return;
+        }
+
+        GameObject enemyObj = Instantiate(bosses[currentBossIndex], spawnPosition, Quaternion.identity);
+
 
         // Get the EnemyController component from the instantiated enemy
         Boss boss = enemyObj.GetComponent<Boss>();
@@ -92,4 +114,24 @@ public class BossFight : MonoBehaviour
 
         bossText.text = boss.Name;
     }
+
+    private IEnumerator LevelComplete()
+    {
+        Debug.Log("Opening Level Complete Menu");
+
+        // Stop spawning
+        spawner.spawning = false;
+
+        // Pause timer
+        gameTimer.PauseTimer();
+
+        yield return new WaitForSeconds(delay);
+
+        Time.timeScale = 0f;
+        if (winScreen != null)
+        {
+            winScreen.SetActive(true);
+        }
+    }
+
 }

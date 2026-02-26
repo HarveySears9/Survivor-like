@@ -816,6 +816,7 @@ MonoBehaviour:
   - {fileID: -348251284, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -1681482450, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -1345,6 +1346,7 @@ MonoBehaviour:
   - {fileID: -2097239919, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: 1113627570, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -2110,6 +2112,7 @@ MonoBehaviour:
   - {fileID: -54180546, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -2138635155, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -2496,6 +2499,7 @@ MonoBehaviour:
   - {fileID: -1208337723, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -1142454900, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -2925,6 +2929,7 @@ MonoBehaviour:
   - {fileID: 2141115162, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   - {fileID: -1113650871, guid: 5d88fdb98546ed745abd5d7b925d317b, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -3054,6 +3059,7 @@ MonoBehaviour:
   - {fileID: 1897373217, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -1742742829, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -3177,6 +3183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArray: []
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -3391,6 +3398,7 @@ MonoBehaviour:
   - {fileID: 1183753820, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -2134469631, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -3521,6 +3529,7 @@ MonoBehaviour:
   - {fileID: 1183753820, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -2138635155, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -3632,6 +3641,7 @@ MonoBehaviour:
   - {fileID: 1065110038, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -727708487, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
