@@ -22,6 +22,10 @@ public class LevelDisplay : MonoBehaviour
                 displayImage.sprite = levelImages[1];
                 levelText.text = "Stage 2";
                 break;
+            case 3:
+                displayImage.sprite = levelImages[2];
+                levelText.text = "Stage 3";
+                break;
             default:
                 displayImage.sprite = levelImages[0];
                 levelText.text = "Stage 1";

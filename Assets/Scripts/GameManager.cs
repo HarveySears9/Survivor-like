@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
             case 2:
                 levels[1].SetActive(true);
                 break;
+            case 3:
+                levels[2].SetActive(true);
+                break;
             default:
                 levels[0].SetActive(true);
                 break;

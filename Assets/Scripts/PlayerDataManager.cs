@@ -36,7 +36,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.speedLevel = 0;
                 data.currentDamage = 1;
                 data.skins = defaultSkins;
-                data.levelsUnlocked = new bool[] { true, false };
+                data.levelsUnlocked = new bool[] { true, false, false };
                 Save();
             }
             else
