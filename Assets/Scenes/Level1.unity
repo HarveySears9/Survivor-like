@@ -18362,7 +18362,7 @@ MonoBehaviour:
   spawnInterval: 0.5
   circleRadius: 6
   spawning: 1
-  enemyDatabase: {fileID: 11400000, guid: 6622b5c7034905d44880bfb54d6bd970, type: 2}
+  enemyDatabase: {fileID: 11400000, guid: f755c023ee99a4947ae9c178c7b18635, type: 2}
 --- !u!114 &1420358126
 MonoBehaviour:
   m_ObjectHideFlags: 0

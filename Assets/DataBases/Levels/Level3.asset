@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f472a4d1cd0be4bacc75f80843c45d, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: 
+  enemySpawns:
+  - enemyPrefabs:
+    - {fileID: 5041408792113627775, guid: d87f2f66fbfe6c949894a841605d748d, type: 3}
+    - {fileID: 4817624483190240689, guid: 7b633ad3b4c969548ac1fcc62cf19bbc, type: 3}
+    - {fileID: 4599833516353399203, guid: ee2f6a19888833c46ab3e5bef1a2772f, type: 3}
+    weights: 010000000100000001000000
