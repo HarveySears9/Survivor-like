@@ -238,7 +238,7 @@ MonoBehaviour:
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
-  animationSpeed: 0.2
+  animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 0
   masterSprite: {fileID: 0}

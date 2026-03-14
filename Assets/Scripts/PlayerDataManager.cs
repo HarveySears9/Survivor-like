@@ -26,6 +26,8 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 0, achievement = true }       // Bone
             };
 
+            bool[] defaultLevels = new bool[] { true, true, true };
+
             if (data == null)
             {
                 // Create brand new data
@@ -36,19 +38,33 @@ public class PlayerDataManager : MonoBehaviour
                 data.speedLevel = 0;
                 data.currentDamage = 1;
                 data.skins = defaultSkins;
-                data.levelsUnlocked = new bool[] { true, false, false };
+                data.levelsUnlocked = defaultLevels;
                 Save();
             }
             else
             {
-                // Merge ownership into defaults before saving
-                int lengthToCopy = Mathf.Min(data.skins?.Length ?? 0, defaultSkins.Length);
-                for (int i = 0; i < lengthToCopy; i++)
+                // Merge skins
+                int skinLengthToCopy = Mathf.Min(data.skins?.Length ?? 0, defaultSkins.Length);
+                for (int i = 0; i < skinLengthToCopy; i++)
                 {
                     defaultSkins[i].owned = data.skins[i].owned;
                 }
 
                 data.skins = defaultSkins;
+
+
+                // Merge levels
+                int levelLengthToCopy = Mathf.Min(data.levelsUnlocked?.Length ?? 0, defaultLevels.Length);
+                for (int i = 0; i < levelLengthToCopy; i++)
+                {
+                    defaultLevels[i] = data.levelsUnlocked[i];
+                }
+
+                // ensure first level is always unlocked
+                defaultLevels[0] = true;
+
+                data.levelsUnlocked = defaultLevels;
+
                 Save(); // overwrite with merged copy
             }
         }
