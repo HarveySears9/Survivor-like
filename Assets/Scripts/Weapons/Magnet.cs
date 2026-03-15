@@ -10,7 +10,7 @@ public class Magnet : MonoBehaviour
 
     public int level = 0;
     public int maxLevel = 5;
-    public float range = 0;
+    public float range = 0.5f;
 
     void Start()
     {
@@ -24,7 +24,14 @@ public class Magnet : MonoBehaviour
         {
             level = maxLevel;
         }
-        range = level/2f;
+        switch (level)
+        {
+            case 1: range = 1f; break;
+            case 2: range = 1.5f; break;
+            case 3: range = 2f; break;
+            case 4: range = 2.5f; break;
+            case 5: range = 3f; break;
+        }
 
         levelUpButton.LevelUp(level, maxLevel);
     }

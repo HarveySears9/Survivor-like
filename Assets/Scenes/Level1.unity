@@ -24939,7 +24939,7 @@ MonoBehaviour:
   levelUpButton: {fileID: 144193802}
   level: 0
   maxLevel: 5
-  range: 0
+  range: 0.5
 --- !u!1 &1858587466
 GameObject:
   m_ObjectHideFlags: 0
