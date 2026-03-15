@@ -446,7 +446,7 @@ TextureImporter:
         width: 16
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +467,7 @@ TextureImporter:
         width: 17
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,6 +475,48 @@ TextureImporter:
       bones: []
       spriteID: 4820d663e449708488c56676e5193c6a
       internalID: 1557538732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_17
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 466
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed51ffb0b38c2ce458c5f1884fa82453
+      internalID: 520622680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 464
+        width: 25
+        height: 18
+      alignment: 9
+      pivot: {x: 0.56, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651dbcc0a77900d479cbe4c63b8ce1aa
+      internalID: -2034572460
       vertices: []
       indices: 
       edges: []
@@ -499,6 +541,8 @@ TextureImporter:
       EnvironmentMiscItems_14: -1195499624
       EnvironmentMiscItems_15: 1866909133
       EnvironmentMiscItems_16: 1557538732
+      EnvironmentMiscItems_17: 520622680
+      EnvironmentMiscItems_18: -2034572460
       EnvironmentMiscItems_2: 1601584364
       EnvironmentMiscItems_3: -809826145
       EnvironmentMiscItems_4: -1164961436
