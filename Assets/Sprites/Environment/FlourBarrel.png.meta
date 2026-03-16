@@ -278,7 +278,7 @@ TextureImporter:
         width: 103
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,6 +286,48 @@ TextureImporter:
       bones: []
       spriteID: 5c8c2c81e2dadd144a86e18d15c495af
       internalID: -306618422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlourBarrel_8
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 219
+        width: 186
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03af7c95ea975bf48be59f871641d205
+      internalID: 1295790215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlourBarrel_9
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 97
+        width: 186
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fa9a78f23580449aede5ebeb08f1f7
+      internalID: -223919986
       vertices: []
       indices: 
       edges: []
@@ -309,6 +351,8 @@ TextureImporter:
       FlourBarrel_5: -1343057834
       FlourBarrel_6: 789136987
       FlourBarrel_7: -306618422
+      FlourBarrel_8: 1295790215
+      FlourBarrel_9: -223919986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

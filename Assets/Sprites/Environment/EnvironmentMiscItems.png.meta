@@ -521,6 +521,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_19
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 392
+        width: 69
+        height: 75
+      alignment: 9
+      pivot: {x: 0.44927537, y: 0.50666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58efa4204dff3484cab8930924fc54db
+      internalID: -948506277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -543,6 +564,7 @@ TextureImporter:
       EnvironmentMiscItems_16: 1557538732
       EnvironmentMiscItems_17: 520622680
       EnvironmentMiscItems_18: -2034572460
+      EnvironmentMiscItems_19: -948506277
       EnvironmentMiscItems_2: 1601584364
       EnvironmentMiscItems_3: -809826145
       EnvironmentMiscItems_4: -1164961436
