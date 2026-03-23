@@ -19,6 +19,7 @@ MonoBehaviour:
   - GoldHardd
   - MosStone
   - BrickY Bones
+  - D'ripped
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -115,3 +116,19 @@ MonoBehaviour:
   - {fileID: -1657909765, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 376915585, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   boneDead: []
+  suit:
+  - {fileID: -1951755490, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1695270060, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 781646533, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -528150235, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 2099133452, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  suitMoving:
+  - {fileID: -796393171, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -324084335, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1502783492, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1108392703, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1960865822, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 25648299, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 197679180, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1291730528, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  suitDead: []

@@ -23,7 +23,8 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 5000 },   // Black
             new SkinData { owned = false, price = 7500 },   // Gold
             new SkinData { owned = false, price = 10000 },   // Teal
-            new SkinData { owned = false, price = 0, achievement = true }       // Bone
+            new SkinData { owned = false, price = 0, achievement = true },       // Bone
+            new SkinData { owned = true, price = 0}       // Suit
             };
 
             bool[] defaultLevels = new bool[] { true, true, true };
