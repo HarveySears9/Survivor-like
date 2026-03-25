@@ -7,6 +7,7 @@ public class SkinManager : MonoBehaviour
 
     [Header("Scene References")]
     public AnimateSprite brickSp;           // Player sprite
+    public AnimateImage loadingScreenImage;
     public AnimateImage[] upgradeButtons;   // Upgrade button sprites
     public AnimateSprite deadBrickSp;       // Dead player sprite
 
@@ -51,6 +52,11 @@ public class SkinManager : MonoBehaviour
         {
             brickSp.spriteArray = sprites;
             brickSp.moveArray = moveArray;
+        }
+
+        if (loadingScreenImage != null)
+        {
+            loadingScreenImage.spriteArray = moveArray;
         }
 
         if (deadBrickSp != null)

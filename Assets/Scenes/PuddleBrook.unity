@@ -3505,6 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
   brickSp: {fileID: 1092234656}
+  loadingScreenImage: {fileID: 4112970773551369139}
   upgradeButtons: []
   deadBrickSp: {fileID: 0}
 --- !u!4 &419057861
@@ -46736,6 +46737,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e320832f93db8de44bf699463ab31792, type: 3}
+--- !u!114 &4112970773551369139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3939015183739488267, guid: e320832f93db8de44bf699463ab31792, type: 3}
+  m_PrefabInstance: {fileID: 4112970773551369138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa49e27f72cf9d46b2c124eb2879ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class SceneTransitionController : MonoBehaviour
     public CanvasGroup transitionScreenCanvasGroup; // Transition screen
     public float transitionDuration = 2.0f;         // Fade duration
     public Slider loadingSlider;                    // Loading bar slider
+    public Image brick;
 
     void Start()
     {
@@ -49,6 +50,11 @@ public class SceneTransitionController : MonoBehaviour
         {
             loadingSlider.gameObject.SetActive(true);
             loadingSlider.value = 0f;
+        }
+
+        if(brick != null)
+        {
+            brick.enabled = true;
         }
 
         float elapsedTime = 0f;

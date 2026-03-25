@@ -169,6 +169,7 @@ MonoBehaviour:
   transitionScreenCanvasGroup: {fileID: 6210929365260353727}
   transitionDuration: 0.5
   loadingSlider: {fileID: 768733949124905479}
+  brick: {fileID: 5786156036524327118}
 --- !u!225 &6210929365260353727
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -478,7 +479,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8131884647803780929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -491,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1373000260, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -514,14 +515,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: 1373000260, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: -2019813457, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: 808392748, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: 1903573115, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: 1415327840, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: -220141428, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: -1434372951, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  - {fileID: 759223060, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   masterSprite: {fileID: 0}
