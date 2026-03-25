@@ -2478,6 +2478,7 @@ GameObject:
   - component: {fileID: 323083855}
   - component: {fileID: 323083854}
   - component: {fileID: 323083853}
+  - component: {fileID: 323083856}
   m_Layer: 5
   m_Name: B'Rick
   m_TagString: Untagged
@@ -2563,6 +2564,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323083851}
   m_CullTransparentMesh: 1
+--- !u!114 &323083856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323083851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6feef7e74d8471f4bb6d74fb1e309b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1092234656}
+  menu: {fileID: 323083853}
 --- !u!1001 &334208619
 PrefabInstance:
   m_ObjectHideFlags: 0
