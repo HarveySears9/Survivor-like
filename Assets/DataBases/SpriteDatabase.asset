@@ -20,6 +20,7 @@ MonoBehaviour:
   - MosStone
   - BrickY Bones
   - D'ripped
+  - Black Bones
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -132,3 +133,19 @@ MonoBehaviour:
   - {fileID: 197679180, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 1291730528, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   suitDead: []
+  blackBone:
+  - {fileID: -1838557207, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1285255861, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -120287063, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 2069889881, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 1929409692, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blackBoneMoving:
+  - {fileID: -1904820143, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 884780187, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 214514725, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -1044282023, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 489966442, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 812841378, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: -768458933, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  - {fileID: 911095917, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
+  blackBoneDead: []

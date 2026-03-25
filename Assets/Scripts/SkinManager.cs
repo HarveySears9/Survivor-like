@@ -36,6 +36,7 @@ public class SkinManager : MonoBehaviour
             case 4: AssignBrickSprites(database.teal, database.tealMoving, database.tealDead); break;
             case 5: AssignBrickSprites(database.bone, database.boneMoving, database.boneDead); break;
             case 6: AssignBrickSprites(database.suit, database.suitMoving, database.suitDead); break;
+            case 7: AssignBrickSprites(database.blackBone, database.blackBoneMoving, database.blackBoneDead); break;
             default:
                 Debug.LogWarning("Invalid skin index for B'rick. Defaulting to Red.");
                 AssignBrickSprites(database.red, database.redMoving, database.redDead);

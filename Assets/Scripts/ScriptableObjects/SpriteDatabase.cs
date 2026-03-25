@@ -15,4 +15,5 @@ public class SpriteDatabase : ScriptableObject
     public Sprite[] teal, tealMoving, tealDead;
     public Sprite[] bone, boneMoving, boneDead;
     public Sprite[] suit, suitMoving, suitDead;
+    public Sprite[] blackBone, blackBoneMoving, blackBoneDead;
 }
