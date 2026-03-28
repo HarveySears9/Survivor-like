@@ -49,7 +49,11 @@ public class SkinShop : MonoBehaviour
             { 4, database.teal.Length > 0 ? database.teal[0] : null },
             { 5, database.bone.Length > 0 ? database.bone[0] : null },
             { 6, database.suit.Length > 0 ? database.suit[0] : null },
-            { 7, database.suit.Length > 0 ? database.blackBone[0] : null }
+            { 7, database.suit.Length > 0 ? database.blackBone[0] : null },
+            { 8, database.suit.Length > 0 ? database.whiteSuit[0] : null },
+            { 9, database.suit.Length > 0 ? database.blackSuit[0] : null },
+            { 10, database.suit.Length > 0 ? database.chef[0] : null }
+
         };
     }
 

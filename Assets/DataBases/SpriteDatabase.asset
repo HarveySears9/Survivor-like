@@ -21,6 +21,9 @@ MonoBehaviour:
   - BrickY Bones
   - D'ripped
   - Black Bones
+  - Boss b'rick
+  - black n gold
+  - Thudbutt's Hat
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -149,3 +152,51 @@ MonoBehaviour:
   - {fileID: -768458933, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 911095917, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   blackBoneDead: []
+  whiteSuit:
+  - {fileID: 860256612, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 667377814, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1714637889, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1398209027, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1724082057, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  whiteSuitMoving:
+  - {fileID: -74147422, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1975618586, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1197231199, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1689228646, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -625189818, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1821845200, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1537885023, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -316667277, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  whiteSuitDead: []
+  blackSuit:
+  - {fileID: 1901003050, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1415141771, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1975761266, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1113207557, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -943687008, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  blackSuitMoving:
+  - {fileID: -670836476, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -276859745, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1565088606, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 2140326711, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 282506489, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1911413227, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 373005519, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -178982733, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  blackSuitDead: []
+  chef:
+  - {fileID: -1264087333, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1394930471, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1942662193, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -840955261, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1738263104, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  chefMoving:
+  - {fileID: 403014412, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 684840813, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 2062799453, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1806023415, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 144908204, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1415356503, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -652793749, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -710876690, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  chefDead: []
