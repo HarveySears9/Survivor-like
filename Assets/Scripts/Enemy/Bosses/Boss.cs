@@ -108,18 +108,21 @@ public class Boss : MonoBehaviour
 
         healthBar.SetHealth(health);
 
-        if (health <= 0f)
+        if (health <= 0f && !isDead)
         {
-            if (!isDead)
-            {
-                isDead = true;
-                // Trigger the EnemyDeathEventManager
-                EnemyDeathEventManager.BossDied(transform.position, drops);
-                MissionManager.Instance.AddProgress($"kill_Boss");
-
-                Destroy(gameObject);
-            }
+            isDead = true;
+            Die();
         }
+    }
+
+    protected virtual void Die()
+    {
+        // Trigger the EnemyDeathEventManager
+        EnemyDeathEventManager.BossDied(transform.position, drops);
+
+        MissionManager.Instance.AddProgress($"kill_Boss");
+
+        Destroy(gameObject);
     }
 
     // --- SLOW EFFECT HANDLING ---

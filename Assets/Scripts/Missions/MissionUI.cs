@@ -66,7 +66,12 @@ public class MissionUI : MonoBehaviour
             { 2, database.black.Length > 0 ? database.black[0] : null },
             { 3, database.gold.Length > 0 ? database.gold[0] : null },
             { 4, database.teal.Length > 0 ? database.teal[0] : null },
-            { 5, database.bone.Length > 0 ? database.bone[0] : null }
+            { 5, database.bone.Length > 0 ? database.bone[0] : null },
+            { 6, database.bone.Length > 0 ? database.suit[0] : null },
+            { 7, database.bone.Length > 0 ? database.blackBone[0] : null },
+            { 8, database.bone.Length > 0 ? database.whiteSuit[0] : null },
+            { 9, database.bone.Length > 0 ? database.blackSuit[0] : null },
+            { 10, database.bone.Length > 0 ? database.chef[0] : null }
         };
     }
 

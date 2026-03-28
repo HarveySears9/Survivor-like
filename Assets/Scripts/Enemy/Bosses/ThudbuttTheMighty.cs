@@ -22,6 +22,13 @@ public class ThudbuttTheMighty : Boss
         animator = GetComponent<AnimateSprite>();
     }
 
+    protected override void Die()
+    {
+        base.Die(); // runs all the parent logic
+
+        MissionManager.Instance.AddProgress($"kill_Thudbutt");
+    }
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

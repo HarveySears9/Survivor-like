@@ -106,12 +106,12 @@ MonoBehaviour:
     claimed: 0
     completed: 0
   - id: 1
-    missionText: Defeat 5 Skeleton
+    missionText: Defeat Thudbutt
     rewardType: 1
-    key: kill_Skeleton
-    targetAmount: 5
-    currentAmount: 5
-    rewardAmount: 0
+    key: kill_Thudbutt
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 10
     type: 2
     claimed: 0
     completed: 0
