@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Thudbutt The Mighty
-  maxHP: 1
+  maxHP: 300
   speed: 2
   damage: 15
   damageInterval: 1
