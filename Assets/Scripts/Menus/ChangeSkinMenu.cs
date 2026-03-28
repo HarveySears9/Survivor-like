@@ -30,6 +30,8 @@ public class ChangeSkinMenu : MonoBehaviour
     [Header("Sprite Database")]
     public SpriteDatabase database;
 
+    public int[] skinOrder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,10 +65,13 @@ public class ChangeSkinMenu : MonoBehaviour
         }
         tabs.OnTabPressed(data.brickSkinEquipped);
 
+        int equippedIndex = data.brickSkinEquipped;
         nameText.text = skinNames[data.brickSkinEquipped];
 
+        int uiIndex = System.Array.IndexOf(skinOrder, equippedIndex);
+
         var rect = scrollContent.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2((data.brickSkinEquipped) * -700, rect.anchoredPosition.y);
+        rect.anchoredPosition = new Vector2(uiIndex * -700, rect.anchoredPosition.y);
 
         if (equipButton != null) equipButton.interactable = false;
         if (equipButton != null) equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
