@@ -44,6 +44,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.currentDamage = 1;
                 data.skins = defaultSkins;
                 data.levelsUnlocked = defaultLevels;
+                data.tutorialCompleted = false;
                 Save();
             }
             else

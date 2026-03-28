@@ -84,6 +84,7 @@ public static class SaveFile
         public DateTime lastWeeklyReset;
 
         public bool[] levelsUnlocked;
+        public bool tutorialCompleted;
 
     }
 }
