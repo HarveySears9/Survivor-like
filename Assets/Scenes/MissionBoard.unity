@@ -7856,6 +7856,8 @@ MonoBehaviour:
   weeklyTimerText: {fileID: 1843370152}
   coinGFX: {fileID: 563492071, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
+  weaponUnlockSprites:
+  - {fileID: -1534252421, guid: c5fed1e53bd367342af6dff802d3b2c0, type: 3}
   dailyScrollContent: {fileID: 54338984}
   weeklyScrollContent: {fileID: 665474584}
   challengeScrollContent: {fileID: 1127606307}

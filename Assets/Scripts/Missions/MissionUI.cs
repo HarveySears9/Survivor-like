@@ -16,6 +16,7 @@ public class MissionUI : MonoBehaviour
 
     public Sprite coinGFX;
     public SpriteDatabase database;
+    public Sprite[] weaponUnlockSprites;
 
     [Header("Scroll Contents")]
     public Transform dailyScrollContent;
@@ -128,6 +129,17 @@ public class MissionUI : MonoBehaviour
                     {
                         ui.missionGFX.sprite = null; // fallback if index not found
                         Debug.LogWarning($"No skin icon found for index {mission.rewardAmount}");
+                    }
+                }
+                else if (mission.rewardType == RewardType.Weapon)
+                {
+                    ui.missionGFX.sprite = weaponUnlockSprites[mission.rewardAmount];
+                    RectTransform rt = ui.missionGFX.GetComponent<RectTransform>();
+                    if (rt != null)
+                    {
+                        Vector3 scale = rt.localScale;
+                        scale = new Vector3(3f, 3f, 1f);
+                        rt.localScale = scale;
                     }
                 }
 
