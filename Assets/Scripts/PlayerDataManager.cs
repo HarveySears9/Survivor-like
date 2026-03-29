@@ -32,6 +32,7 @@ public class PlayerDataManager : MonoBehaviour
             };
 
             bool[] defaultLevels = new bool[] { true, true, true };
+            bool[] weaponUnlocks = new bool[] { false };
 
             if (data == null)
             {
@@ -45,6 +46,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.skins = defaultSkins;
                 data.levelsUnlocked = defaultLevels;
                 data.tutorialCompleted = false;
+                data.weaponUnlocks = weaponUnlocks;
                 Save();
             }
             else
@@ -70,6 +72,15 @@ public class PlayerDataManager : MonoBehaviour
                 defaultLevels[0] = true;
 
                 data.levelsUnlocked = defaultLevels;
+
+                // Merge weapon unlocks
+                int weaponLengthToCopy = Mathf.Min(data.weaponUnlocks?.Length ?? 0, weaponUnlocks.Length);
+                for (int i = 0; i < levelLengthToCopy; i++)
+                {
+                    weaponUnlocks[i] = data.levelsUnlocked[i];
+                }
+
+                data.weaponUnlocks = weaponUnlocks;
 
                 Save(); // overwrite with merged copy
             }

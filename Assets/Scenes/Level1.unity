@@ -4696,7 +4696,7 @@ MonoBehaviour:
   levelUpButton: {fileID: 1944393090}
   sr: {fileID: 994254027}
   player: {fileID: 808585395}
-  unlocked: 1
+  unlocked: 0
 --- !u!1 &388621588
 GameObject:
   m_ObjectHideFlags: 0

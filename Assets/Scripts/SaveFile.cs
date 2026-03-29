@@ -86,5 +86,7 @@ public static class SaveFile
         public bool[] levelsUnlocked;
         public bool tutorialCompleted;
 
+        public bool[] weaponUnlocks;
+
     }
 }

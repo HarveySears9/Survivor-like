@@ -30,11 +30,15 @@ public class Hammer : MonoBehaviour
 
     void Start()
     {
+        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+
+        unlocked = loadedData.weaponUnlocks[0];
+
         if (unlocked)
         {
-            SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+            //SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
 
-            // Only enable for B'Rick (same as your sword logic)
+            // Only enable for B'Rick (same as sword logic)
             if (loadedData.currentCharacter != 0)
             {
                 gameObject.SetActive(false);
