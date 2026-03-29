@@ -203,6 +203,14 @@ public class MissionManager : MonoBehaviour
                     Debug.Log($"Player unlocked skin {mission.rewardAmount}!");
                 }
                 break;
+
+            case RewardType.Weapon:
+                if (mission.rewardAmount >= 0 && mission.rewardAmount <= data.weaponUnlocks.Length)
+                {
+                    data.weaponUnlocks[mission.rewardAmount] = true;
+                    Debug.Log($"Player unlocked Weapon {mission.rewardAmount}!");
+                }
+                break;
         }
 
         // Save progress

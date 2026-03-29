@@ -1934,6 +1934,7 @@ MonoBehaviour:
     activeMissions: []
     levelsUnlocked: 
     tutorialCompleted: 0
+    weaponUnlocks: 
 --- !u!4 &1102254858
 Transform:
   m_ObjectHideFlags: 0

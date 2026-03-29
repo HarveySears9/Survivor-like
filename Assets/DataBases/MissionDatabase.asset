@@ -115,3 +115,13 @@ MonoBehaviour:
     type: 2
     claimed: 0
     completed: 0
+  - id: 2
+    missionText: Defeat Thudbutt
+    rewardType: 2
+    key: kill_Thudbutt
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 0
+    type: 2
+    claimed: 0
+    completed: 0

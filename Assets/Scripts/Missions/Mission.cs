@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum RewardType { Coins, Skin }
+public enum RewardType { Coins, Skin, Weapon }
 public enum ChallengeType { Daily, Weekly, Challenge }
 
 [System.Serializable]

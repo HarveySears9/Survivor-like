@@ -31,8 +31,8 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 0, achievement = true}        // Chef
             };
 
-            bool[] defaultLevels = new bool[] { true, true, true };
-            bool[] weaponUnlocks = new bool[] { false };
+            bool[] defaultLevels = new bool[] { true, false, false };
+            bool[] weaponUnlocks = new bool[] { false, false };
 
             if (data == null)
             {
@@ -75,9 +75,9 @@ public class PlayerDataManager : MonoBehaviour
 
                 // Merge weapon unlocks
                 int weaponLengthToCopy = Mathf.Min(data.weaponUnlocks?.Length ?? 0, weaponUnlocks.Length);
-                for (int i = 0; i < levelLengthToCopy; i++)
+                for (int i = 0; i < weaponLengthToCopy; i++)
                 {
-                    weaponUnlocks[i] = data.levelsUnlocked[i];
+                    weaponUnlocks[i] = data.weaponUnlocks[i];
                 }
 
                 data.weaponUnlocks = weaponUnlocks;
