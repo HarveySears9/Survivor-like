@@ -78,7 +78,7 @@ public class DragonAlterMenu : MonoBehaviour
 
             case DragonDealType.RageBoost:
                 dealFlavourText.text = "Pain sharpens your strikes.";
-                rewardText.text = "Attack When HP is low";
+                rewardText.text = "Attack When\nHP is low";
                 rewardAmount.text = $"+{deal.value * 100f:0}%";
                 break;
 
