@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.enabled = false;
         deadPlayer.SetActive(true);
 
-        deadPlayer.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
+        //deadPlayer.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
 
         // Wait for 2 seconds in real-world time
         yield return new WaitForSecondsRealtime(2f);
