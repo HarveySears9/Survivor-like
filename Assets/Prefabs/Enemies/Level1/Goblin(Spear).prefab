@@ -189,9 +189,9 @@ MonoBehaviour:
   health: 3
   speed: 1.8
   damage: 1
-  damageInterval: 1
   playerTransform: {fileID: 0}
   enemyType: 0
+  deathEffect: {fileID: 6945846846648330168, guid: 9b7815eac44f02b41a3a82c70e62342d, type: 3}
 --- !u!61 &2034193563691243304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,6 +284,7 @@ MonoBehaviour:
   - {fileID: 1181380411, guid: 1487be48c61bc2e4b9289aebbf778b11, type: 3}
   - {fileID: -1194935206, guid: 1487be48c61bc2e4b9289aebbf778b11, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0

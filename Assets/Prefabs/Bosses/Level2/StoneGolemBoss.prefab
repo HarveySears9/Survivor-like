@@ -164,6 +164,7 @@ MonoBehaviour:
   - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
   - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
+  deathEffect: {fileID: 5344750134812515277, guid: 3e1ca4ab861197246b88b987a8f3e43c, type: 3}
   boulderPrefab: {fileID: 4129034542896093630, guid: e0a3e1301bfa14b479804e3f5d5c09b5, type: 3}
   boulderCooldown: 5
   boulderCount: 5

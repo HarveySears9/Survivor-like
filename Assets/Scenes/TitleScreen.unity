@@ -1417,7 +1417,6 @@ MonoBehaviour:
   brickSp: {fileID: 1337817678}
   loadingScreenImage: {fileID: 1292241596}
   upgradeButtons: []
-  deadBrickSp: {fileID: 0}
 --- !u!4 &972194224
 Transform:
   m_ObjectHideFlags: 0

@@ -253,6 +253,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   drops:
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
+  deathEffect: {fileID: 6945846846648330168, guid: 9b7815eac44f02b41a3a82c70e62342d, type: 3}
   hammerPrefab: {fileID: 787470760057298453, guid: cd00b3300a819094ca9e1f49eec8e3a2, type: 3}
   hammerThrowCooldown: 5
   hammerDamage: 5

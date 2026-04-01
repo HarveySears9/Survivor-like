@@ -258,6 +258,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   drops:
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
+  deathEffect: {fileID: 6945846846648330168, guid: 9b7815eac44f02b41a3a82c70e62342d, type: 3}
   staffPrefab: {fileID: 8665646075484415831, guid: 8295bc2d31eb1ed4c882c78584d76f97, type: 3}
   staffCooldown: 6
   staffDuration: 3

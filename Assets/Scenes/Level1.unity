@@ -3369,6 +3369,7 @@ MonoBehaviour:
   rageDamageBonus: 0
   lifestealPercent: 0
   isRaging: 0
+  deathEffect: {fileID: 0}
 --- !u!114 &302951754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10488,6 +10489,7 @@ MonoBehaviour:
   rageDamageBonus: 0
   lifestealPercent: 0
   isRaging: 0
+  deathEffect: {fileID: 6945846846648330168, guid: 9b7815eac44f02b41a3a82c70e62342d, type: 3}
 --- !u!50 &808585397
 Rigidbody2D:
   serializedVersion: 4

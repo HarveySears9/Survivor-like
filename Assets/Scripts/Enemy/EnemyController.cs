@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
     private float separationRadius = 0.15f;
     private float separationStrength = 0.1f;
 
+    public GameObject deathEffect;
+
     // --- Slow effect tracking ---
     private Coroutine slowRoutine;
 
@@ -138,6 +140,14 @@ public class EnemyController : MonoBehaviour
         if (health <= 0f)
         {
             isDead = true;
+
+            // Spawn death effect
+            if (deathEffect != null)
+            {
+                Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
+                Instantiate(deathEffect, transform.position, rot);
+            }
+
             EnemyDeathEventManager.EnemyDied(transform.position);
             MissionManager.Instance.AddProgress($"kill_{enemyType}");
             Destroy(gameObject);

@@ -249,6 +249,7 @@ MonoBehaviour:
   - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
   - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
   - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
+  deathEffect: {fileID: 5344750134812515277, guid: 3e1ca4ab861197246b88b987a8f3e43c, type: 3}
   sporeCloudPrefab: {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
   sporeCooldown: 5
   minionPrefab: {fileID: 307535761751524326, guid: 669286c9ffd1a664ab54dfd6c6dc2350, type: 3}

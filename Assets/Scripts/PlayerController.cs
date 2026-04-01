@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     public float lifestealPercent = 0f;  // % of damage dealt (0.05 = 5%)
     public bool isRaging = false;
 
+    public GameObject deathEffect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -174,6 +176,14 @@ public class PlayerController : MonoBehaviour
         moveDirection = Vector2.zero;
 
         spriteRenderer.enabled = false;
+
+        // Spawn death effect
+        if (deathEffect != null)
+        {
+            Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            Instantiate(deathEffect, transform.position, rot);
+        }
+
         deadPlayer.SetActive(true);
 
         //deadPlayer.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;

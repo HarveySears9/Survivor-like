@@ -34,6 +34,8 @@ public class Boss : MonoBehaviour
 
     public GameObject[] drops;
 
+    public GameObject deathEffect;
+
     // --- Slow effect tracking ---
     private Coroutine slowRoutine;
 
@@ -117,6 +119,13 @@ public class Boss : MonoBehaviour
 
     protected virtual void Die()
     {
+        // Spawn death effect
+        if (deathEffect != null)
+        {
+            Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            Instantiate(deathEffect, transform.position, rot);
+        }
+
         // Trigger the EnemyDeathEventManager
         EnemyDeathEventManager.BossDied(transform.position, drops);
 

@@ -106,6 +106,7 @@ MonoBehaviour:
   damage: 6
   playerTransform: {fileID: 0}
   enemyType: 1
+  deathEffect: {fileID: 4732310941236128202, guid: 7b9a19a59ff810d4f83bafebcef73e0a, type: 3}
 --- !u!50 &176450888262207816
 Rigidbody2D:
   serializedVersion: 4
@@ -153,6 +154,7 @@ MonoBehaviour:
   - {fileID: -1232537203, guid: cb6078665fb16f74a922dc28ff6d4c25, type: 3}
   - {fileID: -483671561, guid: cb6078665fb16f74a922dc28ff6d4c25, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.2
   isMoving: 0
