@@ -15,14 +15,29 @@ public class PlayerHammer : MonoBehaviour
     private Vector2 direction;
 
     public GameObject gfx;
+    //public SpriteRenderer sr;
+    public GameObject[] levels;
     public float spinSpeed = 500f;
     private Hammer owner;
+    private int level;
 
-    public void Initialize(Vector2 targetPosition, Transform playerTransform, Hammer owner)
+    public void Initialize(Vector2 targetPosition, Transform playerTransform, Hammer owner, int level)
     {
         this.targetPosition = targetPosition;
         this.playerTransform = playerTransform;
         this.owner = owner;
+        this.level = level;
+
+        int index = Mathf.Clamp(level - 1, 0, levels.Length - 1);
+
+        // Disable all first
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].SetActive(false);
+        }
+
+        // Enable correct one
+        levels[index].SetActive(true);
 
         direction = (targetPosition - (Vector2)transform.position).normalized;
 

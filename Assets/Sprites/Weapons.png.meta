@@ -1382,6 +1382,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Weapons_60
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 480
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6, y: 0.40000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbebf037a93bde2438eebdb4ce987312
+      internalID: -496145294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_61
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 480
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6, y: 0.40000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0fae879323ffe4190bccf81fe873a6
+      internalID: 1700535007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_62
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 480
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6, y: 0.40000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a3e33088f8c0345bd5a2e2394b7a02
+      internalID: 1597733320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_63
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 480
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5666667, y: 0.40000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9556ae877755a348bc9290078c3e27a
+      internalID: -202382404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_64
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 480
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6, y: 0.40000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49876d235f865bd49a3e37cec399208b
+      internalID: -610486856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1450,6 +1555,11 @@ TextureImporter:
       Weapons_58: -1456175647
       Weapons_59: -1537539762
       Weapons_6: 506627633
+      Weapons_60: -496145294
+      Weapons_61: 1700535007
+      Weapons_62: 1597733320
+      Weapons_63: -202382404
+      Weapons_64: -610486856
       Weapons_7: 336591198
       Weapons_8: 1206243433
       Weapons_9: -1906643539

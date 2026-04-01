@@ -13,7 +13,7 @@ public class Hammer : MonoBehaviour
     private float nextFireTime = 0f;
 
     public AnimateSprite playerAnimator;
-    public AnimateImage levelUpButtonAnimator;
+    //public AnimateImage levelUpButtonAnimator;
 
     public Sprite[] hammer1, hammer1moving, hammer2, hammer2moving, hammer3, hammer3moving, hammer4, hammer4moving, hammer5, hammer5moving;
 
@@ -98,7 +98,7 @@ public class Hammer : MonoBehaviour
 
         if (hammer != null)
         {
-            hammer.Initialize(target.position, transform, this);
+            hammer.Initialize(target.position, transform, this, level);
             hammer.damage = player.ApplyDamageModifiers(damage);
         }
 
