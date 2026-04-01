@@ -85,7 +85,30 @@ public class MissionUI : MonoBehaviour
 
         var missions = PlayerDataManager.Instance.data.activeMissions;
 
-        foreach (var mission in missions)
+        // Create sorted copy
+        var sortedMissions = new List<Mission>(missions);
+
+        sortedMissions.Sort((a, b) =>
+        {
+            int GetPriority(Mission m)
+            {
+                if (m.completed && !m.claimed) return 0; // claimable (top)
+                if (!m.completed && !m.claimed) return 1; // in progress
+                return 2; // claimed (bottom)
+            }
+
+            int priorityCompare = GetPriority(a).CompareTo(GetPriority(b));
+
+            // If same group, sort by progress (higher first)
+            if (priorityCompare == 0)
+            {
+                return b.Progress01.CompareTo(a.Progress01);
+            }
+
+            return priorityCompare;
+        });
+
+        foreach (var mission in sortedMissions)
         {
             // Choose parent based on type
             Transform parent = mission.type switch

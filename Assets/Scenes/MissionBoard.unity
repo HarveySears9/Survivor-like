@@ -545,9 +545,9 @@ RectTransform:
   - {fileID: 1909725814}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 642, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &172946629
@@ -1048,7 +1048,6 @@ MonoBehaviour:
   brickSp: {fileID: 1021901965}
   loadingScreenImage: {fileID: 2686790274985900535}
   upgradeButtons: []
-  deadBrickSp: {fileID: 0}
 --- !u!4 &595345221
 Transform:
   m_ObjectHideFlags: 0
@@ -6791,9 +6790,9 @@ RectTransform:
   - {fileID: 965258803}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230.66667, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1700284179
@@ -6831,9 +6830,9 @@ RectTransform:
   - {fileID: 679458354}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1053.3334, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700284181
