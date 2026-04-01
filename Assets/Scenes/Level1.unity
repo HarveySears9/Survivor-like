@@ -28700,13 +28700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelText: {fileID: 140848834}
-  levelImages:
-  - {fileID: -496145294, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: 1700535007, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: 1597733320, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: -202382404, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: -610486856, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  visibleUpgrade: 1
+  levelImages: []
+  visibleUpgrade: 0
   displayImage: {fileID: 1037616699}
 --- !u!114 &1976882465
 MonoBehaviour:
