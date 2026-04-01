@@ -142,11 +142,14 @@ public class EnemyController : MonoBehaviour
             isDead = true;
 
             // Spawn death effect
-            if (deathEffect != null)
-            {
-                Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
-                Instantiate(deathEffect, transform.position, rot);
-            }
+            //if (deathEffect != null)
+            //{
+            //    Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            //    Instantiate(deathEffect, transform.position, rot);
+            //}
+            GameObject effect = BloodEffectPool.Instance.Get();
+            effect.transform.position = transform.position;
+            effect.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
 
             EnemyDeathEventManager.EnemyDied(transform.position);
             MissionManager.Instance.AddProgress($"kill_{enemyType}");
