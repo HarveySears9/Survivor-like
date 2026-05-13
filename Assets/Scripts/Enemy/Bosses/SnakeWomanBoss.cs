@@ -52,31 +52,19 @@ public class SnakeWomanBoss : Boss
         activeStaffOrbit = staff;
     }
 
-    public override void TakeDamage(float damage)
+    protected override void Die()
     {
-        health -= damage;
-        healthBar.SetHealth(health);
+        base.Die(); // runs all the parent logic
 
-        if (health <= 0f)
+        // Kill the orbiting staff
+        if (activeStaffOrbit != null)
         {
-            if (!isDead)
+            if (activeStaffOrbit != null && activeStaffOrbit.gameObject != null)
             {
-                isDead = true;
-
-                // Kill the orbiting staff
-                if (activeStaffOrbit != null)
-                {
-                    if (activeStaffOrbit != null && activeStaffOrbit.gameObject != null)
-                    {
-                        Destroy(activeStaffOrbit.gameObject);
-                    }
-                }
-
-                EnemyDeathEventManager.BossDied(transform.position, drops);
-                MissionManager.Instance.AddProgress("kill_Boss");
-
-                Destroy(gameObject);
+                Destroy(activeStaffOrbit.gameObject);
             }
         }
+
+        MissionManager.Instance.AddProgress($"kill_SnakeWoman");
     }
 }

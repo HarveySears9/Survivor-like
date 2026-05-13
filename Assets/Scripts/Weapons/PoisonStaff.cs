@@ -33,18 +33,10 @@ public class PoisonStaff : MonoBehaviour
     {
         SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
 
-        //unlocked = loadedData.weaponUnlocks[1];
+        unlocked = loadedData.weaponUnlocks[1];
 
         if (unlocked)
         {
-            //SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
-
-            // Only enable for B'Rick (same as sword logic)
-            if (loadedData.currentCharacter != 0)
-            {
-                gameObject.SetActive(false);
-                return;
-            }
 
             damage = loadedData.currentDamage;
 

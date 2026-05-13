@@ -5677,7 +5677,7 @@ MonoBehaviour:
   levelUpButton: {fileID: 1976882464}
   sr: {fileID: 1181207237}
   player: {fileID: 808585395}
-  unlocked: 1
+  unlocked: 0
   staffOrbitPrefab: {fileID: 5287223195845036954, guid: 84b36bf9046cd0047b771c2207aeb795, type: 3}
 --- !u!1 &426020768
 GameObject:

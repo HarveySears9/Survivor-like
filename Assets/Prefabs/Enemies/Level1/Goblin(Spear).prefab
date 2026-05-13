@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  speed: 1.8
+  speed: 1.5
   damage: 1
   playerTransform: {fileID: 0}
   enemyType: 0

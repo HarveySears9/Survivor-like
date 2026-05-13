@@ -125,3 +125,13 @@ MonoBehaviour:
     type: 2
     claimed: 0
     completed: 0
+  - id: 3
+    missionText: Defeat Snake Boss
+    rewardType: 2
+    key: kill_SnakeWoman
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 1
+    type: 2
+    claimed: 0
+    completed: 0
