@@ -23,7 +23,7 @@ public class SpinningBlades : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
-    private float damage;
+    public float baseDamage = 1f;
 
     public PlayerController player;
 
@@ -31,7 +31,6 @@ public class SpinningBlades : MonoBehaviour
 
     void Start()
     {
-        damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
         level = 0;
         blades = level1Blades; // Initialize blades with level1 at the start
         currentLevel = level1;
@@ -102,15 +101,20 @@ public class SpinningBlades : MonoBehaviour
 
     void SetUpDamage()
     {
+        float finalDamage =
+            baseDamage *
+            PlayerStats.GetDamageMultiplier();
 
-        // Iterate over all blades and set damage
+        finalDamage =
+            player.ApplyDamageModifiers(finalDamage);
+
         foreach (GameObject blade in allBlades)
         {
-            // Ensure the blade has a Weapon component before trying to set damage
             Weapon weapon = blade.GetComponent<Weapon>();
+
             if (weapon != null)
             {
-                weapon.damage = player.ApplyDamageModifiers(damage);
+                weapon.damage = finalDamage;
             }
             else
             {

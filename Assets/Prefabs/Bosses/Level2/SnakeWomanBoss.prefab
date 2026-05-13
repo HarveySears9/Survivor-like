@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dce609b747afe24f88fa45a8fdf6fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 'Snake Maiden: Redonia'
+  name: Hissandra the Venomous
   maxHP: 100
   speed: 1
   damage: 2

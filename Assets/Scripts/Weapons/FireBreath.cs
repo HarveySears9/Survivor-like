@@ -19,7 +19,7 @@ public class FireBreath : MonoBehaviour
 
     public Vector2 moveDirection = Vector2.right; // The direction of the player’s movement
 
-    private float damage;
+    public float baseDamage = 1f;
 
     private PlayerController player;
 
@@ -38,7 +38,6 @@ public class FireBreath : MonoBehaviour
 
         player = FindObjectOfType<PlayerController>();
 
-        damage = loadedData.currentDamage;
         levelUpButton.LevelUp(level, maxLevel);
         fireRate = baseFireRate;
         nextFireTime = Time.time;
@@ -104,7 +103,9 @@ public class FireBreath : MonoBehaviour
 
             // Pass the fire direction to the fireball script
             fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-            fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
+            float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+
+            fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
         }
     }
 
@@ -128,7 +129,9 @@ public class FireBreath : MonoBehaviour
 
         // Pass the fire direction to the fireball script
         fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-        fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
+        float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+
+        fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
     }
 
     private Transform FindTargets()

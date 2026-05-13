@@ -5,101 +5,149 @@ using TMPro;
 public class UpgradeMenu : MonoBehaviour
 {
     public CoinUI coinUI;
+    public MenuDialogManager mdm;
+
+    [Header("UI Text")]
     public TextMeshProUGUI hpUpgradeCostText;
     public TextMeshProUGUI currentHpText;
+
     public TextMeshProUGUI damageUpgradeCostText;
     public TextMeshProUGUI currentDamageText;
-    public TextMeshProUGUI currentSpeedText;
-    public TextMeshProUGUI speedUpgradeCostText;
 
+    public TextMeshProUGUI speedUpgradeCostText;
+    public TextMeshProUGUI currentSpeedText;
+
+    public TextMeshProUGUI pickupUpgradeCostText;
+    public TextMeshProUGUI currentPickupText;
+
+    [Header("Buttons")]
     public Button hpUpgradeButton;
     public Button speedUpgradeButton;
     public Button damageUpgradeButton;
+    public Button pickupUpgradeButton;
 
+    [Header("Base Costs")]
     public int baseHpUpgradeCost = 50;
     public int baseSpeedUpgradeCost = 50;
     public int baseDamageUpgradeCost = 50;
+    public int basePickupUpgradeCost = 50;
 
-    public MenuDialogManager mdm;
+    private SaveFile.Data data => PlayerDataManager.Instance.data;
 
     void OnEnable()
     {
         UpdateUI();
     }
 
-    public void UpgradeMaxHP()
+    // =========================
+    // HP
+    // =========================
+    public void UpgradeHP()
     {
-        var data = PlayerDataManager.Instance.data;
         int cost = Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
 
         if (data.coins >= cost)
         {
             data.coins -= cost;
             data.maxHPLevel++;
-            data.maxHP += data.maxHPLevel + 1;
+
             PlayerDataManager.Instance.Save();
             UpdateUI();
             mdm.OnInteraction();
         }
-        else
-        {
-            mdm.OnBadInteraction();
-        }
+        else mdm.OnBadInteraction();
     }
 
+    // =========================
+    // DAMAGE
+    // =========================
+    public void UpgradeDamage()
+    {
+        int cost = Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.damageLevel));
+
+        if (data.coins >= cost)
+        {
+            data.coins -= cost;
+            data.damageLevel++;
+
+            PlayerDataManager.Instance.Save();
+            UpdateUI();
+            mdm.OnInteraction();
+        }
+        else mdm.OnBadInteraction();
+    }
+
+    // =========================
+    // SPEED
+    // =========================
     public void UpgradeSpeed()
     {
-        var data = PlayerDataManager.Instance.data;
         int cost = Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
 
         if (data.coins >= cost)
         {
             data.coins -= cost;
             data.speedLevel++;
+
             PlayerDataManager.Instance.Save();
             UpdateUI();
             mdm.OnInteraction();
         }
-        else
-        {
-            mdm.OnBadInteraction();
-        }
+        else mdm.OnBadInteraction();
     }
 
-    public void UpgradeDamage()
+    // =========================
+    // PICKUP RADIUS
+    // =========================
+    public void UpgradePickup()
     {
-        var data = PlayerDataManager.Instance.data;
-        int cost = Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
+        int cost = Mathf.CeilToInt(basePickupUpgradeCost * Mathf.Pow(1.4f, data.pickupRadiusLevel));
 
         if (data.coins >= cost)
         {
             data.coins -= cost;
-            data.currentDamage++;
+            data.pickupRadiusLevel++;
+
             PlayerDataManager.Instance.Save();
             UpdateUI();
             mdm.OnInteraction();
         }
-        else
-        {
-            mdm.OnBadInteraction();
-        }
+        else mdm.OnBadInteraction();
     }
 
+    // =========================
+    // UI
+    // =========================
     private void UpdateUI()
     {
-        var data = PlayerDataManager.Instance.data;
-
-        currentHpText.text = $"Max HP: {data.maxHP}";
-        currentDamageText.text = $"Damage: {data.currentDamage}";
-        currentSpeedText.text = $"Speed: {100f * (1f + data.speedLevel * 0.05f)}%";
         coinUI.UpdateCoins();
 
-        hpUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel))}";
-        speedUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel))}";
-        damageUpgradeCostText.text = $"Cost: {Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1))}";
+        // HP
+        currentHpText.text =
+            $"Max HP: {PlayerStats.GetMaxHP()}";
 
-        //hpUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel));
-        //speedUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel));
-        //damageUpgradeButton.interactable = data.coins >= Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.currentDamage - 1));
+        hpUpgradeCostText.text =
+            $"Cost: {Mathf.CeilToInt(baseHpUpgradeCost * Mathf.Pow(1.5f, data.maxHPLevel))}";
+
+        // DAMAGE
+        currentDamageText.text =
+            $"Damage: {PlayerStats.GetDamageMultiplier():0.00}x";
+
+        damageUpgradeCostText.text =
+            $"Cost: {Mathf.CeilToInt(baseDamageUpgradeCost * Mathf.Pow(1.5f, data.damageLevel))}";
+
+        // SPEED
+        currentSpeedText.text =
+            $"Speed: {PlayerStats.GetSpeedMultiplier():0%}";
+
+        speedUpgradeCostText.text =
+            $"Cost: {Mathf.CeilToInt(baseSpeedUpgradeCost * Mathf.Pow(1.25f, data.speedLevel))}";
+
+        // PICKUP RADIUS
+        currentPickupText.text =
+            $"Pickup Radius: {PlayerStats.GetPickupRadius():0.00}";
+
+        pickupUpgradeCostText.text =
+            $"Cost: {Mathf.CeilToInt(basePickupUpgradeCost * Mathf.Pow(1.4f, data.pickupRadiusLevel))}";
     }
 }

@@ -72,6 +72,20 @@ public class PlayerStaffOrbit : MonoBehaviour
 
             GameObject proj = Instantiate(poisonProjectilePrefab, transform.position, Quaternion.identity);
             proj.GetComponent<Boulder>().Initialize(dir);
+
+            Weapon weapon = proj.GetComponent<Weapon>();
+
+            if (weapon != null)
+            {
+                float finalDamage =
+                    owner.baseDamage *
+                    PlayerStats.GetDamageMultiplier();
+
+                finalDamage =
+                    owner.player.ApplyDamageModifiers(finalDamage);
+
+                weapon.damage = finalDamage;
+            }
         }
     }
 

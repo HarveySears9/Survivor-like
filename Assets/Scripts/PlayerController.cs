@@ -63,9 +63,9 @@ public class PlayerController : MonoBehaviour
             playerData.maxHPLevel = 0;
         }
 
-        // Calculate Max HP based on upgrade level
-        maxHP = maxHP + playerData.maxHP; // +2 HP per upgrade level
-        speed = speed * (1f + playerData.speedLevel * 0.05f);
+
+        maxHP = PlayerStats.GetMaxHP();
+        speed = PlayerStats.GetSpeedMultiplier();
 
         startSpeed = speed;
 

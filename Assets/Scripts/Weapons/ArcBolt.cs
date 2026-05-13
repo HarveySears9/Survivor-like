@@ -8,7 +8,7 @@ public class ArcBolt : MonoBehaviour
     public float fireRate = 1f;
     public float baseRange = 5f;   // range to find the first enemy
     public float chainRange = 3f;  // distance for chaining
-    public float damage = 1f;
+    public float baseDamage = 1f;
     public int maxChains = 3;
 
     [Header("Level Settings")]
@@ -70,6 +70,9 @@ public class ArcBolt : MonoBehaviour
 
     IEnumerator ChainToTargetRoutine(Transform target, int chainsRemaining, Vector3 startPos)
     {
+        float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+
+        finalDamage = player.ApplyDamageModifiers(finalDamage);
 
         while (target != null && chainsRemaining > 0)
         {
@@ -83,8 +86,8 @@ public class ArcBolt : MonoBehaviour
             var enemy = target.GetComponent<EnemyController>();
             var boss = target.GetComponent<Boss>();
 
-            if (enemy != null) enemy.TakeDamage(player.ApplyDamageModifiers(damage));
-            if (boss != null) boss.TakeDamage(player.ApplyDamageModifiers(damage));
+            if (enemy != null) enemy.TakeDamage(finalDamage);
+            if (boss != null) boss.TakeDamage(finalDamage);
 
             Vector3 targetPos = target != null ? target.position : startPos;
 

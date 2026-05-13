@@ -15,6 +15,7 @@ public class Magnet : MonoBehaviour
     void Start()
     {
         levelUpButton.LevelUp(level, maxLevel);
+        range = PlayerStats.GetPickupRadius();
     }
     
     public void LevelUp()
@@ -26,11 +27,11 @@ public class Magnet : MonoBehaviour
         }
         switch (level)
         {
-            case 1: range = 1f; break;
-            case 2: range = 1.5f; break;
-            case 3: range = 2f; break;
-            case 4: range = 2.5f; break;
-            case 5: range = 3f; break;
+            case 1: range = PlayerStats.GetPickupRadius() * 1.5f; break;
+            case 2: range = PlayerStats.GetPickupRadius() * 2f; break;
+            case 3: range = PlayerStats.GetPickupRadius() * 2.5f; break;
+            case 4: range = PlayerStats.GetPickupRadius() * 3f; break;
+            case 5: range = PlayerStats.GetPickupRadius() * 3.5f; break;
         }
 
         levelUpButton.LevelUp(level, maxLevel);

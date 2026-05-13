@@ -21,7 +21,7 @@ public class PoisonStaff : MonoBehaviour
     public SpriteRenderer sr;
     public PlayerController player;
 
-    private float damage;
+    public float baseDamage = 1f;
 
     public bool unlocked = false;
 
@@ -37,9 +37,6 @@ public class PoisonStaff : MonoBehaviour
 
         if (unlocked)
         {
-
-            damage = loadedData.currentDamage;
-
             levelUpButton.LevelUp(level, maxLevel);
             UpdateSprites();
         }

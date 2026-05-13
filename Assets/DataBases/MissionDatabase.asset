@@ -126,7 +126,7 @@ MonoBehaviour:
     claimed: 0
     completed: 0
   - id: 3
-    missionText: Defeat Snake Boss
+    missionText: Defeat Hissandra
     rewardType: 2
     key: kill_SnakeWoman
     targetAmount: 1

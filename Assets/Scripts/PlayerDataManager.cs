@@ -40,9 +40,9 @@ public class PlayerDataManager : MonoBehaviour
                 data = new SaveFile.Data();
                 data.coins = 100000; // Testing
                 data.maxHPLevel = 0;
-                data.maxHP = 10;
+                data.damageLevel = 0;
                 data.speedLevel = 0;
-                data.currentDamage = 1;
+                data.pickupRadiusLevel = 0;
                 data.skins = defaultSkins;
                 data.levelsUnlocked = defaultLevels;
                 data.tutorialCompleted = false;

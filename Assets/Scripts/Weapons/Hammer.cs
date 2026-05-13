@@ -22,7 +22,7 @@ public class Hammer : MonoBehaviour
     public SpriteRenderer sr;
     public PlayerController player;
 
-    private float damage;
+    public float baseDamage = 5f;
 
     private bool hammerActive = false;
 
@@ -45,7 +45,6 @@ public class Hammer : MonoBehaviour
                 return;
             }
 
-            damage = loadedData.currentDamage;
 
             levelUpButton.LevelUp(level, maxLevel);
             UpdateSprites();
@@ -99,7 +98,17 @@ public class Hammer : MonoBehaviour
         if (hammer != null)
         {
             hammer.Initialize(target.position, transform, this, level);
-            hammer.damage = player.ApplyDamageModifiers(damage);
+            float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+
+            finalDamage = player.ApplyDamageModifiers(finalDamage);
+
+            hammer.damage = finalDamage;
+
+            Weapon hammerWeapon = hammerObj.GetComponent<Weapon>();
+            if(hammerWeapon != null)
+            {
+                hammerWeapon.damage = finalDamage;
+            }
         }
 
         hammerActive = true;

@@ -21,8 +21,8 @@ public class SwordSlash : MonoBehaviour
     public SpriteRenderer sr;
 
     public PlayerController player;
-    
-    private float damage;
+
+    public float baseDamage = 1f;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class SwordSlash : MonoBehaviour
             this.gameObject.SetActive(false);
             return; // Exit early since FireBreath should not be initialized
         }
-        damage = SaveFile.LoadData<SaveFile.Data>().currentDamage;
+
         levelUpButton.LevelUp(level, maxLevel);
         UpdateSprites();
     }
@@ -98,7 +98,10 @@ public class SwordSlash : MonoBehaviour
 
             // Pass the fire direction to the fireball script
             slash.GetComponent<Fireball>().Initialize(Vector2.right);
-            slash.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(damage);
+
+            float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+
+            slash.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
         }
     }
 

@@ -75,9 +75,9 @@ public static class SaveFile
         public int currentCharacter;
         public int coins;
         public int maxHPLevel;
-        public int maxHP;
-        public int currentDamage;
+        public int damageLevel;
         public int speedLevel;
+        public int pickupRadiusLevel;
         public SkinData[] skins;
         public List<Mission> activeMissions;
         public DateTime lastDailyReset;
