@@ -299,9 +299,9 @@ RectTransform:
   - {fileID: 1381694931}
   m_Father: {fileID: 1569448017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 642, y: -275}
   m_SizeDelta: {x: 1200, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32679928
@@ -1467,9 +1467,9 @@ RectTransform:
   - {fileID: 1544066385}
   m_Father: {fileID: 127879909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 975.5, y: -150}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &285775208 stripped
@@ -2349,9 +2349,9 @@ RectTransform:
   - {fileID: 1983128525}
   m_Father: {fileID: 127879909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 308.5, y: -150}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &530968149
@@ -4258,9 +4258,9 @@ RectTransform:
   - {fileID: 115401680}
   m_Father: {fileID: 1569448017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 642, y: -1275}
   m_SizeDelta: {x: 1200, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088643794
@@ -4336,9 +4336,9 @@ RectTransform:
   - {fileID: 961984901}
   m_Father: {fileID: 1569448017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 642, y: -775}
   m_SizeDelta: {x: 1200, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1110681875
@@ -5012,24 +5012,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1017b23385c97448c8a8ee536bab7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpUpgrade: {fileID: 11400000, guid: a4e1f0aa45248f64bb73f55f7e48713f, type: 2}
+  damageUpgrade: {fileID: 11400000, guid: f7b59d2ec3a8c874ebf7e08e4fdcc026, type: 2}
+  speedUpgrade: {fileID: 11400000, guid: a0dfd28795cdb534aacdcf6b5a0f6893, type: 2}
+  pickupUpgrade: {fileID: 11400000, guid: 946b8ff61c3393943b9987b7767c2724, type: 2}
   coinUI: {fileID: 1773576814}
   mdm: {fileID: 62455320}
-  hpUpgradeCostText: {fileID: 1516452918}
-  currentHpText: {fileID: 1708974557}
-  damageUpgradeCostText: {fileID: 657578430}
-  currentDamageText: {fileID: 1484616545}
-  speedUpgradeCostText: {fileID: 1605612437}
-  currentSpeedText: {fileID: 1573673364}
-  pickupUpgradeCostText: {fileID: 2144522665}
-  currentPickupText: {fileID: 940414009}
-  hpUpgradeButton: {fileID: 1381694928}
-  speedUpgradeButton: {fileID: 115401681}
-  damageUpgradeButton: {fileID: 961984898}
-  pickupUpgradeButton: {fileID: 864726637}
-  baseHpUpgradeCost: 50
-  baseSpeedUpgradeCost: 50
-  baseDamageUpgradeCost: 50
-  basePickupUpgradeCost: 50
+  hpText: {fileID: 1708974557}
+  damageText: {fileID: 1484616545}
+  speedText: {fileID: 1573673364}
+  pickupText: {fileID: 940414009}
+  hpCostText: {fileID: 1516452918}
+  damageCostText: {fileID: 657578430}
+  speedCostText: {fileID: 1605612437}
+  pickupCostText: {fileID: 2144522665}
 --- !u!1 &1364882669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7248,9 +7244,9 @@ RectTransform:
   - {fileID: 864726636}
   m_Father: {fileID: 1569448017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 642, y: -1775}
   m_SizeDelta: {x: 1200, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794730533

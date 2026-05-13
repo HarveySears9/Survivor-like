@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
 
         maxHP = PlayerStats.GetMaxHP();
-        speed = PlayerStats.GetSpeedMultiplier();
+        speed = 2f * PlayerStats.GetSpeedMultiplier();
 
         startSpeed = speed;
 

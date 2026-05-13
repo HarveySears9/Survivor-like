@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122b5e59414eb16409cfb04bfa2d2190, type: 3}
+  m_Name: Damage Upgrade
+  m_EditorClassIdentifier: 
+  type: 0
+  displayName: Damage
+  description: Increases Damage of Attacks by 10% Per Level
+  maxLevel: 5
+  costs: 3200000078000000fa000000f4010000e8030000
+  baseValue: 0
+  valuePerLevel: 0
