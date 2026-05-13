@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122b5e59414eb16409cfb04bfa2d2190, type: 3}
   m_Name: PickUp Upgrade
   m_EditorClassIdentifier: 
-  type: 0
-  displayName: Pickup Radius
+  type: 3
+  displayName: Magnet
   description: Increase Pickup distance by 15% per level
   maxLevel: 5
   costs: 3200000064000000af0000002c010000f4010000

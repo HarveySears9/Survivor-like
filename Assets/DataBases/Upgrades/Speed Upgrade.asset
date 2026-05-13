@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122b5e59414eb16409cfb04bfa2d2190, type: 3}
   m_Name: Speed Upgrade
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   displayName: Speed
   description: Increases Movement Speed by 5% per Level
   maxLevel: 5

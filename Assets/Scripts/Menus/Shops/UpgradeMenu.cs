@@ -24,6 +24,18 @@ public class UpgradeMenu : MonoBehaviour
     public TextMeshProUGUI speedCostText;
     public TextMeshProUGUI pickupCostText;
 
+    [Header("Buttons")]
+    public Button hpButton;
+    public Button damageButton;
+    public Button speedButton;
+    public Button pickupButton;
+
+    [Header("Button Text")]
+    public TextMeshProUGUI hpButtonText;
+    public TextMeshProUGUI damageButtonText;
+    public TextMeshProUGUI speedButtonText;
+    public TextMeshProUGUI pickupButtonText;
+
     private SaveFile.Data data => PlayerDataManager.Instance.data;
 
     void OnEnable()
@@ -75,6 +87,11 @@ public class UpgradeMenu : MonoBehaviour
         UpdateUpgradeUI(damageUpgrade, data.damageLevel, damageText, damageCostText, PlayerStats.GetDamageMultiplier().ToString("0.00") + "x");
         UpdateUpgradeUI(speedUpgrade, data.speedLevel, speedText, speedCostText, PlayerStats.GetSpeedMultiplier().ToString("0%"));
         UpdateUpgradeUI(pickupUpgrade, data.pickupRadiusLevel, pickupText, pickupCostText, PlayerStats.GetPickupRadius().ToString("0.00"));
+
+        UpdateButtonState(hpUpgrade, data.maxHPLevel, hpButton, hpButtonText);
+        UpdateButtonState(damageUpgrade, data.damageLevel, damageButton, damageButtonText);
+        UpdateButtonState(speedUpgrade, data.speedLevel, speedButton, speedButtonText);
+        UpdateButtonState(pickupUpgrade, data.pickupRadiusLevel, pickupButton, pickupButtonText);
     }
 
     private void UpdateUpgradeUI(
@@ -84,7 +101,7 @@ public class UpgradeMenu : MonoBehaviour
         TextMeshProUGUI costText,
         string valueDisplay)
     {
-        valueText.text = valueDisplay;
+        valueText.text = $"{upgrade.displayName}: {valueDisplay}";
 
         if (upgrade.IsMax(level))
         {
@@ -93,6 +110,24 @@ public class UpgradeMenu : MonoBehaviour
         else
         {
             costText.text = $"Cost: {upgrade.GetCost(level)}";
+        }
+    }
+
+    private void UpdateButtonState(
+    UpgradeDefinition upgrade,
+    int level,
+    Button button,
+    TextMeshProUGUI buttonText)
+    {
+        if (upgrade.IsMax(level))
+        {
+            button.interactable = false;
+            buttonText.text = "MAX";
+        }
+        else
+        {
+            button.interactable = true;
+            buttonText.text = "UPGRADE";
         }
     }
 }
