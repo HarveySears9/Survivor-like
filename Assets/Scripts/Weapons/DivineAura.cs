@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class DivineAura : MonoBehaviour
 {
-    public float healAmount = 0f;           // Amount of HP to heal per tick
-    public float cooldownDuration = 5f;    // Time in seconds between heals
-    private float cooldownTimer;           // Tracks time since the last heal
+    public float healAmount = 1f;
+    public float cooldownDuration = 5f;
+
+    private float cooldownTimer;
 
     public GameObject gfx;
 
     public int level = 0;
     public int maxLevel = 5;
 
-    public PlayerController player;       // Reference to the PlayerController script
-
+    public PlayerController player;
     public LevelUpButtons levelUpButton;
+
+    [Header("Weapon UI")]
+    public GameObject weaponUIPrefab;
+    public Transform weaponUIParent;
+    public Sprite weaponIcon;
+
+    private WeaponUI weaponUI;
 
     void Start()
     {
@@ -21,7 +28,8 @@ public class DivineAura : MonoBehaviour
         {
             Debug.LogError("PlayerController script not found on GameObject!");
         }
-        cooldownTimer = cooldownDuration; // Initialize the cooldown timer
+
+        cooldownTimer = cooldownDuration;
         levelUpButton.LevelUp(level, maxLevel);
     }
 
@@ -29,36 +37,63 @@ public class DivineAura : MonoBehaviour
     {
         level++;
 
-        if (level > 0)
+        if (level == 1)
         {
             gfx.SetActive(true);
+            CreateWeaponUI();
         }
 
         if (level > maxLevel)
-        {
             level = maxLevel;
-        }
+
         healAmount++;
+
         levelUpButton.LevelUp(level, maxLevel);
     }
 
     void Update()
     {
-        if (player != null && player.hp < player.maxHP)
-        {
-            cooldownTimer += Time.deltaTime;
+        // Always tick cooldown (important change)
+        cooldownTimer += Time.deltaTime;
 
-            // If the cooldown period has passed, heal the player
-            if (cooldownTimer >= cooldownDuration)
-            {
-                HealPlayer();
-                cooldownTimer = 0f; // Reset the cooldown timer
-            }
+        // Heal only if needed + ready
+        if (player != null &&
+            player.hp < player.maxHP &&
+            cooldownTimer >= cooldownDuration)
+        {
+            HealPlayer();
+            cooldownTimer = 0f;
         }
+
+        UpdateCooldownUI();
     }
 
     void HealPlayer()
     {
         player.Heal(healAmount, true);
+    }
+
+    // ================= UI =================
+
+    private void CreateWeaponUI()
+    {
+        GameObject uiObj = Instantiate(weaponUIPrefab, weaponUIParent);
+
+        weaponUI = uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite = weaponIcon;
+        weaponUI.cooldownSlider.minValue = 0f;
+        weaponUI.cooldownSlider.maxValue = 1f;
+        weaponUI.cooldownSlider.value = 0f;
+    }
+
+    private void UpdateCooldownUI()
+    {
+        if (weaponUI == null)
+            return;
+
+        float progress = cooldownTimer / cooldownDuration;
+
+        weaponUI.cooldownSlider.value = Mathf.Clamp01(progress);
     }
 }

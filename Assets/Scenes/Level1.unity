@@ -854,6 +854,9 @@ MonoBehaviour:
   - {fileID: 808319972}
   - {fileID: 1473440109}
   - {fileID: 164346764}
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 440770632, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
 --- !u!50 &107780991
 Rigidbody2D:
   serializedVersion: 4
@@ -5690,6 +5693,9 @@ MonoBehaviour:
   baseDamage: 1
   unlocked: 0
   staffOrbitPrefab: {fileID: 5287223195845036954, guid: 84b36bf9046cd0047b771c2207aeb795, type: 3}
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 1984844161, guid: 8db9c71712149944281e7e8214b22a35, type: 3}
 --- !u!1 &426020768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6457,6 +6463,9 @@ MonoBehaviour:
   baseDamage: 1
   player: {fileID: 0}
   allBlades: []
+  weaponUIPrefab: {fileID: 0}
+  weaponUIParent: {fileID: 0}
+  weaponIcon: {fileID: 0}
 --- !u!4 &470005393
 Transform:
   m_ObjectHideFlags: 0
@@ -15399,6 +15408,9 @@ MonoBehaviour:
   maxLevel: 5
   player: {fileID: 808585395}
   levelUpButton: {fileID: 504021848}
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: -976015607, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
 --- !u!1 &1092921746
 GameObject:
   m_ObjectHideFlags: 0
@@ -25947,6 +25959,9 @@ MonoBehaviour:
   maxLevel: 5
   player: {fileID: 302951753}
   levelUpButton: {fileID: 0}
+  weaponUIPrefab: {fileID: 0}
+  weaponUIParent: {fileID: 0}
+  weaponIcon: {fileID: 0}
 --- !u!4 &1836660841
 Transform:
   m_ObjectHideFlags: 0

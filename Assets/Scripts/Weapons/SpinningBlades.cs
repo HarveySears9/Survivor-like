@@ -29,6 +29,13 @@ public class SpinningBlades : MonoBehaviour
 
     public GameObject[] allBlades;
 
+    [Header("Weapon UI")]
+    public GameObject weaponUIPrefab;
+    public Transform weaponUIParent;
+    public Sprite weaponIcon;
+
+    private WeaponUI weaponUI;
+
     void Start()
     {
         level = 0;
@@ -59,7 +66,13 @@ public class SpinningBlades : MonoBehaviour
     public void LevelUp()
     {
         level++;  // Increase level
-        if(level > maxLevel)
+
+        if (level == 1)
+        {
+            CreateWeaponUI();
+        }
+
+        if (level > maxLevel)
         {
             level = maxLevel;
         }
@@ -121,6 +134,18 @@ public class SpinningBlades : MonoBehaviour
                 Debug.LogWarning($"No Weapon component found on blade: {blade.name}");
             }
         }
+    }
+
+    private void CreateWeaponUI()
+    {
+        GameObject uiObj = Instantiate(weaponUIPrefab, weaponUIParent);
+
+        weaponUI = uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite = weaponIcon;
+
+        // NO SLIDER USAGE
+        weaponUI.cooldownSlider.enabled = false;
     }
 
 }
