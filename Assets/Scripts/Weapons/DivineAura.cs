@@ -92,8 +92,7 @@ public class DivineAura : MonoBehaviour
         if (weaponUI == null)
             return;
 
-        float progress = cooldownTimer / cooldownDuration;
-
+        float progress = 1f - Mathf.Clamp01(cooldownTimer / cooldownDuration);
         weaponUI.cooldownSlider.value = Mathf.Clamp01(progress);
     }
 }
