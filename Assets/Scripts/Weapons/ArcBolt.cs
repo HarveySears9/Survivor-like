@@ -31,6 +31,15 @@ public class ArcBolt : MonoBehaviour
 
     private PlayerController player;
 
+    private float currentCooldown;
+
+    [Header("Weapon UI")]
+    public GameObject weaponUIPrefab;
+    public Transform weaponUIParent;
+    public Sprite weaponIcon;
+
+    private WeaponUI weaponUI;
+
     void Start()
     {
         if (levelUpButton != null)
@@ -52,6 +61,8 @@ public class ArcBolt : MonoBehaviour
                 StartCoroutine(FireRoutine(firstTarget));
             }
         }
+
+        UpdateCooldownUI();
     }
 
     IEnumerator FireRoutine(Transform firstTarget)
@@ -63,8 +74,9 @@ public class ArcBolt : MonoBehaviour
         
         float effectiveFireRate = fireRate;
         effectiveFireRate *= player.attackSpeedMultiplier;
-        nextFireTime = Time.time + 1f / effectiveFireRate;
-        
+        currentCooldown = 1f / effectiveFireRate;
+        nextFireTime = Time.time + currentCooldown;
+
         isFiring = false;
     }
 
@@ -193,6 +205,11 @@ public class ArcBolt : MonoBehaviour
         if (levelUpButton != null)
             levelUpButton.LevelUp(level, maxLevel);
 
+        if (level == 1)
+        {
+            CreateWeaponUI();
+        }
+
         switch (level)
         {
             case 1: maxChains = 2; break;
@@ -209,5 +226,37 @@ public class ArcBolt : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, baseRange);
         Gizmos.DrawWireSphere(transform.position, chainRange);
+    }
+
+
+    private void CreateWeaponUI()
+    {
+        GameObject uiObj =
+            Instantiate(weaponUIPrefab, weaponUIParent);
+
+        weaponUI = uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite = weaponIcon;
+
+        weaponUI.cooldownSlider.minValue = 0f;
+        weaponUI.cooldownSlider.maxValue = 1f;
+        weaponUI.cooldownSlider.value = 0f;
+    }
+
+    private void UpdateCooldownUI()
+    {
+        if (weaponUI == null)
+            return;
+
+        if (Time.time >= nextFireTime)
+        {
+            weaponUI.cooldownSlider.value = 0f;
+            return;
+        }
+
+        float remaining = nextFireTime - Time.time;
+
+        weaponUI.cooldownSlider.value =
+            remaining / currentCooldown;
     }
 }

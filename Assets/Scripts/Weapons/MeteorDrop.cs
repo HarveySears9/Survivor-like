@@ -21,6 +21,15 @@ public class MeteorDrop : MonoBehaviour
 
     private PlayerController playerController;
 
+    private float currentCooldown;
+
+    [Header("Weapon UI")]
+    public GameObject weaponUIPrefab;
+    public Transform weaponUIParent;
+    public Sprite weaponIcon;
+
+    private WeaponUI weaponUI;
+
     void Start()
     {
         levelUpButton.LevelUp(level, maxLevel);
@@ -34,8 +43,11 @@ public class MeteorDrop : MonoBehaviour
             StartCoroutine(SpawnMeteors());
             float effectiveFireRate = fireRate;
             effectiveFireRate *= playerController.attackSpeedMultiplier;
-            nextFireTime = Time.time + 1f / effectiveFireRate;
+            currentCooldown = 1f / effectiveFireRate;
+            nextFireTime = Time.time + currentCooldown;
         }
+
+        UpdateCooldownUI();
     }
 
     IEnumerator SpawnMeteors()
@@ -73,6 +85,12 @@ public class MeteorDrop : MonoBehaviour
     public void LevelUp()
     {
         level++;
+
+        if (level == 1)
+        {
+            CreateWeaponUI();
+        }
+
         if (level > maxLevel) level = maxLevel;
 
         levelUpButton.LevelUp(level, maxLevel);
@@ -81,5 +99,36 @@ public class MeteorDrop : MonoBehaviour
         meteorsPerWave++;
         if (meteorsPerWave > maxMeteorsPerWave)
             meteorsPerWave = maxMeteorsPerWave;
+    }
+
+    private void CreateWeaponUI()
+    {
+        GameObject uiObj =
+            Instantiate(weaponUIPrefab, weaponUIParent);
+
+        weaponUI = uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite = weaponIcon;
+
+        weaponUI.cooldownSlider.minValue = 0f;
+        weaponUI.cooldownSlider.maxValue = 1f;
+        weaponUI.cooldownSlider.value = 0f;
+    }
+
+    private void UpdateCooldownUI()
+    {
+        if (weaponUI == null)
+            return;
+
+        if (Time.time >= nextFireTime)
+        {
+            weaponUI.cooldownSlider.value = 0f;
+            return;
+        }
+
+        float remaining = nextFireTime - Time.time;
+
+        weaponUI.cooldownSlider.value =
+            remaining / currentCooldown;
     }
 }

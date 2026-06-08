@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class FireBreath : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class FireBreath : MonoBehaviour
 
     private PlayerController player;
 
+
+    public Slider cooldownSlider;
+    private float currentCooldown;
 
     void Start()
     {
@@ -55,8 +59,11 @@ public class FireBreath : MonoBehaviour
         if (Time.time >= nextFireTime)
         {
             Fire();
-            nextFireTime = Time.time + 1f / effectiveFireRate;
+            currentCooldown = 1f / effectiveFireRate;
+            nextFireTime = Time.time + currentCooldown;
         }
+
+        UpdateCooldownUI();
     }
 
 
@@ -237,6 +244,22 @@ public class FireBreath : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private void UpdateCooldownUI()
+    {
+        if (cooldownSlider == null)
+            return;
+
+        if (Time.time >= nextFireTime)
+        {
+            cooldownSlider.value = 0f;
+            return;
+        }
+
+        float remainingTime = nextFireTime - Time.time;
+
+        cooldownSlider.value = remainingTime / currentCooldown;
     }
 
 }
