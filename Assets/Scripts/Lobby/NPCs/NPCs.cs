@@ -8,6 +8,7 @@ public class NPCs : MonoBehaviour
     private Transform player;
 
     public float flipRange = 5f;
+    public bool flips = true;
     public bool idle = true;
 
     [Header("Dialogue Settings")]
@@ -27,7 +28,7 @@ public class NPCs : MonoBehaviour
 
     IEnumerator FlipSprite()
     {
-        while (true)
+        while (flips)
         {
             yield return new WaitForSeconds(Random.Range(2f, flipRange));
             if (idle)
@@ -75,7 +76,7 @@ public class NPCs : MonoBehaviour
 
     private void FacePlayer()
     {
-        if (player != null)
+        if (player != null && flips)
         {
             idle = false;
             float direction = player.position.x - transform.position.x;
