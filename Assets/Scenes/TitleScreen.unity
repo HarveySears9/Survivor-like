@@ -693,6 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -1173,6 +1174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -1672,6 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 10
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -1828,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -2288,6 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -2730,6 +2735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -2808,6 +2814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -3187,6 +3194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 10
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -3318,6 +3326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 10
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -3474,6 +3483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
+  flips: 1
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}

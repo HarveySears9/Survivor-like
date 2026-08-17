@@ -5135,11 +5135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -348251284, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  - {fileID: -1681482450, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  - {fileID: -202087061, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  - {fileID: 1434962862, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  - {fileID: -1896369835, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: 1252973393, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1868845410, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1257145433, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 1965014781, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1253521640, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
