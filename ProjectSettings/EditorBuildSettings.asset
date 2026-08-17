@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MissionBoard.unity
     guid: 37f51a8ae360919429b9de96fa7a98fe
+  - enabled: 1
+    path: Assets/Scenes/AuraFarm.unity
+    guid: bec5a582530b2d143954f778f3873f8d
   m_configObjects: {}
