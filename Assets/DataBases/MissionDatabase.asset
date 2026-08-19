@@ -68,7 +68,7 @@ MonoBehaviour:
     missionText: Defeat 750 Skeletons
     rewardType: 0
     key: kill_Skeleton
-    targetAmount: 1000
+    targetAmount: 750
     currentAmount: 0
     rewardAmount: 450
     type: 1
