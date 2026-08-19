@@ -545,9 +545,9 @@ RectTransform:
   - {fileID: 1909725814}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 642, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &172946629
@@ -6316,7 +6316,9 @@ MonoBehaviour:
   - Welcome Back Adventurer!
   - How was that last mission??
   - Mayor Bertie Butterbuns here to help :)
-  interactionLines: []
+  interactionLines:
+  - Thank you for completing that job.
+  - Well done. Here is your reward
   badInteractionLines: []
   dialogueBubble: {fileID: 429257109}
   typeSpeed: 0.05
@@ -6790,9 +6792,9 @@ RectTransform:
   - {fileID: 965258803}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230.66667, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1700284179
@@ -6830,9 +6832,9 @@ RectTransform:
   - {fileID: 679458354}
   m_Father: {fileID: 224311502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1053.3334, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700284181
@@ -7862,6 +7864,7 @@ MonoBehaviour:
   weeklyScrollContent: {fileID: 665474584}
   challengeScrollContent: {fileID: 1127606307}
   missionUIPrefab: {fileID: 6844680939500489520, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+  mdm: {fileID: 1336913362}
 --- !u!1001 &2686790274985900534
 PrefabInstance:
   m_ObjectHideFlags: 0

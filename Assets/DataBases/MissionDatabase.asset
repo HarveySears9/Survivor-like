@@ -96,11 +96,11 @@ MonoBehaviour:
     completed: 0
   challengeMissions:
   - id: 0
-    missionText: Defeat 5 Skeleton
+    missionText: Defeat 1000 Skeletons
     rewardType: 1
     key: kill_Skeleton
-    targetAmount: 5
-    currentAmount: 5
+    targetAmount: 1000
+    currentAmount: 0
     rewardAmount: 5
     type: 2
     claimed: 0

@@ -29,6 +29,8 @@ public class MissionUI : MonoBehaviour
 
     private Dictionary<int, Sprite> skinIcons;
 
+    public MenuDialogManager mdm;
+
     void Start()
     {
         BuildSkinIconDictionary();
@@ -175,6 +177,7 @@ public class MissionUI : MonoBehaviour
                 ui.claimButton.onClick.AddListener(() =>
                 {
                     MissionManager.Instance.ClaimMission(mission);
+                    mdm.OnInteraction();
                 });
                 
                 ui.claimButton.interactable = !mission.claimed && mission.completed;
