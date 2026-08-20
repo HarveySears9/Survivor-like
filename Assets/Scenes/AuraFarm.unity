@@ -2186,6 +2186,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -75
       objectReference: {fileID: 0}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1986420514}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClaimAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AuraFarm, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119791240773946950, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1203429362786255702, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25
@@ -3617,6 +3641,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &808502962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6631518533279104431, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+  m_PrefabInstance: {fileID: 594643161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &842065395
 GameObject:
   m_ObjectHideFlags: 0
@@ -9750,6 +9785,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322024044}
   m_CullTransparentMesh: 1
+--- !u!114 &1345642143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6492476190585828826, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+  m_PrefabInstance: {fileID: 594643161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354330004
 GameObject:
   m_ObjectHideFlags: 0
@@ -10324,6 +10370,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1483460422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1851712318167001101, guid: 58ee935098392f24f8b1bef4f3522370, type: 3}
+  m_PrefabInstance: {fileID: 594643161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496122665
 GameObject:
   m_ObjectHideFlags: 0
@@ -11651,6 +11708,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958401384}
   m_CullTransparentMesh: 1
+--- !u!1 &1986420513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1986420515}
+  - component: {fileID: 1986420514}
+  m_Layer: 0
+  m_Name: AuraFarm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1986420514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986420513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcba392d0f5f83244acd7833a1614d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAura: 0
+  maxAura: 1000
+  auraPerSecond: 1
+  auraPerCoin: 10
+  auraPercentageText: {fileID: 808502962}
+  auraSlider: {fileID: 1345642143}
+  coinsText: {fileID: 1483460422}
+  sr: {fileID: 0}
+--- !u!4 &1986420515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986420513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 858.9591, y: 544.10364, z: -2.8077083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988097864
 GameObject:
   m_ObjectHideFlags: 0
@@ -13792,3 +13901,4 @@ SceneRoots:
   - {fileID: 595345221}
   - {fileID: 1028016646878698234}
   - {fileID: 685071061}
+  - {fileID: 1986420515}
