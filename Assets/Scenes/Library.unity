@@ -1379,23 +1379,29 @@ MonoBehaviour:
 
     SciGho
 
-    - Treasure+ Sprites</size>
+    - Treasure+ Sprites
 
 
-    <size=30><u>Music
-    & Sound</u></size>
+    TarloEgnaro
+
+    -
+    Aura Sprite Animation</size>
+
+
+    <size=30><u>Music & Sound</u></size>
 
 
 
-    <size=20>Licensed Assets</size>
+    <size=20>Licensed
+    Assets</size>
 
 
 
-    <size=30><u>Special
-    Thanks</u></size>
+    <size=30><u>Special Thanks</u></size>
 
 
-    <size=20>My friends, family, and all adventurers of Puddlebrook</size>
+    <size=20>My
+    friends, family, and all adventurers of Puddlebrook</size>
 
 
 
@@ -8582,7 +8588,6 @@ MonoBehaviour:
   brickSp: {fileID: 540050045}
   loadingScreenImage: {fileID: 3643519313416777851}
   upgradeButtons: []
-  deadBrickSp: {fileID: 0}
 --- !u!4 &1098460197
 Transform:
   m_ObjectHideFlags: 0
