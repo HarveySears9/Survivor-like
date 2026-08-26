@@ -4021,7 +4021,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: -2
   m_Sprite: {fileID: -1228523590, guid: 14fdd75dd44494745bbeedac8f67059e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11744,7 +11744,7 @@ MonoBehaviour:
   auraPercentageText: {fileID: 808502962}
   auraSlider: {fileID: 1345642143}
   coinsText: {fileID: 1483460422}
-  sr: {fileID: 0}
+  sr: {fileID: 873560998}
 --- !u!4 &1986420515
 Transform:
   m_ObjectHideFlags: 0
