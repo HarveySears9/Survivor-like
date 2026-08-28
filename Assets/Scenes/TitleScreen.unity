@@ -207,6 +207,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &74306004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74306006}
+  - component: {fileID: 74306005}
+  m_Layer: 0
+  m_Name: CutsceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &74306005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74306004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e4b3a5806710f40b6943e582fc09a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneTransition: {fileID: 1042110793}
+--- !u!4 &74306006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74306004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 2.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83056279
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,13 +419,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 705584527}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PuddleBrook
-        m_Mode: 1
+      - m_Target: {fileID: 74306005}
+        m_TargetAssemblyTypeName: CutsceneLoader, Assembly-CSharp
+        m_MethodName: PlayCutscene
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: b852830631d1c2549a2a6def5af7b865, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CutsceneData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -677,7 +722,7 @@ MonoBehaviour:
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
-  animationSpeed: 0.1
+  animationSpeed: 0.25
   isMoving: 0
   destroyOnFinish: 0
   masterSprite: {fileID: 0}
@@ -694,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipRange: 5
-  flips: 1
+  flips: 0
   idle: 1
   dialogueLines: []
   dialogueBubblePrefab: {fileID: 0}
@@ -2692,11 +2737,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -2136772231, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
-  - {fileID: 2061224573, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: 1473718537, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -193448528, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -712485850, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -2136772231, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 2061224573, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
@@ -3908,3 +3953,4 @@ SceneRoots:
   - {fileID: 3768447461142423063}
   - {fileID: 972194224}
   - {fileID: 1102254858}
+  - {fileID: 74306006}

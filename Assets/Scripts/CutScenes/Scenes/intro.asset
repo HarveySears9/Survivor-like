@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f8354656a1a3843ae588f625346a10, type: 3}
+  m_Name: intro
+  m_EditorClassIdentifier: 
+  nextScene: PuddleBrook
+  background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
+  character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
+  character2: {fileID: 1090369065293755923, guid: 3d92a4e66c563df468361778c91ac720, type: 3}
+  dialogueLines:
+  - speaker: 0
+    line: Hello
+  - speaker: 1
+    line: 'Howdawdawd awd awd '
+  - speaker: 0
+    line: 'wad awd aw '
+  - speaker: 0
+    line: 'wdaw daw daw '
+  - speaker: 1
+    line: awd awd wa d
