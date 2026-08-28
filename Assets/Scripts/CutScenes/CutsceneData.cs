@@ -6,6 +6,21 @@ using UnityEngine;
 )]
 public class CutsceneData : ScriptableObject
 {
+    // ============================================================
+    // PLAYBACK TYPE
+    // ============================================================
+
+    public enum PlaybackType
+    {
+        EveryTime,
+        Once
+    }
+
+
+    // ============================================================
+    // DIALOGUE LINE
+    // ============================================================
+
     [System.Serializable]
     public class CutsceneLine
     {
@@ -18,21 +33,41 @@ public class CutsceneData : ScriptableObject
     }
 
 
-    [Header("Scene To Load After Cutscene")]
+    // ============================================================
+    // CUTSCENE INFORMATION
+    // ============================================================
+
+    [Header("Cutscene Settings")]
+
+    public string cutsceneID;
+
+    public PlaybackType playbackType = PlaybackType.Once;
 
     public string nextScene;
 
+
+    // ============================================================
+    // BACKGROUND
+    // ============================================================
 
     [Header("Background")]
 
     public GameObject background;
 
 
+    // ============================================================
+    // CHARACTERS
+    // ============================================================
+
     [Header("Characters")]
 
     public GameObject character1;
     public GameObject character2;
 
+
+    // ============================================================
+    // DIALOGUE
+    // ============================================================
 
     [Header("Dialogue")]
 

@@ -85,6 +85,8 @@ public static class SaveFile
 
         public bool[] levelsUnlocked;
         public bool tutorialCompleted;
+        
+        public List<string> completedCutscenes;
 
         public bool[] weaponUnlocks;
 

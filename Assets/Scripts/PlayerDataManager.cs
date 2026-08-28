@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class PlayerDataManager : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class PlayerDataManager : MonoBehaviour
 
                 data.auraLevel = 1;
                 data.auraLastUpdate = DateTime.UtcNow.Ticks;
+                data.completedCutscenes = new List<string>();
                 Save();
             }
             else
@@ -95,6 +97,11 @@ public class PlayerDataManager : MonoBehaviour
                 if (data.auraLastUpdate <= 0)
                 {
                     data.auraLastUpdate = DateTime.UtcNow.Ticks;
+                }
+
+                if (data.completedCutscenes == null)
+                {
+                    data.completedCutscenes = new List<string>();
                 }
 
                 Save(); // overwrite with merged copy

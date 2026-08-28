@@ -399,19 +399,28 @@ public class CutsceneManager : MonoBehaviour
         Debug.Log("Cutscene finished.");
 
 
-        // Mark intro/tutorial as completed
-        PlayerDataManager.Instance.data.tutorialCompleted = true;
-        PlayerDataManager.Instance.Save();
+        // Mark the cutscene as completed
+        if (
+            cutscene.playbackType ==
+            CutsceneData.PlaybackType.Once
+        )
+        {
+            CutsceneLoader.Instance.MarkCutsceneCompleted(
+                cutscene.cutsceneID
+            );
+        }
 
 
-        // Find the transition controller in this scene
+        // Load the next scene
         SceneTransitionController transition =
             FindObjectOfType<SceneTransitionController>();
 
 
         if (transition != null)
         {
-            transition.TriggerTransition(cutscene.nextScene);
+            transition.TriggerTransition(
+                cutscene.nextScene
+            );
         }
         else
         {
