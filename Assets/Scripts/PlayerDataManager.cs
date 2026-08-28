@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerDataManager : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class PlayerDataManager : MonoBehaviour
                 data.levelsUnlocked = defaultLevels;
                 data.tutorialCompleted = false;
                 data.weaponUnlocks = weaponUnlocks;
+
+                data.auraLevel = 1;
+                data.auraLastUpdate = DateTime.UtcNow.Ticks;
                 Save();
             }
             else
@@ -81,6 +85,17 @@ public class PlayerDataManager : MonoBehaviour
                 }
 
                 data.weaponUnlocks = weaponUnlocks;
+
+                // Initialise Aura Farm for older save files
+                if (data.auraLevel <= 0)
+                {
+                    data.auraLevel = 1;
+                }
+
+                if (data.auraLastUpdate <= 0)
+                {
+                    data.auraLastUpdate = DateTime.UtcNow.Ticks;
+                }
 
                 Save(); // overwrite with merged copy
             }

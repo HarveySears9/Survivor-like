@@ -88,5 +88,8 @@ public static class SaveFile
 
         public bool[] weaponUnlocks;
 
+        public int auraLevel;
+        public long auraLastUpdate;
+
     }
 }

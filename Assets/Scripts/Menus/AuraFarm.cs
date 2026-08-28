@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -5,84 +6,208 @@ using TMPro;
 public class AuraFarm : MonoBehaviour
 {
     [Header("Aura Settings")]
-    public float currentAura = 0;
-    public float maxAura = 1000;
-    public float auraPerSecond = 1;
+    public float currentAura = 0f;
+    public float maxAura = 1000f;
+    public float auraPerSecond = 1f;
 
     [Header("Coin Settings")]
-    public float auraPerCoin = 10;
+    public float auraPerCoin = 10f;
 
     [Header("UI")]
     public TMP_Text auraPercentageText;
     public Slider auraSlider;
     public TMP_Text coinsText;
-    public CoinUI coinUI;  
+    public CoinUI coinUI;
 
     [Header("Aura Sprite")]
     public SpriteRenderer sr;
 
+    private DateTime lastAuraUpdateTime;
+
     void Start()
     {
+        LoadAuraFarm();
+        UpdateAura();
         UpdateUI();
-        coinUI.UpdateCoins(); // Update the coin UI
+        coinUI.UpdateCoins();
     }
+
 
     void Update()
     {
-        // Generate Aura until the farm is full
-        if (currentAura < maxAura)
+        UpdateAura();
+    }
+
+    void UpdateAura()
+    {
+        DateTime currentTime = DateTime.UtcNow;
+
+        // how many seconds have passed
+        double elapsedSeconds =
+            (currentTime - lastAuraUpdateTime).TotalSeconds;
+
+        if (elapsedSeconds <= 0)
+            return;
+
+
+        // How much Aura can still fit in the farm?
+        float remainingAura = maxAura - currentAura;
+
+        if (remainingAura <= 0)
         {
-            currentAura += auraPerSecond * Time.deltaTime;
-
-            // Prevent Aura going above the maximum
-            currentAura = Mathf.Min(currentAura, maxAura);
-
+            // Farm is already full.
+            // Keep the timestamp where it is so we don't
+            // accidentally generate Aura beyond the capacity.
             UpdateUI();
+            return;
+        }
+
+
+        // Calculate how much Aura should have been generated
+        float auraGenerated =
+            (float)elapsedSeconds * auraPerSecond;
+
+
+        // If we would go over the maximum,
+        // only add enough to fill the farm.
+        if (auraGenerated >= remainingAura)
+        {
+            currentAura = maxAura;
+
+            // Work out exactly how long it took to fill the farm
+            double secondsNeeded =
+                remainingAura / auraPerSecond;
+
+            lastAuraUpdateTime =
+                lastAuraUpdateTime.AddSeconds(secondsNeeded);
+        }
+        else
+        {
+            currentAura += auraGenerated;
+
+            lastAuraUpdateTime = currentTime;
+        }
+
+
+        UpdateUI();
+    }
+
+    void LoadAuraFarm()
+    {
+        long savedTicks =
+            PlayerDataManager.Instance.data.auraLastUpdate;
+
+
+        // No previous Aura timestamp exists.
+        if (savedTicks <= 0)
+        {
+            lastAuraUpdateTime = DateTime.UtcNow;
+
+            SaveAuraTimestamp();
+        }
+        else
+        {
+            lastAuraUpdateTime =
+                new DateTime(savedTicks, DateTimeKind.Utc);
         }
     }
 
+    void SaveAuraTimestamp()
+    {
+        PlayerDataManager.Instance.data.auraLastUpdate =
+            lastAuraUpdateTime.Ticks;
+
+        PlayerDataManager.Instance.Save();
+    }
+
+
     public void ClaimAura()
     {
-        int coinsToClaim = Mathf.FloorToInt(currentAura / auraPerCoin);
+        // Make absolutely sure we have the latest Aura amount
+        UpdateAura();
+
+
+        // Convert Aura into coins
+        int coinsToClaim =
+            Mathf.FloorToInt(currentAura / auraPerCoin);
+
+
+        // Don't do anything if there aren't enough Aura
+        if (coinsToClaim <= 0)
+        {
+            Debug.Log("Not enough Aura to claim.");
+            return;
+        }
+
 
         Debug.Log("Claimed " + coinsToClaim + " coins!");
+
 
         // Add coins to the player's save data
         PlayerDataManager.Instance.data.coins += coinsToClaim;
 
-        // Save the updated coin total
-        PlayerDataManager.Instance.Save();
 
-        // Reset the Aura farm
-        currentAura = 0;
+        // Empty the Aura farm
+        currentAura = 0f;
 
-        // Update the Aura UI
+
+        // Start generating from this exact moment
+        lastAuraUpdateTime = DateTime.UtcNow;
+
+
+        // Save the new timestamp and coin total
+        SaveAuraTimestamp();
+
+
+        // Update UI
         UpdateUI();
 
-        // Update the player's coin UI
         coinUI.UpdateCoins();
     }
 
     void UpdateUI()
     {
-        float percentage = (currentAura / maxAura) * 100f;
+        // Prevent division by zero
+        if (maxAura <= 0)
+            return;
 
-        // Update percentage text
-        auraPercentageText.text = "Aura: " + Mathf.FloorToInt(percentage) + "%";
 
-        // Update progress bar
-        auraSlider.value = currentAura / maxAura;
+        // Aura percentage as a value between 0 and 1
+        float percentage =
+            Mathf.Clamp01(currentAura / maxAura);
 
-        // Calculate coins
-        float coinsToClaim = currentAura / auraPerCoin;
 
-        coinsText.text = Mathf.FloorToInt(coinsToClaim).ToString();
+        // Percentage text
+        auraPercentageText.text =
+            "Aura: " +
+            Mathf.FloorToInt(percentage * 100f) +
+            "%";
 
-        // Sprite transparency based on Aura
-        float alpha = Mathf.Lerp(0f, 0.65f, currentAura / maxAura);
+
+        // Progress bar
+        auraSlider.value = percentage;
+
+
+        // Coins that can currently be claimed
+        int coinsToClaim =
+            Mathf.FloorToInt(currentAura / auraPerCoin);
+
+
+        coinsText.text =
+            coinsToClaim.ToString();
+
+
+        // Sprite alpha
+        // 0% Aura = 0 alpha
+        // 100% Aura = 0.65 alpha
+        float alpha =
+            Mathf.Lerp(0f, 0.65f, percentage);
+
 
         Color spriteColor = sr.color;
+
         spriteColor.a = alpha;
+
         sr.color = spriteColor;
     }
 }
