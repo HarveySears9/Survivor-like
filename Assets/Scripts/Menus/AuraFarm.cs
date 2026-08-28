@@ -16,6 +16,7 @@ public class AuraFarm : MonoBehaviour
     public TMP_Text auraPercentageText;
     public Slider auraSlider;
     public TMP_Text coinsText;
+    public CoinUI coinUI;  
 
     [Header("Aura Sprite")]
     public SpriteRenderer sr;
@@ -23,6 +24,7 @@ public class AuraFarm : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        coinUI.UpdateCoins(); // Update the coin UI
     }
 
     void Update()
