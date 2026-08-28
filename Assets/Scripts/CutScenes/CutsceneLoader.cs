@@ -2,31 +2,8 @@ using UnityEngine;
 
 public class CutsceneLoader : MonoBehaviour
 {
-    public static CutsceneLoader Instance;
-
-    private CutsceneData cutsceneToPlay;
-
     [Header("Scene Transition")]
     public SceneTransitionController sceneTransition;
-
-
-    // ============================================================
-    // AWAKE
-    // ============================================================
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
 
     // ============================================================
@@ -56,6 +33,7 @@ public class CutsceneLoader : MonoBehaviour
         }
 
 
+        // Check if the cutscene should only play once
         if (cutscene.playbackType == CutsceneData.PlaybackType.Once)
         {
             if (HasCompletedCutscene(cutscene.cutsceneID))
@@ -82,23 +60,17 @@ public class CutsceneLoader : MonoBehaviour
                         );
                     }
                 }
-                else
-                {
-                    Debug.LogError(
-                        "CutsceneLoader: Cutscene has no next scene!"
-                    );
-                }
 
                 return;
             }
         }
 
 
-        // Remember which cutscene we want to play
-        cutsceneToPlay = cutscene;
+        // Pass the selected cutscene to the static holder
+        CutsceneDataHolder.cutsceneToPlay = cutscene;
 
 
-        // Load the cutscene scene using your transition
+        // Load the generic Cutscene scene
         if (sceneTransition != null)
         {
             sceneTransition.TriggerTransition("Cutscene");
@@ -113,16 +85,6 @@ public class CutsceneLoader : MonoBehaviour
 
 
     // ============================================================
-    // GET CUTSCENE
-    // ============================================================
-
-    public CutsceneData GetCutscene()
-    {
-        return cutsceneToPlay;
-    }
-
-
-    // ============================================================
     // CHECK COMPLETED
     // ============================================================
 
@@ -131,15 +93,8 @@ public class CutsceneLoader : MonoBehaviour
         if (PlayerDataManager.Instance == null)
             return false;
 
-
-        if (
-            PlayerDataManager.Instance.data.completedCutscenes
-            == null
-        )
-        {
+        if (PlayerDataManager.Instance.data.completedCutscenes == null)
             return false;
-        }
-
 
         return PlayerDataManager.Instance.data.completedCutscenes
             .Contains(cutsceneID);
@@ -155,22 +110,14 @@ public class CutsceneLoader : MonoBehaviour
         if (PlayerDataManager.Instance == null)
             return;
 
-
-        if (
-            PlayerDataManager.Instance.data.completedCutscenes
-            == null
-        )
+        if (PlayerDataManager.Instance.data.completedCutscenes == null)
         {
             PlayerDataManager.Instance.data.completedCutscenes =
                 new System.Collections.Generic.List<string>();
         }
 
-
-        // Don't add duplicates
-        if (
-            !PlayerDataManager.Instance.data.completedCutscenes
-                .Contains(cutsceneID)
-        )
+        if (!PlayerDataManager.Instance.data.completedCutscenes
+            .Contains(cutsceneID))
         {
             PlayerDataManager.Instance.data.completedCutscenes
                 .Add(cutsceneID);

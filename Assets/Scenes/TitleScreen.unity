@@ -2144,6 +2144,7 @@ MonoBehaviour:
     activeMissions: []
     levelsUnlocked: 
     tutorialCompleted: 0
+    completedCutscenes: []
     weaponUnlocks: 
     auraLevel: 0
     auraLastUpdate: 0

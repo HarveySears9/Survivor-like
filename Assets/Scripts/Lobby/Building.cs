@@ -10,6 +10,8 @@ public class Building : MonoBehaviour
     public Sprite openSprite, closeSprite;
     private SpriteRenderer sr;
 
+    public CutsceneData cutscene;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -24,7 +26,7 @@ public class Building : MonoBehaviour
             sr.sprite = openSprite;
         }
 
-        enterButton.SetUpButton(name, sceneName);
+        enterButton.SetUpButton(name, sceneName, cutscene);
     }
     
     void OnTriggerExit2D()

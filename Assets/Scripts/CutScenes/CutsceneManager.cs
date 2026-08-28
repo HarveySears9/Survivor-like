@@ -12,6 +12,7 @@ public class CutsceneManager : MonoBehaviour
     [Header("Cutscene")]
 
     public CutsceneData cutscene;
+    public CutsceneLoader cutsceneLoader;
 
 
     // ============================================================
@@ -75,7 +76,7 @@ public class CutsceneManager : MonoBehaviour
 
     void Start()
     {
-        cutscene = CutsceneLoader.Instance.GetCutscene();
+        cutscene = CutsceneDataHolder.cutsceneToPlay;
 
         if (cutscene == null)
         {
@@ -405,7 +406,7 @@ public class CutsceneManager : MonoBehaviour
             CutsceneData.PlaybackType.Once
         )
         {
-            CutsceneLoader.Instance.MarkCutsceneCompleted(
+            cutsceneLoader.MarkCutsceneCompleted(
                 cutscene.cutsceneID
             );
         }

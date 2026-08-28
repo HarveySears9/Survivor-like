@@ -8,15 +8,17 @@ public class EnterButton : MonoBehaviour
 {
     public TextMeshProUGUI buttonText;
     private string scene;
+    private CutsceneData cutscene;
 
-    public SceneTransitionController stc;
+    //public SceneTransitionController stc;
+    public CutsceneLoader cutsceneLoader;
 
     // Start is called before the first frame update
     public void PushButton()
     {
         if (Application.CanStreamedLevelBeLoaded(scene))
         {
-            stc.TriggerTransition(scene);
+            cutsceneLoader.PlayCutscene(cutscene);
         }
         else
         {
@@ -24,10 +26,11 @@ public class EnterButton : MonoBehaviour
         }
     }
 
-    public void SetUpButton(string name, string scene)
+    public void SetUpButton(string name, string scene, CutsceneData cutscene)
     {
         SetText(name);
         this.scene = scene;
+        this.cutscene = cutscene;
     }
 
     void SetText(string name)

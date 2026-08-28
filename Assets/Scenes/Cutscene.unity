@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscene: {fileID: 0}
+  cutsceneLoader: {fileID: 1943498048}
   backgroundHolder: {fileID: 1326775177}
   character1Position: {fileID: 1021901963}
   character2Position: {fileID: 107608265}
@@ -1160,6 +1161,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638293447}
   m_CullTransparentMesh: 1
+--- !u!1 &1943498047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943498049}
+  - component: {fileID: 1943498048}
+  m_Layer: 0
+  m_Name: CutsceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1943498048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943498047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e4b3a5806710f40b6943e582fc09a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneTransition: {fileID: 1028016646878698236}
+--- !u!4 &1943498049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943498047}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 2.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2031120010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1458,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa49e27f72cf9d46b2c124eb2879ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1028016646878698236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3652971860532553762, guid: e320832f93db8de44bf699463ab31792, type: 3}
+  m_PrefabInstance: {fileID: 1028016646878698234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4100e81d481ef40a3b4edb8b3b1fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2787967068265460762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1488,3 +1545,4 @@ SceneRoots:
   - {fileID: 1028016646878698234}
   - {fileID: 932878874}
   - {fileID: 1326775178}
+  - {fileID: 1943498049}
