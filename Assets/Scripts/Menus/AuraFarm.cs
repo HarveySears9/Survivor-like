@@ -7,8 +7,23 @@ public class AuraFarm : MonoBehaviour
 {
     [Header("Aura Settings")]
     public float currentAura = 0f;
-    public float maxAura = 1000f;
-    public float auraPerSecond = 1f;
+
+    // The amount of Aura stored at each level
+    private readonly float[] auraCapacityByLevel =
+    {
+        1000f,  // Level 1
+        1500f,  // Level 2
+        2250f   // Level 3
+    };
+
+    private readonly int[] upgradeCosts =
+    {
+        500,    // Level 1 -> Level 2
+        1500    // Level 2 -> Level 3
+    };
+
+    // The farm will always take this many hours to become full
+    public float fillTimeHours = 12f;
 
     [Header("Coin Settings")]
     public float auraPerCoin = 10f;
@@ -22,27 +37,71 @@ public class AuraFarm : MonoBehaviour
     [Header("Aura Sprite")]
     public SpriteRenderer sr;
 
+    private float maxAura;
+    private float auraPerSecond;
+
     private DateTime lastAuraUpdateTime;
+
+    public MenuDialogManager dialogue;
+
+
+    // ============================================================
+    // START
+    // ============================================================
 
     void Start()
     {
+        SetupAuraLevel();
+
         LoadAuraFarm();
+
         UpdateAura();
+
         UpdateUI();
+
         coinUI.UpdateCoins();
     }
 
+
+    // ============================================================
+    // SETUP LEVEL
+    // ============================================================
+
+    void SetupAuraLevel()
+    {
+        int level = PlayerDataManager.Instance.data.auraLevel;
+
+        // Make sure the level is within our available levels
+        level = Mathf.Clamp(level, 1, auraCapacityByLevel.Length);
+
+        // Array starts at 0, so Level 1 = index 0
+        maxAura = auraCapacityByLevel[level - 1];
+
+        // Calculate Aura per second so the farm
+        // always takes exactly 12 hours to fill
+        auraPerSecond =
+            maxAura / (fillTimeHours * 60f * 60f);
+    }
+
+
+    // ============================================================
+    // UPDATE
+    // ============================================================
 
     void Update()
     {
         UpdateAura();
     }
 
+
+    // ============================================================
+    // AURA GENERATION
+    // ============================================================
+
     void UpdateAura()
     {
         DateTime currentTime = DateTime.UtcNow;
 
-        // how many seconds have passed
         double elapsedSeconds =
             (currentTime - lastAuraUpdateTime).TotalSeconds;
 
@@ -50,14 +109,13 @@ public class AuraFarm : MonoBehaviour
             return;
 
 
-        // How much Aura can still fit in the farm?
+        // How much Aura can still fit?
         float remainingAura = maxAura - currentAura;
 
+
+        // Farm is already full
         if (remainingAura <= 0)
         {
-            // Farm is already full.
-            // Keep the timestamp where it is so we don't
-            // accidentally generate Aura beyond the capacity.
             UpdateUI();
             return;
         }
@@ -68,13 +126,13 @@ public class AuraFarm : MonoBehaviour
             (float)elapsedSeconds * auraPerSecond;
 
 
-        // If we would go over the maximum,
-        // only add enough to fill the farm.
+        // If the generated Aura would exceed the capacity,
+        // fill the farm exactly.
         if (auraGenerated >= remainingAura)
         {
             currentAura = maxAura;
 
-            // Work out exactly how long it took to fill the farm
+            // Work out exactly when the farm became full
             double secondsNeeded =
                 remainingAura / auraPerSecond;
 
@@ -92,13 +150,18 @@ public class AuraFarm : MonoBehaviour
         UpdateUI();
     }
 
+
+    // ============================================================
+    // LOAD
+    // ============================================================
+
     void LoadAuraFarm()
     {
         long savedTicks =
             PlayerDataManager.Instance.data.auraLastUpdate;
 
 
-        // No previous Aura timestamp exists.
+        // No timestamp exists
         if (savedTicks <= 0)
         {
             lastAuraUpdateTime = DateTime.UtcNow;
@@ -112,6 +175,11 @@ public class AuraFarm : MonoBehaviour
         }
     }
 
+
+    // ============================================================
+    // SAVE TIMESTAMP
+    // ============================================================
+
     void SaveAuraTimestamp()
     {
         PlayerDataManager.Instance.data.auraLastUpdate =
@@ -121,9 +189,13 @@ public class AuraFarm : MonoBehaviour
     }
 
 
+    // ============================================================
+    // CLAIM AURA
+    // ============================================================
+
     public void ClaimAura()
     {
-        // Make absolutely sure we have the latest Aura amount
+        // Make sure Aura is completely up-to-date
         UpdateAura();
 
 
@@ -132,30 +204,34 @@ public class AuraFarm : MonoBehaviour
             Mathf.FloorToInt(currentAura / auraPerCoin);
 
 
-        // Don't do anything if there aren't enough Aura
         if (coinsToClaim <= 0)
         {
+            dialogue.OnBadInteraction();
             Debug.Log("Not enough Aura to claim.");
             return;
         }
 
 
-        Debug.Log("Claimed " + coinsToClaim + " coins!");
+        Debug.Log(
+            "Claimed " + coinsToClaim + " coins!"
+        );
 
 
-        // Add coins to the player's save data
-        PlayerDataManager.Instance.data.coins += coinsToClaim;
+        // Add coins to player's save data
+        PlayerDataManager.Instance.data.coins +=
+            coinsToClaim;
 
 
-        // Empty the Aura farm
+        // Empty the farm
         currentAura = 0f;
 
 
-        // Start generating from this exact moment
-        lastAuraUpdateTime = DateTime.UtcNow;
+        // Start a new 12-hour cycle
+        lastAuraUpdateTime =
+            DateTime.UtcNow;
 
 
-        // Save the new timestamp and coin total
+        // Save
         SaveAuraTimestamp();
 
 
@@ -163,16 +239,22 @@ public class AuraFarm : MonoBehaviour
         UpdateUI();
 
         coinUI.UpdateCoins();
+
+        dialogue.OnInteraction();
     }
+
+
+    // ============================================================
+    // UI
+    // ============================================================
 
     void UpdateUI()
     {
-        // Prevent division by zero
         if (maxAura <= 0)
             return;
 
 
-        // Aura percentage as a value between 0 and 1
+        // Percentage between 0 and 1
         float percentage =
             Mathf.Clamp01(currentAura / maxAura);
 
@@ -188,18 +270,17 @@ public class AuraFarm : MonoBehaviour
         auraSlider.value = percentage;
 
 
-        // Coins that can currently be claimed
+        // Coins available
         int coinsToClaim =
             Mathf.FloorToInt(currentAura / auraPerCoin);
 
 
-        coinsText.text =
-            coinsToClaim.ToString();
+        coinsText.text = coinsToClaim.ToString();
 
 
-        // Sprite alpha
-        // 0% Aura = 0 alpha
-        // 100% Aura = 0.65 alpha
+        // Aura sprite alpha
+        // 0% = invisible
+        // 100% = 65% opacity
         float alpha =
             Mathf.Lerp(0f, 0.65f, percentage);
 
@@ -209,5 +290,97 @@ public class AuraFarm : MonoBehaviour
         spriteColor.a = alpha;
 
         sr.color = spriteColor;
+    }
+
+    public void UpgradeAuraFarm()
+    {
+        // Get current level
+        int currentLevel =
+            PlayerDataManager.Instance.data.auraLevel;
+
+
+        // Check if the farm is already max level
+        if (currentLevel >= auraCapacityByLevel.Length)
+        {
+            Debug.Log("Aura Farm is already max level.");
+
+            dialogue.OnBadInteraction();
+
+            return;
+        }
+
+
+        // Work out the upgrade cost
+        int upgradeCost =
+            upgradeCosts[currentLevel - 1];
+
+
+        // Check if player can afford it
+        if (PlayerDataManager.Instance.data.coins < upgradeCost)
+        {
+            Debug.Log(
+                "Not enough coins to upgrade Aura Farm. " +
+                "Cost: " + upgradeCost
+            );
+
+            dialogue.OnBadInteraction();
+
+            return;
+        }
+
+
+        // --------------------------------------------------------
+        // Update Aura BEFORE changing the level
+        // --------------------------------------------------------
+        //
+        // This makes sure the player gets all Aura they
+        // earned up until the exact moment of upgrading.
+        //
+        UpdateAura();
+
+
+        // Remove the upgrade cost
+        PlayerDataManager.Instance.data.coins -=
+            upgradeCost;
+
+
+        // Increase Aura Farm level
+        currentLevel++;
+
+        PlayerDataManager.Instance.data.auraLevel =
+            currentLevel;
+
+
+        // --------------------------------------------------------
+        // Recalculate the farm stats
+        // --------------------------------------------------------
+
+        SetupAuraLevel();
+
+
+        // --------------------------------------------------------
+        // Save
+        // --------------------------------------------------------
+
+        PlayerDataManager.Instance.Save();
+
+
+        // --------------------------------------------------------
+        // Update UI
+        // --------------------------------------------------------
+
+        UpdateUI();
+
+        coinUI.UpdateCoins();
+
+
+        Debug.Log(
+            "Aura Farm upgraded to Level " +
+            currentLevel
+        );
+
+
+        // Successful upgrade dialogue
+        dialogue.OnInteraction();
     }
 }

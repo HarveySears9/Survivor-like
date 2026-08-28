@@ -11852,14 +11852,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAura: 0
-  maxAura: 1000
-  auraPerSecond: 1
+  fillTimeHours: 12
   auraPerCoin: 10
   auraPercentageText: {fileID: 808502962}
   auraSlider: {fileID: 1345642143}
   coinsText: {fileID: 1483460422}
   coinUI: {fileID: 141949758}
   sr: {fileID: 873560998}
+  dialogue: {fileID: 2045753578}
 --- !u!4 &1986420515
 Transform:
   m_ObjectHideFlags: 0
@@ -13022,8 +13022,12 @@ MonoBehaviour:
   - .........
   - You Have been away. I have Farmed...
   - Always Farming...
-  interactionLines: []
-  badInteractionLines: []
+  interactionLines:
+  - A profitable harvest.
+  - The Aura is yours.
+  - Behold. Your wealth grows.
+  badInteractionLines:
+  - Not enough aura.
   dialogueBubble: {fileID: 2009036265}
   typeSpeed: 0.1
   startDelay: 0.5
