@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: intro 1
   m_EditorClassIdentifier: 
   cutsceneID: intro_2
-  playbackType: 1
+  playbackType: 0
   nextScene: AuraFarm
   background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
-  character2: {fileID: 1090369065293755923, guid: 3d92a4e66c563df468361778c91ac720, type: 3}
+  character2: {fileID: 5402667104017895134, guid: 492885463250eac4785f5540ed27e363, type: 3}
   dialogueLines:
   - speaker: 0
     line: Hello

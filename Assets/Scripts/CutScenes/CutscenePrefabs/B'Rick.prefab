@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1656117693727936355}
   - component: {fileID: 7088470621268932320}
   - component: {fileID: 5702239827579423385}
+  - component: {fileID: 5141967123972145635}
   m_Layer: 0
   m_Name: B'Rick
   m_TagString: Untagged
@@ -204,3 +205,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animateSprite: {fileID: 7088470621268932320}
+--- !u!114 &5141967123972145635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450183723108219474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03af67d5fd3bc4042a3f729dba11ee6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubbleHeight: 1.25

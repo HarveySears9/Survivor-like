@@ -280,6 +280,20 @@ public class CutsceneManager : MonoBehaviour
         {
             character1Bubble.SetActive(true);
 
+            CutsceneCharacter character =
+            currentCharacter1.GetComponent<CutsceneCharacter>();
+
+            if (character != null)
+            {
+                Vector3 bubblePosition =
+                    currentCharacter1.transform.position;
+
+                bubblePosition.y += character.speechBubbleHeight;
+
+                character1Bubble.transform.position =
+                    bubblePosition;
+            }
+
             currentFullLine =
                 currentLine.line;
 
@@ -297,6 +311,20 @@ public class CutsceneManager : MonoBehaviour
         else if (currentLine.speaker == 1)
         {
             character2Bubble.SetActive(true);
+
+            CutsceneCharacter character =
+            currentCharacter2.GetComponent<CutsceneCharacter>();
+
+            if (character != null)
+            {
+                Vector3 bubblePosition =
+                    currentCharacter2.transform.position;
+
+                bubblePosition.y += character.speechBubbleHeight;
+
+                character2Bubble.transform.position =
+                    bubblePosition;
+            }
 
             currentFullLine =
                 currentLine.line;
