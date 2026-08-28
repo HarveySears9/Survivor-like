@@ -5,6 +5,8 @@ using TMPro;
 
 public class AuraFarm : MonoBehaviour
 {
+    public SceneTransitionController stc;
+
     [Header("Aura Settings")]
     public float currentAura = 0f;
 
@@ -33,6 +35,10 @@ public class AuraFarm : MonoBehaviour
     public Slider auraSlider;
     public TMP_Text coinsText;
     public CoinUI coinUI;
+    public TMP_Text capsityText;
+    public TMP_Text upgradeCostText;
+    public TMP_Text upgradeButtonText;
+    public Button upgradeButton;
 
     [Header("Aura Sprite")]
     public SpriteRenderer sr;
@@ -60,6 +66,8 @@ public class AuraFarm : MonoBehaviour
         UpdateUI();
 
         coinUI.UpdateCoins();
+
+        UpgradeButtonDisplay();
     }
 
 
@@ -81,6 +89,8 @@ public class AuraFarm : MonoBehaviour
         // always takes exactly 12 hours to fill
         auraPerSecond =
             maxAura / (fillTimeHours * 60f * 60f);
+
+        capsityText.text = "Capacity: " + maxAura.ToString();
     }
 
 
@@ -323,7 +333,7 @@ public class AuraFarm : MonoBehaviour
                 "Cost: " + upgradeCost
             );
 
-            dialogue.OnBadInteraction();
+            dialogue.OnBadInteraction2();
 
             return;
         }
@@ -381,6 +391,57 @@ public class AuraFarm : MonoBehaviour
 
 
         // Successful upgrade dialogue
-        dialogue.OnInteraction();
+        dialogue.OnInteraction2();
+
+        UpgradeButtonDisplay();
+    }
+
+    public void UpgradeButtonDisplay()
+    {
+        int currentLevel = PlayerDataManager.Instance.data.auraLevel;
+
+        // Max level
+        if (currentLevel >= auraCapacityByLevel.Length)
+        {
+            upgradeButtonText.text = "MAX";
+            upgradeCostText.text = "Level: MAX";
+
+            // Disable the button
+            upgradeButton.interactable = false;
+
+            return;
+        }
+
+        // Enable the button
+        upgradeButton.interactable = true;
+
+        int currentIndex = currentLevel - 1;
+        int nextIndex = currentIndex + 1;
+
+        int upgradeCost = upgradeCosts[currentIndex];
+
+        float capacityIncrease =
+            auraCapacityByLevel[nextIndex] -
+            auraCapacityByLevel[currentIndex];
+
+        upgradeButtonText.text = "UPGRADE";
+
+        upgradeCostText.text =
+            "Level: " + currentLevel + " -> " + (currentLevel + 1) +
+            "\r\nCost: " + upgradeCost +
+            "\r\nNext Level: + " + capacityIncrease + " Capacity";
+    }
+
+    public void Home()
+    {
+        if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
+        {
+            SceneTracker.UpdateLastSceneName();
+            stc.TriggerTransition("PuddleBrook");
+        }
+        else
+        {
+            Debug.LogError("Scene 'Puddlebrook' not found. Please check Build Settings.");
+        }
     }
 }

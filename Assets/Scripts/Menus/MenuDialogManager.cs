@@ -10,6 +10,8 @@ public class MenuDialogManager : MonoBehaviour
     [Header("Purchase Item Lines")]
     public string[] interactionLines;
     public string[] badInteractionLines;
+    public string[] interactionLines2;
+    public string[] badInteractionLines2;
 
     [Header("Settings")]
     public GameObject dialogueBubble;
@@ -94,5 +96,31 @@ public class MenuDialogManager : MonoBehaviour
         // Start the sequence
         StopAllCoroutines();
         typingCoroutine = StartCoroutine(ShowDialogue(badInteractionLines[Random.Range(0, badInteractionLines.Length)]));
+    }
+
+    public void OnInteraction2()
+    {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        dialogueText.text = "";
+        dialogueBubble.SetActive(false);
+
+        // Start the sequence
+        StopAllCoroutines();
+        typingCoroutine = StartCoroutine(ShowDialogue(interactionLines2[Random.Range(0, interactionLines2.Length)]));
+    }
+
+    public void OnBadInteraction2()
+    {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        dialogueText.text = "";
+        dialogueBubble.SetActive(false);
+
+        // Start the sequence
+        StopAllCoroutines();
+        typingCoroutine = StartCoroutine(ShowDialogue(badInteractionLines2[Random.Range(0, badInteractionLines2.Length)]));
     }
 }
