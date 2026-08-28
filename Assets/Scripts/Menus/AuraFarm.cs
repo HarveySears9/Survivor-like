@@ -43,15 +43,24 @@ public class AuraFarm : MonoBehaviour
 
     public void ClaimAura()
     {
-        float coinsToClaim = currentAura / auraPerCoin;
+        int coinsToClaim = Mathf.FloorToInt(currentAura / auraPerCoin);
 
         Debug.Log("Claimed " + coinsToClaim + " coins!");
 
-        // Later, this will add coins to your actual currency system
+        // Add coins to the player's save data
+        PlayerDataManager.Instance.data.coins += coinsToClaim;
 
+        // Save the updated coin total
+        PlayerDataManager.Instance.Save();
+
+        // Reset the Aura farm
         currentAura = 0;
 
+        // Update the Aura UI
         UpdateUI();
+
+        // Update the player's coin UI
+        coinUI.UpdateCoins();
     }
 
     void UpdateUI()
