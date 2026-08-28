@@ -5043,6 +5043,7 @@ GameObject:
   - component: {fileID: 671697271}
   - component: {fileID: 671697278}
   - component: {fileID: 671697277}
+  - component: {fileID: 671697279}
   m_Layer: 0
   m_Name: Montgomery
   m_TagString: Untagged
@@ -5338,6 +5339,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.0930743, y: 1.3772764}
   m_EdgeRadius: 0
+--- !u!114 &671697279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671697270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b128a1c0735886944aebc7336f981641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateSprite: {fileID: 671697274}
+  level1Sprites:
+  - {fileID: -348251284, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -1681482450, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -202087061, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: 1434962862, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -1896369835, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  level2Sprites:
+  - {fileID: 316503078, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -944536577, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1260825078, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -59008888, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 1683035786, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  level3Sprites:
+  - {fileID: 1252973393, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1868845410, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1257145433, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 1965014781, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1253521640, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
 --- !u!1 &676674783
 GameObject:
   m_ObjectHideFlags: 0

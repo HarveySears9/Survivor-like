@@ -5872,6 +5872,7 @@ MonoBehaviour:
   upgradeButton: {fileID: 1273686191}
   sr: {fileID: 873560998}
   dialogue: {fileID: 2045753578}
+  montgomery: {fileID: 2045753579}
 --- !u!4 &1986420515
 Transform:
   m_ObjectHideFlags: 0
@@ -6184,6 +6185,7 @@ GameObject:
   - component: {fileID: 2045753576}
   - component: {fileID: 2045753575}
   - component: {fileID: 2045753578}
+  - component: {fileID: 2045753579}
   m_Layer: 0
   m_Name: Montgomery
   m_TagString: Untagged
@@ -6318,6 +6320,37 @@ MonoBehaviour:
   typeSpeed: 0.1
   startDelay: 0.5
   hideDelay: 2
+--- !u!114 &2045753579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045753574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b128a1c0735886944aebc7336f981641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateSprite: {fileID: 2045753575}
+  level1Sprites:
+  - {fileID: -348251284, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -1681482450, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -202087061, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: 1434962862, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -1896369835, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  level2Sprites:
+  - {fileID: 316503078, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -944536577, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1260825078, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -59008888, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 1683035786, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  level3Sprites:
+  - {fileID: 1252973393, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1868845410, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1257145433, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 1965014781, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1253521640, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
 --- !u!1001 &1028016646878698234
 PrefabInstance:
   m_ObjectHideFlags: 0

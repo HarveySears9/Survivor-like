@@ -49,6 +49,7 @@ public class AuraFarm : MonoBehaviour
     private DateTime lastAuraUpdateTime;
 
     public MenuDialogManager dialogue;
+    public Montgomery montgomery;
 
 
     // ============================================================
@@ -394,6 +395,7 @@ public class AuraFarm : MonoBehaviour
         dialogue.OnInteraction2();
 
         UpgradeButtonDisplay();
+        montgomery.UpdateArray();
     }
 
     public void UpgradeButtonDisplay()
