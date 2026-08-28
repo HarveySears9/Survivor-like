@@ -11192,10 +11192,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipRange: 10
   flips: 1
-  idle: 1
+  idle: 0
   dialogueLines:
   - You heading out?
   - Stay safe out there Adventurer
+  - I used to be an Adventurer like you....
   dialogueBubblePrefab: {fileID: 723379658756080273, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
   typeSpeed: 0.05
   dialogBoxHieght: 2

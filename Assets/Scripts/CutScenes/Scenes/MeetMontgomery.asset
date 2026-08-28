@@ -13,19 +13,96 @@ MonoBehaviour:
   m_Name: MeetMontgomery
   m_EditorClassIdentifier: 
   cutsceneID: Montgomery_001
-  playbackType: 1
+  playbackType: 0
   nextScene: AuraFarm
   background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 5402667104017895134, guid: 492885463250eac4785f5540ed27e363, type: 3}
   dialogueLines:
   - speaker: 0
-    line: Hello
+    line: Uh... who is this guy?
   - speaker: 1
-    line: 'Howdawdawd awd awd '
+    line: .......
   - speaker: 0
-    line: 'wad awd aw '
-  - speaker: 0
-    line: 'wdaw daw daw '
+    line: ...Are you a wizard?
   - speaker: 1
-    line: awd awd wa d
+    line: I am Montgomery.
+  - speaker: 0
+    line: Right...
+  - speaker: 1
+    line: Wizard. Scholar...
+  - speaker: 1
+    line: Aura farmer!!!
+  - speaker: 0
+    line: Aura... farmer?
+  - speaker: 1
+    line: Precisely.
+  - speaker: 0
+    line: And you do that by standing on a rock?
+  - speaker: 1
+    line: This is no ordinary rock.
+  - speaker: 0
+    line: Looks like a rock.
+  - speaker: 1
+    line: It is a very good rock.
+  - speaker: 0
+    line: ...Right.
+  - speaker: 1
+    line: But enough about me. I sense something interesting about you, B'Rick.
+  - speaker: 0
+    line: You know my name?
+  - speaker: 1
+    line: Your aura precedes you.
+  - speaker: 0
+    line: Is that good?
+  - speaker: 1
+    line: Extremely.
+  - speaker: 0
+    line: So what does that mean?
+  - speaker: 1
+    line: It means you have tremendous potential for aura.
+  - speaker: 0
+    line: Can I eat it?
+  - speaker: 1
+    line: No.
+  - speaker: 0
+    line: Shame.
+  - speaker: 1
+    line: Fortunately, I can put your accumulated aura to better use.
+  - speaker: 0
+    line: How?
+  - speaker: 1
+    line: I have been farming aura on your behalf.
+  - speaker: 0
+    line: You've been doing what?
+  - speaker: 1
+    line: Farming aura. While you are away adventuring, I remain here and cultivate
+      it.
+  - speaker: 0
+    line: ...On that rock?
+  - speaker: 1
+    line: Naturally.
+  - speaker: 0
+    line: And what do you do with it?
+  - speaker: 1
+    line: I refine it into something far more useful.
+  - speaker: 0
+    line: Like what?
+  - speaker: 1
+    line: Coins.
+  - speaker: 0
+    line: Oh.
+  - speaker: 1
+    line: The longer you are away, the more aura I can farm.
+  - speaker: 0
+    line: So I get rich by leaving you on a rock?
+  - speaker: 1
+    line: Now you're beginning to understand.
+  - speaker: 0
+    line: I like you, Montgomery.
+  - speaker: 1
+    line: I had a feeling you would.
+  - speaker: 0
+    line: Keep up the good work.
+  - speaker: 1
+    line: I have been standing here all day.

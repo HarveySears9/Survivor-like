@@ -13,19 +13,50 @@ MonoBehaviour:
   m_Name: intro
   m_EditorClassIdentifier: 
   cutsceneID: intro_001
-  playbackType: 0
+  playbackType: 1
   nextScene: PuddleBrook
   background: {fileID: 6459262931258754729, guid: 9ba73a5a9b544ce4e9544c0f6fff1041, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 1090369065293755923, guid: 3d92a4e66c563df468361778c91ac720, type: 3}
   dialogueLines:
-  - speaker: 0
-    line: Hello
   - speaker: 1
-    line: 'Howdawdawd awd awd '
+    line: B'Rick! Oh, thank goodness you've arrived! Welcome to Puddlebrook!
   - speaker: 0
-    line: 'wad awd aw '
-  - speaker: 0
-    line: 'wdaw daw daw '
+    line: Good to be here, Mayor Bertie. You said there was trouble?
   - speaker: 1
-    line: awd awd wa d
+    line: Ah... yes. I'm afraid there is. A rather... sizeable problem, I'm afraid.
+  - speaker: 1
+    line: Don't mind the crumbs, so to speak.
+  - speaker: 0
+    line: Sounds like exactly the sort of problem I was hoping for.
+  - speaker: 1
+    line: Oh! Well... that's reassuring. I knew we could count on you.
+  - speaker: 0
+    line: Just point me in the right direction.
+  - speaker: 1
+    line: Of course! Head north through the town gate.
+  - speaker: 1
+    line: The road beyond should lead you straight to where you're needed.
+  - speaker: 0
+    line: North it is.
+  - speaker: 1
+    line: And if you need anything, I'll be at the mission board in town. Just come
+      and find me.
+  - speaker: 0
+    line: Got it. Mission board, then north. Easy enough.
+  - speaker: 1
+    line: Precisely! Now go on, then. And... do try to come back in one piece, won't
+      you?
+  - speaker: 0
+    line: Can't make any promises.
+  - speaker: 1
+    line: Oh dear... I suddenly feel rather underbaked about this whole thing.
+  - speaker: 0
+    line: Don't worry, Bertie. I've got this.
+  - speaker: 1
+    line: That's what I'm afraid of.
+  - speaker: 0
+    line: I'll see you when I get back!
+  - speaker: 1
+    line: "Good luck, B'Rick! And don't forget \u2014 if things get a little... messy,
+      just bring the crumbs home with you."
