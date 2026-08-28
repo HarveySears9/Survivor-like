@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -537280082, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
-  - {fileID: -285658807, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: 1897373217, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -1742742829, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   - {fileID: -1912105970, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -537280082, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
+  - {fileID: -285658807, guid: aa963ef88b25a094daa3ddeb52e86927, type: 3}
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
