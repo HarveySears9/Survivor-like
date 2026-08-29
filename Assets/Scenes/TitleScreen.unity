@@ -1485,7 +1485,7 @@ GameObject:
   - component: {fileID: 718593494}
   - component: {fileID: 718593493}
   m_Layer: 0
-  m_Name: Libraian
+  m_Name: Lucinda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1500,7 +1500,7 @@ Transform:
   m_GameObject: {fileID: 718593491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.268, y: 0.974, z: 0}
+  m_LocalPosition: {x: -1.18, y: 0.65, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1520,11 +1520,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: 2125218374, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: 617152800, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -998373542, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: 1318320108, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -380124652, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: 2125218374, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
@@ -2078,7 +2078,7 @@ Transform:
   m_GameObject: {fileID: 1070817930}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.52, z: 0}
+  m_LocalPosition: {x: 1.08, y: 0.95, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2490,7 +2490,7 @@ Transform:
   m_GameObject: {fileID: 1152894470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0.58, z: 0}
+  m_LocalPosition: {x: -0.15, y: 0.5, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:

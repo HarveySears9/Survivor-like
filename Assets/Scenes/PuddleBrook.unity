@@ -15884,6 +15884,10 @@ PrefabInstance:
       value: Enter Library
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 11400000, guid: fe4eb1a514eac5d4fb044e7cce851556, type: 2}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: openSprite
       value: 
       objectReference: {fileID: 285825811, guid: 4420e3d64f3e2c04b85d28ec22400b6a, type: 3}

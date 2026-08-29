@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f8354656a1a3843ae588f625346a10, type: 3}
+  m_Name: MeetLucinda
+  m_EditorClassIdentifier: 
+  cutsceneID: MeetLucinda_001
+  playbackType: 0
+  nextScene: Library
+  background: {fileID: 8843331915889024168, guid: c3c26a5601856b2428700746d84d9961, type: 3}
+  character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
+  character2: {fileID: 7450183723108219474, guid: 1f4ac768400e0804aaef79672ccfc40b, type: 3}
+  character3: {fileID: 0}
+  dialogueLines:
+  - speaker: 1
+    line: Oh, hello there. You must be B'Rick Stonehardd.
+  - speaker: 0
+    line: That's me! How'd you know?
+  - speaker: 1
+    line: Word travels quickly around here.
+  - speaker: 0
+    line: Hopefully good words.
+  - speaker: 1
+    line: ...Some of them.
+  - speaker: 0
+    line: So, are you the librarian?
+  - speaker: 1
+    line: I am. Lucinda Grillfang.
+  - speaker: 1
+    line: Keeper of this library and its many records.
+  - speaker: 0
+    line: Grillfang...?
+  - speaker: 0
+    line: Like Asmodai?
+  - speaker: 1
+    line: Yes. My darling husband.
+  - speaker: 0
+    line: Wait... you're married to Asmodai?!
+  - speaker: 1
+    line: We have been for many years.
+  - speaker: 0
+    line: Huh. He never mentioned you.
+  - speaker: 1
+    line: He does enjoy keeping a little mystery about himself.
+  - speaker: 0
+    line: So you know magic too?
+  - speaker: 1
+    line: A little. My interests lie more in knowledge than spells.
+  - speaker: 0
+    line: And what kind of knowledge is in here?
+  - speaker: 1
+    line: Everything worth knowing about this world.
+  - speaker: 1
+    line: Creatures, weapons, people, places... even the stories behind them.
+  - speaker: 0
+    line: Whoa. So you know everything?
+  - speaker: 1
+    line: Not everything.
+  - speaker: 0
+    line: More than me?
+  - speaker: 1
+    line: Considerably more.
+  - speaker: 0
+    line: Fair enough.
+  - speaker: 1
+    line: As you explore and discover new things, their records will be added to
+      the library.
+  - speaker: 0
+    line: So the more I do, the more books you get?
+  - speaker: 1
+    line: Precisely.
+  - speaker: 0
+    line: I like it.
+  - speaker: 1
+    line: Then I suspect we'll be seeing quite a lot of you.
+  - speaker: 0
+    line: I'll try to bring back something interesting!
+  - speaker: 1
+    line: Please do.
+  - speaker: 1
+    line: And try not to get yourself killed in the process.
+  - speaker: 0
+    line: No promises!
