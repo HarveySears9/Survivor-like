@@ -7865,8 +7865,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: name
-      value: Quests
+      value: Missions
       objectReference: {fileID: 0}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 11400000, guid: d7f4a04f7d569ec4bb5f3388a16e9a60, type: 2}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: sceneName
       value: MissionBoard

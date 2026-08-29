@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f8354656a1a3843ae588f625346a10, type: 3}
+  m_Name: MissionBoard
+  m_EditorClassIdentifier: 
+  cutsceneID: MissionBoard_001
+  playbackType: 1
+  nextScene: MissionBoard
+  background: {fileID: 6459262931258754729, guid: 9ba73a5a9b544ce4e9544c0f6fff1041, type: 3}
+  character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
+  character2: {fileID: 1090369065293755923, guid: 3d92a4e66c563df468361778c91ac720, type: 3}
+  dialogueLines:
+  - speaker: 1
+    line: Oh! B'Rick! Good to see you again!
+  - speaker: 0
+    line: Hey, Bertie. What's all this?
+  - speaker: 1
+    line: This is the mission board! This is where you'll find all sorts of jobs
+      that need doing around Puddlebrook.
+  - speaker: 0
+    line: Jobs? Sounds like my kind of thing.
+  - speaker: 1
+    line: I thought it might!
+  - speaker: 1
+    line: We've got daily missions, weekly missions, and even a few more... challenging
+      ones.
+  - speaker: 0
+    line: And what do I get for doing them?
+  - speaker: 1
+    line: Rewards, of course!
+  - speaker: 1
+    line: Bring your completed missions back to me and I'll make sure you're properly
+      compensated.
+  - speaker: 0
+    line: Gold?
+  - speaker: 1
+    line: Gold, resources... whatever the mission calls for.
+  - speaker: 1
+    line: Just check the board and see what's available.
+  - speaker: 0
+    line: Sounds easy enough.
+  - speaker: 1
+    line: Well... some of them are. Others might be a little more... half-baked.
+  - speaker: 0
+    line: I don't know what that means...
+  - speaker: 1
+    line: Neither do I, sometimes.
+  - speaker: 0
+    line: I'll take a look.
+  - speaker: 1
+    line: "Excellent! And remember, B'Rick \u2014 there's always another job waiting
+      on the board."
+  - speaker: 0
+    line: Good. I was starting to worry I'd have to sit around and do nothing.
+  - speaker: 1
+    line: Oh, I'm sure Montgomery has that covered.
