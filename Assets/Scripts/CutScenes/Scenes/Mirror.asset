@@ -18,4 +18,35 @@ MonoBehaviour:
   background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 6928469428441713025, guid: c4c2823d180ccb14d9013d0f81630a52, type: 3}
-  dialogueLines: []
+  character3: {fileID: 7450183723108219474, guid: b54a57c08bea2684db487bd51a7b6fa7, type: 3}
+  dialogueLines:
+  - speaker: 0
+    line: "What\u2019s that?"
+  - speaker: 2
+    line: The Magic Mirror!
+  - speaker: 0
+    line: "It\u2019s\u2026 a mirror."
+  - speaker: 2
+    line: A magic mirror.
+  - speaker: 2
+    line: Stand in front of it and you can change your outfit whenever you like.
+  - speaker: 0
+    line: Just like that?
+  - speaker: 2
+    line: Just like that!!
+  - speaker: 0
+    line: And you made it?
+  - speaker: 2
+    line: Of course not.
+  - speaker: 2
+    line: I found it in a ditch.
+  - speaker: 0
+    line: A ditch?
+  - speaker: 2
+    line: A very magical ditch.
+  - speaker: 0
+    line: ...Right.
+  - speaker: 2
+    line: Go on, give it a try!
+  - speaker: 0
+    line: I suppose looking good can't hurt.

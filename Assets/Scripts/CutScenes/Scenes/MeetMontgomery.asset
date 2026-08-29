@@ -18,6 +18,7 @@ MonoBehaviour:
   background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 5402667104017895134, guid: 492885463250eac4785f5540ed27e363, type: 3}
+  character3: {fileID: 0}
   dialogueLines:
   - speaker: 0
     line: Uh... who is this guy?

@@ -18,6 +18,7 @@ MonoBehaviour:
   background: {fileID: 6459262931258754729, guid: 9ba73a5a9b544ce4e9544c0f6fff1041, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 1090369065293755923, guid: 3d92a4e66c563df468361778c91ac720, type: 3}
+  character3: {fileID: 0}
   dialogueLines:
   - speaker: 1
     line: B'Rick! Oh, thank goodness you've arrived! Welcome to Puddlebrook!

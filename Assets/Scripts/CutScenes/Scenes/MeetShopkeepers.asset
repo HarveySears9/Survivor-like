@@ -13,16 +13,40 @@ MonoBehaviour:
   m_Name: MeetShopkeepers
   m_EditorClassIdentifier: 
   cutsceneID: MeetShopkeepers_001
-  playbackType: 0
+  playbackType: 1
   nextScene: Shop
   background: {fileID: 8843331915889024168, guid: b57108c8f1cae644d921857e836f39b2, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 7450183723108219474, guid: e9b09213b402c6d4aaa40673b6daac3c, type: 3}
   character3: {fileID: 7450183723108219474, guid: b54a57c08bea2684db487bd51a7b6fa7, type: 3}
   dialogueLines:
-  - speaker: 1
-    line: Hello and welcome
-  - speaker: 2
-    line: Greetings
   - speaker: 0
-    line: Hello There
+    line: "Huh\u2026 this place is bigger than I expected."
+  - speaker: 1
+    line: "Welcome Mortal. I\u2019m Asmodai Grillfang."
+  - speaker: 1
+    line: I handle the upgrades.
+  - speaker: 1
+    line: "Health, damage, speed\u2026 things that actually keep you alive"
+  - speaker: 2
+    line: "And I\u2019m CopperJaw McClink!"
+  - speaker: 2
+    line: I handle the outfits.
+  - speaker: 0
+    line: Outfits?
+  - speaker: 2
+    line: Of course!
+  - speaker: 2
+    line: "What good is surviving if you don\u2019t look fantastic doing it?"
+  - speaker: 1
+    line: He's fighting monsters, not attending a ball.
+  - speaker: 2
+    line: "You say that like monsters don\u2019t appreciate style."
+  - speaker: 0
+    line: "So\u2026 upgrades from Asmodai, outfits from CopperJaw?"
+  - speaker: 1
+    line: Exactly.
+  - speaker: 2
+    line: "Now you\u2019re getting it!"
+  - speaker: 0
+    line: "Right. I think I\u2019m going to like this place."
