@@ -4086,6 +4086,10 @@ PrefabInstance:
       value: Mirror
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd72235a693b394ea239aa390563ddc, type: 2}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: sceneName
       value: Mirror
       objectReference: {fileID: 0}
