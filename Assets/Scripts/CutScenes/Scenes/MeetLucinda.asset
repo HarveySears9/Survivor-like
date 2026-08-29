@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeetLucinda
   m_EditorClassIdentifier: 
   cutsceneID: MeetLucinda_001
-  playbackType: 0
+  playbackType: 1
   nextScene: Library
   background: {fileID: 8843331915889024168, guid: c3c26a5601856b2428700746d84d9961, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
