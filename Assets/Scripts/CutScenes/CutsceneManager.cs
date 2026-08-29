@@ -297,6 +297,7 @@ public class CutsceneManager : MonoBehaviour
         // Hide both bubbles
         character1Bubble.SetActive(false);
         character2Bubble.SetActive(false);
+        character3Bubble.SetActive(false);  
 
 
         // Stop previous typing
