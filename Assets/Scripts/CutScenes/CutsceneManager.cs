@@ -28,6 +28,7 @@ public class CutsceneManager : MonoBehaviour
 
     public Transform character1Position;
     public Transform character2Position;
+    public Transform character3Position;
 
 
     // ============================================================
@@ -38,9 +39,11 @@ public class CutsceneManager : MonoBehaviour
 
     public GameObject character1Bubble;
     public GameObject character2Bubble;
+    public GameObject character3Bubble;
 
     public TextMeshProUGUI character1Text;
     public TextMeshProUGUI character2Text;
+    public TextMeshProUGUI character3Text;
 
 
     // ============================================================
@@ -67,6 +70,7 @@ public class CutsceneManager : MonoBehaviour
 
     private GameObject currentCharacter1;
     private GameObject currentCharacter2;
+    private GameObject currentCharacter3;
     private GameObject currentBackground;
 
 
@@ -168,10 +172,32 @@ public class CutsceneManager : MonoBehaviour
             currentCharacter2.transform.localScale = scale;
         }
 
+        // Create Character 3
+        if (cutscene.character3 != null)
+        {
+            currentCharacter3 =
+                Instantiate(
+                    cutscene.character3,
+                    character3Position
+                );
+
+            currentCharacter3.transform.localPosition =
+                Vector3.zero;
+
+            currentCharacter3.transform.localRotation =
+                Quaternion.identity;
+
+            // Flip Character 3 horizontally
+            Vector3 scale = currentCharacter3.transform.localScale;
+            scale.x *= -1f;
+            currentCharacter3.transform.localScale = scale;
+        }
+
 
         // Hide speech bubbles
         character1Bubble.SetActive(false);
         character2Bubble.SetActive(false);
+        character3Bubble.SetActive(false);
 
 
         // Check dialogue
@@ -207,6 +233,11 @@ public class CutsceneManager : MonoBehaviour
         if (currentCharacter2 != null)
         {
             Destroy(currentCharacter2);
+        }
+
+        if (currentCharacter3 != null)
+        {
+            Destroy(currentCharacter3);
         }
 
         if (currentBackground != null)
@@ -338,6 +369,51 @@ public class CutsceneManager : MonoBehaviour
                 );
         }
 
+        // Character 3 speaking
+        else if (currentLine.speaker == 2)
+        {
+            if (currentCharacter3 == null)
+            {
+                Debug.LogError(
+                    "Character 3 is trying to speak, but no Character 3 exists!"
+                );
+
+                return;
+            }
+
+            character3Bubble.SetActive(true);
+
+
+            // Get character bubble height
+            CutsceneCharacter character =
+                currentCharacter3.GetComponent<CutsceneCharacter>();
+
+
+            if (character != null)
+            {
+                Vector3 bubblePosition =
+                    currentCharacter3.transform.position;
+
+                bubblePosition.y +=
+                    character.speechBubbleHeight;
+
+                character3Bubble.transform.position =
+                    bubblePosition;
+            }
+
+
+            currentFullLine =
+                currentLine.line;
+
+
+            typingCoroutine =
+                StartCoroutine(
+                    TypeLine(
+                        currentFullLine,
+                        character3Text
+                    )
+                );
+        }
 
         else
         {
@@ -411,6 +487,12 @@ public class CutsceneManager : MonoBehaviour
                 currentFullLine;
         }
 
+        else if (currentLine.speaker == 2)
+        {
+            character3Text.text =
+                currentFullLine;
+        }
+
 
         isTyping = false;
     }
@@ -424,6 +506,7 @@ public class CutsceneManager : MonoBehaviour
     {
         character1Bubble.SetActive(false);
         character2Bubble.SetActive(false);
+        character3Bubble.SetActive(false);
 
         Debug.Log("Cutscene finished.");
 

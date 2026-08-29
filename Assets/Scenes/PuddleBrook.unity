@@ -13650,6 +13650,10 @@ PrefabInstance:
       value: Enter Shop
       objectReference: {fileID: 0}
     - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 11400000, guid: 92a5f5f2af07ddd47b74fde8bb764132, type: 2}
+    - target: {fileID: 3512561549345907806, guid: c1026c7b29f4946488a108ba7aa30663, type: 3}
       propertyPath: sceneName
       value: Shop
       objectReference: {fileID: 0}
