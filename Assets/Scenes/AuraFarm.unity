@@ -1865,6 +1865,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1518261696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7282285769747554062, guid: 342d414eb1ad1354d841ed1459ce801c, type: 3}
+  m_PrefabInstance: {fileID: 1257737597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02137ea8fe9ac94ea3da04ea5a65d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638293447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,7 +1972,7 @@ MonoBehaviour:
   auraPercentageText: {fileID: 808502962}
   auraSlider: {fileID: 1345642143}
   coinsText: {fileID: 1483460422}
-  coinUI: {fileID: 0}
+  coinUI: {fileID: 1518261696}
   capsityText: {fileID: 453304868}
   upgradeCostText: {fileID: 424643216}
   upgradeButtonText: {fileID: 243421488}
@@ -2403,7 +2414,7 @@ Transform:
   m_GameObject: {fileID: 7630948710306819649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 3.25, z: 0}
+  m_LocalPosition: {x: 0.75, y: 2.65, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2715,8 +2726,8 @@ Transform:
   m_GameObject: {fileID: 7519023639554098823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.429074, y: -3.3521476, z: 0}
-  m_LocalScale: {x: 1.1764708, y: 1.1764708, z: 1.1764708}
+  m_LocalPosition: {x: -0.429074, y: -3.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2556295514038025053}
