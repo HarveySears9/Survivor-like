@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeetMontgomery
   m_EditorClassIdentifier: 
   cutsceneID: Montgomery_001
-  playbackType: 0
+  playbackType: 1
   nextScene: AuraFarm
   background: {fileID: 4448181869917035581, guid: 8f17eb81c234fab4b8b639d4d04bdf66, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
