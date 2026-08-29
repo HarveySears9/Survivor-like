@@ -290,6 +290,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Menu stuff_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 257
+        width: 8
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026b7057122753c4db343fa8d096eb83
+      internalID: -1628519427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -309,6 +330,7 @@ TextureImporter:
       Menu stuff_5: 1499277096
       Menu stuff_6: 1947527943
       Menu stuff_7: -1374590386
+      Menu stuff_8: -1628519427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
