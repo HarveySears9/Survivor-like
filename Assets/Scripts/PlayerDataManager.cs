@@ -36,7 +36,8 @@ public class PlayerDataManager : MonoBehaviour
             bool[] defaultLevels = new bool[] { true, false, false };
             bool[] weaponUnlocks = new bool[] { true, true, true, true, true, false, false };
 
-            bool[] defaultStartingWeaponUnlocks = new bool[] { true, true, false, false, false, false, false };
+            bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false };
+            int[] defaultStartingWeaponCosts = new int[] { 0, 5000, 10000, 15000, 20000, 25000, 30000 };
 
             if (data == null)
             {
@@ -54,6 +55,7 @@ public class PlayerDataManager : MonoBehaviour
 
                 data.startingWeapon = 0;
                 data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
+                data.startingWeaponCosts = defaultStartingWeaponCosts;
 
                 data.auraLevel = 1;
                 data.auraLastUpdate = DateTime.UtcNow.Ticks;
@@ -101,6 +103,15 @@ public class PlayerDataManager : MonoBehaviour
                 }
 
                 data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
+
+                // Merge starting weapon costs
+                int startingWeaponCostsLengthToCopy = Mathf.Min(data.startingWeaponCosts?.Length ?? 0, defaultStartingWeaponCosts.Length);
+                for (int i = 0; i < startingWeaponCostsLengthToCopy; i++)
+                {
+                    defaultStartingWeaponCosts[i] = data.startingWeaponCosts[i];
+                }
+
+                data.startingWeaponCosts = defaultStartingWeaponCosts;
 
                 if (data.startingWeapon < 0 || data.startingWeapon >= data.startingWeaponUnlocks.Length)
                 {

@@ -4,6 +4,8 @@ using TMPro;
 
 public class StartingWeaponMenu : MonoBehaviour
 {
+    public CoinUI coinUI;
+
     public ShopTabs tabs;
 
     public Button equipButton;
@@ -22,6 +24,7 @@ public class StartingWeaponMenu : MonoBehaviour
 
     public int[] weaponOrder;
 
+
     private void Start()
     {
         SetUpMenu();
@@ -30,6 +33,9 @@ public class StartingWeaponMenu : MonoBehaviour
 
     void SetUpMenu()
     {
+
+        coinUI.UpdateCoins();
+
         var data = PlayerDataManager.Instance?.data;
 
         if (data == null)
@@ -48,13 +54,24 @@ public class StartingWeaponMenu : MonoBehaviour
         // Set name.
         nameText.text = weaponNames[equippedIndex];
 
+
         // Currently equipped weapon.
         SetEquipButton(false, "Equipped");
 
+
+        // Move scroll content to equipped weapon.
         int uiIndex = System.Array.IndexOf(weaponOrder, equippedIndex);
 
-        var rect = scrollContent.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(uiIndex * -700, rect.anchoredPosition.y);
+        if (uiIndex >= 0)
+        {
+            var rect = scrollContent.GetComponent<RectTransform>();
+
+            rect.anchoredPosition = new Vector2(
+                uiIndex * -700,
+                rect.anchoredPosition.y
+            );
+        }
+
 
         // Set lock visuals.
         for (int i = 0; i < locks.Length; i++)
@@ -62,15 +79,19 @@ public class StartingWeaponMenu : MonoBehaviour
             if (i < data.weaponUnlocks.Length &&
                 i < data.startingWeaponUnlocks.Length)
             {
-                bool unlocked =
-                    data.weaponUnlocks[i] &&
-                    data.startingWeaponUnlocks[i];
+                bool weaponUnlocked = data.weaponUnlocks[i];
+                bool startingWeaponUnlocked = data.startingWeaponUnlocks[i];
 
-                locks[i].SetActive(!unlocked);
+                // Lock stays visible unless BOTH are unlocked.
+                bool fullyUnlocked =
+                    weaponUnlocked &&
+                    startingWeaponUnlocked;
+
+                locks[i].SetActive(!fullyUnlocked);
             }
             else
             {
-                // If the arrays don't contain this weapon,
+                // If the weapon doesn't exist in the save arrays,
                 // keep it locked.
                 locks[i].SetActive(true);
             }
@@ -88,12 +109,28 @@ public class StartingWeaponMenu : MonoBehaviour
             return;
         }
 
+
+        // Make sure the index is valid.
+        if (index < 0 ||
+            index >= weaponNames.Length ||
+            index >= data.weaponUnlocks.Length ||
+            index >= data.startingWeaponUnlocks.Length ||
+            index >= data.startingWeaponCosts.Length)
+        {
+            Debug.LogError("Invalid weapon index: " + index);
+            return;
+        }
+
+
         tabs.OnTabPressed(index);
 
         nameText.text = weaponNames[index];
 
 
-        // Already equipped.
+        // ---------------------------------------------------------
+        // ALREADY EQUIPPED
+        // ---------------------------------------------------------
+
         if (index == data.startingWeapon)
         {
             selectedIndex = index;
@@ -104,28 +141,52 @@ public class StartingWeaponMenu : MonoBehaviour
         }
 
 
-        // Weapon must be unlocked normally AND unlocked
-        // as a starting weapon.
-        bool canStartWithWeapon =
-            index < data.weaponUnlocks.Length &&
-            index < data.startingWeaponUnlocks.Length &&
-            data.weaponUnlocks[index] &&
+        bool weaponUnlocked = data.weaponUnlocks[index];
+
+        bool startingWeaponUnlocked =
             data.startingWeaponUnlocks[index];
 
 
-        if (canStartWithWeapon)
+        // ---------------------------------------------------------
+        // WEAPON NOT UNLOCKED
+        // ---------------------------------------------------------
+
+        if (!weaponUnlocked)
+        {
+            selectedIndex = index;
+
+            SetEquipButton(false, "Locked");
+
+            return;
+        }
+
+
+        // ---------------------------------------------------------
+        // STARTING WEAPON ALREADY UNLOCKED
+        // ---------------------------------------------------------
+
+        if (startingWeaponUnlocked)
         {
             selectedIndex = index;
 
             SetEquipButton(true, "Equip");
-        }
-        else
-        {
-            // Weapon is locked.
-            selectedIndex = data.startingWeapon;
 
-            SetEquipButton(false, "Locked");
+            return;
         }
+
+
+        // ---------------------------------------------------------
+        // WEAPON UNLOCKED BUT NOT UNLOCKED AS STARTING WEAPON
+        // ---------------------------------------------------------
+
+        selectedIndex = index;
+
+        int cost = data.startingWeaponCosts[index];
+
+        SetEquipButton(
+            data.coins >= cost,
+            cost.ToString()
+        );
     }
 
 
@@ -140,38 +201,111 @@ public class StartingWeaponMenu : MonoBehaviour
         }
 
 
-        // Make sure the selected weapon exists in both arrays.
-        if (selectedIndex >= data.weaponUnlocks.Length ||
-            selectedIndex >= data.startingWeaponUnlocks.Length)
+        // Make sure the selected weapon exists in all arrays.
+        if (selectedIndex < 0 ||
+            selectedIndex >= data.weaponUnlocks.Length ||
+            selectedIndex >= data.startingWeaponUnlocks.Length ||
+            selectedIndex >= data.startingWeaponCosts.Length)
         {
-            Debug.LogError("Invalid starting weapon index: " + selectedIndex);
-            return;
-        }
-
-
-        // Weapon must be unlocked normally AND
-        // unlocked as a starting weapon.
-        if (!data.weaponUnlocks[selectedIndex] ||
-            !data.startingWeaponUnlocks[selectedIndex])
-        {
-            Debug.LogWarning(
-                "Cannot equip weapon as starting weapon. " +
-                "Weapon is not fully unlocked."
+            Debug.LogError(
+                "Invalid starting weapon index: " +
+                selectedIndex
             );
 
             return;
         }
 
 
-        // Equip the starting weapon.
+        bool weaponUnlocked =
+            data.weaponUnlocks[selectedIndex];
+
+        bool startingWeaponUnlocked =
+            data.startingWeaponUnlocks[selectedIndex];
+
+
+        // ---------------------------------------------------------
+        // WEAPON NOT UNLOCKED
+        // ---------------------------------------------------------
+
+        if (!weaponUnlocked)
+        {
+            Debug.LogWarning(
+                "Cannot unlock this weapon as a starting weapon. " +
+                "The weapon itself is still locked."
+            );
+
+            return;
+        }
+
+
+        // ---------------------------------------------------------
+        // STARTING WEAPON ALREADY UNLOCKED
+        // ---------------------------------------------------------
+
+        if (startingWeaponUnlocked)
+        {
+            // Equip it.
+            data.startingWeapon = selectedIndex;
+
+            PlayerDataManager.Instance.Save();
+
+            SetEquipButton(false, "Equipped");
+
+            return;
+        }
+
+
+        // ---------------------------------------------------------
+        // BUY STARTING WEAPON UNLOCK
+        // ---------------------------------------------------------
+
+        int cost =
+            data.startingWeaponCosts[selectedIndex];
+
+
+        // Make sure the player can afford it.
+        if (data.coins < cost)
+        {
+            Debug.LogWarning("Not enough coins.");
+
+            return;
+        }
+
+
+        // Remove coins.
+        data.coins -= cost;
+
+
+        // Unlock this weapon as a starting weapon.
+        data.startingWeaponUnlocks[selectedIndex] = true;
+
+
+        // Equip it immediately.
         data.startingWeapon = selectedIndex;
 
-        // Save the data.
+
+        // Remove the lock icon.
+        if (selectedIndex < locks.Length)
+        {
+            locks[selectedIndex].SetActive(false);
+        }
+
+
+        // Save everything.
         PlayerDataManager.Instance.Save();
 
+        coinUI.UpdateCoins();
 
         // Update button.
         SetEquipButton(false, "Equipped");
+
+
+        Debug.Log(
+            weaponNames[selectedIndex] +
+            " unlocked as a starting weapon for " +
+            cost +
+            " coins."
+        );
     }
 
 
@@ -180,25 +314,35 @@ public class StartingWeaponMenu : MonoBehaviour
         if (equipButton == null)
             return;
 
+
         equipButton.interactable = interactable;
+
 
         TextMeshProUGUI buttonText =
             equipButton.GetComponentInChildren<TextMeshProUGUI>();
 
+
         if (buttonText != null)
+        {
             buttonText.text = text;
+        }
     }
+
 
     public void Home()
     {
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
             SceneTracker.UpdateLastSceneName();
+
             stc.TriggerTransition("PuddleBrook");
         }
         else
         {
-            Debug.LogError("Scene 'Puddlebrook' not found. Please check Build Settings.");
+            Debug.LogError(
+                "Scene 'Puddlebrook' not found. " +
+                "Please check Build Settings."
+            );
         }
     }
 }

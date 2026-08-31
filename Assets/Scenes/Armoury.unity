@@ -3392,6 +3392,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8295389305606851553, guid: 342d414eb1ad1354d841ed1459ce801c, type: 3}
   m_PrefabInstance: {fileID: 1135510722}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1135510724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7282285769747554062, guid: 342d414eb1ad1354d841ed1459ce801c, type: 3}
+  m_PrefabInstance: {fileID: 1135510722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02137ea8fe9ac94ea3da04ea5a65d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195980496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,6 +5747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7164bacddeb7aa4788535ae95e7d805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinUI: {fileID: 1135510724}
   tabs: {fileID: 2043474512}
   equipButton: {fileID: 2048274600}
   nameText: {fileID: 427121994}

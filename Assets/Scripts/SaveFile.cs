@@ -92,6 +92,7 @@ public static class SaveFile
         
         public int startingWeapon;
         public bool[] startingWeaponUnlocks;
+        public int[] startingWeaponCosts;
 
         public int auraLevel;
         public long auraLastUpdate;
