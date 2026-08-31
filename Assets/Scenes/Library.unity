@@ -12332,7 +12332,6 @@ GameObject:
   - component: {fileID: 898096573}
   - component: {fileID: 898096576}
   - component: {fileID: 898096575}
-  - component: {fileID: 898096574}
   m_Layer: 5
   m_Name: GFX (1)
   m_TagString: Untagged
@@ -12359,26 +12358,6 @@ RectTransform:
   m_AnchoredPosition: {x: -334.44, y: -24.389}
   m_SizeDelta: {x: 38.8789, y: 38.8789}
   m_Pivot: {x: 0.5, y: 0.37269986}
---- !u!114 &898096574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898096572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa49e27f72cf9d46b2c124eb2879ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteArray:
-  - {fileID: 45360883, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: 440770632, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: -798276648, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  - {fileID: -1718163275, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
-  animating: 1
-  animationSpeed: 2
-  masterSprite: {fileID: 0}
 --- !u!114 &898096575
 MonoBehaviour:
   m_ObjectHideFlags: 0
