@@ -18,6 +18,9 @@ public class StartingWeaponMenu : MonoBehaviour
 
     public SceneTransitionController stc;
 
+    public GameObject scrollContent;
+
+    public int[] weaponOrder;
 
     private void Start()
     {
@@ -47,6 +50,11 @@ public class StartingWeaponMenu : MonoBehaviour
 
         // Currently equipped weapon.
         SetEquipButton(false, "Equipped");
+
+        int uiIndex = System.Array.IndexOf(weaponOrder, equippedIndex);
+
+        var rect = scrollContent.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(uiIndex * -700, rect.anchoredPosition.y);
 
         // Set lock visuals.
         for (int i = 0; i < locks.Length; i++)

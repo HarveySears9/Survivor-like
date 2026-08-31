@@ -184,11 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
+  - {fileID: -1975905132, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
+  - {fileID: -1120172669, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -1186326323, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -1566659939, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   - {fileID: -1516393528, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
-  - {fileID: -1975905132, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
-  - {fileID: -1120172669, guid: 552a38348a2848d4eaefbd7ed0458fbc, type: 3}
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
