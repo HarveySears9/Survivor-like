@@ -9,10 +9,15 @@ public class Fireball : MonoBehaviour
 
     public bool penetrate = true;
 
+    public AudioClip startSound;
+    public float startSoundVolume = 0.3f;
+
     public void Initialize(Vector2 direction)
     {
         moveDirection = direction.normalized;
         Destroy(gameObject, lifetime); // Destroy after the lifetime expires
+
+        AudioManager.Instance.PlaySFX(startSound, startSoundVolume);
     }
 
     void Update()

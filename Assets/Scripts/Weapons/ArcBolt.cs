@@ -40,6 +40,8 @@ public class ArcBolt : MonoBehaviour
 
     private WeaponUI weaponUI;
 
+    public AudioClip startSound;
+
     void Start()
     {
         if (levelUpButton != null)
@@ -195,6 +197,9 @@ public class ArcBolt : MonoBehaviour
         Vector3 scale = visual.transform.localScale;
         scale.x = distance / (arcVisualPrefab.GetComponent<SpriteRenderer>().sprite.bounds.size.x); // Adjust for sprite width
         visual.transform.localScale = scale;
+
+        AudioManager.Instance.PlaySFX(startSound);
+
     }
 
     public void LevelUp()

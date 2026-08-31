@@ -53,7 +53,7 @@ public class SwordSlash : MonoBehaviour
     {
         if (Time.time >= nextFireTime)
         {
-            FireAtTargets();
+            StartCoroutine(FireAtTargets());
             float effectiveFireRate = fireRate;
             effectiveFireRate *= player.attackSpeedMultiplier;
             currentCooldown = 1f / effectiveFireRate;
@@ -75,45 +75,51 @@ public class SwordSlash : MonoBehaviour
         UpdateCooldownUI();
     }
 
-    void FireAtTargets()
+    IEnumerator FireAtTargets()
     {
         // Find all colliders within the range
         Collider2D[] targetsInRange = Physics2D.OverlapCircleAll(transform.position, range);
 
         // Filter only enemy targets
         List<Transform> enemyTargets = new List<Transform>();
+
         foreach (var target in targetsInRange)
         {
-            if (target.CompareTag("Enemy")) // Make sure your enemies have the "Enemy" tag
+            if (target.CompareTag("Enemy"))
             {
                 enemyTargets.Add(target.transform);
             }
         }
 
-        if (enemyTargets.Count == 0) return; // Exit if no targets are found
+        if (enemyTargets.Count == 0)
+            yield break;
 
         for (int i = 0; i < level; i++)
         {
-            Transform target = enemyTargets[i % enemyTargets.Count]; // Cycle through targets if there are fewer than fireballs
+            Transform target = enemyTargets[i % enemyTargets.Count];
 
             // Calculate direction to the target
             Vector2 fireDirection = (target.position - transform.position).normalized;
 
-            // Instantiate the fireball
+            // Instantiate the slash
             GameObject slash = Instantiate(slashPrefab, transform.position, Quaternion.identity);
 
-            // Set the rotation to match the fireball's movement direction
             // Add a random variation to the angle
-            float randomOffset = Random.Range(-5f, 5f); // Adjust the range to control the spread (e.g., -5 to 5 degrees)
+            float randomOffset = Random.Range(-5f, 5f);
             float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg + randomOffset;
+
             slash.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
 
             // Pass the fire direction to the fireball script
             slash.GetComponent<Fireball>().Initialize(Vector2.right);
 
+            // Calculate damage
             float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
 
             slash.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
+
+            // Tiny delay before firing the next slash
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

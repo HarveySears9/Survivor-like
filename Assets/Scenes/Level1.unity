@@ -22152,6 +22152,7 @@ MonoBehaviour:
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: -734427091, guid: c07f1386baeb6484fa69e4f8b90ec905, type: 3}
+  startSound: {fileID: 8300000, guid: cf6dc230107d9ea49997cce12b210852, type: 3}
 --- !u!1 &1528730556
 GameObject:
   m_ObjectHideFlags: 0

@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 1886179822, guid: ddc015569d58a524eae59904937f1a7d, type: 3}
   - {fileID: -1036399733, guid: 4a5d92cbdc4e75643b9e1b13026dd7f5, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0

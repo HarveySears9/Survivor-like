@@ -167,6 +167,8 @@ MonoBehaviour:
   speed: 3
   lifetime: 1.5
   penetrate: 0
+  startSound: {fileID: 8300000, guid: 1423b84275f613843b9a394286d7fdfa, type: 3}
+  startSoundVolume: 0.5
 --- !u!114 &-2021436258800077376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,7 @@ MonoBehaviour:
   - {fileID: 287144415, guid: a0d5e346bd99415409dfeb48bbb0f292, type: 3}
   - {fileID: -70166949, guid: a0d5e346bd99415409dfeb48bbb0f292, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
