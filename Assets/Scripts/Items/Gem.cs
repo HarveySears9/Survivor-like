@@ -8,6 +8,8 @@ public class Gem : MonoBehaviour
 
     public float lifetime = 30f;
 
+    public AudioClip pickupSound;
+
     void Start()
     {
         Destroy(gameObject, lifetime);
@@ -23,6 +25,8 @@ public class Gem : MonoBehaviour
             {
                 playerEXP.AddEXP(value); // Add EXP to the player
             }
+
+            AudioManager.Instance.PlaySFX(pickupSound);
 
             // Destroy the gem after it's collected
             Destroy(gameObject);

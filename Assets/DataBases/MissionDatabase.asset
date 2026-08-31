@@ -121,7 +121,7 @@ MonoBehaviour:
     key: kill_Thudbutt
     targetAmount: 1
     currentAmount: 0
-    rewardAmount: 0
+    rewardAmount: 5
     type: 2
     claimed: 0
     completed: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
     key: kill_SnakeWoman
     targetAmount: 1
     currentAmount: 0
-    rewardAmount: 1
+    rewardAmount: 6
     type: 2
     claimed: 0
     completed: 0

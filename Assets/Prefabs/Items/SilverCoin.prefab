@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 2
   lifetime: 90
+  pickupSound: {fileID: 8300000, guid: cbf4255b58b65604b92d73749dfaff57, type: 3}
 --- !u!114 &3266342243203209561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +209,7 @@ MonoBehaviour:
   - {fileID: -225038023, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: 1471139296, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0

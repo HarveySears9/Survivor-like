@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour
 
     public float lifetime = 30f;
 
+    public AudioClip pickupSound;
+
     void Start()
     {
         Destroy(gameObject, lifetime);
@@ -19,6 +21,9 @@ public class Coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().AddCoin(value);
+
+            AudioManager.Instance.PlaySFX(pickupSound);
+
             Destroy(gameObject);
         }
     }

@@ -8,6 +8,8 @@ public class HealthPotion : MonoBehaviour
 
     public float lifetime = 30f;
 
+    public AudioClip pickupSound;
+
     void Start()
     {
         Destroy(gameObject, lifetime);
@@ -20,6 +22,8 @@ public class HealthPotion : MonoBehaviour
             Debug.Log("Health potion aquired");
             // Handle player damage logic here
             other.GetComponent<PlayerController>().Heal(healPercentage, false);
+
+            AudioManager.Instance.PlaySFX(pickupSound);
             Destroy(gameObject);
         }
     }
