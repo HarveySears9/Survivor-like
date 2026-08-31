@@ -89,6 +89,7 @@ public static class SaveFile
         public List<string> completedCutscenes;
 
         public bool[] weaponUnlocks;
+        public int startingWeapon;
 
         public int auraLevel;
         public long auraLastUpdate;

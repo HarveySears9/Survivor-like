@@ -50,6 +50,8 @@ public class PlayerDataManager : MonoBehaviour
                 data.tutorialCompleted = false;
                 data.weaponUnlocks = weaponUnlocks;
 
+                data.startingWeapon = 0;
+
                 data.auraLevel = 1;
                 data.auraLastUpdate = DateTime.UtcNow.Ticks;
                 data.completedCutscenes = new List<string>();

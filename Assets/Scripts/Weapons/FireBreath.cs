@@ -28,28 +28,33 @@ public class FireBreath : MonoBehaviour
     public Slider cooldownSlider;
     private float currentCooldown;
 
+    [Header("Weapon UI")]
+    public GameObject weaponUIPrefab;
+    public Transform weaponUIParent;
+    public Sprite weaponIcon;
+
+    private WeaponUI weaponUI;
+
     void Start()
     {
-        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
-
-        // Check if the current character is not B'rick
-        if (loadedData.currentCharacter != 0)
-        {
-            // Deactivate the FireBreath GameObject
-            this.gameObject.SetActive(false);
-            return; // Exit early since FireBreath should not be initialized
-        }
-
         player = FindObjectOfType<PlayerController>();
 
-        levelUpButton.LevelUp(level, maxLevel);
+        level = 0;
+
         fireRate = baseFireRate;
+
+        levelUpButton.LevelUp(level, maxLevel);
+
         nextFireTime = Time.time;
     }
 
     void Update()
     {
-        float effectiveFireRate = baseFireRate;
+        // Don't attack until the weapon has actually been obtained.
+        if (level <= 0)
+            return;
+
+        float effectiveFireRate = fireRate;
 
         if (player != null)
         {
@@ -59,6 +64,7 @@ public class FireBreath : MonoBehaviour
         if (Time.time >= nextFireTime)
         {
             Fire();
+
             currentCooldown = 1f / effectiveFireRate;
             nextFireTime = Time.time + currentCooldown;
         }
@@ -192,28 +198,37 @@ public class FireBreath : MonoBehaviour
     public void LevelUp()
     {
         level++;
+
         if (level > maxLevel)
             level = maxLevel;
 
+        if (level == 1)
+        {
+            CreateWeaponUI();
+        }
+
         levelUpButton.LevelUp(level, maxLevel);
 
-        // Set fire rate based on level
         switch (level)
         {
             case 1:
-                fireRate = baseFireRate;        // 2.5
+                fireRate = baseFireRate;
                 break;
+
             case 2:
-                fireRate = baseFireRate * 1.4f; // 3.5
+                fireRate = baseFireRate * 1.4f;
                 break;
+
             case 3:
-                fireRate = baseFireRate * 1.8f; // 4.5
+                fireRate = baseFireRate * 1.8f;
                 break;
+
             case 4:
-                fireRate = baseFireRate * 2.3f; // 5.75
+                fireRate = baseFireRate * 2.3f;
                 break;
+
             case 5:
-                fireRate = baseFireRate * 3f;   // 7.5
+                fireRate = baseFireRate * 3f;
                 break;
         }
     }
@@ -261,5 +276,15 @@ public class FireBreath : MonoBehaviour
 
         cooldownSlider.value = remainingTime / currentCooldown;
     }
+    
+    private void CreateWeaponUI()
+    {
+        GameObject uiObj = Instantiate(weaponUIPrefab, weaponUIParent);
 
+        weaponUI = uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite = weaponIcon;
+
+        cooldownSlider = weaponUI.cooldownSlider;
+    }
 }
