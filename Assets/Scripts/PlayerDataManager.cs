@@ -36,6 +36,8 @@ public class PlayerDataManager : MonoBehaviour
             bool[] defaultLevels = new bool[] { true, false, false };
             bool[] weaponUnlocks = new bool[] { false, false };
 
+            bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false };
+
             if (data == null)
             {
                 // Create brand new data
@@ -51,6 +53,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.weaponUnlocks = weaponUnlocks;
 
                 data.startingWeapon = 0;
+                data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
 
                 data.auraLevel = 1;
                 data.auraLastUpdate = DateTime.UtcNow.Ticks;
@@ -89,6 +92,15 @@ public class PlayerDataManager : MonoBehaviour
                 }
 
                 data.weaponUnlocks = weaponUnlocks;
+
+                // Merge starting weapon unlocks
+                int startingWeaponLengthToCopy = Mathf.Min(data.startingWeaponUnlocks?.Length ?? 0, defaultStartingWeaponUnlocks.Length);
+                for (int i = 0; i < startingWeaponLengthToCopy; i++)
+                {
+                    defaultStartingWeaponUnlocks[i] = data.startingWeaponUnlocks[i];
+                }
+
+                data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
 
                 // Initialise Aura Farm for older save files
                 if (data.auraLevel <= 0)
