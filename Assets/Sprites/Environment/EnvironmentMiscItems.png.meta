@@ -803,7 +803,7 @@ TextureImporter:
         width: 51
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -811,6 +811,90 @@ TextureImporter:
       bones: []
       spriteID: 8ea58d996224bb2498d1e42b61a50742
       internalID: 303146373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_33
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 352
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb290e22deecd0946adc500e14f51423
+      internalID: 711469844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_34
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 352
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de06f1165284c2249843a752fc946d45
+      internalID: 1574184702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_35
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 352
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375cf3d21e1547045b00cbe472ff5359
+      internalID: -1437326168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnvironmentMiscItems_36
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 352
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286b102f26671924ea59e8a8534ad99f
+      internalID: -939458677
       vertices: []
       indices: 
       edges: []
@@ -853,6 +937,10 @@ TextureImporter:
       EnvironmentMiscItems_30: 2142746045
       EnvironmentMiscItems_31: 974643173
       EnvironmentMiscItems_32: 303146373
+      EnvironmentMiscItems_33: 711469844
+      EnvironmentMiscItems_34: 1574184702
+      EnvironmentMiscItems_35: -1437326168
+      EnvironmentMiscItems_36: -939458677
       EnvironmentMiscItems_4: -1164961436
       EnvironmentMiscItems_5: 1657905850
       EnvironmentMiscItems_6: -1836811481
