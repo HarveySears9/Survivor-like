@@ -42,6 +42,9 @@ public class LobbyManager : MonoBehaviour
             case "AuraFarm":
                 player.transform.position = spawnLocations[6].position;
                 break;
+            case "Armoury":
+                player.transform.position = spawnLocations[7].position;
+                break;
 
             default:
                 // Fallback location

@@ -34,7 +34,7 @@ public class PlayerDataManager : MonoBehaviour
             };
 
             bool[] defaultLevels = new bool[] { true, false, false };
-            bool[] weaponUnlocks = new bool[] { false, false };
+            bool[] weaponUnlocks = new bool[] { true, true, true, true, true, false, false };
 
             bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false };
 
@@ -101,6 +101,11 @@ public class PlayerDataManager : MonoBehaviour
                 }
 
                 data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
+
+                if (data.startingWeapon < 0 || data.startingWeapon >= data.startingWeaponUnlocks.Length)
+                {
+                    data.startingWeapon = 0;
+                }
 
                 // Initialise Aura Farm for older save files
                 if (data.auraLevel <= 0)

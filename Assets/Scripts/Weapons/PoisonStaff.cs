@@ -42,7 +42,7 @@ public class PoisonStaff : MonoBehaviour
     {
         SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
 
-        unlocked = loadedData.weaponUnlocks[1];
+        unlocked = loadedData.weaponUnlocks[6];
         //unlocked = true;
 
         if (unlocked)

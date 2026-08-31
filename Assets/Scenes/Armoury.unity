@@ -938,9 +938,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1045,9 +1045,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 427121995}
   - component: {fileID: 427121994}
   m_Layer: 5
-  m_Name: SkinNameText
+  m_Name: WeaponNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,8 +1771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1
         m_Arguments:
@@ -2494,19 +2494,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2951,9 +2951,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4150,9 +4150,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5263,9 +5263,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5572,6 +5572,7 @@ GameObject:
   - component: {fileID: 2043474511}
   - component: {fileID: 2043474512}
   - component: {fileID: 2043474513}
+  - component: {fileID: 2043474514}
   m_Layer: 5
   m_Name: WeaponSelect
   m_TagString: Untagged
@@ -5628,7 +5629,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043474510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acc162548a095bb4f8448b2c4e0214a8, type: 3}
   m_Name: 
@@ -5651,6 +5652,38 @@ MonoBehaviour:
   brickTransform: {fileID: 1021901963}
   database: {fileID: 11400000, guid: 6f7fb811ee78862498cb28f0af97dc3b, type: 2}
   skinOrder: 000000000100000002000000030000000400000005000000070000000600000008000000090000000a000000
+--- !u!114 &2043474514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043474510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7164bacddeb7aa4788535ae95e7d805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabs: {fileID: 2043474512}
+  equipButton: {fileID: 2048274600}
+  nameText: {fileID: 427121994}
+  weaponNames:
+  - Fire Breath
+  - Runic Axes
+  - Sword Slash
+  - Arc Bolt
+  - Meteor Drop
+  - Thudbutt's Hammer
+  - Poison Staff
+  locks:
+  - {fileID: 1025238026}
+  - {fileID: 303620981}
+  - {fileID: 1217762746}
+  - {fileID: 2048939207}
+  - {fileID: 1735227915}
+  - {fileID: 2108950995}
+  - {fileID: 856704846}
+  stc: {fileID: 957325376}
 --- !u!1 &2048274598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,8 +5767,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
         m_MethodName: EquipButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -6069,9 +6102,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2043474513}
-        m_TargetAssemblyTypeName: ChangeSkinMenu, Assembly-CSharp
-        m_MethodName: OnSkinTabPressed
+      - m_Target: {fileID: 2043474514}
+        m_TargetAssemblyTypeName: StartingWeaponMenu, Assembly-CSharp
+        m_MethodName: OnWeaponTabPressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

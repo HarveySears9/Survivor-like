@@ -41,7 +41,7 @@ public class Hammer : MonoBehaviour
     {
         SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
 
-        unlocked = loadedData.weaponUnlocks[0];
+        unlocked = loadedData.weaponUnlocks[5];
 
         if (unlocked)
         {
