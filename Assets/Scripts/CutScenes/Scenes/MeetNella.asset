@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MeetNella
   m_EditorClassIdentifier: 
   cutsceneID: MeetNella_001
-  playbackType: 1
+  playbackType: 0
   nextScene: Puddlebrook
-  background: {fileID: 3378044179582439948, guid: 7aef5a05f1924d54aab57cff0d3ac795, type: 3}
+  background: {fileID: 4448181869917035581, guid: 58bd5d7ca42f2f246a7e66089ab37917, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 7450183723108219474, guid: 49494afd96b63d447a3bcf18354022e2, type: 3}
   character3: {fileID: 0}
