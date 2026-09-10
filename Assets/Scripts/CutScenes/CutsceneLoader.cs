@@ -125,4 +125,64 @@ public class CutsceneLoader : MonoBehaviour
             PlayerDataManager.Instance.Save();
         }
     }
+
+    public void ApplyCutsceneUnlocks(CutsceneData cutscene)
+    {
+        if (cutscene == null)
+            return;
+
+        if (PlayerDataManager.Instance == null)
+            return;
+
+        if (!cutscene.unlockEquipment)
+            return;
+
+        SaveFile.Data data =
+            PlayerDataManager.Instance.data;
+
+        if (data.equipmentUnlocks == null)
+        {
+            Debug.LogError(
+                "Equipment unlock array is null!"
+            );
+
+            return;
+        }
+
+        int index = cutscene.equipmentIndex;
+
+        if (
+            index < 0 ||
+            index >= data.equipmentUnlocks.Length
+        )
+        {
+            Debug.LogError(
+                "Invalid equipment unlock index: " +
+                index
+            );
+
+            return;
+        }
+
+        // Already unlocked
+        if (data.equipmentUnlocks[index])
+        {
+            Debug.Log(
+                "Equipment already unlocked: " +
+                cutscene.equipmentName
+            );
+
+            return;
+        }
+
+        // Unlock equipment
+        data.equipmentUnlocks[index] = true;
+
+        PlayerDataManager.Instance.Save();
+
+        Debug.Log(
+            "Equipment unlocked: " +
+            cutscene.equipmentName
+        );
+    }
 }

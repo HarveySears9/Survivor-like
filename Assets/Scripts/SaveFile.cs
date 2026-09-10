@@ -89,7 +89,8 @@ public static class SaveFile
         public List<string> completedCutscenes;
 
         public bool[] weaponUnlocks;
-        
+        public bool[] equipmentUnlocks;
+
         public int startingWeapon;
         public bool[] startingWeaponUnlocks;
         public int[] startingWeaponCosts;

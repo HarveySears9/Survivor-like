@@ -28,9 +28,13 @@ public class DivineAura : MonoBehaviour
         {
             Debug.LogError("PlayerController script not found on GameObject!");
         }
-
-        cooldownTimer = cooldownDuration;
-        levelUpButton.LevelUp(level, maxLevel);
+        
+        if (PlayerDataManager.Instance.data.equipmentUnlocks[1])
+        {
+            cooldownTimer = cooldownDuration;
+            levelUpButton.LevelUp(level, maxLevel);
+        }
+        
     }
 
     public void LevelUp()

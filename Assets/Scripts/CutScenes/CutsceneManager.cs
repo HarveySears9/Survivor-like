@@ -54,6 +54,9 @@ public class CutsceneManager : MonoBehaviour
 
     public float typeSpeed = 0.05f;
 
+    [Header("Unlock Popup")]
+    public CutsceneUnlockPopup unlockPopup;
+
 
     // ============================================================
     // PRIVATE VARIABLES
@@ -73,6 +76,8 @@ public class CutsceneManager : MonoBehaviour
     private GameObject currentCharacter3;
     private GameObject currentBackground;
 
+
+    private bool showingUnlockPopup = false;
 
     // ============================================================
     // START
@@ -524,10 +529,61 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Load the next scene
+        // Check for an equipment unlock
+        if (
+            cutscene.unlockEquipment &&
+            !string.IsNullOrEmpty(cutscene.equipmentName)
+        )
+        {
+            cutsceneLoader.ApplyCutsceneUnlocks(
+                cutscene
+            );
+
+            ShowUnlockPopup();
+
+            return;
+        }
+
+        // No unlock, so continue normally
+        ContinueAfterCutscene();
+    }
+
+    void ShowUnlockPopup()
+    {
+        if (unlockPopup == null)
+        {
+            Debug.LogWarning(
+                "CutsceneManager: Unlock Popup is not assigned."
+            );
+
+            ContinueAfterCutscene();
+
+            return;
+        }
+
+        showingUnlockPopup = true;
+
+        unlockPopup.ShowEquipmentUnlock(
+            cutscene.equipmentName
+        );
+    }
+
+    public void ContinueAfterUnlock()
+    {
+        if (!showingUnlockPopup)
+            return;
+
+        showingUnlockPopup = false;
+
+        unlockPopup.Hide();
+
+        ContinueAfterCutscene();
+    }
+
+    void ContinueAfterCutscene()
+    {
         SceneTransitionController transition =
             FindObjectOfType<SceneTransitionController>();
-
 
         if (transition != null)
         {

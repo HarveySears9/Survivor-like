@@ -35,6 +35,7 @@ public class PlayerDataManager : MonoBehaviour
 
             bool[] defaultLevels = new bool[] { true, false, false };
             bool[] weaponUnlocks = new bool[] { true, true, true, true, true, false, false };
+            bool[] equipmentUnlocks = new bool[] { true, false, true };
 
             bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false };
             int[] defaultStartingWeaponCosts = new int[] { 0, 5000, 10000, 15000, 20000, 25000, 30000 };
@@ -52,6 +53,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.levelsUnlocked = defaultLevels;
                 data.tutorialCompleted = false;
                 data.weaponUnlocks = weaponUnlocks;
+                data.equipmentUnlocks = equipmentUnlocks;
 
                 data.startingWeapon = 0;
                 data.startingWeaponUnlocks = defaultStartingWeaponUnlocks;
@@ -94,6 +96,15 @@ public class PlayerDataManager : MonoBehaviour
                 }
 
                 data.weaponUnlocks = weaponUnlocks;
+
+                // Merge equipment unlocks
+                int equipmentLengthToCopy = Mathf.Min(data.equipmentUnlocks?.Length ?? 0, equipmentUnlocks.Length);
+                for (int i = 0; i < equipmentLengthToCopy; i++)
+                {
+                    equipmentUnlocks[i] = data.equipmentUnlocks[i];
+                }
+
+                data.equipmentUnlocks = equipmentUnlocks;
 
                 // Merge starting weapon unlocks
                 int startingWeaponLengthToCopy = Mathf.Min(data.startingWeaponUnlocks?.Length ?? 0, defaultStartingWeaponUnlocks.Length);

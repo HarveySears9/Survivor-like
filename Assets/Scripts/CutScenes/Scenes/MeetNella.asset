@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeetNella
   m_EditorClassIdentifier: 
   cutsceneID: MeetNella_001
-  playbackType: 0
+  playbackType: 1
   nextScene: Puddlebrook
   background: {fileID: 4448181869917035581, guid: 58bd5d7ca42f2f246a7e66089ab37917, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
@@ -21,6 +21,81 @@ MonoBehaviour:
   character3: {fileID: 0}
   dialogueLines:
   - speaker: 0
-    line: "What\u2019s that?"
+    line: ......
   - speaker: 1
-    line: "What\u2019s that?"
+    line: Hey, you. You're finally awake.
+  - speaker: 0
+    line: ...ughhh
+  - speaker: 0
+    line: Where am I?
+  - speaker: 1
+    line: My grove. I'm Nella, by the way.
+  - speaker: 1
+    line: Druid, healer... and occasional bee.
+  - speaker: 0
+    line: ...Occasional bee?
+  - speaker: 1
+    line: It's a long story.
+  - speaker: 0
+    line: Right.
+  - speaker: 1
+    line: You died, by the way.
+  - speaker: 0
+    line: I what?!
+  - speaker: 1
+    line: Died. Dead. Deceased. Very much not alive.
+  - speaker: 0
+    line: Then how am I talking to you?
+  - speaker: 1
+    line: I healed you.
+  - speaker: 0
+    line: You brought me back from the dead?
+  - speaker: 1
+    line: Let's not get technical.
+  - speaker: 0
+    line: That's not very reassuring.
+  - speaker: 1
+    line: You'll be fine. I've got you covered.
+  - speaker: 0
+    line: ......
+  - speaker: 1
+    line: Anyway, I thought you could use a little extra help.
+  - speaker: 0
+    line: What kind of help?
+  - speaker: 1
+    line: A blessing from the grove.
+  - speaker: 1
+    line: It'll help your wounds mend while you're out fighting.
+  - speaker: 0
+    line: Sounds useful.
+  - speaker: 1
+    line: It is. Just think of it as having a little bit of nature on your side.
+  - speaker: 0
+    line: And the bee?
+  - speaker: 1
+    line: What bee?
+  - speaker: 0
+    line: You said you turn into a bee.
+  - speaker: 1
+    line: I said occasional bee.
+  - speaker: 0
+    line: That's not an answer.
+  - speaker: 1
+    line: Take the blessing, B'Rick.
+  - speaker: 0
+    line: ...Fine.
+  - speaker: 1
+    line: There. All done.
+  - speaker: 0
+    line: I feel... healthier.
+  - speaker: 1
+    line: Good. Now go make better decisions.
+  - speaker: 0
+    line: I make excellent decisions.
+  - speaker: 1
+    line: You died.
+  - speaker: 0
+    line: ...Fair point.
+  unlockEquipment: 1
+  equipmentIndex: 1
+  equipmentName: Nella's Blessing

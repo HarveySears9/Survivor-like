@@ -73,4 +73,8 @@ public class CutsceneData : ScriptableObject
     [Header("Dialogue")]
 
     public CutsceneLine[] dialogueLines;
+
+    public bool unlockEquipment;
+    public int equipmentIndex;
+    public string equipmentName;
 }
