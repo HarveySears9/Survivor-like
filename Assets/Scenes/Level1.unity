@@ -15941,7 +15941,7 @@ MonoBehaviour:
   moveArray: []
   spriteRenderer: {fileID: 0}
   animating: 1
-  animationSpeed: 0.1
+  animationSpeed: 0.2
   isMoving: 0
   destroyOnFinish: 0
   masterSprite: {fileID: 0}
@@ -24706,7 +24706,7 @@ MonoBehaviour:
   - {fileID: 1420724567, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: 1372392279, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   animating: 1
-  animationSpeed: 0.1
+  animationSpeed: 0.2
   masterSprite: {fileID: 0}
 --- !u!114 &1811691229
 MonoBehaviour:
