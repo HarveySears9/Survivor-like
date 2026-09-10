@@ -153,6 +153,15 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(hp);
     }
 
+    public void triggerDeath()
+    {
+        if (!dead)
+        {
+            StartCoroutine(StartDeath());
+        }
+        dead = true;
+    }
+
     private IEnumerator StartDeath()
     {
         // Disable Collider (for building interation)
@@ -169,9 +178,9 @@ public class PlayerController : MonoBehaviour
             weapon.SetActive(false);
         }
 
-        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
-        loadedData.coins += coins;
-        SaveFile.SaveData(loadedData);
+        var data = PlayerDataManager.Instance.data;
+        data.coins += coins;
+        PlayerDataManager.Instance.Save();
 
         moveDirection = Vector2.zero;
 
