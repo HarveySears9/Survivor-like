@@ -21,6 +21,65 @@ MonoBehaviour:
   character3: {fileID: 0}
   dialogueLines:
   - speaker: 0
-    line: "What\u2019s that?"
+    line: You must be Draven.
   - speaker: 1
-    line: "What\u2019s that?"
+    line: Yes.
+  - speaker: 0
+    line: You're looking after my weapons?
+  - speaker: 1
+    line: Yes.
+  - speaker: 0
+    line: All of them?
+  - speaker: 1
+    line: The ones you own.
+  - speaker: 0
+    line: What about my Fire Breath?
+  - speaker: 1
+    line: That's not a weapon.
+  - speaker: 0
+    line: It burns things.
+  - speaker: 1
+    line: So does a torch.
+  - speaker: 0
+    line: ...Fair point.
+  - speaker: 1
+    line: Your weapons are here.
+  - speaker: 0
+    line: And you keep them maintained?
+  - speaker: 1
+    line: Yes.
+  - speaker: 0
+    line: Even the magical ones?
+  - speaker: 1
+    line: Especially those.
+  - speaker: 0
+    line: Why?
+  - speaker: 1
+    line: They explode
+  - speaker: 0
+    line: Some of them.
+  - speaker: 1
+    line: Enough of them.
+  - speaker: 0
+    line: So I choose which one I take with me?
+  - speaker: 1
+    line: Yes.
+  - speaker: 0
+    line: And you'll keep the rest here?
+  - speaker: 1
+    line: That's what an armoury is.
+  - speaker: 0
+    line: Right.
+  - speaker: 1
+    line: Choose.
+  - speaker: 0
+    line: You really don't say much, do you?
+  - speaker: 1
+    line: No.
+  - speaker: 0
+    line: I think I'm going to like you.
+  - speaker: 1
+    line: I doubt that.
+  unlockEquipment: 0
+  equipmentIndex: 0
+  equipmentName: 
