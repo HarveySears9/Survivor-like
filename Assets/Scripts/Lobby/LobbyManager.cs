@@ -45,6 +45,9 @@ public class LobbyManager : MonoBehaviour
             case "Armoury":
                 player.transform.position = spawnLocations[7].position;
                 break;
+            case "firstDeathCutscene":
+                player.transform.position = spawnLocations[8].position;
+                break;
 
             default:
                 // Fallback location

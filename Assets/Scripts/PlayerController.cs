@@ -178,10 +178,6 @@ public class PlayerController : MonoBehaviour
             weapon.SetActive(false);
         }
 
-        var data = PlayerDataManager.Instance.data;
-        data.coins += coins;
-        PlayerDataManager.Instance.Save();
-
         moveDirection = Vector2.zero;
 
         spriteRenderer.enabled = false;
@@ -271,6 +267,5 @@ public class PlayerController : MonoBehaviour
             Heal(healAmount, true);
         }
     }
-
 
 }

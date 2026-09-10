@@ -27,4 +27,9 @@ public class SceneTracker : MonoBehaviour
             LastSceneName = SceneManager.GetActiveScene().name;
         }
     }
+
+    public static void SetLastSceneName(string sceneName)
+    {
+        LastSceneName = sceneName;
+    }
 }

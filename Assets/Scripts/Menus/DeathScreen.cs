@@ -14,17 +14,36 @@ public class DeathScreen : MonoBehaviour
 
     public SceneTransitionController stc;
 
+    public CutsceneData firstDeathCutscene;
+    public CutsceneLoader cutsceneLoader;
+
     public void MainMenu()
     {
+        Time.timeScale = 1f;
+
+        // Check if the first-death cutscene has already been seen
+        if (firstDeathCutscene != null &&
+            cutsceneLoader != null &&
+            !cutsceneLoader.HasCompletedCutscene(
+                firstDeathCutscene.cutsceneID))
+        {
+            // Play the cutscene instead of going to PuddleBrook
+            SceneTracker.SetLastSceneName("firstDeathCutscene");
+            cutsceneLoader.PlayCutscene(firstDeathCutscene);
+            return;
+        }
+
+        // Cutscene has already been seen, so go straight to PuddleBrook
         if (Application.CanStreamedLevelBeLoaded("PuddleBrook"))
         {
-            Time.timeScale = 1f;
             SceneTracker.UpdateLastSceneName();
             stc.TriggerTransition("PuddleBrook");
         }
         else
         {
-            Debug.LogError("Scene 'PuddleBrook' not found. Please check Build Settings.");
+            Debug.LogError(
+                "Scene 'PuddleBrook' not found. Please check Build Settings."
+            );
         }
     }
 
@@ -44,6 +63,11 @@ public class DeathScreen : MonoBehaviour
         killsText.text =
             "Enemies Defeated:\n" + KillCounter.enemyKills +
             "\nBosses Defeated:\n" + KillCounter.bossKills;
+
+        var data = PlayerDataManager.Instance.data;
+        data.coins += pc.coins;
+        PlayerDataManager.Instance.Save();
+
     }
 
     public void LevelComplete()

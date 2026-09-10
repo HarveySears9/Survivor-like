@@ -16487,6 +16487,8 @@ MonoBehaviour:
   coinText: {fileID: 1986120068}
   killsText: {fileID: 1573967496}
   stc: {fileID: 654223906}
+  firstDeathCutscene: {fileID: 11400000, guid: 62a331e6808ea9c4da6d9f0b81f4c1ba, type: 2}
+  cutsceneLoader: {fileID: 1913243502}
 --- !u!1 &1162746701
 GameObject:
   m_ObjectHideFlags: 0
@@ -25987,6 +25989,8 @@ MonoBehaviour:
   coinText: {fileID: 2086880184}
   killsText: {fileID: 47408509}
   stc: {fileID: 654223906}
+  firstDeathCutscene: {fileID: 0}
+  cutsceneLoader: {fileID: 0}
 --- !u!224 &1895788509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26160,6 +26164,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!1 &1913243501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913243503}
+  - component: {fileID: 1913243502}
+  m_Layer: 0
+  m_Name: CutsceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1913243502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913243501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e4b3a5806710f40b6943e582fc09a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneTransition: {fileID: 654223906}
+--- !u!4 &1913243503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913243501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 2.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1915697981
 GameObject:
   m_ObjectHideFlags: 0
@@ -30791,3 +30840,4 @@ SceneRoots:
   - {fileID: 8738095226634040989}
   - {fileID: 1996282271}
   - {fileID: 416492041}
+  - {fileID: 1913243503}
