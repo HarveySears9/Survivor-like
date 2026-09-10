@@ -9,6 +9,6 @@ public class CoinUI : MonoBehaviour
 
     public void UpdateCoins()
     {
-        coinText.text = $"Coins: {PlayerDataManager.Instance.data.coins}";
+        coinText.text = $": {PlayerDataManager.Instance.data.coins}";
     }
 }

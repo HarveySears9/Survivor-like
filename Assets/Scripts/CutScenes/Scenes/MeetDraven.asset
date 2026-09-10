@@ -15,7 +15,7 @@ MonoBehaviour:
   cutsceneID: MeetDraven_001
   playbackType: 1
   nextScene: Armoury
-  background: {fileID: 3378044179582439948, guid: 7aef5a05f1924d54aab57cff0d3ac795, type: 3}
+  background: {fileID: 3378044179582439948, guid: 10bb4e71cbd005b41bfd590dffddce88, type: 3}
   character1: {fileID: 7450183723108219474, guid: 862de98369e86024385d2e10df5bae1d, type: 3}
   character2: {fileID: 7450183723108219474, guid: ed73632a4cdfe094aa9fdc1798cacdf7, type: 3}
   character3: {fileID: 0}
