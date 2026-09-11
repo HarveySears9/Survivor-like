@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4466c109fb80f104785efe049e48102b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   lifetime: 1.5
   penetrate: 0
   startSound: {fileID: 8300000, guid: 1423b84275f613843b9a394286d7fdfa, type: 3}

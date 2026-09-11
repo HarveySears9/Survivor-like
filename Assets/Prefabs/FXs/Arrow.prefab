@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 75298571
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1462439299, guid: f5c5f4606a8cfa64291de96b1a0ee247, type: 3}
+  m_Sprite: {fileID: 1258917742, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,6 +164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifetime: 2.25
+  penetrate: 1
+  startSound: {fileID: 0}
+  startSoundVolume: 0.3
 --- !u!114 &560361576165652755
 MonoBehaviour:
   m_ObjectHideFlags: 0

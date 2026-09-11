@@ -20,7 +20,7 @@ public class FireBreath : MonoBehaviour
 
     public Vector2 moveDirection = Vector2.right; // The direction of the player’s movement
 
-    public float baseDamage = 1f;
+    public float baseDamage = 2f;
 
     private PlayerController player;
 
@@ -126,25 +126,34 @@ public class FireBreath : MonoBehaviour
     {
         Transform enemyTarget = FindTargets();
 
-        Vector2 fireDirection;
+        if (enemyTarget == null)
+            return;
 
-        if (enemyTarget == null) return; // Exit if no targets are found
+        Vector2 fireDirection =
+            (enemyTarget.position - transform.position).normalized;
 
-        // Calculate direction to the target
-        fireDirection = (enemyTarget.position - transform.position).normalized;
+        GameObject fireball = Instantiate(
+            fireballPrefab,
+            transform.position,
+            Quaternion.identity
+        );
 
-        // Instantiate the fireball
-        GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+        // Make the fireball larger
+        fireball.transform.localScale *= 1.5f;
 
-        // Set the rotation to match the fireball's movement direction
-        float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
-        fireball.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
+        float angleToRotate =
+            Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
 
-        // Pass the fire direction to the fireball script
+        fireball.transform.rotation =
+            Quaternion.Euler(0, 0, angleToRotate);
+
         fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-        float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
 
-        fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
+        float finalDamage =
+            baseDamage * PlayerStats.GetDamageMultiplier();
+
+        fireball.GetComponent<Weapon>().damage =
+            player.ApplyDamageModifiers(finalDamage);
     }
 
     private Transform FindTargets()
