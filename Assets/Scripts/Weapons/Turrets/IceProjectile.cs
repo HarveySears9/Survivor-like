@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class IceProjectile : MonoBehaviour
 {
+
+    public bool destroyOnHit = true;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -19,7 +22,8 @@ public class IceProjectile : MonoBehaviour
                 boss.ApplySlow(0.4f, 2f);
             }
 
-            Destroy(gameObject); // Or pool it if you use pooling
+            if (destroyOnHit)
+                Destroy(gameObject); // Or pool it if you use pooling
         }
     }
 

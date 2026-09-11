@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   summoner: {fileID: 0}
+  icePulsePrefab: {fileID: 787319094012989388, guid: 279e271fe61182e43b922226e4e9e75e, type: 3}
   moveSpeed: 3
   followDistance: 0.5
   range: 5

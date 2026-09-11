@@ -7,6 +7,9 @@ public class Penguin : MonoBehaviour
     public PlayerController player;
     public PenguinSummoner summoner;
 
+    [Header("Ice Pulse")]
+    public GameObject icePulsePrefab;
+
     public float moveSpeed = 3f;
     public float followDistance = 2f;
 
@@ -23,6 +26,8 @@ public class Penguin : MonoBehaviour
 
     private bool attacking = false;
 
+    public float[] pulseScales = { 1f, 1.2f, 1.4f, 1.6f, 1.8f };
+    private Vector3 originalPulseScale;
 
     void Start()
     {
@@ -38,6 +43,8 @@ public class Penguin : MonoBehaviour
 
         animateSprite = GetComponent<AnimateSprite>();
         sr = GetComponent<SpriteRenderer>();
+
+        originalPulseScale = icePulsePrefab.transform.localScale;
     }
 
 
@@ -140,6 +147,18 @@ public class Penguin : MonoBehaviour
         }
         else
         {
+            // Spawn the ice pulse at the Penguin's position
+            if (icePulsePrefab != null)
+            {
+                GameObject pulse = Instantiate(
+                    icePulsePrefab,
+                    transform.position,
+                    Quaternion.identity
+                );
+
+                pulse.transform.localScale = originalPulseScale * pulseScales[level - 1];
+            }
+
             target = null;
             returningToPlayer = true;
             animateSprite.isMoving = false;
