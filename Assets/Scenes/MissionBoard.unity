@@ -4207,9 +4207,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2030146507, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   - {fileID: -1534252421, guid: c5fed1e53bd367342af6dff802d3b2c0, type: 3}
   - {fileID: 1963559574, guid: 36779ff76b26502498c361b81b56ae85, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   dailyScrollContent: {fileID: 54338984}
   weeklyScrollContent: {fileID: 665474584}
   challengeScrollContent: {fileID: 1127606307}

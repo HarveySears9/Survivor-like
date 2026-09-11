@@ -30,9 +30,17 @@ public class MeteorDrop : MonoBehaviour
 
     private WeaponUI weaponUI;
 
+    public bool unlocked = true;
+
     void Start()
     {
-        levelUpButton.LevelUp(level, maxLevel);
+
+        unlocked = PlayerDataManager.Instance.data.weaponUnlocks[4];
+
+        if (unlocked)
+        {
+            levelUpButton.LevelUp(level, maxLevel);
+        }
         playerController = FindObjectOfType<PlayerController>();
     }
 

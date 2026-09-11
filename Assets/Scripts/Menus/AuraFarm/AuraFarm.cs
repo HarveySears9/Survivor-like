@@ -252,6 +252,8 @@ public class AuraFarm : MonoBehaviour
         coinUI.UpdateCoins();
 
         dialogue.OnInteraction();
+
+        MissionManager.Instance.AddProgress("aura_claimed", 1);
     }
 
 

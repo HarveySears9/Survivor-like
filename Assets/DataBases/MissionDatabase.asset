@@ -105,6 +105,16 @@ MonoBehaviour:
     type: 2
     claimed: 0
     completed: 0
+  - id: 4
+    missionText: Complete 5 runs
+    rewardType: 2
+    key: complete_run
+    targetAmount: 5
+    currentAmount: 0
+    rewardAmount: 4
+    type: 2
+    claimed: 0
+    completed: 0
   - id: 1
     missionText: Defeat Thudbutt
     rewardType: 1
