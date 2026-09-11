@@ -6,75 +6,57 @@ using UnityEngine;
 )]
 public class CutsceneData : ScriptableObject
 {
-    // ============================================================
-    // PLAYBACK TYPE
-    // ============================================================
-
     public enum PlaybackType
     {
         EveryTime,
         Once
     }
 
-
-    // ============================================================
-    // DIALOGUE LINE
-    // ============================================================
+    public enum UnlockType
+    {
+        Equipment,
+        Weapon
+    }
 
     [System.Serializable]
     public class CutsceneLine
     {
         // 0 = Character 1
         // 1 = Character 2
+        // 2 = Character 3
         public int speaker;
 
         [TextArea(2, 5)]
         public string line;
     }
 
-
-    // ============================================================
-    // CUTSCENE INFORMATION
-    // ============================================================
-
     [Header("Cutscene Settings")]
-
     public string cutsceneID;
-
     public PlaybackType playbackType = PlaybackType.Once;
-
     public string nextScene;
 
-
-    // ============================================================
-    // BACKGROUND
-    // ============================================================
-
     [Header("Background")]
-
     public GameObject background;
 
-
-    // ============================================================
-    // CHARACTERS
-    // ============================================================
-
     [Header("Characters")]
-
     public GameObject character1;
     public GameObject character2;
     public GameObject character3;
 
-
-    // ============================================================
-    // DIALOGUE
-    // ============================================================
-
     [Header("Dialogue")]
-
     public CutsceneLine[] dialogueLines;
 
-    public bool unlockEquipment;
-    public int equipmentIndex;
-    public string equipmentName;
+    [Header("Unlock")]
+    public bool unlockItem;
+
+    public UnlockType unlockType;
+
+    public int itemIndex;
+
+    public string itemName;
+
+    [TextArea(2, 5)]
+    public string itemDescription;
+
+    public Sprite itemIcon;
 }

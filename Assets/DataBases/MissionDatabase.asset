@@ -53,6 +53,26 @@ MonoBehaviour:
     type: 0
     claimed: 0
     completed: 0
+  - id: 0
+    missionText: Complete 1 run
+    rewardType: 0
+    key: complete_run
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 75
+    type: 0
+    claimed: 0
+    completed: 0
+  - id: 0
+    missionText: Claim Aura 1 time
+    rewardType: 0
+    key: aura_claimed
+    targetAmount: 1
+    currentAmount: 0
+    rewardAmount: 50
+    type: 0
+    claimed: 0
+    completed: 0
   weeklyMissions:
   - id: 0
     missionText: Defeat 1000 Goblins
@@ -91,6 +111,26 @@ MonoBehaviour:
     targetAmount: 600
     currentAmount: 0
     rewardAmount: 350
+    type: 1
+    claimed: 0
+    completed: 0
+  - id: 0
+    missionText: Complete 10 runs
+    rewardType: 0
+    key: complete_run
+    targetAmount: 10
+    currentAmount: 0
+    rewardAmount: 500
+    type: 1
+    claimed: 0
+    completed: 0
+  - id: 0
+    missionText: Claim aura 5 times
+    rewardType: 0
+    key: aura_claimed
+    targetAmount: 5
+    currentAmount: 0
+    rewardAmount: 250
     type: 1
     claimed: 0
     completed: 0

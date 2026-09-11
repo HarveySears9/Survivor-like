@@ -5752,6 +5752,8 @@ MonoBehaviour:
   meteorDrop: {fileID: 731191640}
   hammer: {fileID: 385345874}
   poisonStaff: {fileID: 425984310}
+  penguinSummoner: {fileID: 649699955}
+  bow: {fileID: 1502581557}
 --- !u!4 &416492041
 Transform:
   m_ObjectHideFlags: 0
@@ -9974,6 +9976,7 @@ MonoBehaviour:
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: 2030146507, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  unlocked: 1
 --- !u!1001 &734148191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21583,10 +21586,13 @@ MonoBehaviour:
   level: 0
   maxLevel: 5
   baseDamage: 1
+  arrowsPerBurst: 1
+  burstDelay: 0.12
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: 1255721880, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   cooldownSlider: {fileID: 0}
+  unlocked: 1
   levelUpButton: {fileID: 1498471932}
 --- !u!4 &1502581558
 Transform:

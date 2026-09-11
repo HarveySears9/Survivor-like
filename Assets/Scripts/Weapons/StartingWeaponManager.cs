@@ -10,6 +10,8 @@ public class StartingWeaponManager : MonoBehaviour
     public MeteorDrop meteorDrop;
     public Hammer hammer;
     public PoisonStaff poisonStaff;
+    public PenguinSummoner penguinSummoner;
+    public Bow bow;
 
     private IEnumerator Start()
     {
@@ -57,6 +59,14 @@ public class StartingWeaponManager : MonoBehaviour
 
             case 6:
                 poisonStaff.LevelUp();
+                break;
+            
+            case 7:
+                penguinSummoner.LevelUp();
+                break;
+            
+            case 8:
+                bow.LevelUp();
                 break;
 
             default:

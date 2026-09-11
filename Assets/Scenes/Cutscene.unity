@@ -602,6 +602,8 @@ MonoBehaviour:
   popup: {fileID: 100773984}
   titleText: {fileID: 479969572}
   equipmentNameText: {fileID: 1714125423}
+  descriptionText: {fileID: 859475108}
+  itemIconImage: {fileID: 1634001102}
 --- !u!114 &102699869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 445862306028634182, guid: 96073a3336719f3499d0b6b86f60b195, type: 3}
@@ -1130,7 +1132,7 @@ GameObject:
   - component: {fileID: 479969573}
   - component: {fileID: 479969572}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1654,7 +1656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4115118737701047628, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 4115118737701047628, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1710,19 +1712,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581843563964265579, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
       propertyPath: m_Name
-      value: LevelText
+      value: DescriptionText
       objectReference: {fileID: 0}
     - target: {fileID: 8979060221803148928, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
       propertyPath: m_text
-      value: 'Grants B''rick Healing
-
-        Over Time'
+      value: Grants B'rick Healing Over Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979060221803148928, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
+--- !u!114 &859475108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8979060221803148928, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
+  m_PrefabInstance: {fileID: 859475107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &930951314 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2130620160419660145, guid: 5dc0c20776fbcbf41ab3626542291e46, type: 3}
@@ -1928,7 +1943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954350094453793706, guid: 5dc0c20776fbcbf41ab3626542291e46, type: 3}
       propertyPath: m_Name
-      value: Text (TMP) 1
+      value: NameText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2370,7 +2385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634001099}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfa49e27f72cf9d46b2c124eb2879ac8, type: 3}
   m_Name: 
@@ -2403,7 +2418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -976015607, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -96,6 +96,9 @@ MonoBehaviour:
     line: You died.
   - speaker: 0
     line: ...Fair point.
-  unlockEquipment: 1
-  equipmentIndex: 1
-  equipmentName: Nella's Blessing
+  unlockItem: 1
+  unlockType: 0
+  itemIndex: 1
+  itemName: Nella's Blessing
+  itemDescription: Grants B'Rick Healing over time
+  itemIcon: {fileID: -976015607, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}

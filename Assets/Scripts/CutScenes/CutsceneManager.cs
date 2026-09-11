@@ -54,7 +54,9 @@ public class CutsceneManager : MonoBehaviour
 
     public float typeSpeed = 0.05f;
 
+
     [Header("Unlock Popup")]
+
     public CutsceneUnlockPopup unlockPopup;
 
 
@@ -78,6 +80,7 @@ public class CutsceneManager : MonoBehaviour
 
 
     private bool showingUnlockPopup = false;
+
 
     // ============================================================
     // START
@@ -128,7 +131,10 @@ public class CutsceneManager : MonoBehaviour
         ClearCutsceneObjects();
 
 
-        // Create the background
+        // ========================================================
+        // BACKGROUND
+        // ========================================================
+
         if (cutscene.background != null)
         {
             currentBackground =
@@ -139,7 +145,10 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Create Character 1
+        // ========================================================
+        // CHARACTER 1
+        // ========================================================
+
         if (cutscene.character1 != null)
         {
             currentCharacter1 =
@@ -156,7 +165,10 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Create Character 2
+        // ========================================================
+        // CHARACTER 2
+        // ========================================================
+
         if (cutscene.character2 != null)
         {
             currentCharacter2 =
@@ -171,13 +183,22 @@ public class CutsceneManager : MonoBehaviour
             currentCharacter2.transform.localRotation =
                 Quaternion.identity;
 
+
             // Flip Character 2 horizontally
-            Vector3 scale = currentCharacter2.transform.localScale;
+            Vector3 scale =
+                currentCharacter2.transform.localScale;
+
             scale.x *= -1f;
-            currentCharacter2.transform.localScale = scale;
+
+            currentCharacter2.transform.localScale =
+                scale;
         }
 
-        // Create Character 3
+
+        // ========================================================
+        // CHARACTER 3
+        // ========================================================
+
         if (cutscene.character3 != null)
         {
             currentCharacter3 =
@@ -192,20 +213,31 @@ public class CutsceneManager : MonoBehaviour
             currentCharacter3.transform.localRotation =
                 Quaternion.identity;
 
+
             // Flip Character 3 horizontally
-            Vector3 scale = currentCharacter3.transform.localScale;
+            Vector3 scale =
+                currentCharacter3.transform.localScale;
+
             scale.x *= -1f;
-            currentCharacter3.transform.localScale = scale;
+
+            currentCharacter3.transform.localScale =
+                scale;
         }
 
 
-        // Hide speech bubbles
+        // ========================================================
+        // HIDE SPEECH BUBBLES
+        // ========================================================
+
         character1Bubble.SetActive(false);
         character2Bubble.SetActive(false);
         character3Bubble.SetActive(false);
 
 
-        // Check dialogue
+        // ========================================================
+        // CHECK DIALOGUE
+        // ========================================================
+
         if (
             cutscene.dialogueLines == null ||
             cutscene.dialogueLines.Length == 0
@@ -219,7 +251,10 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Start first line
+        // ========================================================
+        // START FIRST LINE
+        // ========================================================
+
         ShowCurrentLine();
     }
 
@@ -299,10 +334,10 @@ public class CutsceneManager : MonoBehaviour
             cutscene.dialogueLines[currentLineIndex];
 
 
-        // Hide both bubbles
+        // Hide all bubbles
         character1Bubble.SetActive(false);
         character2Bubble.SetActive(false);
-        character3Bubble.SetActive(false);  
+        character3Bubble.SetActive(false);
 
 
         // Stop previous typing
@@ -312,20 +347,24 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Character 1 speaking
+        // ========================================================
+        // CHARACTER 1
+        // ========================================================
+
         if (currentLine.speaker == 0)
         {
             character1Bubble.SetActive(true);
 
             CutsceneCharacter character =
-            currentCharacter1.GetComponent<CutsceneCharacter>();
+                currentCharacter1.GetComponent<CutsceneCharacter>();
 
             if (character != null)
             {
                 Vector3 bubblePosition =
                     currentCharacter1.transform.position;
 
-                bubblePosition.y += character.speechBubbleHeight;
+                bubblePosition.y +=
+                    character.speechBubbleHeight;
 
                 character1Bubble.transform.position =
                     bubblePosition;
@@ -344,20 +383,24 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Character 2 speaking
+        // ========================================================
+        // CHARACTER 2
+        // ========================================================
+
         else if (currentLine.speaker == 1)
         {
             character2Bubble.SetActive(true);
 
             CutsceneCharacter character =
-            currentCharacter2.GetComponent<CutsceneCharacter>();
+                currentCharacter2.GetComponent<CutsceneCharacter>();
 
             if (character != null)
             {
                 Vector3 bubblePosition =
                     currentCharacter2.transform.position;
 
-                bubblePosition.y += character.speechBubbleHeight;
+                bubblePosition.y +=
+                    character.speechBubbleHeight;
 
                 character2Bubble.transform.position =
                     bubblePosition;
@@ -375,13 +418,18 @@ public class CutsceneManager : MonoBehaviour
                 );
         }
 
-        // Character 3 speaking
+
+        // ========================================================
+        // CHARACTER 3
+        // ========================================================
+
         else if (currentLine.speaker == 2)
         {
             if (currentCharacter3 == null)
             {
                 Debug.LogError(
-                    "Character 3 is trying to speak, but no Character 3 exists!"
+                    "Character 3 is trying to speak, " +
+                    "but no Character 3 exists!"
                 );
 
                 return;
@@ -390,7 +438,6 @@ public class CutsceneManager : MonoBehaviour
             character3Bubble.SetActive(true);
 
 
-            // Get character bubble height
             CutsceneCharacter character =
                 currentCharacter3.GetComponent<CutsceneCharacter>();
 
@@ -420,6 +467,11 @@ public class CutsceneManager : MonoBehaviour
                     )
                 );
         }
+
+
+        // ========================================================
+        // INVALID SPEAKER
+        // ========================================================
 
         else
         {
@@ -517,7 +569,10 @@ public class CutsceneManager : MonoBehaviour
         Debug.Log("Cutscene finished.");
 
 
-        // Mark the cutscene as completed
+        // ========================================================
+        // MARK CUTSCENE COMPLETED
+        // ========================================================
+
         if (
             cutscene.playbackType ==
             CutsceneData.PlaybackType.Once
@@ -529,24 +584,36 @@ public class CutsceneManager : MonoBehaviour
         }
 
 
-        // Check for an equipment unlock
+        // ========================================================
+        // CHECK FOR UNLOCK
+        // ========================================================
+
         if (
-            cutscene.unlockEquipment &&
-            !string.IsNullOrEmpty(cutscene.equipmentName)
+            cutscene.unlockItem &&
+            !string.IsNullOrEmpty(cutscene.itemName)
         )
         {
+            // Apply the unlock to the save data
             cutsceneLoader.ApplyCutsceneUnlocks(
                 cutscene
             );
 
+
+            // Show the popup
             ShowUnlockPopup();
 
             return;
         }
 
-        // No unlock, so continue normally
+
+        // No unlock, continue normally
         ContinueAfterCutscene();
     }
+
+
+    // ============================================================
+    // SHOW UNLOCK POPUP
+    // ============================================================
 
     void ShowUnlockPopup()
     {
@@ -563,10 +630,24 @@ public class CutsceneManager : MonoBehaviour
 
         showingUnlockPopup = true;
 
-        unlockPopup.ShowEquipmentUnlock(
-            cutscene.equipmentName
+
+        bool isWeapon =
+            cutscene.unlockType ==
+            CutsceneData.UnlockType.Weapon;
+
+
+        unlockPopup.ShowUnlock(
+            cutscene.itemName,
+            cutscene.itemDescription,
+            cutscene.itemIcon,
+            isWeapon
         );
     }
+
+
+    // ============================================================
+    // CONTINUE AFTER UNLOCK
+    // ============================================================
 
     public void ContinueAfterUnlock()
     {
@@ -579,6 +660,11 @@ public class CutsceneManager : MonoBehaviour
 
         ContinueAfterCutscene();
     }
+
+
+    // ============================================================
+    // CONTINUE AFTER CUTSCENE
+    // ============================================================
 
     void ContinueAfterCutscene()
     {

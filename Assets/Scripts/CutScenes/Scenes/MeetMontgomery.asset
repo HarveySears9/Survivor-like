@@ -107,3 +107,9 @@ MonoBehaviour:
     line: Keep up the good work.
   - speaker: 1
     line: I have been standing here all day.
+  unlockItem: 0
+  unlockType: 1
+  itemIndex: 7
+  itemName: Penguin
+  itemDescription: awdawdawd
+  itemIcon: {fileID: 19061627, guid: a95cc8e7afd15b340917b4e5d1fca2fb, type: 3}

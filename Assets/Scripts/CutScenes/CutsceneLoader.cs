@@ -5,11 +5,6 @@ public class CutsceneLoader : MonoBehaviour
     [Header("Scene Transition")]
     public SceneTransitionController sceneTransition;
 
-
-    // ============================================================
-    // PLAY CUTSCENE
-    // ============================================================
-
     public void PlayCutscene(CutsceneData cutscene)
     {
         if (cutscene == null)
@@ -17,23 +12,17 @@ public class CutsceneLoader : MonoBehaviour
             Debug.LogError(
                 "CutsceneLoader: CutsceneData is null!"
             );
-
             return;
         }
 
-
-        // Make sure the cutscene has an ID
         if (string.IsNullOrEmpty(cutscene.cutsceneID))
         {
             Debug.LogError(
                 "CutsceneLoader: Cutscene has no ID!"
             );
-
             return;
         }
 
-
-        // Check if the cutscene should only play once
         if (cutscene.playbackType == CutsceneData.PlaybackType.Once)
         {
             if (HasCompletedCutscene(cutscene.cutsceneID))
@@ -43,8 +32,6 @@ public class CutsceneLoader : MonoBehaviour
                     cutscene.cutsceneID
                 );
 
-                // Skip the cutscene and go straight
-                // to the scene it would have loaded.
                 if (!string.IsNullOrEmpty(cutscene.nextScene))
                 {
                     if (sceneTransition != null)
@@ -65,12 +52,8 @@ public class CutsceneLoader : MonoBehaviour
             }
         }
 
-
-        // Pass the selected cutscene to the static holder
         CutsceneDataHolder.cutsceneToPlay = cutscene;
 
-
-        // Load the generic Cutscene scene
         if (sceneTransition != null)
         {
             sceneTransition.TriggerTransition("Cutscene");
@@ -83,11 +66,6 @@ public class CutsceneLoader : MonoBehaviour
         }
     }
 
-
-    // ============================================================
-    // CHECK COMPLETED
-    // ============================================================
-
     public bool HasCompletedCutscene(string cutsceneID)
     {
         if (PlayerDataManager.Instance == null)
@@ -99,11 +77,6 @@ public class CutsceneLoader : MonoBehaviour
         return PlayerDataManager.Instance.data.completedCutscenes
             .Contains(cutsceneID);
     }
-
-
-    // ============================================================
-    // MARK COMPLETED
-    // ============================================================
 
     public void MarkCutsceneCompleted(string cutsceneID)
     {
@@ -134,55 +107,93 @@ public class CutsceneLoader : MonoBehaviour
         if (PlayerDataManager.Instance == null)
             return;
 
-        if (!cutscene.unlockEquipment)
+        if (!cutscene.unlockItem)
             return;
 
         SaveFile.Data data =
             PlayerDataManager.Instance.data;
 
-        if (data.equipmentUnlocks == null)
+        int index = cutscene.itemIndex;
+
+        if (cutscene.unlockType == CutsceneData.UnlockType.Equipment)
         {
-            Debug.LogError(
-                "Equipment unlock array is null!"
-            );
+            if (data.equipmentUnlocks == null)
+            {
+                Debug.LogError(
+                    "Equipment unlock array is null!"
+                );
+                return;
+            }
 
-            return;
-        }
+            if (
+                index < 0 ||
+                index >= data.equipmentUnlocks.Length
+            )
+            {
+                Debug.LogError(
+                    "Invalid equipment unlock index: " +
+                    index
+                );
+                return;
+            }
 
-        int index = cutscene.equipmentIndex;
+            if (data.equipmentUnlocks[index])
+            {
+                Debug.Log(
+                    "Equipment already unlocked: " +
+                    cutscene.itemName
+                );
+                return;
+            }
 
-        if (
-            index < 0 ||
-            index >= data.equipmentUnlocks.Length
-        )
-        {
-            Debug.LogError(
-                "Invalid equipment unlock index: " +
-                index
-            );
+            data.equipmentUnlocks[index] = true;
 
-            return;
-        }
+            PlayerDataManager.Instance.Save();
 
-        // Already unlocked
-        if (data.equipmentUnlocks[index])
-        {
             Debug.Log(
-                "Equipment already unlocked: " +
-                cutscene.equipmentName
+                "Equipment unlocked: " +
+                cutscene.itemName
             );
-
-            return;
         }
+        else if (cutscene.unlockType == CutsceneData.UnlockType.Weapon)
+        {
+            if (data.weaponUnlocks == null)
+            {
+                Debug.LogError(
+                    "Weapon unlock array is null!"
+                );
+                return;
+            }
 
-        // Unlock equipment
-        data.equipmentUnlocks[index] = true;
+            if (
+                index < 0 ||
+                index >= data.weaponUnlocks.Length
+            )
+            {
+                Debug.LogError(
+                    "Invalid weapon unlock index: " +
+                    index
+                );
+                return;
+            }
 
-        PlayerDataManager.Instance.Save();
+            if (data.weaponUnlocks[index])
+            {
+                Debug.Log(
+                    "Weapon already unlocked: " +
+                    cutscene.itemName
+                );
+                return;
+            }
 
-        Debug.Log(
-            "Equipment unlocked: " +
-            cutscene.equipmentName
-        );
+            data.weaponUnlocks[index] = true;
+
+            PlayerDataManager.Instance.Save();
+
+            Debug.Log(
+                "Weapon unlocked: " +
+                cutscene.itemName
+            );
+        }
     }
 }
