@@ -36,6 +36,8 @@ public class Bow : MonoBehaviour
     public Slider cooldownSlider;
 
 
+    public bool unlocked = true;
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -44,7 +46,12 @@ public class Bow : MonoBehaviour
 
         fireRate = baseFireRate;
 
-        levelUpButton.LevelUp(level, maxLevel);
+        unlocked = PlayerDataManager.Instance.data.weaponUnlocks[8];
+
+        if (unlocked)
+        {
+            levelUpButton.LevelUp(level, maxLevel);
+        }
 
         nextFireTime = Time.time;
     }

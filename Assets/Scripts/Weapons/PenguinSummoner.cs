@@ -36,19 +36,10 @@ public class PenguinSummoner : MonoBehaviour
 
     void Start()
     {
-        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
-
-        // unlocked = loadedData.weaponUnlocks[/* PENGUIN INDEX */];
+        unlocked = PlayerDataManager.Instance.data.weaponUnlocks[7];
 
         if (unlocked)
         {
-            // Only enable for B'Rick
-            if (loadedData.currentCharacter != 0)
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-
             levelUpButton.LevelUp(level, maxLevel);
         }
     }
