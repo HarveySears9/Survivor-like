@@ -17218,6 +17218,8 @@ MonoBehaviour:
   stc: {fileID: 654223906}
   firstDeathCutscene: {fileID: 11400000, guid: 62a331e6808ea9c4da6d9f0b81f4c1ba, type: 2}
   cutsceneLoader: {fileID: 1913243502}
+  doubleCoinsButton: {fileID: 2059253810}
+  doubleCoinsButtonText: {fileID: 832372968}
 --- !u!1 &1162746701
 GameObject:
   m_ObjectHideFlags: 0
@@ -28010,6 +28012,8 @@ MonoBehaviour:
   stc: {fileID: 654223906}
   firstDeathCutscene: {fileID: 0}
   cutsceneLoader: {fileID: 0}
+  doubleCoinsButton: {fileID: 1818207370}
+  doubleCoinsButtonText: {fileID: 151051175}
 --- !u!224 &1895788509
 RectTransform:
   m_ObjectHideFlags: 0

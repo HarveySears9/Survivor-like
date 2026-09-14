@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class DeathScreen : MonoBehaviour
 
     private bool coinsAdded = false;
     private int coinsFromRun;
+
+    public Button doubleCoinsButton;
+    public TextMeshProUGUI doubleCoinsButtonText;
 
     public void MainMenu()
     {
@@ -103,13 +107,16 @@ public class DeathScreen : MonoBehaviour
         if (AdsManager.Instance == null)
             return;
 
+        doubleCoinsButton.interactable = false;
+
         bool adStarted = AdsManager.Instance.ShowRewardedAd(
             GiveDoubleCoinsReward
         );
 
-        if (adStarted)
+        if (!adStarted)
         {
-            Debug.Log("Double Coins ad started.");
+            // Ad wasn't available, so let the player try again
+            doubleCoinsButton.interactable = true;
         }
     }
 
@@ -123,6 +130,12 @@ public class DeathScreen : MonoBehaviour
 
         coinText.text =
             "Coins Collected:\n" + (coinsFromRun * 2).ToString();
+
+        // Disable the button so the reward can only be claimed once
+        doubleCoinsButton.interactable = false;
+
+        // Change the button text
+        doubleCoinsButtonText.text = "Coins Doubled!";
 
         Debug.Log("Double Coins reward granted.");
     }
