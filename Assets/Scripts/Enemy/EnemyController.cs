@@ -35,6 +35,9 @@ public class EnemyController : MonoBehaviour
 
     private float separationRadius = 0.15f;
     private float separationStrength = 0.1f;
+    private Vector2 separationForce;
+    private float separationTimer;
+    public float separationUpdateRate = 0.1f;
 
     public GameObject deathEffect;
 
@@ -57,33 +60,61 @@ public class EnemyController : MonoBehaviour
     {
         if (playerTransform == null) return;
 
-        Vector2 targetDir = (playerTransform.position - transform.position).normalized;
+        Vector2 targetDir =
+            (playerTransform.position - transform.position).normalized;
 
-        // --- Separation behaviour ---
-        Vector2 separationForce = Vector2.zero;
-        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, separationRadius);
+        separationTimer -= Time.fixedDeltaTime;
 
-        foreach (var c in nearbyEnemies)
+        if (separationTimer <= 0f)
         {
-            if (c != null && c != GetComponent<Collider2D>() && c.CompareTag("Enemy"))
-            {
-                Vector2 away = (Vector2)(transform.position - c.transform.position);
-                float dist = away.magnitude;
-                if (dist > 0f)
-                    separationForce += away.normalized / dist;
-            }
+            UpdateSeparation();
+            separationTimer = separationUpdateRate;
         }
 
-        Vector2 finalDir = (targetDir + separationForce * separationStrength).normalized;
+        Vector2 finalDir =
+            (targetDir + separationForce * separationStrength).normalized;
 
-        // Smooth transition instead of snapping
-        smoothDirection = Vector2.Lerp(smoothDirection, finalDir, 0.1f);
+        smoothDirection =
+            Vector2.Lerp(smoothDirection, finalDir, 0.1f);
 
-        rb.MovePosition(rb.position + smoothDirection * currentSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(
+            rb.position +
+            smoothDirection * currentSpeed * Time.fixedDeltaTime
+        );
 
         HandleFlip(targetDir.x);
     }
 
+    private void UpdateSeparation()
+    {
+        separationForce = Vector2.zero;
+
+        Collider2D[] nearbyEnemies =
+            Physics2D.OverlapCircleAll(
+                transform.position,
+                separationRadius
+            );
+
+        Collider2D myCollider = GetComponent<Collider2D>();
+
+        foreach (var c in nearbyEnemies)
+        {
+            if (c != null &&
+                c != myCollider &&
+                c.CompareTag("Enemy"))
+            {
+                Vector2 away =
+                    (Vector2)(transform.position - c.transform.position);
+
+                float dist = away.magnitude;
+
+                if (dist > 0f)
+                {
+                    separationForce += away.normalized / dist;
+                }
+            }
+        }
+    }
 
     void HandleFlip(float dirX)
     {
