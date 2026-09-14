@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 6102072642284406399}
   - component: {fileID: 1010640496602894990}
   - component: {fileID: 8105117362702243586}
-  - component: {fileID: 5236017948028604076}
-  - component: {fileID: 4115587328594568695}
-  - component: {fileID: 6608948240650338272}
+  - component: {fileID: -8230530646895190040}
   m_Layer: 8
   m_Name: PenguinAOE
   m_TagString: Weapon
@@ -156,7 +154,7 @@ MonoBehaviour:
   isMoving: 0
   destroyOnFinish: 1
   masterSprite: {fileID: 0}
---- !u!114 &5236017948028604076
+--- !u!114 &-8230530646895190040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,55 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 787319094012989388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5ca1f61f243034da948fa6abf25368, type: 3}
+  m_Script: {fileID: 11500000, guid: bd3b8b9e8b5645d4886311755568f9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 2
   damage: 1
---- !u!114 &4115587328594568695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787319094012989388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925b15c4b2248f045bc1310ab0a199a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnHit: 0
---- !u!58 &6608948240650338272
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787319094012989388}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
+  slowAmount: 0.4
+  slowDuration: 2
