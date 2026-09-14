@@ -146,6 +146,8 @@ public class BossFight : MonoBehaviour
         }
 
         gameTimer.ResumeTimer();
+
+        OvertimeManager.Instance.StartOvertime();
     }
 
 }

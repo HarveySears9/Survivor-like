@@ -11,6 +11,7 @@ public class DeathScreen : MonoBehaviour
     public GameTimer gt;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI overtimeBonusText;
     public TextMeshProUGUI killsText;
 
     public SceneTransitionController stc;
@@ -25,6 +26,7 @@ public class DeathScreen : MonoBehaviour
     public TextMeshProUGUI doubleCoinsButtonText;
 
     public bool isLevelComplete = false;
+    public bool isOvertime = false;
 
     public void MainMenu()
     {
@@ -59,14 +61,33 @@ public class DeathScreen : MonoBehaviour
     void OnEnable()
     {
 
-        if (isLevelComplete)
-        {
-            LevelComplete();
-        }
-
         coinsFromRun = pc.coins;
 
-        coinText.text = "Coins Collected:\n" + coinsFromRun.ToString();
+        if (isOvertime && OvertimeManager.Instance != null)
+        {
+            int originalCoins = coinsFromRun;
+
+            coinsFromRun = Mathf.RoundToInt(
+                coinsFromRun * OvertimeManager.Instance.coinMultiplier
+            );
+
+            coinText.text =
+                "Coins Collected:\n" + originalCoins.ToString();
+
+            overtimeBonusText.text =
+                "Overtime Bonus: x" +
+                OvertimeManager.Instance.coinMultiplier.ToString("0.00") +
+                "\nTotal: " + coinsFromRun.ToString();
+
+            //overtimeBonusText.gameObject.SetActive(true);
+        }
+        else
+        {
+            coinText.text =
+                "Coins Collected:\n" + coinsFromRun.ToString();
+
+            overtimeBonusText.gameObject.SetActive(false);
+        }
 
         int minutes = Mathf.FloorToInt(gt.elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(gt.elapsedTime % 60f);
@@ -136,13 +157,21 @@ public class DeathScreen : MonoBehaviour
 
         PlayerDataManager.Instance.Save();
 
-        coinText.text =
-            "Coins Collected:\n" + (coinsFromRun * 2).ToString();
+        if (isOvertime)
+        {
+            overtimeBonusText.text =
+                "Overtime Bonus: x" +
+                OvertimeManager.Instance.coinMultiplier.ToString("0.00") +
+                "\nTotal: " + (coinsFromRun * 2).ToString();
+        }
+        else
+        {
+            coinText.text =
+                "Coins Collected:\n" +
+                (coinsFromRun * 2).ToString();
+        }
 
-        // Disable the button so the reward can only be claimed once
         doubleCoinsButton.interactable = false;
-
-        // Change the button text
         doubleCoinsButtonText.text = "Coins Doubled!";
 
         Debug.Log("Double Coins reward granted.");
@@ -150,6 +179,8 @@ public class DeathScreen : MonoBehaviour
 
     public void LevelComplete()
     {
+        isOvertime = true;
+
         var data = PlayerDataManager.Instance.data;
 
         if (data == null)
@@ -169,7 +200,5 @@ public class DeathScreen : MonoBehaviour
         {
             Debug.Log("Last level completed. Nothing to unlock.");
         }
-
-        OvertimeManager.Instance.StartOvertime();
     }
 }
