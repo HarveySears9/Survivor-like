@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] characters;
     public GameObject[] levels;
     public DeathScreen deathScreen;
-    public DeathScreen winScreen;
+    //public DeathScreen winScreen;
 
     private int currentLevel;
 
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].SetActive(true); 
         characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].tag = "Player";
         deathScreen.pc = characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].GetComponent<PlayerController>();
-        winScreen.pc = characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].GetComponent<PlayerController>();
+        //winScreen.pc = characters[SaveFile.LoadData<SaveFile.Data>().currentCharacter].GetComponent<PlayerController>();
     }
 
     private void SetLevel(int level)

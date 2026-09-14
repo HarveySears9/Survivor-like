@@ -24,7 +24,7 @@ public class BossFight : MonoBehaviour
 
     private int currentBossIndex = 0;
 
-    public GameObject winScreen;
+    public GameObject deathScreen;
 
 
     void Start()
@@ -39,6 +39,12 @@ public class BossFight : MonoBehaviour
 
     public void OnSpawnBoss(int bossNumber)
     {
+        if (currentBossIndex >= bosses.Length)
+        {
+            Debug.Log("All bosses already spawned.");
+            return;
+        }
+
         if (gameTimer != null)
         {
             gameTimer.PauseTimer(); // Pause the timer when the boss spawns
@@ -127,13 +133,19 @@ public class BossFight : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-        Time.timeScale = 0f;
-        if (winScreen != null)
+        worldMessage.ShowMessage("Overtime");
+
+        spawner.spawning = true;
+
+        //Time.timeScale = 0f;
+        if (deathScreen != null)
         {
-            winScreen.SetActive(true);
-            DeathScreen screen = winScreen.GetComponent<DeathScreen>();
+            DeathScreen screen = deathScreen.GetComponent<DeathScreen>();
+            screen.isLevelComplete = true;
             screen.LevelComplete();
         }
+
+        gameTimer.ResumeTimer();
     }
 
 }

@@ -24,6 +24,8 @@ public class DeathScreen : MonoBehaviour
     public Button doubleCoinsButton;
     public TextMeshProUGUI doubleCoinsButtonText;
 
+    public bool isLevelComplete = false;
+
     public void MainMenu()
     {
         Time.timeScale = 1f;
@@ -56,6 +58,12 @@ public class DeathScreen : MonoBehaviour
 
     void OnEnable()
     {
+
+        if (isLevelComplete)
+        {
+            LevelComplete();
+        }
+
         coinsFromRun = pc.coins;
 
         coinText.text = "Coins Collected:\n" + coinsFromRun.ToString();
@@ -161,5 +169,7 @@ public class DeathScreen : MonoBehaviour
         {
             Debug.Log("Last level completed. Nothing to unlock.");
         }
+
+        OvertimeManager.Instance.StartOvertime();
     }
 }
