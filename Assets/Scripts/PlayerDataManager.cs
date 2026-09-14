@@ -33,7 +33,7 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 0, achievement = true}        // Chef
             };
 
-            bool[] defaultLevels = new bool[] { true, false, false };
+            bool[] defaultLevels = new bool[] { true, true, true };
             bool[] weaponUnlocks = new bool[] { true, true, true, true, false, false, false, false, false };
             bool[] equipmentUnlocks = new bool[] { true, false, true };
 

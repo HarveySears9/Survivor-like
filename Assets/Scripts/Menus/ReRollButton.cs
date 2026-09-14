@@ -33,12 +33,26 @@ public class ReRollButton : MonoBehaviour
 
     public void OnClick()
     {
-        // Disable the button temporarily while the animation is happening
+        if (AdsManager.Instance == null)
+            return;
+
         reRollButton.interactable = false;
 
-        // Deactivate and reactivate the Scroll (or whatever UI element you're working with)
-        Scroll.SetActive(false);  // Deactivate the scroll
-        Scroll.SetActive(true);   // Reactivate the scroll
+        bool adStarted = AdsManager.Instance.ShowRewardedAd(
+            PerformReroll
+        );
+
+        if (!adStarted)
+        {
+            reRollButton.interactable = true;
+        }
+    }
+
+    private void PerformReroll()
+    {
+        Scroll.SetActive(false);
+        Scroll.SetActive(true);
+
         StartCoroutine(EnableAfterScroll());
     }
 }

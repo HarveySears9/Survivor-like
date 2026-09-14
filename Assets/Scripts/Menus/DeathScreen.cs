@@ -17,6 +17,9 @@ public class DeathScreen : MonoBehaviour
     public CutsceneData firstDeathCutscene;
     public CutsceneLoader cutsceneLoader;
 
+    private bool coinsAdded = false;
+    private int coinsFromRun;
+
     public void MainMenu()
     {
         Time.timeScale = 1f;
@@ -49,27 +52,79 @@ public class DeathScreen : MonoBehaviour
 
     void OnEnable()
     {
-        coinText.text = "Coins Collected:\n" + pc.coins.ToString();
+        coinsFromRun = pc.coins;
+
+        coinText.text = "Coins Collected:\n" + coinsFromRun.ToString();
 
         int minutes = Mathf.FloorToInt(gt.elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(gt.elapsedTime % 60f);
 
-        MissionManager.Instance.AddProgress("time_Survived", Mathf.FloorToInt(gt.elapsedTime));
+        MissionManager.Instance.AddProgress(
+            "time_Survived",
+            Mathf.FloorToInt(gt.elapsedTime)
+        );
 
-        MissionManager.Instance.AddProgress("complete_run", 1);
+        MissionManager.Instance.AddProgress(
+            "complete_run",
+            1
+        );
 
-        MissionManager.Instance.AddProgress($"coins_Collected", pc.coins);
+        MissionManager.Instance.AddProgress(
+            "coins_Collected",
+            coinsFromRun
+        );
 
-        timerText.text = $"Time Survived:\n{minutes:D2}:{seconds:D2}";
+        timerText.text =
+            $"Time Survived:\n{minutes:D2}:{seconds:D2}";
 
         killsText.text =
             "Enemies Defeated:\n" + KillCounter.enemyKills +
             "\nBosses Defeated:\n" + KillCounter.bossKills;
 
+        AddNormalCoins();
+    }
+
+    private void AddNormalCoins()
+    {
+        if (coinsAdded)
+            return;
+
         var data = PlayerDataManager.Instance.data;
-        data.coins += pc.coins;
+
+        data.coins += coinsFromRun;
+
         PlayerDataManager.Instance.Save();
 
+        coinsAdded = true;
+    }
+
+    public void DoubleCoins()
+    {
+        if (AdsManager.Instance == null)
+            return;
+
+        bool adStarted = AdsManager.Instance.ShowRewardedAd(
+            GiveDoubleCoinsReward
+        );
+
+        if (adStarted)
+        {
+            Debug.Log("Double Coins ad started.");
+        }
+    }
+
+    private void GiveDoubleCoinsReward()
+    {
+        var data = PlayerDataManager.Instance.data;
+
+        data.coins += coinsFromRun;
+
+        PlayerDataManager.Instance.Save();
+
+        coinText.text =
+            "Coins Collected:\n" + (coinsFromRun * 2).ToString();
+
+        Debug.Log("Double Coins reward granted.");
     }
 
     public void LevelComplete()
