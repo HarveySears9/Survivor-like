@@ -2171,6 +2171,7 @@ MonoBehaviour:
     tutorialCompleted: 0
     completedCutscenes: []
     weaponUnlocks: 
+    equipmentUnlocks: 
     startingWeapon: 0
     startingWeaponUnlocks: 
     startingWeaponCosts: 
