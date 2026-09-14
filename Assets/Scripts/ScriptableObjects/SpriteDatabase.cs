@@ -19,4 +19,7 @@ public class SpriteDatabase : ScriptableObject
     public Sprite[] whiteSuit, whiteSuitMoving;
     public Sprite[] blackSuit, blackSuitMoving;
     public Sprite[] chef, chefMoving;
+    public Sprite[] glasses, glassesMoving;
+    public Sprite[] tophat, tophatMoving;
+    public Sprite[] hatman, hatmanMoving;
 }

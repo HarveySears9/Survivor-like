@@ -26784,6 +26784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scroll: {fileID: 1843022518}
+  buttonText: {fileID: 0}
 --- !u!114 &1818207370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28546,6 +28547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scroll: {fileID: 1843022518}
+  buttonText: {fileID: 1036127143}
 --- !u!1 &1926011144
 GameObject:
   m_ObjectHideFlags: 0
@@ -31757,6 +31759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scroll: {fileID: 1843022518}
+  buttonText: {fileID: 0}
 --- !u!114 &2059253810
 MonoBehaviour:
   m_ObjectHideFlags: 0

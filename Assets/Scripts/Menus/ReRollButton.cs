@@ -1,20 +1,28 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ReRollButton : MonoBehaviour
 {
-    public GameObject Scroll;        // Reference to the scroll object
-    private Button reRollButton;     // Reference to the reroll button
+    public GameObject Scroll;
+
+    private Button reRollButton;
+    public TextMeshProUGUI buttonText;
+
+    private bool hasRerolled = false;
 
     void Start()
     {
-        reRollButton = GetComponent<Button>();  // Get the Button component attached to this GameObject
+        reRollButton = GetComponent<Button>();
     }
 
     void OnEnable()
     {
+        hasRerolled = false;
+
         StartCoroutine(EnableAfterScroll());
+        buttonText.text = "Reroll?";
     }
 
     void OnDisable()
@@ -24,16 +32,23 @@ public class ReRollButton : MonoBehaviour
 
     IEnumerator EnableAfterScroll()
     {
-        // Wait for the animation to complete (based on the duration of the animation)
-        yield return new WaitForSecondsRealtime(Scroll.GetComponent<AnimateWidthToParent>().animationDuration);
+        yield return new WaitForSecondsRealtime(
+            Scroll.GetComponent<AnimateWidthToParent>().animationDuration
+        );
 
-        // Re-enable the button after the animation is done
-        reRollButton.interactable = true;
+        // Don't enable it if the player has already rerolled
+        if (!hasRerolled)
+        {
+            reRollButton.interactable = true;
+        }
     }
 
     public void OnClick()
     {
         if (AdsManager.Instance == null)
+            return;
+
+        if (hasRerolled)
             return;
 
         reRollButton.interactable = false;
@@ -50,9 +65,13 @@ public class ReRollButton : MonoBehaviour
 
     private void PerformReroll()
     {
+        hasRerolled = true;
+
         Scroll.SetActive(false);
         Scroll.SetActive(true);
 
-        StartCoroutine(EnableAfterScroll());
+        // Keep the button disabled permanently for this level-up
+        reRollButton.interactable = false;
+        buttonText.text = "Reroll Used";
     }
 }

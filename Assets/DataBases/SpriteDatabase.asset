@@ -24,6 +24,9 @@ MonoBehaviour:
   - Boss b'rick
   - black n gold
   - Thudbutt's Hat
+  - B'Rick???
+  - The Hatman
+  - The Gentleb'rick
   red:
   - {fileID: 327551420, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1714400887, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -39,7 +42,6 @@ MonoBehaviour:
   - {fileID: -220141428, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1434372951, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 759223060, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  redDead: []
   blue:
   - {fileID: 1830220883, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 703646882, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -55,7 +57,6 @@ MonoBehaviour:
   - {fileID: 883417179, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 219372484, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1156931657, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  blueDead: []
   black:
   - {fileID: 374226543, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1575974041, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -71,7 +72,6 @@ MonoBehaviour:
   - {fileID: -1254468610, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1505499424, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -280717992, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  blackDead: []
   gold:
   - {fileID: 1878832385, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 581374352, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -87,7 +87,6 @@ MonoBehaviour:
   - {fileID: -1957393679, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -510060283, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 2014912782, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  goldDead: []
   teal:
   - {fileID: 1865048132, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1993706067, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -103,7 +102,6 @@ MonoBehaviour:
   - {fileID: 372424385, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1804215287, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -663382733, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  tealDead: []
   bone:
   - {fileID: -926168172, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1770261063, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -119,7 +117,6 @@ MonoBehaviour:
   - {fileID: 1115065850, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1657909765, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 376915585, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  boneDead: []
   suit:
   - {fileID: -1951755490, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 1695270060, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -135,7 +132,6 @@ MonoBehaviour:
   - {fileID: 25648299, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 197679180, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 1291730528, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  suitDead: []
   blackBone:
   - {fileID: -1838557207, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -1285255861, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
@@ -151,7 +147,6 @@ MonoBehaviour:
   - {fileID: 812841378, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: -768458933, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
   - {fileID: 911095917, guid: 481839e1905c98242b560734d4ee85fb, type: 3}
-  blackBoneDead: []
   whiteSuit:
   - {fileID: 860256612, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: 667377814, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
@@ -167,7 +162,6 @@ MonoBehaviour:
   - {fileID: -1821845200, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: -1537885023, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: -316667277, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
-  whiteSuitDead: []
   blackSuit:
   - {fileID: 1901003050, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: 1415141771, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
@@ -183,7 +177,6 @@ MonoBehaviour:
   - {fileID: -1911413227, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: 373005519, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: -178982733, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
-  blackSuitDead: []
   chef:
   - {fileID: -1264087333, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: 1394930471, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
@@ -199,4 +192,48 @@ MonoBehaviour:
   - {fileID: 1415356503, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: -652793749, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
   - {fileID: -710876690, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
-  chefDead: []
+  glasses:
+  - {fileID: 983632191, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -131908445, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -205789642, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1978159470, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1515276919, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  glassesMoving:
+  - {fileID: -767867930, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1533065022, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 7971398, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1299022413, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1360436297, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1904032220, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1028252540, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -745615124, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  tophat:
+  - {fileID: -1573903771, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1637497687, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -453445799, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1461643064, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 550447769, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  tophatMoving:
+  - {fileID: -955029583, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1025993860, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1330133709, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1053522178, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 570228713, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1229224280, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1592966978, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1029496429, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  hatman:
+  - {fileID: -1597800557, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 325043610, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1519375883, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1858349559, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 180190170, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  hatmanMoving:
+  - {fileID: -1461631182, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -44306020, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -2063913175, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -118274349, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1724568276, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: 1524834554, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -236209516, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}
+  - {fileID: -1637938838, guid: 2d4da4305dbd6a64cac787048e5a6f1a, type: 3}

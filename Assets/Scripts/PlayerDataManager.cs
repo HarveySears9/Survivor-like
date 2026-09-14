@@ -30,7 +30,10 @@ public class PlayerDataManager : MonoBehaviour
             new SkinData { owned = false, price = 0},       // Black Bone
             new SkinData { owned = false, price = 0},       // White Suit 
             new SkinData { owned = false, price = 0},       // Black Suit
-            new SkinData { owned = false, price = 0, achievement = true}        // Chef
+            new SkinData { owned = false, price = 0, achievement = true},        // Chef
+            new SkinData { owned = false, price = 0},       // Glasses
+            new SkinData { owned = false, price = 0},      // Top Hat
+            new SkinData { owned = false, price = 0, achievement = true}        // HatMan
             };
 
             bool[] defaultLevels = new bool[] { true, true, true };
