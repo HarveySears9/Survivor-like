@@ -132,7 +132,7 @@ TextureImporter:
         height: 72
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
+      border: {x: 14, y: 12, z: 14, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -174,7 +174,7 @@ TextureImporter:
         height: 72
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 11, z: 14, w: 11}
+      border: {x: 14, y: 12, z: 14, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -341,7 +341,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,6 +349,48 @@ TextureImporter:
       bones: []
       spriteID: 1c438c4e885587441a6f4489f9be29b7
       internalID: 41142591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu stuff_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 109
+        width: 135
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 12, z: 14, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd77bd588259b646a9a90615c71989f
+      internalID: 1848890223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu stuff_12
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 109
+        width: 135
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 14, y: 12, z: 14, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65d248c1d41def469f58cc0ecb4cb11
+      internalID: -1133770782
       vertices: []
       indices: 
       edges: []
@@ -367,6 +409,8 @@ TextureImporter:
       Menu stuff_0: 940987737
       Menu stuff_1: -1689436455
       Menu stuff_10: 41142591
+      Menu stuff_11: 1848890223
+      Menu stuff_12: -1133770782
       Menu stuff_2: 282763277
       Menu stuff_3: -1471570317
       Menu stuff_4: 846733441
