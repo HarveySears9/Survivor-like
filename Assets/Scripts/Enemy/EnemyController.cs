@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour
     public Transform playerTransform;
 
     private Vector2 direction;
-    private Rigidbody2D rb;
 
     public EnemyType enemyType;
 
@@ -58,7 +57,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -102,14 +100,11 @@ public class EnemyController : MonoBehaviour
         Vector2 finalDir =
             (targetDirection + separationForce * separationStrength).normalized;
 
-        // Continue smoothing every physics frame
         smoothDirection =
             Vector2.Lerp(smoothDirection, finalDir, 0.1f);
 
-        rb.MovePosition(
-            rb.position +
-            smoothDirection * currentSpeed * Time.fixedDeltaTime
-        );
+        transform.position +=
+            (Vector3)(smoothDirection * currentSpeed * Time.fixedDeltaTime);
 
         HandleFlip(targetDirection.x);
     }
@@ -128,19 +123,21 @@ public class EnemyController : MonoBehaviour
         {
             Collider2D c = separationResults[i];
 
-            if (c != null &&
-                c != myCollider &&
-                c.CompareTag("Enemy"))
+            if (c == null ||
+                c == myCollider ||
+                !c.CompareTag("Enemy"))
             {
-                Vector2 away =
-                    (Vector2)(transform.position - c.transform.position);
+                continue;
+            }
 
-                float dist = away.magnitude;
+            Vector2 away =
+                (Vector2)(transform.position - c.transform.position);
 
-                if (dist > 0f)
-                {
-                    separationForce += away.normalized / dist;
-                }
+            float sqrDist = away.sqrMagnitude;
+
+            if (sqrDist > 0.0001f)
+            {
+                separationForce += away / sqrDist;
             }
         }
     }
@@ -208,6 +205,9 @@ public class EnemyController : MonoBehaviour
 
     public void ApplySlow(float slowAmount, float duration)
     {
+        if (isDead)
+            return;
+
         if (slowRoutine != null)
             StopCoroutine(slowRoutine);
 

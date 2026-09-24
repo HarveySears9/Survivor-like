@@ -12,6 +12,9 @@ public class PenguinAOE : MonoBehaviour
 
     private bool hasAttacked = false;
 
+    // Reusable buffer — no allocation every AOE
+    private Collider2D[] targets = new Collider2D[64];
+
     private void Start()
     {
         ApplyAOE();
@@ -26,14 +29,17 @@ public class PenguinAOE : MonoBehaviour
 
         float scaledRadius = radius * transform.lossyScale.x;
 
-        Collider2D[] targets = Physics2D.OverlapCircleAll(
+        int count = Physics2D.OverlapCircleNonAlloc(
             transform.position,
-            scaledRadius
+            scaledRadius,
+            targets
         );
 
-        foreach (Collider2D target in targets)
+        for (int i = 0; i < count; i++)
         {
-            if (!target.CompareTag("Enemy"))
+            Collider2D target = targets[i];
+
+            if (target == null || !target.CompareTag("Enemy"))
                 continue;
 
             EnemyController enemy =

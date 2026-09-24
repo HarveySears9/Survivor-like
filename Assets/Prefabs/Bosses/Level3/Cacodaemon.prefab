@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4380613483730981827}
   - component: {fileID: 878231684593914853}
   - component: {fileID: 153064019060923681}
-  - component: {fileID: 1756804258547297656}
   - component: {fileID: 3940146488641767866}
   m_Layer: 0
   m_Name: Cacodaemon
@@ -217,33 +216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.734136, y: 2.1437669}
   m_EdgeRadius: 0
---- !u!50 &1756804258547297656
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6339935998683960598}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &3940146488641767866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +236,7 @@ MonoBehaviour:
   - {fileID: -379625402, guid: fb9fa84f3533e4547b9b77ec09e46f89, type: 3}
   - {fileID: 2040222897, guid: fb9fa84f3533e4547b9b77ec09e46f89, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0

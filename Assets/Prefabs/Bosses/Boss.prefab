@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2843288142618806388}
   - component: {fileID: 621530363540741296}
   - component: {fileID: 1950626732686373843}
-  - component: {fileID: 4321836796436002552}
   - component: {fileID: 2268670312537599990}
   - component: {fileID: 8190442791037523177}
   m_Layer: 0
@@ -133,33 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &4321836796436002552
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381536309536306029}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &2268670312537599990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +148,7 @@ MonoBehaviour:
   - {fileID: 1080455465, guid: 1d44ae19b377e544381929677b82b589, type: 3}
   - {fileID: 90323785, guid: 1d44ae19b377e544381929677b82b589, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.25
   isMoving: 0
@@ -203,3 +176,4 @@ MonoBehaviour:
   drops:
   - {fileID: 9144986467765460932, guid: f0fec17437707ad4faad4300dd97f554, type: 3}
   - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}
+  deathEffect: {fileID: 0}

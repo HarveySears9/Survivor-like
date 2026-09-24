@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 7926407040603605642}
   - component: {fileID: 2568315296130853191}
   - component: {fileID: 7886112706606538631}
-  - component: {fileID: 2636572993318799385}
   - component: {fileID: 5519142294913430412}
   - component: {fileID: -1074087892067159655}
   m_Layer: 9
@@ -190,34 +189,11 @@ MonoBehaviour:
   damage: 1
   playerTransform: {fileID: 0}
   enemyType: 1
+  separationRadius: 0.15
+  separationStrength: 0.1
+  separationUpdateRate: 0.2
   deathEffect: {fileID: 4732310941236128202, guid: 7b9a19a59ff810d4f83bafebcef73e0a, type: 3}
---- !u!50 &2636572993318799385
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565328182572884486}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  directionUpdateFrames: 5
 --- !u!114 &5519142294913430412
 MonoBehaviour:
   m_ObjectHideFlags: 0
