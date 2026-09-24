@@ -37,7 +37,7 @@ public class PlayerDataManager : MonoBehaviour
             };
 
             bool[] defaultLevels = new bool[] { true, true, true };
-            bool[] weaponUnlocks = new bool[] { true, true, true, true, false, false, false, false, false };
+            bool[] weaponUnlocks = new bool[] { true, true, true, true, true, true, true, true, true };
             bool[] equipmentUnlocks = new bool[] { true, false, true };
 
             bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false, false, false };
