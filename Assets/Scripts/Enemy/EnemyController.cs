@@ -7,61 +7,89 @@ public enum EnemyType
     Skeleton,
     Boss,
     Other
-    // add more as you go
 }
-
 
 public class EnemyController : MonoBehaviour
 {
-    public float health = 1f;         // Enemy health
-    public float speed = 2f;         // Normal movement speed
+    public float health = 1f;
+    public float speed = 2f;
     public float damage = 1f;
 
-    public Transform playerTransform; // Reference to the player's position
-    private Vector2 direction;        // Direction vector for movement
-    private Rigidbody2D rb;           // Rigidbody for physics-based movement
+    public Transform playerTransform;
+
+    private Vector2 direction;
+    private Rigidbody2D rb;
 
     public EnemyType enemyType;
 
-    private float currentSpeed;       // Current speed (used for slowing effects)
-    private float originalSpeed;      // Original speed for resetting after slow
+    private float currentSpeed;
+    private float originalSpeed;
 
     private bool isFlipped = false;
-
     private bool isDead = false;
 
     private SpriteRenderer spriteRenderer;
+    private Collider2D myCollider;
 
+    // --- Separation ---
+    [SerializeField] private float separationRadius = 0.15f;
+    [SerializeField] private float separationStrength = 0.1f;
 
-    private float separationRadius = 0.15f;
-    private float separationStrength = 0.1f;
     private Vector2 separationForce;
     private float separationTimer;
-    public float separationUpdateRate = 0.1f;
+
+    // Increased from 0.1 to 0.2
+    [SerializeField] private float separationUpdateRate = 0.2f;
+
+    // Reusable array so we don't allocate a new array every search
+    private Collider2D[] separationResults = new Collider2D[16];
 
     public GameObject deathEffect;
 
     // --- Slow effect tracking ---
     private Coroutine slowRoutine;
 
+    private Vector2 smoothDirection;
+
+    private Vector2 targetDirection;
+    private int directionUpdateCounter = 0;
+
+    [SerializeField] private int directionUpdateFrames = 5;
+
     void Start()
     {
-        // Initialize Rigidbody2D and speed variables
         rb = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         originalSpeed = speed;
         currentSpeed = speed;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        // Stagger separation updates between enemies
+        separationTimer = Random.Range(0f, separationUpdateRate);
 
-    private Vector2 smoothDirection;
+        // Get initial direction immediately
+        if (playerTransform != null)
+        {
+            targetDirection =
+                (playerTransform.position - transform.position).normalized;
+        }
+    }
 
     void FixedUpdate()
     {
         if (playerTransform == null) return;
 
-        Vector2 targetDir =
-            (playerTransform.position - transform.position).normalized;
+        // Only recalculate direction every few physics frames
+        directionUpdateCounter++;
+
+        if (directionUpdateCounter >= directionUpdateFrames)
+        {
+            directionUpdateCounter = 0;
+
+            targetDirection =
+                (playerTransform.position - transform.position).normalized;
+        }
 
         separationTimer -= Time.fixedDeltaTime;
 
@@ -72,8 +100,9 @@ public class EnemyController : MonoBehaviour
         }
 
         Vector2 finalDir =
-            (targetDir + separationForce * separationStrength).normalized;
+            (targetDirection + separationForce * separationStrength).normalized;
 
+        // Continue smoothing every physics frame
         smoothDirection =
             Vector2.Lerp(smoothDirection, finalDir, 0.1f);
 
@@ -82,23 +111,23 @@ public class EnemyController : MonoBehaviour
             smoothDirection * currentSpeed * Time.fixedDeltaTime
         );
 
-        HandleFlip(targetDir.x);
+        HandleFlip(targetDirection.x);
     }
 
     private void UpdateSeparation()
     {
         separationForce = Vector2.zero;
 
-        Collider2D[] nearbyEnemies =
-            Physics2D.OverlapCircleAll(
-                transform.position,
-                separationRadius
-            );
+        int count = Physics2D.OverlapCircleNonAlloc(
+            transform.position,
+            separationRadius,
+            separationResults
+        );
 
-        Collider2D myCollider = GetComponent<Collider2D>();
-
-        foreach (var c in nearbyEnemies)
+        for (int i = 0; i < count; i++)
         {
+            Collider2D c = separationResults[i];
+
             if (c != null &&
                 c != myCollider &&
                 c.CompareTag("Enemy"))
@@ -119,6 +148,7 @@ public class EnemyController : MonoBehaviour
     void HandleFlip(float dirX)
     {
         bool flip = dirX < 0;
+
         if (flip != isFlipped)
         {
             isFlipped = flip;
@@ -127,6 +157,7 @@ public class EnemyController : MonoBehaviour
             foreach (Transform child in GetComponentsInChildren<Transform>())
             {
                 if (child == transform) continue;
+
                 Vector3 localPos = child.localPosition;
                 localPos.x *= -1;
                 child.localPosition = localPos;
@@ -134,33 +165,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Weapon"))
         {
             Weapon weapon = other.GetComponent<Weapon>();
+
             if (weapon != null)
             {
-                Debug.Log("Enemy hit by weapon!");
                 TakeDamage(weapon.damage);
             }
         }
     }
-
-    /*void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (Time.time >= lastDamageTime + damageInterval)
-            {
-                lastDamageTime = Time.time;
-                Debug.Log("Enemy dealing periodic damage to player!");
-                other.GetComponent<PlayerController>().TakeDamage(damage);
-            }
-        }
-    }*/
 
     public void TakeDamage(float damage)
     {
@@ -172,63 +188,87 @@ public class EnemyController : MonoBehaviour
         {
             isDead = true;
 
-            // Spawn death effect
-            //if (deathEffect != null)
-            //{
-            //    Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            //    Instantiate(deathEffect, transform.position, rot);
-            //}
             GameObject effect = BloodEffectPool.Instance.Get();
+
             effect.transform.position = transform.position;
-            effect.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            effect.transform.rotation =
+                Quaternion.Euler(0, 0, Random.Range(0, 360));
 
             EnemyDeathEventManager.EnemyDied(transform.position);
-            MissionManager.Instance.AddProgress($"kill_{enemyType}");
+
+            MissionManager.Instance.AddProgress(
+                $"kill_{enemyType}"
+            );
+
             Destroy(gameObject);
         }
     }
 
-
     // --- SLOW EFFECT HANDLING ---
+
     public void ApplySlow(float slowAmount, float duration)
     {
-        // Cancel existing slow so new one refreshes
         if (slowRoutine != null)
             StopCoroutine(slowRoutine);
 
-        slowRoutine = StartCoroutine(SlowEffect(slowAmount, duration));
+        slowRoutine = StartCoroutine(
+            SlowEffect(slowAmount, duration)
+        );
     }
 
     private IEnumerator SlowEffect(float slowAmount, float duration)
     {
-        // Clamp slow between 0–1 (1 = no slow, 0 = fully stopped)
         slowAmount = Mathf.Clamp01(slowAmount);
 
         currentSpeed = originalSpeed * slowAmount;
 
-        // Smoothly transition color to blue
         if (spriteRenderer != null)
-            yield return StartCoroutine(FadeColor(spriteRenderer.color, Color.cyan, 0.1f));
+            yield return StartCoroutine(
+                FadeColor(
+                    spriteRenderer.color,
+                    Color.cyan,
+                    0.1f
+                )
+            );
 
         yield return new WaitForSeconds(duration);
 
-        // Restore normal speed and color
         currentSpeed = originalSpeed;
+
         if (spriteRenderer != null)
-            yield return StartCoroutine(FadeColor(spriteRenderer.color, Color.white, 0.1f));
+            yield return StartCoroutine(
+                FadeColor(
+                    spriteRenderer.color,
+                    Color.white,
+                    0.1f
+                )
+            );
 
         slowRoutine = null;
     }
 
-    private IEnumerator FadeColor(Color from, Color to, float time)
+    private IEnumerator FadeColor(
+        Color from,
+        Color to,
+        float time
+    )
     {
         float elapsed = 0f;
+
         while (elapsed < time)
         {
             elapsed += Time.deltaTime;
-            spriteRenderer.color = Color.Lerp(from, to, elapsed / time);
+
+            spriteRenderer.color =
+                Color.Lerp(
+                    from,
+                    to,
+                    elapsed / time
+                );
+
             yield return null;
         }
+
         spriteRenderer.color = to;
     }
 }
