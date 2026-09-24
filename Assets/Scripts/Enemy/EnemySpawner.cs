@@ -103,20 +103,27 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        // Random angle for spawn around player
         float randomAngle = Random.Range(0f, 360f);
-        float spawnX = playerTransform.position.x + circleRadius * Mathf.Cos(randomAngle * Mathf.Deg2Rad);
-        float spawnY = playerTransform.position.y + circleRadius * Mathf.Sin(randomAngle * Mathf.Deg2Rad);
 
-        Vector3 spawnPos = new Vector3(spawnX, spawnY, 0f);
-        GameObject selectedEnemy = GetRandomWeightedEnemy();
+        float spawnX =
+            playerTransform.position.x +
+            circleRadius * Mathf.Cos(randomAngle * Mathf.Deg2Rad);
 
-        GameObject enemyObj = Instantiate(selectedEnemy, spawnPos, Quaternion.identity);
+        float spawnY =
+            playerTransform.position.y +
+            circleRadius * Mathf.Sin(randomAngle * Mathf.Deg2Rad);
 
-        // Assign target
-        EnemyController enemy = enemyObj.GetComponent<EnemyController>();
-        if (enemy != null)
-            enemy.playerTransform = playerTransform;
+        Vector3 spawnPos =
+            new Vector3(spawnX, spawnY, 0f);
+
+        GameObject selectedEnemy =
+            GetRandomWeightedEnemy();
+
+        EnemyPool.Instance.Get(
+            selectedEnemy,
+            spawnPos,
+            playerTransform
+        );
     }
 
     GameObject GetRandomWeightedEnemy()

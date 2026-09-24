@@ -11,6 +11,7 @@ public enum EnemyType
 
 public class EnemyController : MonoBehaviour
 {
+    public float maxHealth = 1f;
     public float health = 1f;
     public float speed = 2f;
     public float damage = 1f;
@@ -55,7 +56,10 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private int directionUpdateFrames = 5;
 
-    void Start()
+    private Transform[] childTransforms;
+    private Vector3[] originalChildPositions;
+
+    void Awake()
     {
         myCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -63,14 +67,16 @@ public class EnemyController : MonoBehaviour
         originalSpeed = speed;
         currentSpeed = speed;
 
-        // Stagger separation updates between enemies
-        separationTimer = Random.Range(0f, separationUpdateRate);
+        maxHealth = health;
 
-        // Get initial direction immediately
-        if (playerTransform != null)
+        childTransforms = GetComponentsInChildren<Transform>();
+
+        originalChildPositions = new Vector3[childTransforms.Length];
+
+        for (int i = 0; i < childTransforms.Length; i++)
         {
-            targetDirection =
-                (playerTransform.position - transform.position).normalized;
+            originalChildPositions[i] =
+                childTransforms[i].localPosition;
         }
     }
 
@@ -146,19 +152,23 @@ public class EnemyController : MonoBehaviour
     {
         bool flip = dirX < 0;
 
-        if (flip != isFlipped)
+        if (flip == isFlipped)
+            return;
+
+        isFlipped = flip;
+        spriteRenderer.flipX = flip;
+
+        for (int i = 0; i < childTransforms.Length; i++)
         {
-            isFlipped = flip;
-            spriteRenderer.flipX = flip;
+            if (childTransforms[i] == transform)
+                continue;
 
-            foreach (Transform child in GetComponentsInChildren<Transform>())
-            {
-                if (child == transform) continue;
+            Vector3 localPos = originalChildPositions[i];
 
-                Vector3 localPos = child.localPosition;
+            if (flip)
                 localPos.x *= -1;
-                child.localPosition = localPos;
-            }
+
+            childTransforms[i].localPosition = localPos;
         }
     }
 
@@ -197,7 +207,54 @@ public class EnemyController : MonoBehaviour
                 $"kill_{enemyType}"
             );
 
-            Destroy(gameObject);
+            EnemyPool.Instance.Return(gameObject);
+        }
+    }
+
+    public void ResetEnemy()
+    {
+        health = maxHealth;
+        currentSpeed = originalSpeed;
+        isDead = false;
+
+        separationForce = Vector2.zero;
+        smoothDirection = Vector2.zero;
+        targetDirection = Vector2.zero;
+
+        directionUpdateCounter = 0;
+
+        separationTimer =
+            Random.Range(0f, separationUpdateRate);
+
+        isFlipped = false;
+        spriteRenderer.flipX = false;
+
+        for (int i = 0; i < childTransforms.Length; i++)
+        {
+            if (childTransforms[i] == transform)
+                continue;
+
+            childTransforms[i].localPosition =
+                originalChildPositions[i];
+        }
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = false;
+            spriteRenderer.color = Color.white;
+        }
+
+        if (slowRoutine != null)
+        {
+            StopCoroutine(slowRoutine);
+            slowRoutine = null;
+        }
+
+        // Set initial direction toward the player
+        if (playerTransform != null)
+        {
+            targetDirection =
+                (playerTransform.position - transform.position).normalized;
         }
     }
 
