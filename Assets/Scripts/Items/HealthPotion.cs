@@ -1,29 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthPotion : MonoBehaviour
 {
     public float healPercentage = 10f;
-
     public float lifetime = 30f;
-
     public AudioClip pickupSound;
 
-    void Start()
+    private float lifetimeTimer;
+
+    void OnEnable()
     {
-        Destroy(gameObject, lifetime);
+        lifetimeTimer = lifetime;
+    }
+
+    void Update()
+    {
+        lifetimeTimer -= Time.deltaTime;
+
+        if (lifetimeTimer <= 0f)
+        {
+            ReturnToPool();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Health potion aquired");
-            // Handle player damage logic here
-            other.GetComponent<PlayerController>().Heal(healPercentage, false);
+        if (!other.CompareTag("Player"))
+            return;
 
-            AudioManager.Instance.PlaySFX(pickupSound);
+        PlayerController player =
+            other.GetComponent<PlayerController>();
+
+        if (player != null)
+        {
+            player.Heal(healPercentage, false);
+        }
+
+        AudioManager.Instance.PlaySFX(pickupSound);
+
+        ReturnToPool();
+    }
+
+    void ReturnToPool()
+    {
+        if (ItemPool.Instance != null)
+        {
+            ItemPool.Instance.Return(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

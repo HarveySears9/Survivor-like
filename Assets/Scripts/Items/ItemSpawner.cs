@@ -105,15 +105,19 @@ public class ItemSpawner : MonoBehaviour
 
         int selectedIndex = GetWeightedRandomIndex();
 
-        if (selectedIndex >= 0 &&
-            selectedIndex < dropItems.Length)
-        {
-            Instantiate(
-                dropItems[selectedIndex],
-                position,
-                Quaternion.identity
-            );
-        }
+        if (selectedIndex < 0 ||
+            selectedIndex >= dropItems.Length)
+            return;
+
+        GameObject prefab = dropItems[selectedIndex];
+
+        GameObject item = ItemPool.Instance.Get(prefab);
+
+        if (item == null)
+            return;
+
+        item.transform.position = position;
+        item.transform.rotation = Quaternion.identity;
     }
 
     void SpawnBossItem(Vector3 position, GameObject[] dropPrefabs)

@@ -1,34 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
     public int value = 1;
-
     public float lifetime = 30f;
-
     public AudioClip pickupSound;
 
-    void Start()
+    private float lifetimeTimer;
+
+    void OnEnable()
     {
-        Destroy(gameObject, lifetime);
+        lifetimeTimer = lifetime;
     }
 
+    void Update()
+    {
+        lifetimeTimer -= Time.deltaTime;
+
+        if (lifetimeTimer <= 0f)
+        {
+            ReturnToPool();
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player"))
+            return;
+
+        EXPBar playerEXP = other.GetComponent<EXPBar>();
+
+        if (playerEXP != null)
         {
-            EXPBar playerEXP = other.GetComponent<EXPBar>();
-            if (playerEXP != null)
-            {
-                playerEXP.AddEXP(value); // Add EXP to the player
-            }
+            playerEXP.AddEXP(value);
+        }
 
-            AudioManager.Instance.PlaySFX(pickupSound);
+        AudioManager.Instance.PlaySFX(pickupSound);
 
-            // Destroy the gem after it's collected
+        ReturnToPool();
+    }
+
+    void ReturnToPool()
+    {
+        if (ItemPool.Instance != null)
+        {
+            ItemPool.Instance.Return(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }
