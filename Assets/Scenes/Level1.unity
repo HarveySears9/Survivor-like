@@ -10552,7 +10552,7 @@ MonoBehaviour:
   spawnInterval: 0.75
   difficultyInterval: 90
   dropInterval: 90
-  bossInterval: 180
+  bossInterval: 1
   waveInterval: 45
   structureInterval: 120
 --- !u!4 &756902211
@@ -20138,9 +20138,7 @@ MonoBehaviour:
   bossText: {fileID: 154559580}
   circleRadius: 6
   bosses:
-  - {fileID: 9133842674983061728, guid: e4e0d1bfb136eac47936b4c122cb027f, type: 3}
-  - {fileID: 4469197173487781520, guid: df4aab97692ebf34fb8a16579beb343d, type: 3}
-  - {fileID: 8600259776942184326, guid: 3d7875e7f25d9764b8341f06868fcf45, type: 3}
+  - {fileID: 2968153149765848380, guid: 6342e07529890234dab05f4d815c075f, type: 3}
   bossHpBar: {fileID: 1481209266}
   delay: 3
   worldMessage: {fileID: 358378588}

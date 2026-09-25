@@ -1643,7 +1643,7 @@ TextureImporter:
         width: 23
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1664,7 +1664,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1672,6 +1672,27 @@ TextureImporter:
       bones: []
       spriteID: 10ac5445cdefc1a469c976ff7985b2a5
       internalID: 1255721880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_74
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 358
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.475, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f794f1e609e7c428db6d5c4c63da2f
+      internalID: -1449183891
       vertices: []
       indices: 
       edges: []
@@ -1759,6 +1780,7 @@ TextureImporter:
       Weapons_71: 1006755100
       Weapons_72: 1258917742
       Weapons_73: 1255721880
+      Weapons_74: -1449183891
       Weapons_8: 1206243433
       Weapons_9: -1906643539
   mipmapLimitGroupName: 
