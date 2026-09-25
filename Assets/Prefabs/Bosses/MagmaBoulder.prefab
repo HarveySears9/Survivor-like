@@ -111,11 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  lifetime: 3
+  lifetime: 1.5
   damage: 1
   gfx: {fileID: 6810060555901573883}
   spinSpeed: 150
   shadow: {fileID: 6912309575473873910}
+  lavaPoolPrefab: {fileID: 9093857887060984465, guid: d76969897ac26c24cb20426f1350596b, type: 3}
 --- !u!1 &6810060555901573883
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,10 +15,13 @@ public class Boulder : MonoBehaviour
 
     public GameObject shadow;
 
+    public GameObject lavaPoolPrefab;
+
     public void Initialize(Vector2 direction)
     {
         moveDirection = direction.normalized;
-        Destroy(gameObject, lifetime); // Destroy after the lifetime expires
+
+        StartCoroutine(LifetimeRoutine());
     }
 
     void Update()
@@ -39,6 +42,14 @@ public class Boulder : MonoBehaviour
         }
     }
 
+    private IEnumerator LifetimeRoutine()
+    {
+        yield return new WaitForSeconds(lifetime);
+
+        SpawnLavaPool();
+
+        Destroy(gameObject);
+    }
 
     void FixedUpdate()
     {
@@ -46,14 +57,31 @@ public class Boulder : MonoBehaviour
         gfx.transform.Rotate(0f, 0f, spinSpeed * Time.deltaTime); // Spin around Z-axis
     }
 
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Enemy hit the player!");
-            // Handle player damage logic here
-            other.GetComponent<PlayerController>().TakeDamage(damage);
+
+            other.GetComponent<PlayerController>()
+                .TakeDamage(damage);
+
+            SpawnLavaPool();
+
             Destroy(gameObject);
+        }
+    }
+
+
+    private void SpawnLavaPool()
+    {
+        if (lavaPoolPrefab != null)
+        {
+            Instantiate(
+                lavaPoolPrefab,
+                transform.position,
+                Quaternion.identity
+            );
         }
     }
 }
