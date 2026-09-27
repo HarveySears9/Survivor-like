@@ -6834,7 +6834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8682aa910e8c08449c6372bd39f906e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 0.5
+  dropChance: 1
   tier1:
   - {fileID: 3190766407511353783, guid: dda01c051595cb44eb93a0e8e79ab506, type: 3}
   - {fileID: 4056437496795740678, guid: f5a5de47c56e92c43bc3b9a11292db4f, type: 3}
