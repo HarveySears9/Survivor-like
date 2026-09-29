@@ -37,11 +37,11 @@ public class PlayerDataManager : MonoBehaviour
             };
 
             bool[] defaultLevels = new bool[] { true, true, true };
-            bool[] weaponUnlocks = new bool[] { true, true, true, true, true, true, true, true, true };
+            bool[] weaponUnlocks = new bool[] { true, true, true, true, true, true, true, true, true, true };
             bool[] equipmentUnlocks = new bool[] { true, false, true };
 
-            bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false, false, false };
-            int[] defaultStartingWeaponCosts = new int[] { 0, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 17500 };
+            bool[] defaultStartingWeaponUnlocks = new bool[] { true, false, false, false, false, false, false, false, false, false };
+            int[] defaultStartingWeaponCosts = new int[] { 0, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 17500, 22500 };
 
             if (data == null)
             {
