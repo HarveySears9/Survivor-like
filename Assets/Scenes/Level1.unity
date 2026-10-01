@@ -9177,7 +9177,7 @@ MonoBehaviour:
   level: 0
   maxLevel: 5
   baseDamage: 1
-  attackDuration: 0.45
+  attackDuration: 1.2
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: -163292265, guid: 587999892244d7c44b1c93d129f9fbfd, type: 3}

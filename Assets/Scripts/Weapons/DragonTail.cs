@@ -16,7 +16,7 @@ public class DragonTail : MonoBehaviour
     public float baseDamage = 1f;
 
     [Header("Attack")]
-    public float attackDuration = 0.45f;
+    public float attackDuration = 1.2f;
 
     private bool isAttacking = false;
 
@@ -75,9 +75,6 @@ public class DragonTail : MonoBehaviour
         if (Time.time >= nextFireTime && !isAttacking)
         {
             StartCoroutine(Attack());
-
-            currentCooldown = 1f / effectiveFireRate;
-            nextFireTime = Time.time + currentCooldown;
         }
 
         UpdateCooldownUI();
@@ -100,9 +97,6 @@ public class DragonTail : MonoBehaviour
             yield break;
         }
 
-        // Opposite direction to movement
-        Vector2 attackDirection = -lastAttackDirection;
-
         // Create the tail as a child of B'Rick
         GameObject tail = Instantiate(
             tailPrefab,
@@ -111,15 +105,6 @@ public class DragonTail : MonoBehaviour
 
         // Position around B'Rick's waist / tail bone
         tail.transform.localPosition = new Vector3(0f, -1f, 0f);
-
-        // Rotate tail to face the opposite direction
-        float angle =
-            Mathf.Atan2(attackDirection.y, attackDirection.x)
-            * Mathf.Rad2Deg;
-
-        // Tail sprite points UP by default
-        tail.transform.localRotation =
-            Quaternion.Euler(0, 0, angle - 90f);
 
         // Apply damage
         float finalDamage =
@@ -135,11 +120,45 @@ public class DragonTail : MonoBehaviour
         }
 
         // Keep tail alive for the duration of the animation
-        yield return new WaitForSeconds(attackDuration);
+        float timer = 0f;
+
+        while (timer < attackDuration)
+        {
+            // Only change direction if B'Rick is moving
+            if (player.moveDirection != Vector2.zero)
+            {
+                lastAttackDirection = player.moveDirection;
+            }
+
+            // Attack opposite to B'Rick's last direction
+            Vector2 attackDirection = -lastAttackDirection;
+
+            float angle =
+                Mathf.Atan2(attackDirection.y, attackDirection.x)
+                * Mathf.Rad2Deg;
+
+            tail.transform.localRotation =
+                Quaternion.Euler(0, 0, angle - 90f);
+
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
 
         Destroy(tail);
 
         isAttacking = false;
+
+        // Start cooldown AFTER the attack finishes
+        float effectiveFireRate = fireRate;
+
+        if (player != null)
+        {
+            effectiveFireRate *= player.attackSpeedMultiplier;
+        }
+
+        currentCooldown = 1f / effectiveFireRate;
+        nextFireTime = Time.time + currentCooldown;
     }
 
 
