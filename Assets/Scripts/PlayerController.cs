@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems; // For pointer events
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Health")]
     public int maxHP = 10;
     public float hp;
+
+    [Header("Movement")]
     public float speed;
     public float startSpeed;
     public VariableJoystick variableJoystick;
+
+    [Header("References")]
     [SerializeField] private FireBreath fireBreath;
     private AnimateSprite animator;
-    private SpriteRenderer spriteRenderer; // To control flipping of the sprite
-
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
     public GameObject deathScreen;
@@ -26,154 +30,273 @@ public class PlayerController : MonoBehaviour
 
     public HealthBar healthBar;
 
+    [Header("Coins")]
     public int coins = 0;
     public TextMeshProUGUI coinText;
-
     public float coinMultiplyer = 1f;
 
+    [Header("Movement State")]
     public bool isMoving = false;
     private bool dead = false;
     public Vector2 moveDirection = Vector2.zero;
 
+    [Header("Contact Damage")]
     float lastDamageTime;
     public float damageInterval = 0.25f;
 
     [Header("Dragon Altar Buffs")]
     public float attackSpeedMultiplier = 1f;
-    public float rageDamageBonus = 0f;   // % bonus when low HP (0.3 = +30%)
-    public float lifestealPercent = 0f;  // % of damage dealt (0.05 = 5%)
+    public float rageDamageBonus = 0f;
+    public float lifestealPercent = 0f;
     public bool isRaging = false;
 
     [Header("Weapon Buffs")]
     public float weaponCooldownMultiplier = 1f;
     public float weaponDamageMultiplier = 1f;
 
-    [Header("Weapon Buffs")]
+    [Header("Summon Buffs")]
     public float summonDamageMultiplier = 1f;
     public float summonCooldownMultiplier = 1f;
 
-    [Header("Weapon Buffs")]
+    [Header("Turret Buffs")]
     public float turretDamageMultiplier = 1f;
     public float turretCooldownMultiplier = 1f;
 
     public GameObject deathEffect;
 
 
-    // Start is called before the first frame update
+    // =========================
+    // START
+    // =========================
+
     void Start()
     {
-        animator = GetComponent<AnimateSprite>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        animator =
+            GetComponent<AnimateSprite>();
 
-        // Load saved data
-        SaveFile.Data playerData = SaveFile.LoadData<SaveFile.Data>();
+        spriteRenderer =
+            GetComponent<SpriteRenderer>();
+
+        rb =
+            GetComponent<Rigidbody2D>();
+
+
+        // =========================
+        // LOAD SAVED DATA
+        // =========================
+
+        SaveFile.Data playerData =
+            SaveFile.LoadData<SaveFile.Data>();
 
         if (playerData == null)
         {
-            playerData = new SaveFile.Data();
+            playerData =
+                new SaveFile.Data();
+
             playerData.maxHPLevel = 0;
         }
 
 
-        maxHP = PlayerStats.GetMaxHP();
-        speed = 2f * PlayerStats.GetSpeedMultiplier();
+        // =========================
+        // PERMANENT UPGRADES
+        // =========================
 
-        startSpeed = speed;
+        maxHP =
+            PlayerStats.GetMaxHP();
 
-        hp = maxHP; // Set current HP to max HP
+        speed =
+            2f *
+            PlayerStats.GetSpeedMultiplier();
 
-        // Find and initialize the health bar
-        healthBar.SetMaxHealth(maxHP);
+        startSpeed =
+            speed;
+
+        attackSpeedMultiplier =
+            PlayerStats.GetAttackSpeedMultiplier();
+
+
+        // =========================
+        // INITIAL HP
+        // =========================
+
+        hp =
+            maxHP;
+
+
+        // =========================
+        // HEALTH BAR
+        // =========================
+
+        healthBar.SetMaxHealth(
+            maxHP
+        );
     }
 
-    // Update is called once per frame
+
+    // =========================
+    // MOVEMENT
+    // =========================
+
     void FixedUpdate()
     {
-        // For 2D movement (X and Y only)
         if (!dead)
         {
-            moveDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+            moveDirection =
+                new Vector2(
+                    variableJoystick.Horizontal,
+                    variableJoystick.Vertical
+                );
         }
 
-        // Move the player in the direction specified by moveDirection
-        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
+        rb.MovePosition(
+            rb.position +
+            moveDirection *
+            speed *
+            Time.fixedDeltaTime
+        );
+
 
         if (moveDirection != Vector2.zero)
-        { 
-            animator.isMoving = true;
-            isMoving = true;
+        {
+            animator.isMoving =
+                true;
 
-            // Flip sprite based on movement direction
+            isMoving =
+                true;
+
+
             if (moveDirection.x < 0)
             {
-                spriteRenderer.flipX = true; // Flip sprite when moving left
+                spriteRenderer.flipX =
+                    true;
             }
             else if (moveDirection.x > 0)
             {
-                spriteRenderer.flipX = false; // Keep sprite normal when moving right
+                spriteRenderer.flipX =
+                    false;
             }
         }
         else
         {
-            animator.isMoving = false;
-            isMoving = false;
+            animator.isMoving =
+                false;
+
+            isMoving =
+                false;
         }
 
-        //player is raging when Hp is below half
+
+        // =========================
+        // RAGE
+        // =========================
+
         if (rageDamageBonus > 0f)
         {
-            isRaging = hp <= maxHP * 0.5f;
-            rageAura.SetActive(isRaging);
-        }
+            isRaging =
+                hp <= maxHP * 0.5f;
 
+            if (rageAura != null)
+            {
+                rageAura.SetActive(
+                    isRaging
+                );
+            }
+        }
     }
+
+
+    // =========================
+    // DAMAGE
+    // =========================
 
     public void TakeDamage(float damage)
     {
         hp -= damage;
 
-        // Update health bar
         healthBar.SetHealth(hp);
 
-        // Check if the player is dead
+
         if (hp <= 0)
         {
-            if(!dead)
+            if (!dead)
             {
-                StartCoroutine(StartDeath());
+                StartCoroutine(
+                    StartDeath()
+                );
             }
+
             dead = true;
         }
     }
 
-    public void Heal(float value, bool isFlatAmount)
+
+    // =========================
+    // HEALING
+    // =========================
+
+    public void Heal(
+        float value,
+        bool isFlatAmount
+    )
     {
-        hp += isFlatAmount ? value : (value / 100f) * maxHP;
-        hp = Mathf.Clamp(hp, 0, maxHP); // Clamp to prevent exceeding maxHP
+        hp +=
+            isFlatAmount
+            ? value
+            : (value / 100f) * maxHP;
+
+        hp =
+            Mathf.Clamp(
+                hp,
+                0,
+                maxHP
+            );
+
         healthBar.SetHealth(hp);
     }
 
-    public void IncreaseMaxHP(float percentage)
+
+    // =========================
+    // MAX HP
+    // =========================
+
+    public void IncreaseMaxHP(
+        float percentage
+    )
     {
-        int increase = Mathf.CeilToInt(maxHP * percentage);
-        maxHP += increase;
+        int increase =
+            Mathf.CeilToInt(
+                maxHP * percentage
+            );
+
+        maxHP +=
+            increase;
+
         healthBar.SetHealth(hp);
     }
+
+
+    // =========================
+    // DEATH
+    // =========================
 
     public void triggerDeath()
     {
         if (!dead)
         {
-            StartCoroutine(StartDeath());
+            StartCoroutine(
+                StartDeath()
+            );
         }
+
         dead = true;
     }
 
+
     private IEnumerator StartDeath()
     {
-        // Disable Collider (for building interation)
-        CapsuleCollider2D col = GetComponent<CapsuleCollider2D>();
+        CapsuleCollider2D col =
+            GetComponent<CapsuleCollider2D>();
+
         if (col != null)
         {
             col.enabled = false;
@@ -186,94 +309,194 @@ public class PlayerController : MonoBehaviour
             weapon.SetActive(false);
         }
 
-        moveDirection = Vector2.zero;
 
-        spriteRenderer.enabled = false;
+        moveDirection =
+            Vector2.zero;
 
-        // Spawn death effect
+        spriteRenderer.enabled =
+            false;
+
+
+        // Death effect
         if (deathEffect != null)
         {
-            Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            Instantiate(deathEffect, transform.position, rot);
+            Quaternion rot =
+                Quaternion.Euler(
+                    0,
+                    0,
+                    Random.Range(
+                        0,
+                        360
+                    )
+                );
+
+            Instantiate(
+                deathEffect,
+                transform.position,
+                rot
+            );
         }
 
-        deadPlayer.SetActive(true);
 
-        //deadPlayer.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
+        deadPlayer.SetActive(
+            true
+        );
 
-        // Wait for 2 seconds in real-world time
-        yield return new WaitForSecondsRealtime(2f);
 
-        // Activate the death screen
+        yield return new WaitForSecondsRealtime(
+            2f
+        );
+
+
         if (deathScreen != null)
         {
-            deathScreen.SetActive(true);
+            deathScreen.SetActive(
+                true
+            );
         }
 
-        Time.timeScale = 0f;
+        Time.timeScale =
+            0f;
     }
 
+
+    // =========================
+    // COINS
+    // =========================
 
     public void AddCoin(int value)
     {
-        coins += Mathf.FloorToInt(value * coinMultiplyer);
-        coinText.text = ":" + coins.ToString();
+        coins +=
+            Mathf.FloorToInt(
+                value *
+                coinMultiplyer
+            );
+
+        coinText.text =
+            ":" +
+            coins.ToString();
     }
 
-    public void IncreaseCoinMultiplyer(float value)
+
+    public void IncreaseCoinMultiplyer(
+        float value
+    )
     {
-        coinMultiplyer += value;
+        coinMultiplyer +=
+            value;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+
+    // =========================
+    // CONTACT DAMAGE
+    // =========================
+
+    void OnTriggerEnter2D(
+        Collider2D other
+    )
     {
-        TryTakeContactDamage(other);
+        TryTakeContactDamage(
+            other
+        );
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (Time.time < lastDamageTime + damageInterval) return;
-        TryTakeContactDamage(other);
-    }
 
-    void TryTakeContactDamage(Collider2D other)
+    void OnTriggerStay2D(
+        Collider2D other
+    )
     {
-        // Boss damage
-        Boss boss = other.GetComponent<Boss>();
-        if (boss != null)
+        if (
+            Time.time <
+            lastDamageTime +
+            damageInterval
+        )
         {
-            TakeDamage(boss.damage);
-            lastDamageTime = Time.time;
             return;
         }
 
-        // Normal enemy damage
-        EnemyController enemy = other.GetComponent<EnemyController>();
+        TryTakeContactDamage(
+            other
+        );
+    }
+
+
+    void TryTakeContactDamage(
+        Collider2D other
+    )
+    {
+        Boss boss =
+            other.GetComponent<Boss>();
+
+        if (boss != null)
+        {
+            TakeDamage(
+                boss.damage
+            );
+
+            lastDamageTime =
+                Time.time;
+
+            return;
+        }
+
+
+        EnemyController enemy =
+            other.GetComponent<EnemyController>();
+
         if (enemy != null)
         {
-            TakeDamage(enemy.damage);
-            lastDamageTime = Time.time;
+            TakeDamage(
+                enemy.damage
+            );
+
+            lastDamageTime =
+                Time.time;
         }
     }
 
-    public float ApplyDamageModifiers(float dmg)
+
+    // =========================
+    // DAMAGE MODIFIERS
+    // =========================
+
+    public float ApplyDamageModifiers(
+        float dmg
+    )
     {
-        float finalDamage = dmg;
+        float finalDamage =
+            dmg;
+
 
         // Rage
         if (isRaging)
-            finalDamage *= (1f+rageDamageBonus);
+        {
+            finalDamage *=
+                (1f + rageDamageBonus);
+        }
+
 
         return finalDamage;
     }
 
-    public void OnDamageDealt(float finalDamage)
+
+    // =========================
+    // LIFE STEAL
+    // =========================
+
+    public void OnDamageDealt(
+        float finalDamage
+    )
     {
         if (lifestealPercent > 0f)
         {
-            float healAmount = finalDamage * lifestealPercent;
-            Heal(healAmount, true);
+            float healAmount =
+                finalDamage *
+                lifestealPercent;
+
+            Heal(
+                healAmount,
+                true
+            );
         }
     }
-
 }

@@ -32,4 +32,11 @@ public static class PlayerStats
 
         return 0.5f + (data.pickupRadiusLevel * 0.15f);
     }
+
+    public static float GetAttackSpeedMultiplier()
+    {
+        var data = PlayerDataManager.Instance.data;
+
+        return 1f + (data.attackSpeedLevel * 0.05f);
+    }
 }

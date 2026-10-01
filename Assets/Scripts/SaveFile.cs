@@ -77,6 +77,7 @@ public static class SaveFile
         public int maxHPLevel;
         public int damageLevel;
         public int speedLevel;
+        public int attackSpeedLevel;
         public int pickupRadiusLevel;
         public SkinData[] skins;
         public List<Mission> activeMissions;
