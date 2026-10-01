@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour
     public float equipmentDamageMultiplier = 1f;
     public float equipmentMaxHPMultiplier = 1f;
 
+    [Header("Area Buffs")]
+    public float areaSizeMultiplier = 1f;
+
     public GameObject deathEffect;
 
 
@@ -371,15 +374,14 @@ public class PlayerController : MonoBehaviour
 
     public void AddCoin(int value)
     {
-        coins +=
-            Mathf.FloorToInt(
-                value *
-                coinMultiplyer
-            );
+        coins += value;
 
-        coinText.text =
-            ":" +
-            coins.ToString();
+        if (Random.value < coinBonusChance)
+        {
+            coins += 1;
+        }
+
+        coinText.text = ":" + coins.ToString();
     }
 
 
