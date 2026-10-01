@@ -2854,7 +2854,7 @@ MonoBehaviour:
   level: 0
   maxLevel: 5
   levelUpButton: {fileID: 729920803}
-  player: {fileID: 0}
+  player: {fileID: 808585395}
   percentIncreasePerLevel: 10
   boots1:
   - {fileID: 1391610371, guid: 2d1c304e36ade794c97847fdb4cfcc45, type: 3}
@@ -12711,7 +12711,7 @@ MonoBehaviour:
   animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 0
-  masterSprite: {fileID: 0}
+  masterSprite: {fileID: 808585398}
 --- !u!212 &836817951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15499,7 +15499,7 @@ MonoBehaviour:
   animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 0
-  masterSprite: {fileID: 0}
+  masterSprite: {fileID: 808585398}
 --- !u!212 &994254027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18499,7 +18499,7 @@ MonoBehaviour:
   animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 0
-  masterSprite: {fileID: 0}
+  masterSprite: {fileID: 808585398}
 --- !u!212 &1181207237
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30031,7 +30031,7 @@ MonoBehaviour:
   animationSpeed: 0.1
   isMoving: 0
   destroyOnFinish: 0
-  masterSprite: {fileID: 0}
+  masterSprite: {fileID: 808585398}
 --- !u!212 &1927311752
 SpriteRenderer:
   m_ObjectHideFlags: 0
