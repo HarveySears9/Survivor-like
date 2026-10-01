@@ -2957,7 +2957,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 714364296, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  m_Sprite: {fileID: 1098529506, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5602,7 +5602,6 @@ MonoBehaviour:
   levelUpButton: {fileID: 315488931}
   sizeIncreasePerLevel: 0.1
   spinningBlades: {fileID: 107780990}
-  meteor: {fileID: 0}
   hammer: {fileID: 0}
   dragonTail: {fileID: 0}
 --- !u!4 &329702430

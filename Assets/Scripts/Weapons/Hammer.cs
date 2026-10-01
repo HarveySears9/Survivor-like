@@ -135,7 +135,8 @@ public class Hammer : WeaponBase
                 target.position,
                 transform,
                 this,
-                level
+                level,
+                player.areaSizeMultiplier
             );
 
             float finalDamage =
@@ -245,5 +246,23 @@ public class Hammer : WeaponBase
             transform.position,
             range
         );
+    }
+
+    void CreateWeaponUI()
+    {
+        GameObject uiObj =
+            Instantiate(
+                weaponUIPrefab,
+                weaponUIParent
+            );
+
+        WeaponUI weaponUI =
+            uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite =
+            weaponIcon;
+
+        weaponUI.cooldownSlider.enabled =
+            false;
     }
 }

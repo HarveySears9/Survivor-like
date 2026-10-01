@@ -78,6 +78,10 @@ public class DragonTail : WeaponBase
                 transform
             );
 
+        // Apply Enchanted Lens area size
+        tail.transform.localScale *=
+            player.areaSizeMultiplier;
+
         // Position around B'Rick's waist / tail bone
         tail.transform.localPosition =
             new Vector3(

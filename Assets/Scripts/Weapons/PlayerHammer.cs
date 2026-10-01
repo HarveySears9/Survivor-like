@@ -16,6 +16,10 @@ public class PlayerHammer : MonoBehaviour
 
     public float spinSpeed = 500f;
 
+    [Header("Area Size")]
+    [HideInInspector]
+    public float areaSizeMultiplier = 1f;
+
     private Vector2 targetPosition;
     private Transform playerTransform;
     private Hammer owner;
@@ -26,17 +30,30 @@ public class PlayerHammer : MonoBehaviour
 
     private int level;
 
+    private Vector3 originalScale;
+
     public void Initialize(
         Vector2 targetPosition,
         Transform playerTransform,
         Hammer owner,
-        int level
+        int level,
+        float areaSizeMultiplier
     )
     {
         this.targetPosition = targetPosition;
         this.playerTransform = playerTransform;
         this.owner = owner;
         this.level = level;
+        this.areaSizeMultiplier = areaSizeMultiplier;
+
+        // Store original prefab scale
+        originalScale =
+            transform.localScale;
+
+        // Apply Enchanted Lens
+        transform.localScale =
+            originalScale *
+            areaSizeMultiplier;
 
         // Select the correct hammer visual
         if (levels != null && levels.Length > 0)

@@ -12,6 +12,10 @@ public class Meteor : MonoBehaviour
     public GameObject aoePrefab;
     public GameObject shadowPrefab;
 
+    [Header("Area Size")]
+    [HideInInspector]
+    public float areaSizeMultiplier = 1f;
+
     [HideInInspector]
     public Vector3 targetPosition;
 
@@ -21,9 +25,13 @@ public class Meteor : MonoBehaviour
 
     private Vector3 shadowStartScale;
 
+    private Vector3 meteorStartScale;
+
     void Start()
     {
-        // Create the shadow at the landing position
+        meteorStartScale =
+            transform.localScale;
+
         Vector3 shadowPos = targetPosition;
         shadowPos.y -= 0.25f;
 
@@ -37,9 +45,13 @@ public class Meteor : MonoBehaviour
         shadowStartScale =
             shadowInstance.transform.localScale;
 
-        // Start the shadow small
+        shadowStartScale *= areaSizeMultiplier;
+
         shadowInstance.transform.localScale =
             shadowStartScale * 0.1f;
+
+        transform.localScale =
+            meteorStartScale * areaSizeMultiplier;
 
         startY =
             transform.position.y;
@@ -99,6 +111,8 @@ public class Meteor : MonoBehaviour
                 aoePos,
                 Quaternion.identity
             );
+
+        aoe.transform.localScale *= areaSizeMultiplier;
 
         DamageOverTimeArea damageArea =
             aoe.GetComponent<DamageOverTimeArea>();

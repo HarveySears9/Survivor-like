@@ -72,6 +72,9 @@ public class MeteorDrop : WeaponBase
 
                 meteorScript.damage =
                     GetWeaponDamage();
+
+                meteorScript.areaSizeMultiplier =
+                    player.areaSizeMultiplier;
             }
 
             float randomDelay =

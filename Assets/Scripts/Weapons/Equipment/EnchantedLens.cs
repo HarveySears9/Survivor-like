@@ -6,7 +6,6 @@ public class EnchantedLens : EquipmentBase
     public float sizeIncreasePerLevel = 0.10f;
 
     public SpinningBlades spinningBlades;
-    public Meteor meteor;
     public Hammer hammer;
     public DragonTail dragonTail;
 
