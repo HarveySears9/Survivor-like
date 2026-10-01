@@ -2164,6 +2164,7 @@ MonoBehaviour:
     maxHPLevel: 0
     damageLevel: 0
     speedLevel: 0
+    attackSpeedLevel: 0
     pickupRadiusLevel: 0
     skins: []
     activeMissions: []

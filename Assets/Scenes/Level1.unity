@@ -651,9 +651,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55e60bec887818469b0d55fedf7bee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 120
+  baseFireRate: 1
+  fireRate: 1
   level: 0
   maxLevel: 5
+  baseDamage: 1
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 440770632, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  cooldownSlider: {fileID: 0}
   level1Blades:
   - {fileID: 1771131201}
   - {fileID: 1913172875}
@@ -679,14 +685,6 @@ MonoBehaviour:
   - {fileID: 808319972}
   - {fileID: 1473440109}
   - {fileID: 164346764}
-  level1: {fileID: 2127102536}
-  level2: {fileID: 957715935}
-  level3: {fileID: 927883764}
-  level4: {fileID: 561836686}
-  level5: {fileID: 1004247155}
-  levelUpButton: {fileID: 1960822071}
-  baseDamage: 1
-  player: {fileID: 808585395}
   allBlades:
   - {fileID: 1771131201}
   - {fileID: 1913172875}
@@ -708,9 +706,14 @@ MonoBehaviour:
   - {fileID: 808319972}
   - {fileID: 1473440109}
   - {fileID: 164346764}
-  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
-  weaponUIParent: {fileID: 475976205}
-  weaponIcon: {fileID: 440770632, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  level1: {fileID: 2127102536}
+  level2: {fileID: 957715935}
+  level3: {fileID: 927883764}
+  level4: {fileID: 561836686}
+  level5: {fileID: 1004247155}
+  spinSpeed: 120
+  levelUpButton: {fileID: 1960822071}
+  unlocked: 1
 --- !u!50 &107780991
 Rigidbody2D:
   serializedVersion: 4
@@ -1210,10 +1213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2efdea747fadc24db45960dbee4adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashPrefab: {fileID: 7747718533898637920, guid: 4bc07af7781e45842b47def7941f466c, type: 3}
+  baseFireRate: 1
   fireRate: 1
   level: 0
   maxLevel: 5
+  baseDamage: 1
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 1465144857, guid: 0891f3a494a565540a315f3c0a6db776, type: 3}
+  cooldownSlider: {fileID: 0}
+  slashPrefab: {fileID: 7747718533898637920, guid: 4bc07af7781e45842b47def7941f466c, type: 3}
   range: 2
   playerAnimator: {fileID: 1927311751}
   levelUpButtonAnimator: {fileID: 1619566590}
@@ -1294,11 +1303,6 @@ MonoBehaviour:
   - {fileID: 908812353, guid: 1c9f6bce12772bd4790f4e3f57b444a6, type: 3}
   levelUpButton: {fileID: 1915697983}
   sr: {fileID: 1927311752}
-  player: {fileID: 808585395}
-  baseDamage: 1
-  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
-  weaponUIParent: {fileID: 475976205}
-  weaponIcon: {fileID: 1465144857, guid: 0891f3a494a565540a315f3c0a6db776, type: 3}
 --- !u!224 &140848833 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4115118737701047628, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
@@ -2545,53 +2549,6 @@ MonoBehaviour:
   gfx: {fileID: 836817950}
   levelUpButtonAnimator: {fileID: 1878078263}
   sr: {fileID: 836817951}
---- !u!1 &218169890
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 218169891}
-  - component: {fileID: 218169892}
-  m_Layer: 0
-  m_Name: IceBombDropper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &218169891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218169890}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 808585393}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &218169892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218169890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5fa0d3dfdf87d64a9e41a37e4b8b22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iceBombPrefab: {fileID: 2088076801791209694, guid: bff4c4caf9a8e6f4aaa7432984fdea77, type: 3}
-  dropInterval: 5
-  level: 0
 --- !u!224 &230909379 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4115118737701047628, guid: 75c742e39ecaa4a438e22ba76fa5e40e, type: 3}
@@ -4334,6 +4291,12 @@ MonoBehaviour:
   rageDamageBonus: 0
   lifestealPercent: 0
   isRaging: 0
+  weaponCooldownMultiplier: 1
+  weaponDamageMultiplier: 1
+  summonDamageMultiplier: 1
+  summonCooldownMultiplier: 1
+  turretDamageMultiplier: 1
+  turretCooldownMultiplier: 1
   deathEffect: {fileID: 0}
 --- !u!114 &302951754
 MonoBehaviour:
@@ -5362,10 +5325,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4516d9737000594ea9c2bfabd99d8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hammerPrefab: {fileID: 2072016722604773734, guid: 33b4b48c8a565aa469b466fb25b0eab1, type: 3}
+  baseFireRate: 1
   fireRate: 0.2
   level: 0
   maxLevel: 5
+  baseDamage: 5
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: -627797706, guid: 2157d25d53fcb8e4b92a759c2974e891, type: 3}
+  cooldownSlider: {fileID: 0}
+  hammerPrefab: {fileID: 2072016722604773734, guid: 33b4b48c8a565aa469b466fb25b0eab1, type: 3}
   range: 10
   playerAnimator: {fileID: 994254026}
   hammer1:
@@ -5445,12 +5414,7 @@ MonoBehaviour:
   - {fileID: 1994004336, guid: 2157d25d53fcb8e4b92a759c2974e891, type: 3}
   levelUpButton: {fileID: 1944393090}
   sr: {fileID: 994254027}
-  player: {fileID: 808585395}
-  baseDamage: 5
   unlocked: 0
-  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
-  weaponUIParent: {fileID: 475976205}
-  weaponIcon: {fileID: -627797706, guid: 2157d25d53fcb8e4b92a759c2974e891, type: 3}
 --- !u!1 &388621588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6083,9 +6047,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cf025ac6bcef343bd9d16b4d4fbeae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseFireRate: 1
   fireRate: 0.2
   level: 0
   maxLevel: 5
+  baseDamage: 1
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 1984844161, guid: 8db9c71712149944281e7e8214b22a35, type: 3}
+  cooldownSlider: {fileID: 0}
+  staffOrbitPrefab: {fileID: 5287223195845036954, guid: 84b36bf9046cd0047b771c2207aeb795, type: 3}
   playerAnimator: {fileID: 1181207236}
   staff1:
   - {fileID: 1984844161, guid: 8db9c71712149944281e7e8214b22a35, type: 3}
@@ -6164,13 +6135,7 @@ MonoBehaviour:
   - {fileID: 1954768135, guid: 8db9c71712149944281e7e8214b22a35, type: 3}
   levelUpButton: {fileID: 1976882464}
   sr: {fileID: 1181207237}
-  player: {fileID: 808585395}
-  baseDamage: 1
   unlocked: 0
-  staffOrbitPrefab: {fileID: 5287223195845036954, guid: 84b36bf9046cd0047b771c2207aeb795, type: 3}
-  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
-  weaponUIParent: {fileID: 475976205}
-  weaponIcon: {fileID: 1984844161, guid: 8db9c71712149944281e7e8214b22a35, type: 3}
 --- !u!1 &426020768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6900,9 +6865,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55e60bec887818469b0d55fedf7bee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 120
+  baseFireRate: 1
+  fireRate: 1
   level: 0
   maxLevel: 5
+  baseDamage: 1
+  weaponUIPrefab: {fileID: 0}
+  weaponUIParent: {fileID: 0}
+  weaponIcon: {fileID: 0}
+  cooldownSlider: {fileID: 0}
   level1Blades:
   - {fileID: 493525559}
   - {fileID: 701049681}
@@ -6928,18 +6899,15 @@ MonoBehaviour:
   - {fileID: 1486395675}
   - {fileID: 313496791}
   - {fileID: 1785474671}
+  allBlades: []
   level1: {fileID: 1257013983}
   level2: {fileID: 992885371}
   level3: {fileID: 974668921}
   level4: {fileID: 2055951736}
   level5: {fileID: 1578497245}
+  spinSpeed: 120
   levelUpButton: {fileID: 0}
-  baseDamage: 1
-  player: {fileID: 0}
-  allBlades: []
-  weaponUIPrefab: {fileID: 0}
-  weaponUIParent: {fileID: 0}
-  weaponIcon: {fileID: 0}
+  unlocked: 1
 --- !u!4 &470005393
 Transform:
   m_ObjectHideFlags: 0
@@ -9171,17 +9139,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed02c3a97fc4794d884e256206aabc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailPrefab: {fileID: 2767501445765653247, guid: 7e5fc700196b5624891f45405ca8162d, type: 3}
   baseFireRate: 1.5
   fireRate: 1.5
   level: 0
   maxLevel: 5
   baseDamage: 1
-  attackDuration: 1.2
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: -163292265, guid: 587999892244d7c44b1c93d129f9fbfd, type: 3}
   cooldownSlider: {fileID: 0}
+  tailPrefab: {fileID: 2767501445765653247, guid: 7e5fc700196b5624891f45405ca8162d, type: 3}
+  attackDuration: 1.2
   unlocked: 1
   levelUpButton: {fileID: 2025436305}
 --- !u!1 &677401931
@@ -10045,18 +10013,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c481704753488ce48a5d90c856e3ce38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 3236070517778889549, guid: f7914ab8b1db6e04595e27d1509b11ef, type: 3}
-  player: {fileID: 808585393}
+  baseFireRate: 1
   fireRate: 0.2
   level: 0
   maxLevel: 5
+  baseDamage: 1
+  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
+  weaponUIParent: {fileID: 475976205}
+  weaponIcon: {fileID: 2030146507, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  cooldownSlider: {fileID: 0}
+  meteorPrefab: {fileID: 3236070517778889549, guid: f7914ab8b1db6e04595e27d1509b11ef, type: 3}
   radius: 1.5
   meteorsPerWave: 0
   maxMeteorsPerWave: 5
   levelUpButton: {fileID: 238833268}
-  weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
-  weaponUIParent: {fileID: 475976205}
-  weaponIcon: {fileID: 2030146507, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   unlocked: 1
 --- !u!1001 &734148191
 PrefabInstance:
@@ -11289,7 +11259,6 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 107780989}
   - {fileID: 1450253029}
-  - {fileID: 218169891}
   - {fileID: 1089598204}
   - {fileID: 1856092777}
   - {fileID: 140133674}
@@ -11358,6 +11327,12 @@ MonoBehaviour:
   rageDamageBonus: 0
   lifestealPercent: 0
   isRaging: 0
+  weaponCooldownMultiplier: 1
+  weaponDamageMultiplier: 1
+  summonDamageMultiplier: 1
+  summonCooldownMultiplier: 1
+  turretDamageMultiplier: 1
+  turretCooldownMultiplier: 1
   deathEffect: {fileID: 6945846846648330168, guid: 9b7815eac44f02b41a3a82c70e62342d, type: 3}
 --- !u!50 &808585397
 Rigidbody2D:
@@ -20759,19 +20734,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eacc6fad72069a44a9e240d5fe4ffbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireballPrefab: {fileID: 568635051185227710, guid: 6093857d94b32ee41a7eb393e72373a9, type: 3}
   baseFireRate: 0.5
+  fireRate: 1
   level: 0
   maxLevel: 5
-  spreadAngle: 30
-  range: 3.5
-  levelUpButton: {fileID: 97395567}
-  moveDirection: {x: 0, y: 0}
   baseDamage: 3
-  cooldownSlider: {fileID: 0}
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: -882779443, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
+  cooldownSlider: {fileID: 0}
+  fireballPrefab: {fileID: 568635051185227710, guid: 6093857d94b32ee41a7eb393e72373a9, type: 3}
+  range: 3.5
+  levelUpButton: {fileID: 97395567}
 --- !u!224 &1455803455 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2130620160419660145, guid: 5dc0c20776fbcbf41ab3626542291e46, type: 3}
@@ -21925,18 +21899,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fb5b52392c944f9005f73c08f7bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 4379824629723330770, guid: cef277f36f4ceba47a4c3534bfdd6f4a, type: 3}
   baseFireRate: 1
   fireRate: 1
   level: 0
   maxLevel: 5
   baseDamage: 1
-  arrowsPerBurst: 1
-  burstDelay: 0.12
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: 1255721880, guid: e231d22ee79dc6343af95f4025cfb39c, type: 3}
   cooldownSlider: {fileID: 0}
+  arrowPrefab: {fileID: 4379824629723330770, guid: cef277f36f4ceba47a4c3534bfdd6f4a, type: 3}
+  arrowsPerBurst: 1
+  burstDelay: 0.12
   unlocked: 1
   levelUpButton: {fileID: 1498471932}
 --- !u!4 &1502581558
@@ -22257,21 +22231,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954d9e078b6e3e048a6ca79a53e46e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseFireRate: 1
   fireRate: 0.4
-  baseRange: 2.25
-  chainRange: 1.75
-  baseDamage: 1
-  maxChains: 3
   level: 0
   maxLevel: 5
-  levelUpButton: {fileID: 1316870217}
-  arcVisualPrefab: {fileID: 6604213439518367188, guid: c558475a4fd4f0f4f8ddafeee7a116ac, type: 3}
-  chainDelay: 0.08
-  testing: 0
+  baseDamage: 1
   weaponUIPrefab: {fileID: 997944066040738054, guid: daebf700b773d12419e9016aac1feb13, type: 3}
   weaponUIParent: {fileID: 475976205}
   weaponIcon: {fileID: -734427091, guid: c07f1386baeb6484fa69e4f8b90ec905, type: 3}
+  cooldownSlider: {fileID: 0}
+  baseRange: 2.25
+  chainRange: 1.75
+  maxChains: 3
+  arcVisualPrefab: {fileID: 6604213439518367188, guid: c558475a4fd4f0f4f8ddafeee7a116ac, type: 3}
+  chainDelay: 0.08
   startSound: {fileID: 8300000, guid: cf6dc230107d9ea49997cce12b210852, type: 3}
+  levelUpButton: {fileID: 1316870217}
+  testing: 0
 --- !u!1 &1528730556
 GameObject:
   m_ObjectHideFlags: 0
