@@ -51,6 +51,7 @@ public class PlayerDataManager : MonoBehaviour
                 data.maxHPLevel = 0;
                 data.damageLevel = 0;
                 data.speedLevel = 0;
+                data.attackSpeedLevel = 0;
                 data.pickupRadiusLevel = 0;
                 data.skins = defaultSkins;
                 data.levelsUnlocked = defaultLevels;

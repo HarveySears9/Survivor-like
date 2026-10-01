@@ -9,6 +9,7 @@ public class UpgradeMenu : MonoBehaviour
     public UpgradeDefinition damageUpgrade;
     public UpgradeDefinition speedUpgrade;
     public UpgradeDefinition pickupUpgrade;
+    public UpgradeDefinition attackSpeedUpgrade;
 
     [Header("UI")]
     public CoinUI coinUI;
@@ -18,23 +19,27 @@ public class UpgradeMenu : MonoBehaviour
     public TextMeshProUGUI damageText;
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI pickupText;
+    public TextMeshProUGUI attackSpeedText;
 
     public TextMeshProUGUI hpCostText;
     public TextMeshProUGUI damageCostText;
     public TextMeshProUGUI speedCostText;
     public TextMeshProUGUI pickupCostText;
+    public TextMeshProUGUI attackSpeedCostText;
 
     [Header("Buttons")]
     public Button hpButton;
     public Button damageButton;
     public Button speedButton;
     public Button pickupButton;
+    public Button attackSpeedButton;
 
     [Header("Button Text")]
     public TextMeshProUGUI hpButtonText;
     public TextMeshProUGUI damageButtonText;
     public TextMeshProUGUI speedButtonText;
     public TextMeshProUGUI pickupButtonText;
+    public TextMeshProUGUI attackSpeedButtonText;
 
     private SaveFile.Data data => PlayerDataManager.Instance.data;
 
@@ -75,6 +80,7 @@ public class UpgradeMenu : MonoBehaviour
     public void UpgradeDamage() => TryUpgrade(damageUpgrade, ref data.damageLevel);
     public void UpgradeSpeed() => TryUpgrade(speedUpgrade, ref data.speedLevel);
     public void UpgradePickup() => TryUpgrade(pickupUpgrade, ref data.pickupRadiusLevel);
+    public void UpgradeAttackSpeed() => TryUpgrade(attackSpeedUpgrade, ref data.attackSpeedLevel);
 
     // =========================
     // UI
@@ -87,11 +93,13 @@ public class UpgradeMenu : MonoBehaviour
         UpdateUpgradeUI(damageUpgrade, data.damageLevel, damageText, damageCostText, PlayerStats.GetDamageMultiplier().ToString("0.00") + "x");
         UpdateUpgradeUI(speedUpgrade, data.speedLevel, speedText, speedCostText, PlayerStats.GetSpeedMultiplier().ToString("0%"));
         UpdateUpgradeUI(pickupUpgrade, data.pickupRadiusLevel, pickupText, pickupCostText, PlayerStats.GetPickupRadius().ToString("0.00"));
+        UpdateUpgradeUI(attackSpeedUpgrade, data.attackSpeedLevel, attackSpeedText, attackSpeedCostText, PlayerStats.GetAttackSpeedMultiplier().ToString("0.00") + "x");
 
         UpdateButtonState(hpUpgrade, data.maxHPLevel, hpButton, hpButtonText);
         UpdateButtonState(damageUpgrade, data.damageLevel, damageButton, damageButtonText);
         UpdateButtonState(speedUpgrade, data.speedLevel, speedButton, speedButtonText);
         UpdateButtonState(pickupUpgrade, data.pickupRadiusLevel, pickupButton, pickupButtonText);
+        UpdateButtonState(attackSpeedUpgrade, data.attackSpeedLevel, attackSpeedButton, attackSpeedButtonText);
     }
 
     private void UpdateUpgradeUI(

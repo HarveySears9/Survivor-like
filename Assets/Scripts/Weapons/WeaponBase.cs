@@ -52,7 +52,9 @@ public abstract class WeaponBase : MonoBehaviour
 
     protected float GetCooldown()
     {
-        float cooldown = 1f / GetEffectiveFireRate();
+        float effectiveFireRate = GetEffectiveFireRate();
+
+        float cooldown = 1f / effectiveFireRate;
 
         if (player != null)
         {
