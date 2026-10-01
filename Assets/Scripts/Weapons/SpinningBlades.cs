@@ -28,17 +28,45 @@ public class SpinningBlades : WeaponBase
     private GameObject[] blades;
     private GameObject currentLevel;
 
+    [Header("Area Size")]
+    private Vector3 level1OriginalScale;
+    private Vector3 level2OriginalScale;
+    private Vector3 level3OriginalScale;
+    private Vector3 level4OriginalScale;
+    private Vector3 level5OriginalScale;
+
+    private float lastAreaSizeMultiplier = -1f;
+
     protected override void Start()
     {
         base.Start();
 
         level = 0;
 
+        // Store the original scale of every blade level
+        if (level1 != null)
+            level1OriginalScale = level1.transform.localScale;
+
+        if (level2 != null)
+            level2OriginalScale = level2.transform.localScale;
+
+        if (level3 != null)
+            level3OriginalScale = level3.transform.localScale;
+
+        if (level4 != null)
+            level4OriginalScale = level4.transform.localScale;
+
+        if (level5 != null)
+            level5OriginalScale = level5.transform.localScale;
+
         blades = level1Blades;
         currentLevel = level1;
 
         // Make sure all blade levels start disabled
         DisableAllLevels();
+
+        // Apply the initial area size
+        ApplyAreaSize();
 
         if (levelUpButton != null)
         {
@@ -174,6 +202,62 @@ public class SpinningBlades : WeaponBase
                 level,
                 maxLevel
             );
+        }
+    }
+
+    public void UpdateAreaSize()
+    {
+        // Force the area size to update
+        lastAreaSizeMultiplier = -1f;
+
+        ApplyAreaSize();
+    }
+
+    void ApplyAreaSize()
+    {
+        float multiplier = player != null
+            ? player.areaSizeMultiplier
+            : 1f;
+
+        // Don't do anything if the multiplier hasn't changed
+        if (Mathf.Approximately(
+            multiplier,
+            lastAreaSizeMultiplier))
+        {
+            return;
+        }
+
+        lastAreaSizeMultiplier =
+            multiplier;
+
+        if (level1 != null)
+        {
+            level1.transform.localScale =
+                level1OriginalScale * multiplier;
+        }
+
+        if (level2 != null)
+        {
+            level2.transform.localScale =
+                level2OriginalScale * multiplier;
+        }
+
+        if (level3 != null)
+        {
+            level3.transform.localScale =
+                level3OriginalScale * multiplier;
+        }
+
+        if (level4 != null)
+        {
+            level4.transform.localScale =
+                level4OriginalScale * multiplier;
+        }
+
+        if (level5 != null)
+        {
+            level5.transform.localScale =
+                level5OriginalScale * multiplier;
         }
     }
 
