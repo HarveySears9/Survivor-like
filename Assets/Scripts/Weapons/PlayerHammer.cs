@@ -3,72 +3,138 @@ using UnityEngine;
 
 public class PlayerHammer : MonoBehaviour
 {
+    [Header("Hammer")]
     public float speed = 6f;
     public float damage = 5f;
 
+    [Header("Return")]
+    public float returnDelay = 0.5f;
+
+    [Header("Visuals")]
+    public GameObject gfx;
+    public GameObject[] levels;
+
+    public float spinSpeed = 500f;
+
     private Vector2 targetPosition;
     private Transform playerTransform;
-    private bool returning = false;
+    private Hammer owner;
 
-    public float returnDelay = 0.5f;
+    private bool returning = false;
 
     private Vector2 direction;
 
-    public GameObject gfx;
-    //public SpriteRenderer sr;
-    public GameObject[] levels;
-    public float spinSpeed = 500f;
-    private Hammer owner;
     private int level;
 
-    public void Initialize(Vector2 targetPosition, Transform playerTransform, Hammer owner, int level)
+    public void Initialize(
+        Vector2 targetPosition,
+        Transform playerTransform,
+        Hammer owner,
+        int level
+    )
     {
         this.targetPosition = targetPosition;
         this.playerTransform = playerTransform;
         this.owner = owner;
         this.level = level;
 
-        int index = Mathf.Clamp(level - 1, 0, levels.Length - 1);
-
-        // Disable all first
-        for (int i = 0; i < levels.Length; i++)
+        // Select the correct hammer visual
+        if (levels != null && levels.Length > 0)
         {
-            levels[i].SetActive(false);
+            int index =
+                Mathf.Clamp(
+                    level - 1,
+                    0,
+                    levels.Length - 1
+                );
+
+            // Disable all levels
+            for (int i = 0; i < levels.Length; i++)
+            {
+                if (levels[i] != null)
+                {
+                    levels[i].SetActive(false);
+                }
+            }
+
+            // Enable current level
+            if (levels[index] != null)
+            {
+                levels[index].SetActive(true);
+            }
         }
 
-        // Enable correct one
-        levels[index].SetActive(true);
+        // Initial direction toward target
+        direction =
+            (
+                targetPosition -
+                (Vector2)transform.position
+            ).normalized;
 
-        direction = (targetPosition - (Vector2)transform.position).normalized;
-
-        StartCoroutine(ReturnHammer());
+        StartCoroutine(
+            ReturnHammer()
+        );
     }
 
     void Update()
     {
+        if (playerTransform == null)
+            return;
+
+        // Once returning, constantly update
+        // direction toward the player
         if (returning)
         {
-            direction = ((Vector2)playerTransform.position - (Vector2)transform.position).normalized;
+            direction =
+                (
+                    (Vector2)playerTransform.position -
+                    (Vector2)transform.position
+                ).normalized;
         }
 
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(
+            direction *
+            speed *
+            Time.deltaTime
+        );
 
-        // Return complete
-        if (returning && Vector2.Distance(transform.position, playerTransform.position) < 0.2f)
+        // Hammer has reached player
+        if (
+            returning &&
+            Vector2.Distance(
+                transform.position,
+                playerTransform.position
+            ) < 0.2f
+        )
         {
-            owner.HammerReturned();
+            if (owner != null)
+            {
+                owner.HammerReturned();
+            }
+
             Destroy(gameObject);
         }
     }
 
     IEnumerator ReturnHammer()
     {
-        yield return new WaitForSeconds(returnDelay);
+        yield return new WaitForSeconds(
+            returnDelay
+        );
+
         returning = true;
     }
 
     void FixedUpdate()
     {
-        gfx.transform.Rotate(0f, 0f, spinSpeed * Time.deltaTime);
+        if (gfx != null)
+        {
+            gfx.transform.Rotate(
+                0f,
+                0f,
+                spinSpeed *
+                Time.deltaTime
+            );
+        }
     }
 }

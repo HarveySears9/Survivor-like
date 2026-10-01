@@ -2,65 +2,64 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ArcBolt : MonoBehaviour
+public class ArcBolt : WeaponBase
 {
-    [Header("Attack Settings")]
-    public float fireRate = 1f;
-    public float baseRange = 5f;   // range to find the first enemy
-    public float chainRange = 3f;  // distance for chaining
-    public float baseDamage = 1f;
+    [Header("Arc Bolt")]
+    public float baseRange = 5f;
+    public float chainRange = 3f;
     public int maxChains = 3;
 
-    [Header("Level Settings")]
-    public int level = 1;
-    public int maxLevel = 5;
+    [Header("Visuals")]
+    public GameObject arcVisualPrefab;
+
+    [Header("Timing")]
+    public float chainDelay = 0.08f;
+
+    [Header("Audio")]
+    public AudioClip startSound;
+
+    [Header("Level Up")]
     public LevelUpButtons levelUpButton;
 
-    [Header("Visuals")]
-    public GameObject arcVisualPrefab; // simple graphic (line or particle)
+    private List<Transform> hitEnemies =
+        new List<Transform>();
 
-    [Header("Timing Settings")]
-    public float chainDelay = 0.08f; // delay between each lightning jump
-
-    private float nextFireTime = 0f;
-    private List<Transform> hitEnemies = new List<Transform>();
     private bool isFiring = false;
-
 
     public bool testing = false;
 
-    private PlayerController player;
-
-    private float currentCooldown;
-
-    [Header("Weapon UI")]
-    public GameObject weaponUIPrefab;
-    public Transform weaponUIParent;
-    public Sprite weaponIcon;
-
-    private WeaponUI weaponUI;
-
-    public AudioClip startSound;
-
-    void Start()
+    protected override void Start()
     {
-        if (levelUpButton != null)
-            levelUpButton.LevelUp(level, maxLevel);
+        base.Start();
 
-        player = FindObjectOfType<PlayerController>();
+        level = 0;
+
+        if (levelUpButton != null)
+        {
+            levelUpButton.LevelUp(level, maxLevel);
+        }
     }
 
     void Update()
     {
-        if (level <= 0 || isFiring) return;
+        if (level <= 0)
+            return;
 
-        if (Time.time >= nextFireTime)
+        if (!isFiring && CooldownReady())
         {
             hitEnemies.Clear();
-            Transform firstTarget = FindClosestEnemy(transform.position, baseRange);
+
+            Transform firstTarget =
+                FindClosestEnemy(
+                    transform.position,
+                    baseRange
+                );
+
             if (firstTarget != null)
             {
-                StartCoroutine(FireRoutine(firstTarget));
+                StartCoroutine(
+                    FireRoutine(firstTarget)
+                );
             }
         }
 
@@ -69,146 +68,215 @@ public class ArcBolt : MonoBehaviour
 
     IEnumerator FireRoutine(Transform firstTarget)
     {
-        if (firstTarget == null) yield break;
+        if (firstTarget == null)
+            yield break;
 
         isFiring = true;
-        yield return StartCoroutine(ChainToTargetRoutine(firstTarget, maxChains, transform.position));
-        
-        float effectiveFireRate = fireRate;
-        effectiveFireRate *= player.attackSpeedMultiplier;
-        currentCooldown = 1f / effectiveFireRate;
-        nextFireTime = Time.time + currentCooldown;
+
+        yield return StartCoroutine(
+            ChainToTargetRoutine(
+                firstTarget,
+                maxChains,
+                transform.position
+            )
+        );
+
+        // Cooldown starts after the entire chain finishes
+        StartCooldown();
 
         isFiring = false;
     }
 
-    IEnumerator ChainToTargetRoutine(Transform target, int chainsRemaining, Vector3 startPos)
+    IEnumerator ChainToTargetRoutine(
+        Transform target,
+        int chainsRemaining,
+        Vector3 startPos
+    )
     {
-        float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+        float finalDamage =
+            GetWeaponDamage();
 
-        finalDamage = player.ApplyDamageModifiers(finalDamage);
-
-        while (target != null && chainsRemaining > 0)
+        while (
+            target != null &&
+            chainsRemaining > 0
+        )
         {
-            // if target got destroyed, stop immediately
             if (target == null)
                 yield break;
 
             hitEnemies.Add(target);
 
-            // Damage enemy safely
-            var enemy = target.GetComponent<EnemyController>();
-            var boss = target.GetComponent<Boss>();
+            // Damage enemy
+            EnemyController enemy =
+                target.GetComponent<EnemyController>();
 
-            if (enemy != null) enemy.TakeDamage(finalDamage);
-            if (boss != null) boss.TakeDamage(finalDamage);
+            // Damage boss
+            Boss boss =
+                target.GetComponent<Boss>();
 
-            Vector3 targetPos = target != null ? target.position : startPos;
+            if (enemy != null)
+            {
+                enemy.TakeDamage(finalDamage);
+            }
 
-            // Visual
+            if (boss != null)
+            {
+                boss.TakeDamage(finalDamage);
+            }
+
+            Vector3 targetPos =
+                target.position;
+
+            // Spawn lightning visual
             if (arcVisualPrefab != null)
-                SpawnLightningArc(startPos, targetPos);
+            {
+                SpawnLightningArc(
+                    startPos,
+                    targetPos
+                );
+            }
 
+            yield return new WaitForSeconds(
+                chainDelay
+            );
 
-            // Line
-            // DrawLine(startPos, targetPos);
+            // Find the next enemy
+            Transform nextTarget =
+                FindClosestEnemy(
+                    targetPos,
+                    chainRange
+                );
 
-            yield return new WaitForSeconds(chainDelay);
-
-            // Find next target
-            Transform nextTarget = FindClosestEnemy(targetPos, chainRange);
-
-            // If next target is invalid, break
-            if (nextTarget == null || hitEnemies.Contains(nextTarget))
+            if (
+                nextTarget == null ||
+                hitEnemies.Contains(nextTarget)
+            )
+            {
                 break;
+            }
 
-            // Prep for next chain
             startPos = targetPos;
             target = nextTarget;
+
             chainsRemaining--;
         }
     }
 
-    Transform FindClosestEnemy(Vector3 position, float range)
+    Transform FindClosestEnemy(
+        Vector3 position,
+        float range
+    )
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(position, range);
-
-        Debug.Log($"Found {hits.Length} colliders in range {range}");
-        foreach (var h in hits)
-        {
-            Debug.Log($"{h.name} - Tag: {h.tag}");
-        }
+        Collider2D[] hits =
+            Physics2D.OverlapCircleAll(
+                position,
+                range
+            );
 
         Transform closest = null;
-        float closestDist = Mathf.Infinity;
 
-        foreach (var h in hits)
+        float closestDistance =
+            Mathf.Infinity;
+
+        foreach (Collider2D hit in hits)
         {
-            if (h == null) continue; // skip destroyed colliders
-            if (h.CompareTag("Enemy") && !hitEnemies.Contains(h.transform))
+            if (hit == null)
+                continue;
+
+            if (!hit.CompareTag("Enemy"))
+                continue;
+
+            Transform target =
+                hit.transform;
+
+            if (target == null)
+                continue;
+
+            if (hitEnemies.Contains(target))
+                continue;
+
+            float distance =
+                Vector2.Distance(
+                    position,
+                    target.position
+                );
+
+            if (distance < closestDistance)
             {
-                if (h.transform == null) continue; // safeguard
-                float dist = Vector2.Distance(position, h.transform.position);
-                if (dist < closestDist)
-                {
-                    closestDist = dist;
-                    closest = h.transform;
-                }
+                closestDistance = distance;
+                closest = target;
             }
         }
 
-        Debug.Log($"{closest}");
         return closest;
     }
 
-    void DrawLine(Vector3 start, Vector3 end)
+    void SpawnLightningArc(
+        Vector3 start,
+        Vector3 end
+    )
     {
-        GameObject lineObj = new GameObject("ArcLine");
-        LineRenderer lr = lineObj.AddComponent<LineRenderer>();
-        lr.positionCount = 2;
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, end);
-        lr.startWidth = 0.05f;
-        lr.endWidth = 0.05f;
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.yellow;
-        lr.endColor = Color.yellow;
+        if (arcVisualPrefab == null)
+            return;
 
-        lr.sortingLayerName = "Projectile";
-        lr.sortingOrder = 5;
+        GameObject visual =
+            Instantiate(
+                arcVisualPrefab,
+                start,
+                Quaternion.identity
+            );
 
-        Destroy(lineObj, 0.2f);
+        Vector3 direction =
+            end - start;
+
+        float distance =
+            direction.magnitude;
+
+        if (distance > 0f)
+        {
+            visual.transform.right =
+                direction.normalized;
+        }
+
+        SpriteRenderer spriteRenderer =
+            arcVisualPrefab.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null &&
+            spriteRenderer.sprite != null)
+        {
+            Vector3 scale =
+                visual.transform.localScale;
+
+            scale.x =
+                distance /
+                spriteRenderer.sprite.bounds.size.x;
+
+            visual.transform.localScale =
+                scale;
+        }
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(
+                startSound
+            );
+        }
     }
 
-    void SpawnLightningArc(Vector3 start, Vector3 end)
-    {
-        if (arcVisualPrefab == null) return;
-
-        GameObject visual = Instantiate(arcVisualPrefab, start, Quaternion.identity);
-
-        // Compute the direction and distance
-        Vector3 dir = end - start;
-        float distance = dir.magnitude;
-
-        // Rotate the prefab to face the target
-        visual.transform.right = dir.normalized;
-
-        // Scale along X to stretch between points
-        Vector3 scale = visual.transform.localScale;
-        scale.x = distance / (arcVisualPrefab.GetComponent<SpriteRenderer>().sprite.bounds.size.x); // Adjust for sprite width
-        visual.transform.localScale = scale;
-
-        AudioManager.Instance.PlaySFX(startSound);
-
-    }
-
-    public void LevelUp()
+    public override void LevelUp()
     {
         level++;
-        if (level > maxLevel) level = maxLevel;
+
+        if (level > maxLevel)
+            level = maxLevel;
 
         if (levelUpButton != null)
-            levelUpButton.LevelUp(level, maxLevel);
+        {
+            levelUpButton.LevelUp(
+                level,
+                maxLevel
+            );
+        }
 
         if (level == 1)
         {
@@ -217,51 +285,40 @@ public class ArcBolt : MonoBehaviour
 
         switch (level)
         {
-            case 1: maxChains = 2; break;
-            case 2: maxChains = 3; break;
-            case 3: maxChains = 4; break;
-            case 4: maxChains = 5; break;
-            case 5: maxChains = 6; break;
+            case 1:
+                maxChains = 2;
+                break;
+
+            case 2:
+                maxChains = 3;
+                break;
+
+            case 3:
+                maxChains = 4;
+                break;
+
+            case 4:
+                maxChains = 5;
+                break;
+
+            case 5:
+                maxChains = 6;
+                break;
         }
     }
-
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, baseRange);
-        Gizmos.DrawWireSphere(transform.position, chainRange);
-    }
 
+        Gizmos.DrawWireSphere(
+            transform.position,
+            baseRange
+        );
 
-    private void CreateWeaponUI()
-    {
-        GameObject uiObj =
-            Instantiate(weaponUIPrefab, weaponUIParent);
-
-        weaponUI = uiObj.GetComponent<WeaponUI>();
-
-        weaponUI.icon.sprite = weaponIcon;
-
-        weaponUI.cooldownSlider.minValue = 0f;
-        weaponUI.cooldownSlider.maxValue = 1f;
-        weaponUI.cooldownSlider.value = 0f;
-    }
-
-    private void UpdateCooldownUI()
-    {
-        if (weaponUI == null)
-            return;
-
-        if (Time.time >= nextFireTime)
-        {
-            weaponUI.cooldownSlider.value = 0f;
-            return;
-        }
-
-        float remaining = nextFireTime - Time.time;
-
-        weaponUI.cooldownSlider.value =
-            remaining / currentCooldown;
+        Gizmos.DrawWireSphere(
+            transform.position,
+            chainRange
+        );
     }
 }

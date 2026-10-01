@@ -1,52 +1,24 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
-public class FireBreath : MonoBehaviour
+public class FireBreath : WeaponBase
 {
-    public GameObject fireballPrefab; // Reference to the Fireball prefab
-    private float fireRate = 5f;       // Time between each fire breath
-    public float baseFireRate = 0.5f;
-    public int level = 1;             // Weapon level (determines number of fireballs)
-    public int maxLevel = 5;
-    public float spreadAngle = 30f;   // Total spread angle for the fireballs
-    public float range = 10f;   // Total spread angle for the fireballs
-    private float nextFireTime = 0f;  // Tracks when the next fire is allowed
-
-    private bool aimWithJoystick = false;
+    [Header("Fire Breath")]
+    public GameObject fireballPrefab;
+    public float range = 10f;
 
     public LevelUpButtons levelUpButton;
 
-    public Vector2 moveDirection = Vector2.right; // The direction of the player’s movement
 
-    public float baseDamage = 2f;
-
-    private PlayerController player;
-
-
-    public Slider cooldownSlider;
-    private float currentCooldown;
-
-    [Header("Weapon UI")]
-    public GameObject weaponUIPrefab;
-    public Transform weaponUIParent;
-    public Sprite weaponIcon;
-
-    private WeaponUI weaponUI;
-
-    void Start()
+    protected override void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        base.Start();
 
         level = 0;
 
-        fireRate = baseFireRate;
-
         levelUpButton.LevelUp(level, maxLevel);
-
-        nextFireTime = Time.time;
     }
+
 
     void Update()
     {
@@ -54,80 +26,25 @@ public class FireBreath : MonoBehaviour
         if (level <= 0)
             return;
 
-        float effectiveFireRate = fireRate;
-
-        if (player != null)
+        if (CooldownReady())
         {
-            effectiveFireRate *= player.attackSpeedMultiplier;
-        }
-
-        if (Time.time >= nextFireTime)
-        {
-            Fire();
-
-            currentCooldown = 1f / effectiveFireRate;
-            nextFireTime = Time.time + currentCooldown;
+            if (Fire())
+            {
+                StartCooldown();
+            }
         }
 
         UpdateCooldownUI();
     }
 
 
-    void ShotgunFire()
-    {
-        //int fireballCount = (2*level) + 1; // More fireballs as the level increases
-        int fireballCount = 3;
-        float angleStep = spreadAngle / (fireballCount - 1);
-        float startAngle = -spreadAngle / 2;
-
-        Transform enemyTarget = FindTargets();
-
-        Vector2 fireDirection;
-
-        for (int i = 0; i < fireballCount; i++)
-        {
-            // Calculate the fireball's direction
-            float angle = startAngle + i * angleStep;
-
-            if (aimWithJoystick)
-            {
-                // Use joystick direction with spread
-                fireDirection = Quaternion.Euler(0, 0, angle) * moveDirection;
-            }
-            else
-            {
-                if (enemyTarget == null) return; // Exit if no targets are found
-
-                // Calculate direction to the target
-                fireDirection = (enemyTarget.position - transform.position).normalized;
-
-                // Add a spread angle to the direction
-                fireDirection = Quaternion.Euler(0, 0, angle) * fireDirection;
-            }
-
-
-
-            // Instantiate the fireball
-            GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-
-            // Set the rotation to match the fireball's movement direction
-            float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
-            fireball.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
-
-            // Pass the fire direction to the fireball script
-            fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-            float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
-
-            fireball.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
-        }
-    }
-
-    void Fire()
+    private bool Fire()
     {
         Transform enemyTarget = FindTargets();
 
+        // No target, so don't start the cooldown.
         if (enemyTarget == null)
-            return;
+            return false;
 
         Vector2 fireDirection =
             (enemyTarget.position - transform.position).normalized;
@@ -142,69 +59,71 @@ public class FireBreath : MonoBehaviour
         fireball.transform.localScale *= 1.5f;
 
         float angleToRotate =
-            Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
+            Mathf.Atan2(
+                fireDirection.y,
+                fireDirection.x
+            ) * Mathf.Rad2Deg;
 
         fireball.transform.rotation =
             Quaternion.Euler(0, 0, angleToRotate);
 
-        fireball.GetComponent<Fireball>().Initialize(Vector2.right);
-
-        float finalDamage =
-            baseDamage * PlayerStats.GetDamageMultiplier();
+        fireball.GetComponent<Fireball>()
+            .Initialize(Vector2.right);
 
         fireball.GetComponent<Weapon>().damage =
-            player.ApplyDamageModifiers(finalDamage);
+            GetWeaponDamage();
+
+        return true;
     }
+
 
     private Transform FindTargets()
     {
-        List<Transform> enemyTargets = new List<Transform>();
+        List<Transform> enemyTargets =
+            new List<Transform>();
 
-        if (!aimWithJoystick)
+        Collider2D[] targetsInRange =
+            Physics2D.OverlapCircleAll(
+                transform.position,
+                range
+            );
+
+        foreach (var target in targetsInRange)
         {
-            // Find all colliders within the range
-            Collider2D[] targetsInRange = Physics2D.OverlapCircleAll(transform.position, range);
-
-            // Filter only enemy targets
-            foreach (var target in targetsInRange)
+            if (target.CompareTag("Enemy"))
             {
-                if (target.CompareTag("Enemy")) // Make sure your enemies have the "Enemy" tag
-                {
-                    enemyTargets.Add(target.transform);
-                }
+                enemyTargets.Add(target.transform);
             }
-
-            if (enemyTargets.Count == 0) return null; // Exit if no targets are found
-
-            // Find the closest target
-            Transform closestTarget = null;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (Transform enemy in enemyTargets)
-            {
-                float distanceToEnemy = Vector2.Distance(transform.position, enemy.position);
-                if (distanceToEnemy < closestDistance)
-                {
-                    closestDistance = distanceToEnemy;
-                    closestTarget = enemy;
-                }
-            }
-
-            return closestTarget; // Return the closest enemy
         }
-        else
+
+        if (enemyTargets.Count == 0)
+            return null;
+
+        Transform closestTarget = null;
+
+        float closestDistance =
+            Mathf.Infinity;
+
+        foreach (Transform enemy in enemyTargets)
         {
-            return null; // No target if using joystick aiming
+            float distance =
+                Vector2.Distance(
+                    transform.position,
+                    enemy.position
+                );
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestTarget = enemy;
+            }
         }
+
+        return closestTarget;
     }
 
 
-    public void Ability()
-    {
-        StartCoroutine(BurstFire());
-    }
-
-    public void LevelUp()
+    public override void LevelUp()
     {
         level++;
 
@@ -243,57 +162,13 @@ public class FireBreath : MonoBehaviour
     }
 
 
-    IEnumerator BurstFire()
-    {
-        // Store the original fire rate
-        float originalFR = fireRate;
-
-        aimWithJoystick = true;
-
-        // Temporarily set the fire rate to a faster value
-        fireRate = 10f;
-
-        nextFireTime = 0f;
-
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(3f);
-
-        // Restore the original fire rate
-        fireRate = originalFR;
-
-        aimWithJoystick = false;
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
 
-    private void UpdateCooldownUI()
-    {
-        if (cooldownSlider == null)
-            return;
-
-        if (Time.time >= nextFireTime)
-        {
-            cooldownSlider.value = 0f;
-            return;
-        }
-
-        float remainingTime = nextFireTime - Time.time;
-
-        cooldownSlider.value = remainingTime / currentCooldown;
-    }
-    
-    private void CreateWeaponUI()
-    {
-        GameObject uiObj = Instantiate(weaponUIPrefab, weaponUIParent);
-
-        weaponUI = uiObj.GetComponent<WeaponUI>();
-
-        weaponUI.icon.sprite = weaponIcon;
-
-        cooldownSlider = weaponUI.cooldownSlider;
+        Gizmos.DrawWireSphere(
+            transform.position,
+            range
+        );
     }
 }

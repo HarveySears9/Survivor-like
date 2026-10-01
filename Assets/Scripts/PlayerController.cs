@@ -44,6 +44,18 @@ public class PlayerController : MonoBehaviour
     public float lifestealPercent = 0f;  // % of damage dealt (0.05 = 5%)
     public bool isRaging = false;
 
+    [Header("Weapon Buffs")]
+    public float weaponCooldownMultiplier = 1f;
+    public float weaponDamageMultiplier = 1f;
+
+    [Header("Weapon Buffs")]
+    public float summonDamageMultiplier = 1f;
+    public float summonCooldownMultiplier = 1f;
+
+    [Header("Weapon Buffs")]
+    public float turretDamageMultiplier = 1f;
+    public float turretCooldownMultiplier = 1f;
+
     public GameObject deathEffect;
 
 

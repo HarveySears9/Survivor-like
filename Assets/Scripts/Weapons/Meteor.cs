@@ -2,50 +2,85 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
+    [Header("Meteor")]
     public float fallSpeed = 10f;
-    public float damage = 10f;
 
+    [Header("Damage")]
+    public float damage = 1f;
+
+    [Header("Impact")]
     public GameObject aoePrefab;
     public GameObject shadowPrefab;
 
+    [HideInInspector]
     public Vector3 targetPosition;
 
     private GameObject shadowInstance;
+
     private float startY;
 
     private Vector3 shadowStartScale;
 
     void Start()
     {
-        // Spawn shadow at target
+        // Create the shadow at the landing position
         Vector3 shadowPos = targetPosition;
-        shadowPos.y -= 0.25f; // slight offset
-        shadowInstance = Instantiate(shadowPrefab, shadowPos, Quaternion.identity);
+        shadowPos.y -= 0.25f;
 
-        // Store the prefab's original scale
-        shadowStartScale = shadowInstance.transform.localScale;
+        shadowInstance =
+            Instantiate(
+                shadowPrefab,
+                shadowPos,
+                Quaternion.identity
+            );
 
-        // Start small
-        shadowInstance.transform.localScale = shadowStartScale * 0.1f;
+        shadowStartScale =
+            shadowInstance.transform.localScale;
 
-        startY = transform.position.y;
+        // Start the shadow small
+        shadowInstance.transform.localScale =
+            shadowStartScale * 0.1f;
+
+        startY =
+            transform.position.y;
     }
 
     void Update()
     {
-        // Move meteor down
-        float step = fallSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+        float step =
+            fallSpeed * Time.deltaTime;
 
-        // Scale shadow based on progress
+        transform.position =
+            Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                step
+            );
+
+        // Grow the shadow as the meteor approaches
         if (shadowInstance != null)
         {
-            float progress = 1f - (transform.position.y - targetPosition.y) / (startY - targetPosition.y);
-            shadowInstance.transform.localScale = Vector3.Lerp(shadowStartScale * 0.1f, shadowStartScale, progress);
+            float progress =
+                1f -
+                (transform.position.y - targetPosition.y) /
+                (startY - targetPosition.y);
+
+            progress =
+                Mathf.Clamp01(progress);
+
+            shadowInstance.transform.localScale =
+                Vector3.Lerp(
+                    shadowStartScale * 0.1f,
+                    shadowStartScale,
+                    progress
+                );
         }
 
-        // Check if reached target
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        // Check if the meteor has landed
+        if (Vector3.Distance(
+                transform.position,
+                targetPosition
+            ) < 0.1f)
         {
             Impact();
         }
@@ -53,16 +88,31 @@ public class Meteor : MonoBehaviour
 
     void Impact()
     {
-        // Spawn the impact AOE at the meteor's current position
-        Vector3 aoePos = transform.position;
-        aoePos.y -= 0.1f;
-        Instantiate(aoePrefab, aoePos, Quaternion.identity);
+        Vector3 aoePos =
+            transform.position;
 
+        aoePos.y -= 0.1f;
+
+        GameObject aoe =
+            Instantiate(
+                aoePrefab,
+                aoePos,
+                Quaternion.identity
+            );
+
+        DamageOverTimeArea damageArea =
+            aoe.GetComponent<DamageOverTimeArea>();
+
+        if (damageArea != null)
+        {
+            damageArea.SetDamage(damage);
+        }
 
         if (shadowInstance != null)
+        {
             Destroy(shadowInstance);
+        }
 
-        // Destroy the meteor itself
         Destroy(gameObject);
     }
 }

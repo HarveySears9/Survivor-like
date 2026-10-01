@@ -6,22 +6,34 @@ public class DamageOverTimeArea : MonoBehaviour
 {
     [Header("DoT Settings")]
     public float damagePerSecond = 1f;
-    public bool damageOnEnter = true; // Apply damage immediately when enemy enters
 
-    private HashSet<EnemyController> enemiesInRange = new HashSet<EnemyController>();
+    public bool damageOnEnter = true;
+
+    private HashSet<EnemyController> enemiesInRange =
+        new HashSet<EnemyController>();
+
+    public void SetDamage(float damage)
+    {
+        damagePerSecond = damage;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyController enemy = other.GetComponent<EnemyController>();
+            EnemyController enemy =
+                other.GetComponent<EnemyController>();
+
             if (enemy != null)
             {
                 enemiesInRange.Add(enemy);
 
                 if (damageOnEnter)
                 {
-                    enemy.TakeDamage(damagePerSecond * Time.fixedDeltaTime);
+                    enemy.TakeDamage(
+                        damagePerSecond *
+                        Time.fixedDeltaTime
+                    );
                 }
             }
         }
@@ -31,7 +43,9 @@ public class DamageOverTimeArea : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyController enemy = other.GetComponent<EnemyController>();
+            EnemyController enemy =
+                other.GetComponent<EnemyController>();
+
             if (enemy != null)
             {
                 enemiesInRange.Remove(enemy);
@@ -41,10 +55,15 @@ public class DamageOverTimeArea : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float tickDamage = damagePerSecond * Time.fixedDeltaTime;
+        float tickDamage =
+            damagePerSecond *
+            Time.fixedDeltaTime;
 
-        // Iterate over a copy to prevent "collection modified" errors
-        EnemyController[] enemiesArray = new EnemyController[enemiesInRange.Count];
+        EnemyController[] enemiesArray =
+            new EnemyController[
+                enemiesInRange.Count
+            ];
+
         enemiesInRange.CopyTo(enemiesArray);
 
         foreach (EnemyController enemy in enemiesArray)

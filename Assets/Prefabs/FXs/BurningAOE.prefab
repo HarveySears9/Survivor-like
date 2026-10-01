@@ -124,6 +124,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -253,6 +254,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -382,6 +384,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -511,6 +514,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -640,6 +644,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -769,6 +774,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -786,7 +792,7 @@ GameObject:
   - component: {fileID: 5659046993547378672}
   - component: {fileID: 2301103232530053755}
   - component: {fileID: 4017032771947641533}
-  - component: {fileID: 4128321839618604199}
+  - component: {fileID: 5758230010151088199}
   m_Layer: 8
   m_Name: BurningAOE
   m_TagString: Weapon
@@ -907,6 +913,7 @@ MonoBehaviour:
   - {fileID: -1325468643, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   - {fileID: -1263014012, guid: 7a69b5e10ead8bc489244fc2a10303dd, type: 3}
   moveArray: []
+  spriteRenderer: {fileID: 0}
   animating: 1
   animationSpeed: 0.1
   isMoving: 0
@@ -957,7 +964,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1492376, y: 0.3676744}
   m_EdgeRadius: 0
---- !u!114 &4128321839618604199
+--- !u!114 &5758230010151088199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -966,10 +973,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9218306184963478178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5ca1f61f243034da948fa6abf25368, type: 3}
+  m_Script: {fileID: 11500000, guid: 151384276d7ae3a4189fe649376ec0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damagePerSecond: 1
+  damageOnEnter: 1
 --- !u!1001 &1872946594819604415
 PrefabInstance:
   m_ObjectHideFlags: 0

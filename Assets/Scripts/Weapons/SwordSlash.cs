@@ -2,86 +2,85 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SwordSlash : MonoBehaviour
+public class SwordSlash : WeaponBase
 {
-    public GameObject slashPrefab; // Reference to the Fireball prefab
-    public float fireRate = 5f;       // Time between each fire breath
-    public int level = 0;             // Weapon level (determines number of fireballs)
-    public int maxLevel = 5;
-    public float range = 10f;         // Range to detect targets
-    private float nextFireTime = 0f;  // Tracks when the next fire is allowed
+    [Header("Sword Slash")]
+    public GameObject slashPrefab;
+    public float range = 10f;
 
+    [Header("Player Animation")]
     public AnimateSprite playerAnimator;
     public AnimateImage levelUpButtonAnimator;
 
-    public Sprite[] sword1 ,sword1moving, sword2, sword2moving, sword3, sword3moving, sword4, sword4moving, sword5, sword5moving;
+    public Sprite[] sword1, sword1moving;
+    public Sprite[] sword2, sword2moving;
+    public Sprite[] sword3, sword3moving;
+    public Sprite[] sword4, sword4moving;
+    public Sprite[] sword5, sword5moving;
 
     public LevelUpButtons levelUpButton;
 
     public SpriteRenderer sr;
 
-    public PlayerController player;
 
-    public float baseDamage = 1f;
-
-    private float currentCooldown;
-
-    [Header("Weapon UI")]
-    public GameObject weaponUIPrefab;
-    public Transform weaponUIParent;
-    public Sprite weaponIcon;
-
-    private WeaponUI weaponUI;
-
-    void Start()
+    protected override void Start()
     {
-        SaveFile.Data loadedData = SaveFile.LoadData<SaveFile.Data>();
+        SaveFile.Data loadedData =
+            SaveFile.LoadData<SaveFile.Data>();
 
-        // Check if the current character is not B'rick
+        // Sword Slash is only available to B'Rick.
         if (loadedData.currentCharacter != 0)
         {
-            // Deactivate the FireBreath GameObject
-            this.gameObject.SetActive(false);
-            return; // Exit early since FireBreath should not be initialized
+            gameObject.SetActive(false);
+            return;
         }
 
+        base.Start();
+
+        level = 0;
+
         levelUpButton.LevelUp(level, maxLevel);
+
         UpdateSprites();
     }
 
+
     void Update()
     {
-        if (Time.time >= nextFireTime)
+        if (level <= 0)
+            return;
+
+        if (CooldownReady())
         {
             StartCoroutine(FireAtTargets());
-            float effectiveFireRate = fireRate;
-            effectiveFireRate *= player.attackSpeedMultiplier;
-            currentCooldown = 1f / effectiveFireRate;
-            nextFireTime = Time.time + currentCooldown;
         }
 
         playerAnimator.isMoving = player.isMoving;
 
-        // Flip the sprite's X-axis based on the player's movement direction
+        // Flip the sword sprite based on movement direction.
         if (player.moveDirection.x < 0)
         {
-            sr.flipX = true; // Flip sprite when moving left
+            sr.flipX = true;
         }
         else if (player.moveDirection.x > 0)
         {
-            sr.flipX = false; // Keep sprite normal when moving right
+            sr.flipX = false;
         }
 
         UpdateCooldownUI();
     }
 
+
     IEnumerator FireAtTargets()
     {
-        // Find all colliders within the range
-        Collider2D[] targetsInRange = Physics2D.OverlapCircleAll(transform.position, range);
+        Collider2D[] targetsInRange =
+            Physics2D.OverlapCircleAll(
+                transform.position,
+                range
+            );
 
-        // Filter only enemy targets
-        List<Transform> enemyTargets = new List<Transform>();
+        List<Transform> enemyTargets =
+            new List<Transform>();
 
         foreach (var target in targetsInRange)
         {
@@ -91,50 +90,70 @@ public class SwordSlash : MonoBehaviour
             }
         }
 
+        // No targets, so don't start the cooldown.
         if (enemyTargets.Count == 0)
             yield break;
 
+        // Start cooldown now that we know we are actually attacking.
+        StartCooldown();
+
         for (int i = 0; i < level; i++)
         {
-            Transform target = enemyTargets[i % enemyTargets.Count];
+            Transform target =
+                enemyTargets[i % enemyTargets.Count];
 
-            // Calculate direction to the target
-            Vector2 fireDirection = (target.position - transform.position).normalized;
+            Vector2 fireDirection =
+                (target.position - transform.position)
+                .normalized;
 
-            // Instantiate the slash
-            GameObject slash = Instantiate(slashPrefab, transform.position, Quaternion.identity);
+            GameObject slash =
+                Instantiate(
+                    slashPrefab,
+                    transform.position,
+                    Quaternion.identity
+                );
 
-            // Add a random variation to the angle
-            float randomOffset = Random.Range(-5f, 5f);
-            float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg + randomOffset;
+            // Add a small random angle variation.
+            float randomOffset =
+                Random.Range(-5f, 5f);
 
-            slash.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
+            float angleToRotate =
+                Mathf.Atan2(
+                    fireDirection.y,
+                    fireDirection.x
+                ) * Mathf.Rad2Deg + randomOffset;
 
-            // Pass the fire direction to the fireball script
-            slash.GetComponent<Fireball>().Initialize(Vector2.right);
+            slash.transform.rotation =
+                Quaternion.Euler(
+                    new Vector3(
+                        0,
+                        0,
+                        angleToRotate
+                    )
+                );
 
-            // Calculate damage
-            float finalDamage = baseDamage * PlayerStats.GetDamageMultiplier();
+            slash.GetComponent<Fireball>()
+                .Initialize(Vector2.right);
 
-            slash.GetComponent<Weapon>().damage = player.ApplyDamageModifiers(finalDamage);
+            slash.GetComponent<Weapon>().damage =
+                GetWeaponDamage();
 
-            // Tiny delay before firing the next slash
+            // Tiny delay between slashes.
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    public void LevelUp()
+
+    public override void LevelUp()
     {
         level++;
+
+        if (level > maxLevel)
+            level = maxLevel;
 
         if (level == 1)
         {
             CreateWeaponUI();
-        }
-
-        if (level > maxLevel)
-        {
-            level = maxLevel;
         }
 
         levelUpButton.LevelUp(level, maxLevel);
@@ -142,65 +161,39 @@ public class SwordSlash : MonoBehaviour
         UpdateSprites();
     }
 
+
     void UpdateSprites()
     {
-        switch(level)
+        switch (level)
         {
             case 1:
                 playerAnimator.spriteArray = sword1;
                 playerAnimator.moveArray = sword1moving;
                 levelUpButtonAnimator.spriteArray = sword2;
                 break;
+
             case 2:
                 playerAnimator.spriteArray = sword2;
                 playerAnimator.moveArray = sword2moving;
                 levelUpButtonAnimator.spriteArray = sword3;
                 break;
+
             case 3:
                 playerAnimator.spriteArray = sword3;
                 playerAnimator.moveArray = sword3moving;
                 levelUpButtonAnimator.spriteArray = sword4;
                 break;
+
             case 4:
                 playerAnimator.spriteArray = sword4;
                 playerAnimator.moveArray = sword4moving;
                 levelUpButtonAnimator.spriteArray = sword5;
                 break;
+
             case 5:
                 playerAnimator.spriteArray = sword5;
                 playerAnimator.moveArray = sword5moving;
                 break;
         }
-    }
-
-    private void CreateWeaponUI()
-    {
-        GameObject uiObj =
-            Instantiate(weaponUIPrefab, weaponUIParent);
-
-        weaponUI = uiObj.GetComponent<WeaponUI>();
-
-        weaponUI.icon.sprite = weaponIcon;
-
-        weaponUI.cooldownSlider.minValue = 0f;
-        weaponUI.cooldownSlider.maxValue = 1f;
-        weaponUI.cooldownSlider.value = 0f;
-    }
-
-    private void UpdateCooldownUI()
-    {
-        if (weaponUI == null)
-            return;
-
-        if (Time.time >= nextFireTime)
-        {
-            weaponUI.cooldownSlider.value = 0f;
-            return;
-        }
-
-        float remaining = nextFireTime - Time.time;
-
-        weaponUI.cooldownSlider.value =
-            remaining / currentCooldown;
     }
 }

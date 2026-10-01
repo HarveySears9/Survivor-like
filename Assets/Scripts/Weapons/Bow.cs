@@ -1,92 +1,66 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
-public class Bow : MonoBehaviour
+public class Bow : WeaponBase
 {
     [Header("Projectile")]
     public GameObject arrowPrefab;
 
-    [Header("Weapon Stats")]
-    public float baseFireRate = 3f;
-    public float fireRate = 3f;
-    public int level = 0;
-    public int maxLevel = 5;
-
-    public float baseDamage = 1f;
-
+    [Header("Burst")]
     public int arrowsPerBurst = 1;
     public float burstDelay = 0.12f;
 
     private bool isBursting = false;
 
-    private float nextFireTime = 0f;
-    private float currentCooldown;
-
-    private PlayerController player;
-
-    private Vector2 lastFireDirection = Vector2.right;
-
-    [Header("Weapon UI")]
-    public GameObject weaponUIPrefab;
-    public Transform weaponUIParent;
-    public Sprite weaponIcon;
-
-    private WeaponUI weaponUI;
-    public Slider cooldownSlider;
-
+    private Vector2 lastFireDirection =
+        Vector2.right;
 
     public bool unlocked = true;
 
-    void Start()
+    public LevelUpButtons levelUpButton;
+
+    protected override void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        base.Start();
 
         level = 0;
 
-        fireRate = baseFireRate;
-
-        unlocked = PlayerDataManager.Instance.data.weaponUnlocks[8];
+        unlocked =
+            PlayerDataManager.Instance.data.weaponUnlocks[8];
 
         if (unlocked)
         {
-            levelUpButton.LevelUp(level, maxLevel);
+            levelUpButton.LevelUp(
+                level,
+                maxLevel
+            );
         }
-
-        nextFireTime = Time.time;
     }
-
-
-    public LevelUpButtons levelUpButton;
-
 
     void Update()
     {
-        // Don't attack until the weapon has actually been obtained
+        // Don't attack until the weapon
+        // has actually been obtained
         if (level <= 0)
             return;
 
-        float effectiveFireRate = fireRate;
-
-        if (player != null)
+        // Remember the player's latest
+        // movement direction
+        if (player != null &&
+            player.moveDirection != Vector2.zero)
         {
-            effectiveFireRate *= player.attackSpeedMultiplier;
+            lastFireDirection =
+                player.moveDirection;
         }
 
-        if (Time.time >= nextFireTime && !isBursting)
+        if (!isBursting && CooldownReady())
         {
-            StartCoroutine(FireBurst());
-
-            currentCooldown = 1f / effectiveFireRate;
-            nextFireTime = Time.time + currentCooldown;
+            StartCoroutine(
+                FireBurst()
+            );
         }
 
         UpdateCooldownUI();
-
-        if (player.moveDirection != Vector2.zero)
-        {
-            lastFireDirection = player.moveDirection;
-        }
     }
 
     private IEnumerator FireBurst()
@@ -99,9 +73,15 @@ public class Bow : MonoBehaviour
 
             if (i < arrowsPerBurst - 1)
             {
-                yield return new WaitForSeconds(burstDelay);
+                yield return new WaitForSeconds(
+                    burstDelay
+                );
             }
         }
+
+        // Burst is completely finished.
+        // Start the cooldown now.
+        StartCooldown();
 
         isBursting = false;
     }
@@ -111,30 +91,52 @@ public class Bow : MonoBehaviour
         if (player == null)
             return;
 
-        Vector2 fireDirection = lastFireDirection;
+        Vector2 fireDirection =
+            lastFireDirection;
 
+        GameObject arrow =
+            Instantiate(
+                arrowPrefab,
+                transform.position,
+                Quaternion.identity
+            );
 
-        GameObject arrow = Instantiate(
-            arrowPrefab,
-            transform.position,
-            Quaternion.identity
-        );
+        float angleToRotate =
+            Mathf.Atan2(
+                fireDirection.y,
+                fireDirection.x
+            ) * Mathf.Rad2Deg;
 
-        float angleToRotate = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
+        arrow.transform.rotation =
+            Quaternion.Euler(
+                new Vector3(
+                    0,
+                    0,
+                    angleToRotate
+                )
+            );
 
-        arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleToRotate));
+        Fireball fireball =
+            arrow.GetComponent<Fireball>();
 
-        arrow.GetComponent<Fireball>().Initialize(Vector2.right);
+        if (fireball != null)
+        {
+            fireball.Initialize(
+                Vector2.right
+            );
+        }
 
-        float finalDamage =
-            baseDamage * PlayerStats.GetDamageMultiplier();
+        Weapon weapon =
+            arrow.GetComponent<Weapon>();
 
-        arrow.GetComponent<Weapon>().damage =
-            player.ApplyDamageModifiers(finalDamage);
+        if (weapon != null)
+        {
+            weapon.damage =
+                GetWeaponDamage();
+        }
     }
 
-
-    public void LevelUp()
+    public override void LevelUp()
     {
         level++;
 
@@ -146,7 +148,10 @@ public class Bow : MonoBehaviour
             CreateWeaponUI();
         }
 
-        levelUpButton.LevelUp(level, maxLevel);
+        levelUpButton.LevelUp(
+            level,
+            maxLevel
+        );
 
         switch (level)
         {
@@ -170,42 +175,5 @@ public class Bow : MonoBehaviour
                 arrowsPerBurst = 5;
                 break;
         }
-    }
-
-
-    private void UpdateCooldownUI()
-    {
-        if (cooldownSlider == null)
-            return;
-
-        if (Time.time >= nextFireTime)
-        {
-            cooldownSlider.value = 0f;
-            return;
-        }
-
-        float remainingTime =
-            nextFireTime - Time.time;
-
-        cooldownSlider.value =
-            remainingTime / currentCooldown;
-    }
-
-
-    private void CreateWeaponUI()
-    {
-        GameObject uiObj =
-            Instantiate(
-                weaponUIPrefab,
-                weaponUIParent
-            );
-
-        weaponUI =
-            uiObj.GetComponent<WeaponUI>();
-
-        weaponUI.icon.sprite = weaponIcon;
-
-        cooldownSlider =
-            weaponUI.cooldownSlider;
     }
 }

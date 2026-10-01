@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinningBlades : MonoBehaviour
+public class SpinningBlades : WeaponBase
 {
-    private GameObject[] blades; // Array of blades (if you want multiple blades)
-    private GameObject currentLevel;
-    public float spinSpeed;     // Speed of the spinning (in degrees per second)
-    public int level;
-    public int maxLevel = 5;
+    [Header("Blades")]
     public GameObject[] level1Blades;
     public GameObject[] level2Blades;
     public GameObject[] level3Blades;
     public GameObject[] level4Blades;
     public GameObject[] level5Blades;
+
+    public GameObject[] allBlades;
 
     public GameObject level1;
     public GameObject level2;
@@ -21,131 +17,200 @@ public class SpinningBlades : MonoBehaviour
     public GameObject level4;
     public GameObject level5;
 
+    [Header("Spin")]
+    public float spinSpeed;
+
+    [Header("Level Up")]
     public LevelUpButtons levelUpButton;
 
-    public float baseDamage = 1f;
+    public bool unlocked = true;
 
-    public PlayerController player;
+    private GameObject[] blades;
+    private GameObject currentLevel;
 
-    public GameObject[] allBlades;
-
-    [Header("Weapon UI")]
-    public GameObject weaponUIPrefab;
-    public Transform weaponUIParent;
-    public Sprite weaponIcon;
-
-    private WeaponUI weaponUI;
-
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         level = 0;
-        blades = level1Blades; // Initialize blades with level1 at the start
+
+        blades = level1Blades;
         currentLevel = level1;
-        //currentLevel.SetActive(true);
-        levelUpButton.LevelUp(level, maxLevel);
 
-        SetUpDamage();
-    }
+        // Make sure all blade levels start disabled
+        DisableAllLevels();
 
-    // FixedUpdate is called once per frame
-    void FixedUpdate()
-    {
-        // Rotate the main object (spinning around the Z-axis)
-        transform.Rotate(0f, 0f, spinSpeed * Time.deltaTime); // Spin around Z-axis
-
-        // Loop through each blade and rotate it
-        foreach (GameObject blade in blades)
+        if (levelUpButton != null)
         {
-            blade.transform.Rotate(0f, 0f, 4f * spinSpeed * Time.deltaTime); // Spin each blade around Z-axis
+            levelUpButton.LevelUp(
+                level,
+                maxLevel
+            );
         }
 
         SetUpDamage();
     }
 
-    // Function to increase the level and update the blades
-    public void LevelUp()
+    void FixedUpdate()
     {
-        level++;  // Increase level
+        if (level <= 0)
+            return;
+
+        // Rotate the main object around the player
+        transform.Rotate(
+            0f,
+            0f,
+            spinSpeed *
+            Time.deltaTime
+        );
+
+        // Rotate each individual blade
+        foreach (GameObject blade in blades)
+        {
+            if (blade == null)
+                continue;
+
+            blade.transform.Rotate(
+                0f,
+                0f,
+                4f *
+                spinSpeed *
+                Time.deltaTime
+            );
+        }
+
+        SetUpDamage();
+    }
+
+    void SetUpDamage()
+    {
+        float finalDamage =
+            GetWeaponDamage();
+
+        foreach (GameObject blade in allBlades)
+        {
+            if (blade == null)
+                continue;
+
+            Weapon weapon =
+                blade.GetComponent<Weapon>();
+
+            if (weapon != null)
+            {
+                weapon.damage =
+                    finalDamage;
+            }
+        }
+    }
+
+    public override void LevelUp()
+    {
+        level++;
+
+        if (level > maxLevel)
+            level = maxLevel;
 
         if (level == 1)
         {
             CreateWeaponUI();
         }
 
-        if (level > maxLevel)
-        {
-            level = maxLevel;
-        }
-        currentLevel.SetActive(false);
+        // Disable the previous level
+        DisableAllLevels();
 
         switch (level)
         {
             case 1:
-                // If level is 1 or an unexpected value, set to level1 blades
-                blades = level1Blades;
-                currentLevel = level1;
+                blades =
+                    level1Blades;
+
+                currentLevel =
+                    level1;
                 break;
+
             case 2:
-                blades = level2Blades;
-                currentLevel = level2;
+                blades =
+                    level2Blades;
+
+                currentLevel =
+                    level2;
                 break;
+
             case 3:
-                blades = level3Blades;
-                currentLevel = level3;
+                blades =
+                    level3Blades;
+
+                currentLevel =
+                    level3;
                 break;
+
             case 4:
-                blades = level4Blades;
-                currentLevel = level4;
+                blades =
+                    level4Blades;
+
+                currentLevel =
+                    level4;
                 break;
+
             case 5:
-                blades = level5Blades;
-                currentLevel = level5;
-                break;
-            default:
-                // If level is 1 or an unexpected value, set to level1 blades
-                blades = level1Blades;
-                currentLevel = level1;
+                blades =
+                    level5Blades;
+
+                currentLevel =
+                    level5;
                 break;
         }
 
-        currentLevel.SetActive(true);
-        levelUpButton.LevelUp(level, maxLevel);
-    }
-
-    void SetUpDamage()
-    {
-        float finalDamage =
-            baseDamage *
-            PlayerStats.GetDamageMultiplier();
-
-        finalDamage =
-            player.ApplyDamageModifiers(finalDamage);
-
-        foreach (GameObject blade in allBlades)
+        if (currentLevel != null)
         {
-            Weapon weapon = blade.GetComponent<Weapon>();
+            currentLevel.SetActive(true);
+        }
 
-            if (weapon != null)
-            {
-                weapon.damage = finalDamage;
-            }
-            else
-            {
-                Debug.LogWarning($"No Weapon component found on blade: {blade.name}");
-            }
+        SetUpDamage();
+
+        if (levelUpButton != null)
+        {
+            levelUpButton.LevelUp(
+                level,
+                maxLevel
+            );
         }
     }
 
-    private void CreateWeaponUI()
+    void DisableAllLevels()
     {
-        GameObject uiObj = Instantiate(weaponUIPrefab, weaponUIParent);
+        if (level1 != null)
+            level1.SetActive(false);
 
-        weaponUI = uiObj.GetComponent<WeaponUI>();
+        if (level2 != null)
+            level2.SetActive(false);
 
-        weaponUI.icon.sprite = weaponIcon;
+        if (level3 != null)
+            level3.SetActive(false);
 
-        // NO SLIDER USAGE
-        weaponUI.cooldownSlider.enabled = false;
+        if (level4 != null)
+            level4.SetActive(false);
+
+        if (level5 != null)
+            level5.SetActive(false);
     }
 
+    void CreateWeaponUI()
+    {
+        GameObject uiObj =
+            Instantiate(
+                weaponUIPrefab,
+                weaponUIParent
+            );
+
+        WeaponUI weaponUI =
+            uiObj.GetComponent<WeaponUI>();
+
+        weaponUI.icon.sprite =
+            weaponIcon;
+
+        // Spinning Blades has no cooldown
+        weaponUI.cooldownSlider.enabled =
+            false;
+    }
 }

@@ -2,95 +2,170 @@ using UnityEngine;
 
 public class PlayerStaffOrbit : MonoBehaviour
 {
+    [Header("Projectiles")]
     public GameObject poisonProjectilePrefab;
 
+    [Header("Orbit")]
     public float orbitRadius = 1.2f;
     public float orbitSpeed = 180f;
 
+    [Header("Attack")]
     public float duration = 3f;
     public float fireInterval = 1f;
     public int projectileCount = 6;
+
+    [Header("Visual")]
+    public Transform staffGfx;
+    public float spinSpeed = 360f;
 
     private Transform player;
     private PoisonStaff owner;
 
     private float angle;
     private float nextFireTime;
-    public Transform staffGfx;
-    public float spinSpeed = 360f;
 
-    public void Initialize(Transform player, PoisonStaff owner, int level)
+    private float damage;
+
+    private bool finished = false;
+
+    public void Initialize(
+        Transform player,
+        PoisonStaff owner,
+        int level,
+        float damage
+    )
     {
         this.player = player;
         this.owner = owner;
+        this.damage = damage;
 
-        // Scale with level (simple for now)
-        projectileCount = 1 + (level * 2);
+        // Increase projectile count with weapon level
+        projectileCount =
+            1 + (level * 2);
 
-        nextFireTime = Time.time;
+        nextFireTime =
+            Time.time;
 
-        Destroy(gameObject, duration);
+        Destroy(
+            gameObject,
+            duration
+        );
     }
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null)
+            return;
 
-        // Orbit
-        angle += orbitSpeed * Time.deltaTime;
-        float rad = angle * Mathf.Deg2Rad;
+        // Orbit around the player
+        angle +=
+            orbitSpeed *
+            Time.deltaTime;
 
-        Vector2 offset = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * orbitRadius;
-        transform.position = (Vector2)player.position + offset;
+        float rad =
+            angle *
+            Mathf.Deg2Rad;
 
-        // Fire
+        Vector2 offset =
+            new Vector2(
+                Mathf.Cos(rad),
+                Mathf.Sin(rad)
+            ) *
+            orbitRadius;
+
+        transform.position =
+            (Vector2)player.position +
+            offset;
+
+        // Fire poison projectiles
         if (Time.time >= nextFireTime)
         {
             FireRadial();
-            nextFireTime = Time.time + fireInterval;
+
+            nextFireTime =
+                Time.time +
+                fireInterval;
         }
 
-        // Spin the staff visual
+        // Rotate staff graphic
         if (staffGfx != null)
         {
-            staffGfx.Rotate(0f, 0f, spinSpeed * Time.deltaTime);
+            staffGfx.Rotate(
+                0f,
+                0f,
+                spinSpeed *
+                Time.deltaTime
+            );
         }
     }
 
     void FireRadial()
     {
-        float step = 360f / projectileCount;
+        if (poisonProjectilePrefab == null)
+            return;
+
+        if (projectileCount <= 0)
+            return;
+
+        float step =
+            360f /
+            projectileCount;
 
         for (int i = 0; i < projectileCount; i++)
         {
-            float angle = i * step;
+            float projectileAngle =
+                i * step;
 
-            Vector2 dir = new Vector2(
-                Mathf.Cos(angle * Mathf.Deg2Rad),
-                Mathf.Sin(angle * Mathf.Deg2Rad)
-            );
+            Vector2 direction =
+                new Vector2(
+                    Mathf.Cos(
+                        projectileAngle *
+                        Mathf.Deg2Rad
+                    ),
+                    Mathf.Sin(
+                        projectileAngle *
+                        Mathf.Deg2Rad
+                    )
+                );
 
-            GameObject proj = Instantiate(poisonProjectilePrefab, transform.position, Quaternion.identity);
-            proj.GetComponent<Boulder>().Initialize(dir);
+            GameObject projectile =
+                Instantiate(
+                    poisonProjectilePrefab,
+                    transform.position,
+                    Quaternion.identity
+                );
 
-            Weapon weapon = proj.GetComponent<Weapon>();
+            Boulder boulder =
+                projectile.GetComponent<Boulder>();
+
+            if (boulder != null)
+            {
+                boulder.Initialize(
+                    direction
+                );
+            }
+
+            Weapon weapon =
+                projectile.GetComponent<Weapon>();
 
             if (weapon != null)
             {
-                float finalDamage =
-                    owner.baseDamage *
-                    PlayerStats.GetDamageMultiplier();
-
-                finalDamage =
-                    owner.player.ApplyDamageModifiers(finalDamage);
-
-                weapon.damage = finalDamage;
+                weapon.damage =
+                    damage;
             }
         }
     }
 
     void OnDestroy()
     {
-        owner.StaffFinished();
+        if (finished)
+            return;
+
+        finished = true;
+
+        if (owner != null)
+        {
+            owner.StaffFinished();
+        }
     }
 }
