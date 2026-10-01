@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public int coins = 0;
     public TextMeshProUGUI coinText;
     public float coinMultiplyer = 1f;
+    public float coinBonusChance = 0f;
 
     [Header("Movement State")]
     public bool isMoving = false;
