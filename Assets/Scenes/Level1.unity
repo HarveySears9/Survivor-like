@@ -6798,9 +6798,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 1
+  baseSpawnInterval: 0.6
   circleRadius: 6
   spawning: 1
   enemyDatabase: {fileID: 11400000, guid: 6622b5c7034905d44880bfb54d6bd970, type: 2}
+  waveActive: 0
 --- !u!114 &429575879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7326,9 +7328,9 @@ MonoBehaviour:
   - {fileID: 4695558043855393838, guid: 9d9a3880b77fa9a4ab9a2efe97c8b4dd, type: 3}
   - {fileID: 522717323906260398, guid: 159bded1ee39c4d41a54659c27ff69c9, type: 3}
   - {fileID: 1242405770168991644, guid: 9a20991dfbf73f84a8acb8f456832bde, type: 3}
-  weights1: 32000000230000000f000000
-  weights2: 190000001e000000140000000f0000000a000000
-  weights3: 190000001e0000000f000000140000000a000000
+  weights1: 3f0000002300000002000000
+  weights2: 210000001e000000140000000f00000002000000
+  weights3: 210000001e0000000f0000001400000002000000
   bossDrops:
   - {fileID: 7937523105513906517, guid: de64075a203ea09458255c0104de11ce, type: 3}
 --- !u!4 &465943711
@@ -11111,6 +11113,10 @@ MonoBehaviour:
   difficulty: 1
   dropTier: 1
   bossCount: 0
+  enemySpawner: {fileID: 0}
+  earlySpawnInterval: 1.2
+  midSpawnInterval: 0.9
+  normalSpawnInterval: 0.6
 --- !u!222 &740212142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15742,9 +15748,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.5
+  baseSpawnInterval: 0.6
   circleRadius: 6
   spawning: 1
   enemyDatabase: {fileID: 11400000, guid: 36a2f6ea2ec64714d9a18b334e0b9031, type: 2}
+  waveActive: 0
 --- !u!114 &1001450323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21761,9 +21769,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.5
+  baseSpawnInterval: 0.6
   circleRadius: 6
   spawning: 1
   enemyDatabase: {fileID: 11400000, guid: f755c023ee99a4947ae9c178c7b18635, type: 2}
+  waveActive: 0
 --- !u!114 &1420358126
 MonoBehaviour:
   m_ObjectHideFlags: 0

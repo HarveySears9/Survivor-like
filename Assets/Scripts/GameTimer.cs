@@ -3,19 +3,38 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
-    public float elapsedTime = 0f;           // Timer to track total time elapsed
-    public TextMeshProUGUI timerText;       // Reference to the TextMeshProUGUI component
-    public int difficulty = 1;             // Current difficulty level
-    public int dropTier = 1;               // Current drop tier
-    public int bossCount = 0;              // Number of bosses spawned
-    private float difficultyInterval; // Time interval for difficulty increase (in seconds)
-    private float dropInterval;       // Time interval for drop tier increase (in seconds)
-    private float bossInterval;      // Time interval for boss spawn (in seconds)
+    public float elapsedTime = 0f;
+    public TextMeshProUGUI timerText;
+
+    [Header("Difficulty")]
+    public int difficulty = 1;
+    public int dropTier = 1;
+    public int bossCount = 0;
+
+    private float difficultyInterval;
+    private float dropInterval;
+    private float bossInterval;
 
     private float nextDifficultyTime;
     private float nextDropTime;
     private float nextBossTime;
-    private bool isPaused = true;         // Flag to pause the timer
+
+    private bool isPaused = true;
+
+    [Header("Wave")]
+    private float waveInterval;
+    private float nextWaveTime;
+
+    [Header("Structure")]
+    private float structureInterval;
+    private float nextStructureTime;
+
+    [Header("Spawn Pacing")]
+    public EnemySpawner enemySpawner;
+
+    public float earlySpawnInterval = 1.2f;
+    public float midSpawnInterval = 0.9f;
+    public float normalSpawnInterval = 0.6f;
 
     public delegate void DifficultyChange(int newDifficulty);
     public event DifficultyChange OnDifficultyChange;
@@ -28,17 +47,16 @@ public class GameTimer : MonoBehaviour
 
     public delegate void WaveStart();
     public event WaveStart OnWaveStart;
-    private float waveInterval; // time between waves
-
-    private float nextWaveTime;
 
     public delegate void SpawnStructure();
     public event SpawnStructure OnSpawnStructure;
 
-    private float structureInterval;
-    private float nextStructureTime;
-
-    public void SetIntervals(float diff, float drop, float boss, float wave, float structure)
+    public void SetIntervals(
+        float diff,
+        float drop,
+        float boss,
+        float wave,
+        float structure)
     {
         difficultyInterval = diff;
         dropInterval = drop;
@@ -58,65 +76,93 @@ public class GameTimer : MonoBehaviour
     void Start()
     {
         isPaused = true;
-        UpdateTimerUI();  // Initialize timer display
+        UpdateTimerUI();
     }
 
     void Update()
     {
-        if (isPaused) return; // Exit if the timer is paused
+        if (isPaused)
+            return;
 
-        // Update elapsed time
         elapsedTime += Time.deltaTime;
 
-        // Check if it's time to increase difficulty
+        UpdateSpawnInterval();
+
         if (elapsedTime >= nextDifficultyTime)
         {
             difficulty++;
-            nextDifficultyTime += difficultyInterval; // Schedule the next difficulty change
-            OnDifficultyChange?.Invoke(difficulty);   // Trigger the event
+            nextDifficultyTime += difficultyInterval;
+
+            OnDifficultyChange?.Invoke(difficulty);
         }
 
-        // Check if it's time to increase drop tier
         if (elapsedTime >= nextDropTime)
         {
             dropTier++;
-            nextDropTime += dropInterval; // Schedule the next drop change
-            OnDropChange?.Invoke(dropTier); // Trigger the event
+            nextDropTime += dropInterval;
+
+            OnDropChange?.Invoke(dropTier);
         }
 
-        // Check if it's time to spawn a boss
         if (elapsedTime >= nextBossTime)
         {
             bossCount++;
-            nextBossTime += bossInterval; // Schedule the next boss spawn
-            OnSpawnBoss?.Invoke(bossCount); // Trigger the event
+            nextBossTime += bossInterval;
+
+            OnSpawnBoss?.Invoke(bossCount);
         }
 
-        // Waves
         if (elapsedTime >= nextWaveTime)
         {
             nextWaveTime += waveInterval;
+
             OnWaveStart?.Invoke();
         }
 
-        // Structure spawning
         if (elapsedTime >= nextStructureTime)
         {
             nextStructureTime += structureInterval;
+
             OnSpawnStructure?.Invoke();
         }
 
-        // Update the timer display
         UpdateTimerUI();
+    }
+
+    void UpdateSpawnInterval()
+    {
+        if (enemySpawner == null)
+            return;
+
+        if (elapsedTime < 30f)
+        {
+            enemySpawner.baseSpawnInterval = earlySpawnInterval;
+        }
+        else if (elapsedTime < 60f)
+        {
+            enemySpawner.baseSpawnInterval = midSpawnInterval;
+        }
+        else
+        {
+            enemySpawner.baseSpawnInterval = normalSpawnInterval;
+        }
+
+        // Only update the actual spawn interval if a wave
+        // isn't currently overriding it.
+        if (!enemySpawner.waveActive)
+        {
+            enemySpawner.spawnInterval =
+                enemySpawner.baseSpawnInterval;
+        }
     }
 
     void UpdateTimerUI()
     {
         if (timerText != null)
         {
-            // Format elapsed time as MM:SS
             int minutes = Mathf.FloorToInt(elapsedTime / 60f);
             int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+
             timerText.text = $"{minutes:D2}:{seconds:D2}";
         }
     }
