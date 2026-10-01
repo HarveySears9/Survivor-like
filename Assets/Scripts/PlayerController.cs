@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
     public float turretDamageMultiplier = 1f;
     public float turretCooldownMultiplier = 1f;
 
+    [Header("Equipment Buffs")]
+    public float equipmentDamageMultiplier = 1f;
+
     public GameObject deathEffect;
 
 

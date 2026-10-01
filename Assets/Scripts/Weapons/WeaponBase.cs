@@ -74,6 +74,7 @@ public abstract class WeaponBase : MonoBehaviour
         if (player != null)
         {
             damage *= player.weaponDamageMultiplier;
+            damage *= player.equipmentDamageMultiplier;
 
             damage = player.ApplyDamageModifiers(damage);
         }

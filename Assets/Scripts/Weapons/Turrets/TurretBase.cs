@@ -59,8 +59,8 @@ public class TurretBase : MonoBehaviour
         // Temporary turret damage buffs
         if (player != null)
         {
-            finalDamage *=
-                player.turretDamageMultiplier;
+            finalDamage *= player.turretDamageMultiplier;
+            finalDamage *= player.equipmentDamageMultiplier;
         }
 
         return finalDamage;

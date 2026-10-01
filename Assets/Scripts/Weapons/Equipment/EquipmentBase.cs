@@ -8,8 +8,12 @@ public abstract class EquipmentBase : MonoBehaviour
 
     public LevelUpButtons levelUpButton;
 
+    protected PlayerController player;
+
     protected virtual void Start()
     {
+        player = FindObjectOfType<PlayerController>();
+
         if (levelUpButton != null)
         {
             levelUpButton.LevelUp(level, maxLevel);
