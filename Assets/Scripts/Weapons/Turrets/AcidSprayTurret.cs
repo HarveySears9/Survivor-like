@@ -3,88 +3,136 @@ using UnityEngine;
 public class AcidSprayTurret : TurretBase
 {
     [Header("Acid Spray Settings")]
-    public GameObject spray;           // The spray GameObject (already in scene, child of barrel)
+    public GameObject spray;
 
     public SpriteRenderer[] spraySprites;
 
     [Header("Rotation Settings")]
-    public Transform barrel;           // The rotating barrel/point of the turret
-    public float rotationSpeed = 360f; // Degrees per second
-    private float targetAngle = 0f;    // Angle to target
+    public Transform barrel;
+    public float rotationSpeed = 360f;
+
+    private float targetAngle = 0f;
 
     protected override void Update()
     {
         HandleLifetime();
-        // Find the nearest target
+
         currentTarget = FindTargets();
 
         if (currentTarget != null)
         {
-            // Enable spray if it exists
-            if (spray != null && !spray.activeSelf)
+            if (spray != null &&
+                !spray.activeSelf)
             {
                 spray.SetActive(true);
             }
 
-            // Calculate target angle toward enemy
-            Vector2 direction = (currentTarget.position - barrel.position).normalized;
-            targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Vector2 direction =
+                (currentTarget.position -
+                 barrel.position).normalized;
 
-            // Smoothly rotate barrel toward target and handle flips
+            targetAngle =
+                Mathf.Atan2(
+                    direction.y,
+                    direction.x
+                ) * Mathf.Rad2Deg;
+
             SmoothRotateBarrel();
+
+            UpdateSprayDamage();
         }
         else
         {
-            // No target: disable spray
-            if (spray != null && spray.activeSelf)
+            if (spray != null &&
+                spray.activeSelf)
             {
                 spray.SetActive(false);
             }
         }
     }
 
+    private void UpdateSprayDamage()
+    {
+        if (spray == null)
+            return;
+
+        Weapon weapon =
+            spray.GetComponent<Weapon>();
+
+        if (weapon != null)
+        {
+            weapon.damage =
+                GetTurretDamage();
+        }
+    }
+
     private void SmoothRotateBarrel()
     {
-        if (barrel == null) return;
+        if (barrel == null)
+            return;
 
-        // Smooth rotation toward target angle
-        float currentAngle = barrel.eulerAngles.z;
-        float newAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, rotationSpeed * Time.deltaTime);
-        barrel.rotation = Quaternion.Euler(0, 0, newAngle);
+        float currentAngle =
+            barrel.eulerAngles.z;
 
-        // Normalize angle to -180 to +180 for consistent flipping
-        float normalizedAngle = (newAngle > 180f) ? newAngle - 360f : newAngle;
+        float newAngle =
+            Mathf.MoveTowardsAngle(
+                currentAngle,
+                targetAngle,
+                rotationSpeed * Time.deltaTime
+            );
 
-        // Flip the barrel sprite
-        SpriteRenderer barrelSR = barrel.GetComponent<SpriteRenderer>();
+        barrel.rotation =
+            Quaternion.Euler(
+                0f,
+                0f,
+                newAngle
+            );
+
+        float normalizedAngle =
+            (newAngle > 180f)
+            ? newAngle - 360f
+            : newAngle;
+
+        SpriteRenderer barrelSR =
+            barrel.GetComponent<SpriteRenderer>();
+
         if (barrelSR != null)
         {
-            barrelSR.flipY = (normalizedAngle > 90f || normalizedAngle < -90f);
+            barrelSR.flipY =
+                normalizedAngle > 90f ||
+                normalizedAngle < -90f;
         }
 
-        // Flip the spray
-        if (spraySprites != null && spraySprites.Length > 0)
+        if (spraySprites != null &&
+            spraySprites.Length > 0)
         {
-            bool shouldFlip = (normalizedAngle > 90f || normalizedAngle < -90f);
-            for (int i = 0; i < spraySprites.Length; i++)
+            bool shouldFlip =
+                normalizedAngle > 90f ||
+                normalizedAngle < -90f;
+
+            for (int i = 0;
+                 i < spraySprites.Length;
+                 i++)
             {
                 if (spraySprites[i] != null)
-                    spraySprites[i].flipY = shouldFlip;
+                {
+                    spraySprites[i].flipY =
+                        shouldFlip;
+                }
             }
         }
-
     }
 
     protected override void Fire()
     {
-        // No individual projectiles; the spray handles continuous damage
+        // Acid spray deals continuous damage.
+        // It does not use individual projectiles.
     }
 
     protected override void HandleLifetime()
     {
         base.HandleLifetime();
 
-        // Ensure spray is disabled if turret dies
         if (spray != null)
         {
             spray.SetActive(false);

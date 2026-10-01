@@ -24,7 +24,8 @@ public class TurretBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player =
+            FindObjectOfType<PlayerController>();
 
         lifeTimer = lifeTime;
     }
@@ -48,11 +49,18 @@ public class TurretBase : MonoBehaviour
 
     protected float GetTurretDamage()
     {
-        float finalDamage = damage;
+        float finalDamage =
+            damage;
 
+        // Permanent damage upgrade
+        finalDamage *=
+            PlayerStats.GetDamageMultiplier();
+
+        // Temporary turret damage buffs
         if (player != null)
         {
-            finalDamage *= player.turretDamageMultiplier;
+            finalDamage *=
+                player.turretDamageMultiplier;
         }
 
         return finalDamage;
@@ -60,7 +68,8 @@ public class TurretBase : MonoBehaviour
 
     protected float GetTurretCooldown()
     {
-        float effectiveFireRate = fireRate;
+        float effectiveFireRate =
+            fireRate;
 
         if (player != null)
         {
@@ -86,7 +95,8 @@ public class TurretBase : MonoBehaviour
 
     protected virtual void HandleLifetime()
     {
-        lifeTimer -= Time.deltaTime;
+        lifeTimer -=
+            Time.deltaTime;
 
         if (lifeTimer <= 0f)
         {
@@ -100,7 +110,8 @@ public class TurretBase : MonoBehaviour
 
     protected virtual void Fire()
     {
-        currentTarget = FindTargets();
+        currentTarget =
+            FindTargets();
 
         if (currentTarget == null)
             return;
@@ -110,8 +121,10 @@ public class TurretBase : MonoBehaviour
             return;
 
         Vector2 fireDirection =
-            (currentTarget.position -
-             firePoint.position).normalized;
+            (
+                currentTarget.position -
+                firePoint.position
+            ).normalized;
 
         GameObject projectile =
             Instantiate(
@@ -138,7 +151,9 @@ public class TurretBase : MonoBehaviour
 
         if (fireball != null)
         {
-            fireball.Initialize(Vector2.right);
+            fireball.Initialize(
+                Vector2.right
+            );
         }
 
         Weapon weapon =
@@ -184,8 +199,11 @@ public class TurretBase : MonoBehaviour
 
             if (distance < closestDistance)
             {
-                closestDistance = distance;
-                closest = hit.transform;
+                closestDistance =
+                    distance;
+
+                closest =
+                    hit.transform;
             }
         }
 
