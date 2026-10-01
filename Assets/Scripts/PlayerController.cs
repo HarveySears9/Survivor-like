@@ -100,11 +100,7 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
 
         if (moveDirection != Vector2.zero)
-        {
-            if(fireBreath != null)
-            {
-                fireBreath.moveDirection = moveDirection;
-            }
+        { 
             animator.isMoving = true;
             isMoving = true;
 
