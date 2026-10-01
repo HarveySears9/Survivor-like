@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Equipment Buffs")]
     public float equipmentDamageMultiplier = 1f;
+    public float equipmentMaxHPMultiplier = 1f;
 
     public GameObject deathEffect;
 
@@ -104,8 +105,7 @@ public class PlayerController : MonoBehaviour
         // PERMANENT UPGRADES
         // =========================
 
-        maxHP =
-            PlayerStats.GetMaxHP();
+        maxHP = Mathf.RoundToInt(PlayerStats.GetMaxHP() * equipmentMaxHPMultiplier);
 
         speed =
             2f *
@@ -262,17 +262,18 @@ public class PlayerController : MonoBehaviour
     // MAX HP
     // =========================
 
-    public void IncreaseMaxHP(
-        float percentage
-    )
+    public void IncreaseMaxHP(float percentage, bool healDifference = false)
     {
         int increase =
-            Mathf.CeilToInt(
-                maxHP * percentage
-            );
+            Mathf.CeilToInt(maxHP * percentage);
 
-        maxHP +=
-            increase;
+        maxHP += increase;
+
+        if (healDifference)
+        {
+            hp += increase;
+            hp = Mathf.Clamp(hp, 0, maxHP);
+        }
 
         healthBar.SetHealth(hp);
     }
